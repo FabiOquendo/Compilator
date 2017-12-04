@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tooldataform:ModelFactory xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tooldataform="http:///tooldataform.ecore" xmlns:tooldataform.formmodel.concreta="http:///tooldataform/formmodel/concreta.ecore">
+  <listProyecto listDataFormDiagram="//@listProyecto.0/@listDiagram.0">
+    <listDiagram xsi:type="tooldataform.formmodel.concreta:DataForm_Diagram" name="model.tooldataform_diagram" theProject="//@listProyecto.0">
+      <theInterface name="Dataform Diagram" positionX="10" positionY="10" width="950" height="340">
+        <listGraphicalContainer xsi:type="tooldataform.formmodel.concreta:Container" name="Viaje" positionX="0" positionY="0" width="930" height="240">
+          <listGraphicalContainer xsi:type="tooldataform.formmodel.concreta:Container" name="Vuelo" positionX="10" positionY="10" width="450" height="100">
+            <listIndividualElementDataForm xsi:type="tooldataform.formmodel.concreta:LabelView" name="origen" positionX="10" positionY="10" width="80" height="20"/>
+            <listIndividualElementDataForm xsi:type="tooldataform.formmodel.concreta:TextView" name="origen" positionX="100" positionY="10" width="120" height="20"/>
+            <listIndividualElementDataForm xsi:type="tooldataform.formmodel.concreta:LabelView" name="destino" positionX="230" positionY="10" width="80" height="20"/>
+            <listIndividualElementDataForm xsi:type="tooldataform.formmodel.concreta:TextView" name="destino" positionX="320" positionY="10" width="120" height="20"/>
+          </listGraphicalContainer>
+          <listGraphicalContainer xsi:type="tooldataform.formmodel.concreta:Container" name="Vuelo" positionX="470" positionY="10" width="450" height="100">
+            <listIndividualElementDataForm xsi:type="tooldataform.formmodel.concreta:LabelView" name="origen" positionX="10" positionY="10" width="80" height="20"/>
+            <listIndividualElementDataForm xsi:type="tooldataform.formmodel.concreta:TextView" name="origen" positionX="100" positionY="10" width="120" height="20"/>
+            <listIndividualElementDataForm xsi:type="tooldataform.formmodel.concreta:LabelView" name="destino" positionX="230" positionY="10" width="80" height="20"/>
+            <listIndividualElementDataForm xsi:type="tooldataform.formmodel.concreta:TextView" name="destino" positionX="320" positionY="10" width="120" height="20"/>
+          </listGraphicalContainer>
+        </listGraphicalContainer>
+      </theInterface>
+    </listDiagram>
+  </listProyecto>
+</tooldataform:ModelFactory>

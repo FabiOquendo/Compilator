@@ -1,0 +1,30 @@
+comp1=txt_hola;
+comp2=btn_Fin;
+Alumnos|{
+	filtroCurso[*cursos],
+	listaAlumnos[alumnos<nombre,edad,curso>],
+	InfomacionAlumno[|[txt_nombre,txt_codigo,txt_Direccion]',|[txt_apellido,txt_edad,txt_telefono]'],
+	btn_Inicio
+};
+txt_nombre.color=#000000;
+txt_alumno.tamFuente=12px;
+
+titulo1{
+	filtroCurso,
+	listaAlumnos,
+	InfomacionAlumno
+};
+
+titulo2{
+	txt_nombre,
+	txt_codigo,
+	txt_Direccion,
+	txt_apellido,
+	txt_edad,
+	txt_telefono
+};
+
+font{
+	cursos,
+	btn_inicio
+};

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated styles -->
+      <package
+            uri="http:///styles.ecore"
+            class="styles.StylesPackage"
+            genModel="model/styles.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated styles -->
+      <package
+            uri="http:///styles/domain.ecore"
+            class="styles.domain.DomainPackage"
+            genModel="model/styles.genmodel"/>
+   </extension>
+
+</plugin>

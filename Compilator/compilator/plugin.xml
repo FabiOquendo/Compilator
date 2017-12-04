@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated compilator -->
+      <package
+            uri="http:///compilator.ecore"
+            class="compilator.CompilatorPackage"
+            genModel="model/compilator.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated compilator -->
+      <package
+            uri="http:///compilator/domain.ecore"
+            class="compilator.domain.DomainPackage"
+            genModel="model/compilator.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated compilator -->
+      <package
+            uri="http:///compilator/domain/expression.ecore"
+            class="compilator.domain.expression.ExpressionPackage"
+            genModel="model/compilator.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated compilator -->
+      <package
+            uri="http:///compilator/domain/expression/expressionmodel.ecore"
+            class="compilator.domain.expression.expressionmodel.ExpressionmodelPackage"
+            genModel="model/compilator.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated compilator -->
+      <package
+            uri="http:///compilator/domain/expression/expressionmodel/individualcomponent.ecore"
+            class="compilator.domain.expression.expressionmodel.individualcomponent.IndividualcomponentPackage"
+            genModel="model/compilator.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated compilator -->
+      <package
+            uri="http:///compilator/domain/expression/expressionmodel/containercomponent.ecore"
+            class="compilator.domain.expression.expressionmodel.containercomponent.ContainercomponentPackage"
+            genModel="model/compilator.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated compilator -->
+      <package
+            uri="http:///compilator/domain/expression/sentence.ecore"
+            class="compilator.domain.expression.sentence.SentencePackage"
+            genModel="model/compilator.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated compilator -->
+      <package
+            uri="http:///compilator/domain/shapes.ecore"
+            class="compilator.domain.shapes.ShapesPackage"
+            genModel="model/compilator.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated compilator -->
+      <package
+            uri="http:///compilator/domain/datatypes/util.ecore"
+            class="compilator.domain.datatypes.util.UtilPackage"
+            genModel="model/compilator.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated compilator -->
+      <package
+            uri="http:///compilator/domain/generator.ecore"
+            class="compilator.domain.generator.GeneratorPackage"
+            genModel="model/compilator.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated compilator -->
+      <package
+            uri="http:///compilator/ui.ecore"
+            class="compilator.ui.UiPackage"
+            genModel="model/compilator.genmodel"/>
+   </extension>
+
+</plugin>

@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated generator -->
+      <package
+            uri="http:///generator.ecore"
+            class="generator.GeneratorPackage"
+            genModel="model/generator.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated generator -->
+      <package
+            uri="http:///generator/apperance/alignment.ecore"
+            class="generator.apperance.alignment.AlignmentPackage"
+            genModel="model/generator.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated generator -->
+      <package
+            uri="http:///generator/apperance/background.ecore"
+            class="generator.apperance.background.BackgroundPackage"
+            genModel="model/generator.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated generator -->
+      <package
+            uri="http:///generator/apperance/linesvisible.ecore"
+            class="generator.apperance.linesvisible.LinesvisiblePackage"
+            genModel="model/generator.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated generator -->
+      <package
+            uri="http:///generator/apperance/position.ecore"
+            class="generator.apperance.position.PositionPackage"
+            genModel="model/generator.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated generator -->
+      <package
+            uri="http:///generator/apperance/size.ecore"
+            class="generator.apperance.size.SizePackage"
+            genModel="model/generator.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated generator -->
+      <package
+            uri="http:///generator/apperance/font.ecore"
+            class="generator.apperance.font.FontPackage"
+            genModel="model/generator.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated generator -->
+      <package
+            uri="http:///generator/apperance/titlesize.ecore"
+            class="generator.apperance.titlesize.TitlesizePackage"
+            genModel="model/generator.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated generator -->
+      <package
+            uri="http:///generator/genmodel.ecore"
+            class="generator.genmodel.GenmodelPackage"
+            genModel="model/generator.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated generator -->
+      <package
+            uri="http:///generator/genmodel/genindividualcomponent.ecore"
+            class="generator.genmodel.genindividualcomponent.GenindividualcomponentPackage"
+            genModel="model/generator.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated generator -->
+      <package
+            uri="http:///generator/genmodel/genindividualcomponent/genbutton.ecore"
+            class="generator.genmodel.genindividualcomponent.genbutton.GenbuttonPackage"
+            genModel="model/generator.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated generator -->
+      <package
+            uri="http:///generator/genmodel/genindividualcomponent/gencolunm.ecore"
+            class="generator.genmodel.genindividualcomponent.gencolunm.GencolunmPackage"
+            genModel="model/generator.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated generator -->
+      <package
+            uri="http:///generator/genmodel/genindividualcomponent/gencombobox.ecore"
+            class="generator.genmodel.genindividualcomponent.gencombobox.GencomboboxPackage"
+            genModel="model/generator.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated generator -->
+      <package
+            uri="http:///generator/genmodel/genindividualcomponent/genlabel.ecore"
+            class="generator.genmodel.genindividualcomponent.genlabel.GenlabelPackage"
+            genModel="model/generator.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated generator -->
+      <package
+            uri="http:///generator/genmodel/genindividualcomponent/gentable.ecore"
+            class="generator.genmodel.genindividualcomponent.gentable.GentablePackage"
+            genModel="model/generator.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated generator -->
+      <package
+            uri="http:///generator/genmodel/genindividualcomponent/gentextfield.ecore"
+            class="generator.genmodel.genindividualcomponent.gentextfield.GentextfieldPackage"
+            genModel="model/generator.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated generator -->
+      <package
+            uri="http:///generator/genmodel/gencontainercomponent.ecore"
+            class="generator.genmodel.gencontainercomponent.GencontainercomponentPackage"
+            genModel="model/generator.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated generator -->
+      <package
+            uri="http:///generator/genmodel/gencontainercomponent/gencontainer.ecore"
+            class="generator.genmodel.gencontainercomponent.gencontainer.GencontainerPackage"
+            genModel="model/generator.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated generator -->
+      <package
+            uri="http:///generator/enumeration.ecore"
+            class="generator.enumeration.EnumerationPackage"
+            genModel="model/generator.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated generator -->
+      <package
+            uri="http:///generator/datatypes.ecore"
+            class="generator.datatypes.DatatypesPackage"
+            genModel="model/generator.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated generator -->
+      <package
+            uri="http:///generator/datatypes/datatypesdataform.ecore"
+            class="generator.datatypes.datatypesdataform.DatatypesdataformPackage"
+            genModel="model/generator.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated generator -->
+      <package
+            uri="http:///generator/datatypes/datatypesgmf.ecore"
+            class="generator.datatypes.datatypesgmf.DatatypesgmfPackage"
+            genModel="model/generator.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated generator -->
+      <package
+            uri="http:///generator/gendataform.ecore"
+            class="generator.gendataform.GendataformPackage"
+            genModel="model/generator.genmodel"/>
+   </extension>
+
+</plugin>

@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Compiladordataform
+Bundle-SymbolicName: compiladordataform;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: org.eclipse.ui;bundle-version="3.108.0",
+ org.eclipse.ui.workbench,
+ org.eclipse.emf.edit,
+ org.eclipse.emf.edit.ui,
+ org.eclipse.core.runtime;bundle-version="3.12.0",
+ org.eclipse.ui.forms;bundle-version="3.7.0",
+ tooldataform;bundle-version="1.0.0",
+ tool.model;bundle-version="1.0.0",
+ org.eclipse.emf.common.ui;bundle-version="2.11.0",
+ org.eclipse.ui.workbench,
+ compilator;bundle-version="1.0.0",
+ generator;bundle-version="1.0.0"
+

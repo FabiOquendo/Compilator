@@ -1,0 +1,89 @@
+/**
+ */
+package generator.apperance.size.tests;
+
+import generator.apperance.size.Height;
+import generator.apperance.size.SizeFactory;
+
+import junit.framework.TestCase;
+
+import junit.textui.TestRunner;
+
+/**
+ * <!-- begin-user-doc -->
+ * A test case for the model object '<em><b>Height</b></em>'.
+ * <!-- end-user-doc -->
+ * @generated
+ */
+public class HeightTest extends TestCase {
+
+	/**
+	 * The fixture for this Height test case.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected Height fixture = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static void main(String[] args) {
+		TestRunner.run(HeightTest.class);
+	}
+
+	/**
+	 * Constructs a new Height test case with the given name.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public HeightTest(String name) {
+		super(name);
+	}
+
+	/**
+	 * Sets the fixture for this Height test case.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void setFixture(Height fixture) {
+		this.fixture = fixture;
+	}
+
+	/**
+	 * Returns the fixture for this Height test case.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected Height getFixture() {
+		return fixture;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see junit.framework.TestCase#setUp()
+	 * @generated
+	 */
+	@Override
+	protected void setUp() throws Exception {
+		setFixture(SizeFactory.eINSTANCE.createHeight());
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see junit.framework.TestCase#tearDown()
+	 * @generated
+	 */
+	@Override
+	protected void tearDown() throws Exception {
+		setFixture(null);
+	}
+
+} //HeightTest

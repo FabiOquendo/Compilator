@@ -1,0 +1,36 @@
+grammar xtext.Expression with org.eclipse.xtext.common.Terminals
+
+generate expression "http://www.Expression.xtext"
+
+Model:
+	 (elements+=Container) ';' ; 
+		
+Element:
+	Container | Table | Label | TextView | ComboView | Button;
+
+Container:
+	name=ID Orientation? '[' (elements+=Element) (',' elements+=Element)* ']';
+
+Orientation:
+	"|" | "-";
+
+Table:
+	name=ID '<' (columns+=Column) (',' columns+=Column)* '>';
+
+Column:
+	name=ID;	
+	
+Label:
+	'lbl_' name=ID;
+
+TextView:
+	'txt_' name=ID;
+	
+ComboView:
+	'*' name=ID;
+
+Button:
+	'btn_' name=ID;
+	
+terminal ID :
+	('a'..'z'|'A'..'Z') ('a'..'z'|'A'..'Z'|'0'..'9')*; 

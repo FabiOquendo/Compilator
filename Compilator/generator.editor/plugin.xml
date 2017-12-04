@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated generator -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="generator.presentation.GeneratorModelWizardID"
+            name="%_UI_GeneratorModelWizard_label"
+            class="generator.presentation.GeneratorModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/GeneratorModelFile.gif">
+         <description>%_UI_GeneratorModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated generator -->
+      <editor
+            id="generator.presentation.GeneratorEditorID"
+            name="%_UI_GeneratorEditor_label"
+            icon="icons/full/obj16/GeneratorModelFile.gif"
+            extensions="generator"
+            class="generator.presentation.GeneratorEditor"
+            contributorClass="generator.presentation.GeneratorActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated generator -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="generator.apperance.alignment.presentation.AlignmentModelWizardID"
+            name="%_UI_AlignmentModelWizard_label"
+            class="generator.apperance.alignment.presentation.AlignmentModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/AlignmentModelFile.gif">
+         <description>%_UI_AlignmentModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated generator -->
+      <editor
+            id="generator.apperance.alignment.presentation.AlignmentEditorID"
+            name="%_UI_AlignmentEditor_label"
+            icon="icons/full/obj16/AlignmentModelFile.gif"
+            extensions="alignment"
+            class="generator.apperance.alignment.presentation.AlignmentEditor"
+            contributorClass="generator.apperance.alignment.presentation.AlignmentActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated generator -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="generator.apperance.background.presentation.BackgroundModelWizardID"
+            name="%_UI_BackgroundModelWizard_label"
+            class="generator.apperance.background.presentation.BackgroundModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/BackgroundModelFile.gif">
+         <description>%_UI_BackgroundModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated generator -->
+      <editor
+            id="generator.apperance.background.presentation.BackgroundEditorID"
+            name="%_UI_BackgroundEditor_label"
+            icon="icons/full/obj16/BackgroundModelFile.gif"
+            extensions="background"
+            class="generator.apperance.background.presentation.BackgroundEditor"
+            contributorClass="generator.apperance.background.presentation.BackgroundActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated generator -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="generator.apperance.linesvisible.presentation.LinesvisibleModelWizardID"
+            name="%_UI_LinesvisibleModelWizard_label"
+            class="generator.apperance.linesvisible.presentation.LinesvisibleModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/LinesvisibleModelFile.gif">
+         <description>%_UI_LinesvisibleModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated generator -->
+      <editor
+            id="generator.apperance.linesvisible.presentation.LinesvisibleEditorID"
+            name="%_UI_LinesvisibleEditor_label"
+            icon="icons/full/obj16/LinesvisibleModelFile.gif"
+            extensions="linesvisible"
+            class="generator.apperance.linesvisible.presentation.LinesvisibleEditor"
+            contributorClass="generator.apperance.linesvisible.presentation.LinesvisibleActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated generator -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="generator.apperance.position.presentation.PositionModelWizardID"
+            name="%_UI_PositionModelWizard_label"
+            class="generator.apperance.position.presentation.PositionModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/PositionModelFile.gif">
+         <description>%_UI_PositionModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated generator -->
+      <editor
+            id="generator.apperance.position.presentation.PositionEditorID"
+            name="%_UI_PositionEditor_label"
+            icon="icons/full/obj16/PositionModelFile.gif"
+            extensions="position"
+            class="generator.apperance.position.presentation.PositionEditor"
+            contributorClass="generator.apperance.position.presentation.PositionActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated generator -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="generator.apperance.size.presentation.SizeModelWizardID"
+            name="%_UI_SizeModelWizard_label"
+            class="generator.apperance.size.presentation.SizeModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/SizeModelFile.gif">
+         <description>%_UI_SizeModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated generator -->
+      <editor
+            id="generator.apperance.size.presentation.SizeEditorID"
+            name="%_UI_SizeEditor_label"
+            icon="icons/full/obj16/SizeModelFile.gif"
+            extensions="size"
+            class="generator.apperance.size.presentation.SizeEditor"
+            contributorClass="generator.apperance.size.presentation.SizeActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated generator -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="generator.apperance.font.presentation.FontModelWizardID"
+            name="%_UI_FontModelWizard_label"
+            class="generator.apperance.font.presentation.FontModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/FontModelFile.gif">
+         <description>%_UI_FontModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated generator -->
+      <editor
+            id="generator.apperance.font.presentation.FontEditorID"
+            name="%_UI_FontEditor_label"
+            icon="icons/full/obj16/FontModelFile.gif"
+            extensions="font"
+            class="generator.apperance.font.presentation.FontEditor"
+            contributorClass="generator.apperance.font.presentation.FontActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated generator -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="generator.apperance.titlesize.presentation.TitlesizeModelWizardID"
+            name="%_UI_TitlesizeModelWizard_label"
+            class="generator.apperance.titlesize.presentation.TitlesizeModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/TitlesizeModelFile.gif">
+         <description>%_UI_TitlesizeModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated generator -->
+      <editor
+            id="generator.apperance.titlesize.presentation.TitlesizeEditorID"
+            name="%_UI_TitlesizeEditor_label"
+            icon="icons/full/obj16/TitlesizeModelFile.gif"
+            extensions="titlesize"
+            class="generator.apperance.titlesize.presentation.TitlesizeEditor"
+            contributorClass="generator.apperance.titlesize.presentation.TitlesizeActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated generator -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="generator.genmodel.presentation.GenmodelModelWizardID"
+            name="%_UI_GenmodelModelWizard_label"
+            class="generator.genmodel.presentation.GenmodelModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/GenmodelModelFile.gif">
+         <description>%_UI_GenmodelModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated generator -->
+      <editor
+            id="generator.genmodel.presentation.GenmodelEditorID"
+            name="%_UI_GenmodelEditor_label"
+            icon="icons/full/obj16/GenmodelModelFile.gif"
+            extensions="genmodel"
+            class="generator.genmodel.presentation.GenmodelEditor"
+            contributorClass="generator.genmodel.presentation.GenmodelActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated generator -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="generator.genmodel.genindividualcomponent.genbutton.presentation.GenbuttonModelWizardID"
+            name="%_UI_GenbuttonModelWizard_label"
+            class="generator.genmodel.genindividualcomponent.genbutton.presentation.GenbuttonModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/GenbuttonModelFile.gif">
+         <description>%_UI_GenbuttonModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated generator -->
+      <editor
+            id="generator.genmodel.genindividualcomponent.genbutton.presentation.GenbuttonEditorID"
+            name="%_UI_GenbuttonEditor_label"
+            icon="icons/full/obj16/GenbuttonModelFile.gif"
+            extensions="genbutton"
+            class="generator.genmodel.genindividualcomponent.genbutton.presentation.GenbuttonEditor"
+            contributorClass="generator.genmodel.genindividualcomponent.genbutton.presentation.GenbuttonActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated generator -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="generator.genmodel.genindividualcomponent.gencolunm.presentation.GencolunmModelWizardID"
+            name="%_UI_GencolunmModelWizard_label"
+            class="generator.genmodel.genindividualcomponent.gencolunm.presentation.GencolunmModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/GencolunmModelFile.gif">
+         <description>%_UI_GencolunmModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated generator -->
+      <editor
+            id="generator.genmodel.genindividualcomponent.gencolunm.presentation.GencolunmEditorID"
+            name="%_UI_GencolunmEditor_label"
+            icon="icons/full/obj16/GencolunmModelFile.gif"
+            extensions="gencolunm"
+            class="generator.genmodel.genindividualcomponent.gencolunm.presentation.GencolunmEditor"
+            contributorClass="generator.genmodel.genindividualcomponent.gencolunm.presentation.GencolunmActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated generator -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="generator.genmodel.genindividualcomponent.gencombobox.presentation.GencomboboxModelWizardID"
+            name="%_UI_GencomboboxModelWizard_label"
+            class="generator.genmodel.genindividualcomponent.gencombobox.presentation.GencomboboxModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/GencomboboxModelFile.gif">
+         <description>%_UI_GencomboboxModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated generator -->
+      <editor
+            id="generator.genmodel.genindividualcomponent.gencombobox.presentation.GencomboboxEditorID"
+            name="%_UI_GencomboboxEditor_label"
+            icon="icons/full/obj16/GencomboboxModelFile.gif"
+            extensions="gencombobox"
+            class="generator.genmodel.genindividualcomponent.gencombobox.presentation.GencomboboxEditor"
+            contributorClass="generator.genmodel.genindividualcomponent.gencombobox.presentation.GencomboboxActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated generator -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="generator.genmodel.genindividualcomponent.genlabel.presentation.GenlabelModelWizardID"
+            name="%_UI_GenlabelModelWizard_label"
+            class="generator.genmodel.genindividualcomponent.genlabel.presentation.GenlabelModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/GenlabelModelFile.gif">
+         <description>%_UI_GenlabelModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated generator -->
+      <editor
+            id="generator.genmodel.genindividualcomponent.genlabel.presentation.GenlabelEditorID"
+            name="%_UI_GenlabelEditor_label"
+            icon="icons/full/obj16/GenlabelModelFile.gif"
+            extensions="genlabel"
+            class="generator.genmodel.genindividualcomponent.genlabel.presentation.GenlabelEditor"
+            contributorClass="generator.genmodel.genindividualcomponent.genlabel.presentation.GenlabelActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated generator -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="generator.genmodel.genindividualcomponent.gentable.presentation.GentableModelWizardID"
+            name="%_UI_GentableModelWizard_label"
+            class="generator.genmodel.genindividualcomponent.gentable.presentation.GentableModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/GentableModelFile.gif">
+         <description>%_UI_GentableModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated generator -->
+      <editor
+            id="generator.genmodel.genindividualcomponent.gentable.presentation.GentableEditorID"
+            name="%_UI_GentableEditor_label"
+            icon="icons/full/obj16/GentableModelFile.gif"
+            extensions="gentable"
+            class="generator.genmodel.genindividualcomponent.gentable.presentation.GentableEditor"
+            contributorClass="generator.genmodel.genindividualcomponent.gentable.presentation.GentableActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated generator -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="generator.genmodel.genindividualcomponent.gentextfield.presentation.GentextfieldModelWizardID"
+            name="%_UI_GentextfieldModelWizard_label"
+            class="generator.genmodel.genindividualcomponent.gentextfield.presentation.GentextfieldModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/GentextfieldModelFile.gif">
+         <description>%_UI_GentextfieldModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated generator -->
+      <editor
+            id="generator.genmodel.genindividualcomponent.gentextfield.presentation.GentextfieldEditorID"
+            name="%_UI_GentextfieldEditor_label"
+            icon="icons/full/obj16/GentextfieldModelFile.gif"
+            extensions="gentextfield"
+            class="generator.genmodel.genindividualcomponent.gentextfield.presentation.GentextfieldEditor"
+            contributorClass="generator.genmodel.genindividualcomponent.gentextfield.presentation.GentextfieldActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated generator -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="generator.genmodel.gencontainercomponent.gencontainer.presentation.GencontainerModelWizardID"
+            name="%_UI_GencontainerModelWizard_label"
+            class="generator.genmodel.gencontainercomponent.gencontainer.presentation.GencontainerModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/GencontainerModelFile.gif">
+         <description>%_UI_GencontainerModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated generator -->
+      <editor
+            id="generator.genmodel.gencontainercomponent.gencontainer.presentation.GencontainerEditorID"
+            name="%_UI_GencontainerEditor_label"
+            icon="icons/full/obj16/GencontainerModelFile.gif"
+            extensions="gencontainer"
+            class="generator.genmodel.gencontainercomponent.gencontainer.presentation.GencontainerEditor"
+            contributorClass="generator.genmodel.gencontainercomponent.gencontainer.presentation.GencontainerActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated generator -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="generator.gendataform.presentation.GendataformModelWizardID"
+            name="%_UI_GendataformModelWizard_label"
+            class="generator.gendataform.presentation.GendataformModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/GendataformModelFile.gif">
+         <description>%_UI_GendataformModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated generator -->
+      <editor
+            id="generator.gendataform.presentation.GendataformEditorID"
+            name="%_UI_GendataformEditor_label"
+            icon="icons/full/obj16/GendataformModelFile.gif"
+            extensions="gendataform"
+            class="generator.gendataform.presentation.GendataformEditor"
+            contributorClass="generator.gendataform.presentation.GendataformActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

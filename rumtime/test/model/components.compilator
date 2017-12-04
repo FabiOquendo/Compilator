@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ASCII"?>
+<compilator:ModelFactory xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:compilator="http:///compilator.ecore" xmlns:compilator.domain.expression.expressionmodel.containercomponent="http:///compilator/domain/expression/expressionmodel/containercomponent.ecore" xmlns:compilator.domain.expression.expressionmodel.individualcomponent="http:///compilator/domain/expression/expressionmodel/individualcomponent.ecore">
+  <theDomainCompilator theUI="//@theUI">
+    <Shapes>
+      <listComponents name="Vuelo">
+        <theElement xsi:type="compilator.domain.expression.expressionmodel.containercomponent:Container" name="Vuelo" orientation="|" isVisible="true">
+          <listElements xsi:type="compilator.domain.expression.expressionmodel.individualcomponent:Label" name="origen"/>
+          <listElements xsi:type="compilator.domain.expression.expressionmodel.individualcomponent:TextField" name="origen"/>
+          <listElements xsi:type="compilator.domain.expression.expressionmodel.individualcomponent:Label" name="destino"/>
+          <listElements xsi:type="compilator.domain.expression.expressionmodel.individualcomponent:TextField" name="destino"/>
+        </theElement>
+        <theSentence fullSentence="Vuelo|[lbl_origen,txt_origen,lbl_destino,txt_destino]"/>
+      </listComponents>
+    </Shapes>
+  </theDomainCompilator>
+  <theUI theDomain="//@theDomainCompilator">
+    <theCharacteristicstContainer/>
+    <StylesConainer/>
+    <ComponentsContainer/>
+    <theExpressionContainer/>
+    <theStyleAssigmentContainer/>
+  </theUI>
+</compilator:ModelFactory>

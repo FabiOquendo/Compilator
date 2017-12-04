@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            category="compiladordataform.category1"
+            class="UI.Principal"
+            id="UI.Principal"
+            name="Compilador">
+      </view>
+      <category
+            id="compiladordataform.category1"
+            name="CompiladorTooldataform">
+      </category>
+      <view
+            class="UI.View"
+            id="UI.View"
+            name="New ViewPart">
+      </view>
+      <view
+            class="UI.tst"
+            id="UI.tst"
+            name="New ViewPart">
+      </view>
+   </extension>
+   
+</plugin>

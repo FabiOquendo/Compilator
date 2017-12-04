@@ -1,0 +1,89 @@
+/**
+ */
+package compilator.ui.tests;
+
+import compilator.ui.CharacteristicstContainer;
+import compilator.ui.UiFactory;
+
+import junit.framework.TestCase;
+
+import junit.textui.TestRunner;
+
+/**
+ * <!-- begin-user-doc -->
+ * A test case for the model object '<em><b>Characteristicst Container</b></em>'.
+ * <!-- end-user-doc -->
+ * @generated
+ */
+public class CharacteristicstContainerTest extends TestCase {
+
+	/**
+	 * The fixture for this Characteristicst Container test case.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CharacteristicstContainer fixture = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static void main(String[] args) {
+		TestRunner.run(CharacteristicstContainerTest.class);
+	}
+
+	/**
+	 * Constructs a new Characteristicst Container test case with the given name.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CharacteristicstContainerTest(String name) {
+		super(name);
+	}
+
+	/**
+	 * Sets the fixture for this Characteristicst Container test case.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void setFixture(CharacteristicstContainer fixture) {
+		this.fixture = fixture;
+	}
+
+	/**
+	 * Returns the fixture for this Characteristicst Container test case.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CharacteristicstContainer getFixture() {
+		return fixture;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see junit.framework.TestCase#setUp()
+	 * @generated
+	 */
+	@Override
+	protected void setUp() throws Exception {
+		setFixture(UiFactory.eINSTANCE.createCharacteristicstContainer());
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see junit.framework.TestCase#tearDown()
+	 * @generated
+	 */
+	@Override
+	protected void tearDown() throws Exception {
+		setFixture(null);
+	}
+
+} //CharacteristicstContainerTest

@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/generator/src" modelPluginID="generator" modelName="Generator"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.rose"
+    complianceLevel="5.0" copyrightFields="false" usedGenPackages="../../compilator/model/compilator.genmodel#//compilator ../../styles/model/styles.genmodel#//styles/domain ../../styles/model/styles.genmodel#//styles"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>D:\Compilador\Model\generator.mdl</foreignModel>
+  <genPackages prefix="Generator" disposableProviderFactory="true" ecorePackage="generator.ecore#/">
+    <genClasses ecoreClass="generator.ecore#//Generator">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference generator.ecore#//Generator/theExpression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference generator.ecore#//Generator/theGenModel"/>
+      <genOperations ecoreOperation="generator.ecore#//Generator/createGenModel">
+        <genParameters ecoreParameter="generator.ecore#//Generator/createGenModel/expressionModel"/>
+      </genOperations>
+      <genOperations ecoreOperation="generator.ecore#//Generator/createGenContainer">
+        <genParameters ecoreParameter="generator.ecore#//Generator/createGenContainer/container"/>
+      </genOperations>
+      <genOperations ecoreOperation="generator.ecore#//Generator/createGenIndividualElement">
+        <genParameters ecoreParameter="generator.ecore#//Generator/createGenIndividualElement/element"/>
+      </genOperations>
+      <genOperations ecoreOperation="generator.ecore#//Generator/createGenButton">
+        <genParameters ecoreParameter="generator.ecore#//Generator/createGenButton/button"/>
+      </genOperations>
+      <genOperations ecoreOperation="generator.ecore#//Generator/createGenColumn">
+        <genParameters ecoreParameter="generator.ecore#//Generator/createGenColumn/column"/>
+      </genOperations>
+      <genOperations ecoreOperation="generator.ecore#//Generator/createGenComboBox">
+        <genParameters ecoreParameter="generator.ecore#//Generator/createGenComboBox/combo"/>
+      </genOperations>
+      <genOperations ecoreOperation="generator.ecore#//Generator/createGenLabel">
+        <genParameters ecoreParameter="generator.ecore#//Generator/createGenLabel/label"/>
+      </genOperations>
+      <genOperations ecoreOperation="generator.ecore#//Generator/createGenTable">
+        <genParameters ecoreParameter="generator.ecore#//Generator/createGenTable/table"/>
+      </genOperations>
+      <genOperations ecoreOperation="generator.ecore#//Generator/createGenTextField">
+        <genParameters ecoreParameter="generator.ecore#//Generator/createGenTextField/text"/>
+      </genOperations>
+      <genOperations ecoreOperation="generator.ecore#//Generator/setApperances">
+        <genParameters ecoreParameter="generator.ecore#//Generator/setApperances/element"/>
+        <genParameters ecoreParameter="generator.ecore#//Generator/setApperances/genElement"/>
+      </genOperations>
+      <genOperations ecoreOperation="generator.ecore#//Generator/saveGenModel"/>
+      <genOperations ecoreOperation="generator.ecore#//Generator/loadGenModel"/>
+    </genClasses>
+    <nestedGenPackages prefix="Apperance" disposableProviderFactory="true" ecorePackage="generator.ecore#//apperance">
+      <nestedGenPackages prefix="Alignment" disposableProviderFactory="true" ecorePackage="generator.ecore#//apperance/alignment">
+        <genClasses ecoreClass="generator.ecore#//apperance/alignment/Alignment">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generator.ecore#//apperance/alignment/Alignment/value"/>
+          <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference generator.ecore#//apperance/alignment/Alignment/GenButton"/>
+          <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference generator.ecore#//apperance/alignment/Alignment/GenColumn"/>
+          <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference generator.ecore#//apperance/alignment/Alignment/GenLabel"/>
+        </genClasses>
+      </nestedGenPackages>
+      <nestedGenPackages prefix="Background" disposableProviderFactory="true" ecorePackage="generator.ecore#//apperance/background">
+        <genClasses ecoreClass="generator.ecore#//apperance/background/Background">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generator.ecore#//apperance/background/Background/value"/>
+          <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference generator.ecore#//apperance/background/Background/GenComboBox"/>
+          <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference generator.ecore#//apperance/background/Background/GenTextField"/>
+          <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference generator.ecore#//apperance/background/Background/GenLabel"/>
+          <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference generator.ecore#//apperance/background/Background/GenTable"/>
+          <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference generator.ecore#//apperance/background/Background/GenContainer"/>
+        </genClasses>
+      </nestedGenPackages>
+      <nestedGenPackages prefix="Linesvisible" disposableProviderFactory="true" ecorePackage="generator.ecore#//apperance/linesvisible">
+        <genClasses ecoreClass="generator.ecore#//apperance/linesvisible/LinesVisible">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generator.ecore#//apperance/linesvisible/LinesVisible/value"/>
+          <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference generator.ecore#//apperance/linesvisible/LinesVisible/GenTable"/>
+        </genClasses>
+      </nestedGenPackages>
+      <nestedGenPackages prefix="Position" disposableProviderFactory="true" ecorePackage="generator.ecore#//apperance/position">
+        <genClasses ecoreClass="generator.ecore#//apperance/position/X">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generator.ecore#//apperance/position/X/value"/>
+          <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference generator.ecore#//apperance/position/X/GenElement"/>
+        </genClasses>
+        <genClasses ecoreClass="generator.ecore#//apperance/position/Y">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generator.ecore#//apperance/position/Y/value"/>
+          <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference generator.ecore#//apperance/position/Y/GenElement"/>
+        </genClasses>
+      </nestedGenPackages>
+      <nestedGenPackages prefix="Size" disposableProviderFactory="true" ecorePackage="generator.ecore#//apperance/size">
+        <genClasses ecoreClass="generator.ecore#//apperance/size/Width">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generator.ecore#//apperance/size/Width/Value"/>
+          <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference generator.ecore#//apperance/size/Width/GenElement"/>
+        </genClasses>
+        <genClasses ecoreClass="generator.ecore#//apperance/size/Height">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generator.ecore#//apperance/size/Height/Value"/>
+          <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference generator.ecore#//apperance/size/Height/GenElement"/>
+        </genClasses>
+      </nestedGenPackages>
+      <nestedGenPackages prefix="Font" disposableProviderFactory="true" ecorePackage="generator.ecore#//apperance/font">
+        <genClasses ecoreClass="generator.ecore#//apperance/font/Color">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generator.ecore#//apperance/font/Color/value"/>
+          <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference generator.ecore#//apperance/font/Color/GenElement"/>
+        </genClasses>
+        <genClasses ecoreClass="generator.ecore#//apperance/font/Type">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generator.ecore#//apperance/font/Type/value"/>
+          <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference generator.ecore#//apperance/font/Type/GenElement"/>
+        </genClasses>
+        <genClasses ecoreClass="generator.ecore#//apperance/font/Size">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generator.ecore#//apperance/font/Size/value"/>
+          <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference generator.ecore#//apperance/font/Size/GenElement"/>
+        </genClasses>
+      </nestedGenPackages>
+      <nestedGenPackages prefix="Titlesize" disposableProviderFactory="true" ecorePackage="generator.ecore#//apperance/titlesize">
+        <genClasses ecoreClass="generator.ecore#//apperance/titlesize/TitleHeight">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generator.ecore#//apperance/titlesize/TitleHeight/value"/>
+          <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference generator.ecore#//apperance/titlesize/TitleHeight/GenTable"/>
+          <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference generator.ecore#//apperance/titlesize/TitleHeight/GenContainer"/>
+        </genClasses>
+      </nestedGenPackages>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Genmodel" disposableProviderFactory="true" ecorePackage="generator.ecore#//genmodel">
+      <genClasses image="false" ecoreClass="generator.ecore#//genmodel/GenElement">
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference generator.ecore#//genmodel/GenElement/GenModel"/>
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference generator.ecore#//genmodel/GenElement/GenContainerElement"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference generator.ecore#//genmodel/GenElement/theX"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference generator.ecore#//genmodel/GenElement/theY"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference generator.ecore#//genmodel/GenElement/theWidth"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference generator.ecore#//genmodel/GenElement/theHeight"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference generator.ecore#//genmodel/GenElement/theColor"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference generator.ecore#//genmodel/GenElement/theType"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference generator.ecore#//genmodel/GenElement/theSize"/>
+        <genOperations ecoreOperation="generator.ecore#//genmodel/GenElement/createX"/>
+        <genOperations ecoreOperation="generator.ecore#//genmodel/GenElement/createY"/>
+        <genOperations ecoreOperation="generator.ecore#//genmodel/GenElement/createWidth"/>
+        <genOperations ecoreOperation="generator.ecore#//genmodel/GenElement/createHeight"/>
+        <genOperations ecoreOperation="generator.ecore#//genmodel/GenElement/createFontColor"/>
+        <genOperations ecoreOperation="generator.ecore#//genmodel/GenElement/createFontType"/>
+        <genOperations ecoreOperation="generator.ecore#//genmodel/GenElement/createFontSize"/>
+        <genOperations ecoreOperation="generator.ecore#//genmodel/GenElement/createProperties"/>
+        <genOperations ecoreOperation="generator.ecore#//genmodel/GenElement/setDefaultFont"/>
+      </genClasses>
+      <genClasses ecoreClass="generator.ecore#//genmodel/GenModel">
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference generator.ecore#//genmodel/GenModel/Generator"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference generator.ecore#//genmodel/GenModel/listGenElements"/>
+      </genClasses>
+      <nestedGenPackages prefix="Genindividualcomponent" disposableProviderFactory="true"
+          ecorePackage="generator.ecore#//genmodel/genindividualcomponent">
+        <genClasses image="false" ecoreClass="generator.ecore#//genmodel/genindividualcomponent/GenIndividualElement"/>
+        <nestedGenPackages prefix="Genbutton" disposableProviderFactory="true" ecorePackage="generator.ecore#//genmodel/genindividualcomponent/genbutton">
+          <genClasses ecoreClass="generator.ecore#//genmodel/genindividualcomponent/genbutton/GenButton">
+            <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                ecoreFeature="ecore:EReference generator.ecore#//genmodel/genindividualcomponent/genbutton/GenButton/theButton"/>
+            <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference generator.ecore#//genmodel/genindividualcomponent/genbutton/GenButton/theAlignment"/>
+            <genOperations ecoreOperation="generator.ecore#//genmodel/genindividualcomponent/genbutton/GenButton/createPropertiesButton">
+              <genParameters ecoreParameter="generator.ecore#//genmodel/genindividualcomponent/genbutton/GenButton/createPropertiesButton/text"/>
+              <genParameters ecoreParameter="generator.ecore#//genmodel/genindividualcomponent/genbutton/GenButton/createPropertiesButton/fontSize"/>
+            </genOperations>
+            <genOperations ecoreOperation="generator.ecore#//genmodel/genindividualcomponent/genbutton/GenButton/createAlignment"/>
+            <genOperations ecoreOperation="generator.ecore#//genmodel/genindividualcomponent/genbutton/GenButton/setDefaultButton">
+              <genParameters ecoreParameter="generator.ecore#//genmodel/genindividualcomponent/genbutton/GenButton/setDefaultButton/text"/>
+              <genParameters ecoreParameter="generator.ecore#//genmodel/genindividualcomponent/genbutton/GenButton/setDefaultButton/fontSize"/>
+            </genOperations>
+          </genClasses>
+        </nestedGenPackages>
+        <nestedGenPackages prefix="Gencolunm" disposableProviderFactory="true" ecorePackage="generator.ecore#//genmodel/genindividualcomponent/gencolunm">
+          <genClasses ecoreClass="generator.ecore#//genmodel/genindividualcomponent/gencolunm/GenColumn">
+            <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference generator.ecore#//genmodel/genindividualcomponent/gencolunm/GenColumn/GenTable"/>
+            <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                ecoreFeature="ecore:EReference generator.ecore#//genmodel/genindividualcomponent/gencolunm/GenColumn/theColumn"/>
+            <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference generator.ecore#//genmodel/genindividualcomponent/gencolunm/GenColumn/theAlignment"/>
+            <genOperations ecoreOperation="generator.ecore#//genmodel/genindividualcomponent/gencolunm/GenColumn/createPropertiesColumn">
+              <genParameters ecoreParameter="generator.ecore#//genmodel/genindividualcomponent/gencolunm/GenColumn/createPropertiesColumn/text"/>
+              <genParameters ecoreParameter="generator.ecore#//genmodel/genindividualcomponent/gencolunm/GenColumn/createPropertiesColumn/fontSize"/>
+            </genOperations>
+            <genOperations ecoreOperation="generator.ecore#//genmodel/genindividualcomponent/gencolunm/GenColumn/createAlignment"/>
+            <genOperations ecoreOperation="generator.ecore#//genmodel/genindividualcomponent/gencolunm/GenColumn/setDefaultColumn">
+              <genParameters ecoreParameter="generator.ecore#//genmodel/genindividualcomponent/gencolunm/GenColumn/setDefaultColumn/text"/>
+              <genParameters ecoreParameter="generator.ecore#//genmodel/genindividualcomponent/gencolunm/GenColumn/setDefaultColumn/fontSize"/>
+            </genOperations>
+          </genClasses>
+        </nestedGenPackages>
+        <nestedGenPackages prefix="Gencombobox" disposableProviderFactory="true" ecorePackage="generator.ecore#//genmodel/genindividualcomponent/gencombobox">
+          <genClasses ecoreClass="generator.ecore#//genmodel/genindividualcomponent/gencombobox/GenComboBox">
+            <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference generator.ecore#//genmodel/genindividualcomponent/gencombobox/GenComboBox/theBackground"/>
+            <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                ecoreFeature="ecore:EReference generator.ecore#//genmodel/genindividualcomponent/gencombobox/GenComboBox/theComboBox"/>
+            <genOperations ecoreOperation="generator.ecore#//genmodel/genindividualcomponent/gencombobox/GenComboBox/createPropertiesComboBox">
+              <genParameters ecoreParameter="generator.ecore#//genmodel/genindividualcomponent/gencombobox/GenComboBox/createPropertiesComboBox/fontSize"/>
+            </genOperations>
+            <genOperations ecoreOperation="generator.ecore#//genmodel/genindividualcomponent/gencombobox/GenComboBox/createBackground"/>
+            <genOperations ecoreOperation="generator.ecore#//genmodel/genindividualcomponent/gencombobox/GenComboBox/setDefaultCombo">
+              <genParameters ecoreParameter="generator.ecore#//genmodel/genindividualcomponent/gencombobox/GenComboBox/setDefaultCombo/fontSize"/>
+            </genOperations>
+          </genClasses>
+        </nestedGenPackages>
+        <nestedGenPackages prefix="Genlabel" disposableProviderFactory="true" ecorePackage="generator.ecore#//genmodel/genindividualcomponent/genlabel">
+          <genClasses ecoreClass="generator.ecore#//genmodel/genindividualcomponent/genlabel/GenLabel">
+            <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference generator.ecore#//genmodel/genindividualcomponent/genlabel/GenLabel/theBackground"/>
+            <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                ecoreFeature="ecore:EReference generator.ecore#//genmodel/genindividualcomponent/genlabel/GenLabel/theLabel"/>
+            <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference generator.ecore#//genmodel/genindividualcomponent/genlabel/GenLabel/theAlignment"/>
+            <genOperations ecoreOperation="generator.ecore#//genmodel/genindividualcomponent/genlabel/GenLabel/createPropertiesLabel">
+              <genParameters ecoreParameter="generator.ecore#//genmodel/genindividualcomponent/genlabel/GenLabel/createPropertiesLabel/text"/>
+              <genParameters ecoreParameter="generator.ecore#//genmodel/genindividualcomponent/genlabel/GenLabel/createPropertiesLabel/fontSize"/>
+            </genOperations>
+            <genOperations ecoreOperation="generator.ecore#//genmodel/genindividualcomponent/genlabel/GenLabel/createAlignment"/>
+            <genOperations ecoreOperation="generator.ecore#//genmodel/genindividualcomponent/genlabel/GenLabel/createBackground"/>
+            <genOperations ecoreOperation="generator.ecore#//genmodel/genindividualcomponent/genlabel/GenLabel/setDefaultLabel">
+              <genParameters ecoreParameter="generator.ecore#//genmodel/genindividualcomponent/genlabel/GenLabel/setDefaultLabel/text"/>
+              <genParameters ecoreParameter="generator.ecore#//genmodel/genindividualcomponent/genlabel/GenLabel/setDefaultLabel/fontSize"/>
+            </genOperations>
+          </genClasses>
+        </nestedGenPackages>
+        <nestedGenPackages prefix="Gentable" disposableProviderFactory="true" ecorePackage="generator.ecore#//genmodel/genindividualcomponent/gentable">
+          <genClasses ecoreClass="generator.ecore#//genmodel/genindividualcomponent/gentable/GenTable">
+            <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference generator.ecore#//genmodel/genindividualcomponent/gentable/GenTable/theBackground"/>
+            <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference generator.ecore#//genmodel/genindividualcomponent/gentable/GenTable/theLinesVisible"/>
+            <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference generator.ecore#//genmodel/genindividualcomponent/gentable/GenTable/theTitleHeight"/>
+            <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference generator.ecore#//genmodel/genindividualcomponent/gentable/GenTable/listGenColumns"/>
+            <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                ecoreFeature="ecore:EReference generator.ecore#//genmodel/genindividualcomponent/gentable/GenTable/theTable"/>
+            <genOperations ecoreOperation="generator.ecore#//genmodel/genindividualcomponent/gentable/GenTable/createPropertiesTable">
+              <genParameters ecoreParameter="generator.ecore#//genmodel/genindividualcomponent/gentable/GenTable/createPropertiesTable/columnHeight"/>
+              <genParameters ecoreParameter="generator.ecore#//genmodel/genindividualcomponent/gentable/GenTable/createPropertiesTable/columnsWidth"/>
+              <genParameters ecoreParameter="generator.ecore#//genmodel/genindividualcomponent/gentable/GenTable/createPropertiesTable/fontSize"/>
+            </genOperations>
+            <genOperations ecoreOperation="generator.ecore#//genmodel/genindividualcomponent/gentable/GenTable/createBackground"/>
+            <genOperations ecoreOperation="generator.ecore#//genmodel/genindividualcomponent/gentable/GenTable/createLinesVisible"/>
+            <genOperations ecoreOperation="generator.ecore#//genmodel/genindividualcomponent/gentable/GenTable/createTitleHeight"/>
+            <genOperations ecoreOperation="generator.ecore#//genmodel/genindividualcomponent/gentable/GenTable/setDefaultTable">
+              <genParameters ecoreParameter="generator.ecore#//genmodel/genindividualcomponent/gentable/GenTable/setDefaultTable/columnHeight"/>
+              <genParameters ecoreParameter="generator.ecore#//genmodel/genindividualcomponent/gentable/GenTable/setDefaultTable/columnsWidth"/>
+              <genParameters ecoreParameter="generator.ecore#//genmodel/genindividualcomponent/gentable/GenTable/setDefaultTable/fontSize"/>
+            </genOperations>
+          </genClasses>
+        </nestedGenPackages>
+        <nestedGenPackages prefix="Gentextfield" disposableProviderFactory="true"
+            ecorePackage="generator.ecore#//genmodel/genindividualcomponent/gentextfield">
+          <genClasses ecoreClass="generator.ecore#//genmodel/genindividualcomponent/gentextfield/GenTextField">
+            <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference generator.ecore#//genmodel/genindividualcomponent/gentextfield/GenTextField/theBackground"/>
+            <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                ecoreFeature="ecore:EReference generator.ecore#//genmodel/genindividualcomponent/gentextfield/GenTextField/theTextField"/>
+            <genOperations ecoreOperation="generator.ecore#//genmodel/genindividualcomponent/gentextfield/GenTextField/createPropertiesTextField">
+              <genParameters ecoreParameter="generator.ecore#//genmodel/genindividualcomponent/gentextfield/GenTextField/createPropertiesTextField/fontSize"/>
+            </genOperations>
+            <genOperations ecoreOperation="generator.ecore#//genmodel/genindividualcomponent/gentextfield/GenTextField/createBackground"/>
+            <genOperations ecoreOperation="generator.ecore#//genmodel/genindividualcomponent/gentextfield/GenTextField/setDefaultText">
+              <genParameters ecoreParameter="generator.ecore#//genmodel/genindividualcomponent/gentextfield/GenTextField/setDefaultText/fontSize"/>
+            </genOperations>
+          </genClasses>
+        </nestedGenPackages>
+      </nestedGenPackages>
+      <nestedGenPackages prefix="Gencontainercomponent" disposableProviderFactory="true"
+          ecorePackage="generator.ecore#//genmodel/gencontainercomponent">
+        <genClasses image="false" ecoreClass="generator.ecore#//genmodel/gencontainercomponent/GenContainerElement">
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference generator.ecore#//genmodel/gencontainercomponent/GenContainerElement/listGenElements"/>
+        </genClasses>
+        <nestedGenPackages prefix="Gencontainer" disposableProviderFactory="true"
+            ecorePackage="generator.ecore#//genmodel/gencontainercomponent/gencontainer">
+          <genClasses ecoreClass="generator.ecore#//genmodel/gencontainercomponent/gencontainer/GenContainer">
+            <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference generator.ecore#//genmodel/gencontainercomponent/gencontainer/GenContainer/theTitleHeight"/>
+            <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                ecoreFeature="ecore:EReference generator.ecore#//genmodel/gencontainercomponent/gencontainer/GenContainer/theContainer"/>
+            <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference generator.ecore#//genmodel/gencontainercomponent/gencontainer/GenContainer/theBackground"/>
+            <genOperations ecoreOperation="generator.ecore#//genmodel/gencontainercomponent/gencontainer/GenContainer/createPropertiesContainer">
+              <genParameters ecoreParameter="generator.ecore#//genmodel/gencontainercomponent/gencontainer/GenContainer/createPropertiesContainer/fontSize"/>
+            </genOperations>
+            <genOperations ecoreOperation="generator.ecore#//genmodel/gencontainercomponent/gencontainer/GenContainer/createBackground"/>
+            <genOperations ecoreOperation="generator.ecore#//genmodel/gencontainercomponent/gencontainer/GenContainer/createTitleHeight"/>
+            <genOperations ecoreOperation="generator.ecore#//genmodel/gencontainercomponent/gencontainer/GenContainer/setDefaultContainer">
+              <genParameters ecoreParameter="generator.ecore#//genmodel/gencontainercomponent/gencontainer/GenContainer/setDefaultContainer/fontSize"/>
+            </genOperations>
+          </genClasses>
+        </nestedGenPackages>
+      </nestedGenPackages>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Enumeration" disposableProviderFactory="true" ecorePackage="generator.ecore#//enumeration">
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="generator.ecore#//enumeration/Weight">
+        <genEnumLiterals ecoreEnumLiteral="generator.ecore#//enumeration/Weight/WEIGHT_BUTTON"/>
+        <genEnumLiterals ecoreEnumLiteral="generator.ecore#//enumeration/Weight/WEIGHT_COLUMN"/>
+        <genEnumLiterals ecoreEnumLiteral="generator.ecore#//enumeration/Weight/WEIGHT_COMBO"/>
+        <genEnumLiterals ecoreEnumLiteral="generator.ecore#//enumeration/Weight/WEIGHT_LABEL"/>
+        <genEnumLiterals ecoreEnumLiteral="generator.ecore#//enumeration/Weight/WEIGHT_TEXTFIELD"/>
+      </genEnums>
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="generator.ecore#//enumeration/Height">
+        <genEnumLiterals ecoreEnumLiteral="generator.ecore#//enumeration/Height/HEIGHT_BUTTON"/>
+        <genEnumLiterals ecoreEnumLiteral="generator.ecore#//enumeration/Height/HEIGHT_COMBO"/>
+        <genEnumLiterals ecoreEnumLiteral="generator.ecore#//enumeration/Height/HEIGHT_LABEL"/>
+        <genEnumLiterals ecoreEnumLiteral="generator.ecore#//enumeration/Height/HEIGHT_TABLE"/>
+        <genEnumLiterals ecoreEnumLiteral="generator.ecore#//enumeration/Height/HEIGHT_TEXTFIELD"/>
+      </genEnums>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Datatypes" disposableProviderFactory="true" ecorePackage="generator.ecore#//datatypes">
+      <genDataTypes ecoreDataType="generator.ecore#//datatypes/Propertie"/>
+      <nestedGenPackages prefix="Datatypesdataform" disposableProviderFactory="true"
+          ecorePackage="generator.ecore#//datatypes/datatypesdataform">
+        <genDataTypes ecoreDataType="generator.ecore#//datatypes/datatypesdataform/GraphicalContainer"/>
+        <genDataTypes ecoreDataType="generator.ecore#//datatypes/datatypesdataform/Container"/>
+        <genDataTypes ecoreDataType="generator.ecore#//datatypes/datatypesdataform/DataForm_Diagram"/>
+        <genDataTypes ecoreDataType="generator.ecore#//datatypes/datatypesdataform/GraphicalIndividualEement"/>
+        <genDataTypes ecoreDataType="generator.ecore#//datatypes/datatypesdataform/Button"/>
+        <genDataTypes ecoreDataType="generator.ecore#//datatypes/datatypesdataform/ComboView"/>
+        <genDataTypes ecoreDataType="generator.ecore#//datatypes/datatypesdataform/LabelView"/>
+        <genDataTypes ecoreDataType="generator.ecore#//datatypes/datatypesdataform/TextView"/>
+        <genDataTypes ecoreDataType="generator.ecore#//datatypes/datatypesdataform/TableView"/>
+        <genDataTypes ecoreDataType="generator.ecore#//datatypes/datatypesdataform/ColumView"/>
+        <genDataTypes ecoreDataType="generator.ecore#//datatypes/datatypesdataform/ModelFactory"/>
+        <genDataTypes ecoreDataType="generator.ecore#//datatypes/datatypesdataform/Interface"/>
+      </nestedGenPackages>
+      <nestedGenPackages prefix="Datatypesgmf" disposableProviderFactory="true" ecorePackage="generator.ecore#//datatypes/datatypesgmf">
+        <genDataTypes ecoreDataType="generator.ecore#//datatypes/datatypesgmf/Bounds"/>
+        <genDataTypes ecoreDataType="generator.ecore#//datatypes/datatypesgmf/Diagram"/>
+        <genDataTypes ecoreDataType="generator.ecore#//datatypes/datatypesgmf/Node"/>
+      </nestedGenPackages>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Gendataform" disposableProviderFactory="true" ecorePackage="generator.ecore#//gendataform">
+      <genClasses ecoreClass="generator.ecore#//gendataform/DataFormDiagramGenerator">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generator.ecore#//gendataform/DataFormDiagramGenerator/modelFactory"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generator.ecore#//gendataform/DataFormDiagramGenerator/dataformDiagram"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generator.ecore#//gendataform/DataFormDiagramGenerator/interface1"/>
+        <genOperations ecoreOperation="generator.ecore#//gendataform/DataFormDiagramGenerator/DataformDiagramGenerator">
+          <genParameters ecoreParameter="generator.ecore#//gendataform/DataFormDiagramGenerator/DataformDiagramGenerator/modelFactory"/>
+        </genOperations>
+        <genOperations ecoreOperation="generator.ecore#//gendataform/DataFormDiagramGenerator/salvarDiagram">
+          <genParameters ecoreParameter="generator.ecore#//gendataform/DataFormDiagramGenerator/salvarDiagram/diagram"/>
+        </genOperations>
+        <genOperations ecoreOperation="generator.ecore#//gendataform/DataFormDiagramGenerator/cargarDiagram"/>
+        <genOperations ecoreOperation="generator.ecore#//gendataform/DataFormDiagramGenerator/resetDiagram">
+          <genParameters ecoreParameter="generator.ecore#//gendataform/DataFormDiagramGenerator/resetDiagram/path"/>
+        </genOperations>
+        <genOperations ecoreOperation="generator.ecore#//gendataform/DataFormDiagramGenerator/generateDiagram"/>
+        <genOperations ecoreOperation="generator.ecore#//gendataform/DataFormDiagramGenerator/createDiagram"/>
+        <genOperations ecoreOperation="generator.ecore#//gendataform/DataFormDiagramGenerator/initComponents">
+          <genParameters ecoreParameter="generator.ecore#//gendataform/DataFormDiagramGenerator/initComponents/graphicalContainer"/>
+          <genParameters ecoreParameter="generator.ecore#//gendataform/DataFormDiagramGenerator/initComponents/parent"/>
+        </genOperations>
+        <genOperations ecoreOperation="generator.ecore#//gendataform/DataFormDiagramGenerator/createBounds">
+          <genParameters ecoreParameter="generator.ecore#//gendataform/DataFormDiagramGenerator/createBounds/x"/>
+          <genParameters ecoreParameter="generator.ecore#//gendataform/DataFormDiagramGenerator/createBounds/y"/>
+          <genParameters ecoreParameter="generator.ecore#//gendataform/DataFormDiagramGenerator/createBounds/width"/>
+          <genParameters ecoreParameter="generator.ecore#//gendataform/DataFormDiagramGenerator/createBounds/height"/>
+        </genOperations>
+        <genOperations ecoreOperation="generator.ecore#//gendataform/DataFormDiagramGenerator/openDiagram">
+          <genParameters ecoreParameter="generator.ecore#//gendataform/DataFormDiagramGenerator/openDiagram/diag"/>
+        </genOperations>
+      </genClasses>
+      <genClasses ecoreClass="generator.ecore#//gendataform/DataFormModelGenerator">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generator.ecore#//gendataform/DataFormModelGenerator/levelContainer"/>
+        <genOperations ecoreOperation="generator.ecore#//gendataform/DataFormModelGenerator/createDataFormModel">
+          <genParameters ecoreParameter="generator.ecore#//gendataform/DataFormModelGenerator/createDataFormModel/genModel"/>
+        </genOperations>
+        <genOperations ecoreOperation="generator.ecore#//gendataform/DataFormModelGenerator/createToolDataFormContainer">
+          <genParameters ecoreParameter="generator.ecore#//gendataform/DataFormModelGenerator/createToolDataFormContainer/parent"/>
+        </genOperations>
+        <genOperations ecoreOperation="generator.ecore#//gendataform/DataFormModelGenerator/createIndividualElement">
+          <genParameters ecoreParameter="generator.ecore#//gendataform/DataFormModelGenerator/createIndividualElement/element"/>
+        </genOperations>
+        <genOperations ecoreOperation="generator.ecore#//gendataform/DataFormModelGenerator/createGraphicalContainer">
+          <genParameters ecoreParameter="generator.ecore#//gendataform/DataFormModelGenerator/createGraphicalContainer/element"/>
+        </genOperations>
+        <genOperations ecoreOperation="generator.ecore#//gendataform/DataFormModelGenerator/createButton">
+          <genParameters ecoreParameter="generator.ecore#//gendataform/DataFormModelGenerator/createButton/genButton"/>
+        </genOperations>
+        <genOperations ecoreOperation="generator.ecore#//gendataform/DataFormModelGenerator/createComboView">
+          <genParameters ecoreParameter="generator.ecore#//gendataform/DataFormModelGenerator/createComboView/genCombo"/>
+        </genOperations>
+        <genOperations ecoreOperation="generator.ecore#//gendataform/DataFormModelGenerator/createLabelView">
+          <genParameters ecoreParameter="generator.ecore#//gendataform/DataFormModelGenerator/createLabelView/genLabel"/>
+        </genOperations>
+        <genOperations ecoreOperation="generator.ecore#//gendataform/DataFormModelGenerator/createTextView">
+          <genParameters ecoreParameter="generator.ecore#//gendataform/DataFormModelGenerator/createTextView/genText"/>
+        </genOperations>
+        <genOperations ecoreOperation="generator.ecore#//gendataform/DataFormModelGenerator/createTableView">
+          <genParameters ecoreParameter="generator.ecore#//gendataform/DataFormModelGenerator/createTableView/genTable"/>
+        </genOperations>
+        <genOperations ecoreOperation="generator.ecore#//gendataform/DataFormModelGenerator/createColumView">
+          <genParameters ecoreParameter="generator.ecore#//gendataform/DataFormModelGenerator/createColumView/genColumn"/>
+        </genOperations>
+        <genOperations ecoreOperation="generator.ecore#//gendataform/DataFormModelGenerator/setLevelContainer">
+          <genParameters ecoreParameter="generator.ecore#//gendataform/DataFormModelGenerator/setLevelContainer/container"/>
+        </genOperations>
+        <genOperations ecoreOperation="generator.ecore#//gendataform/DataFormModelGenerator/setBoundsContainers">
+          <genParameters ecoreParameter="generator.ecore#//gendataform/DataFormModelGenerator/setBoundsContainers/index"/>
+          <genParameters ecoreParameter="generator.ecore#//gendataform/DataFormModelGenerator/setBoundsContainers/container"/>
+        </genOperations>
+      </genClasses>
+    </nestedGenPackages>
+  </genPackages>
+</genmodel:GenModel>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ASCII"?>
+<styles:ModelFactoryStyles xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:styles="http:///styles.ecore">
+  <theDomainStyles>
+    <theStyleFactory>
+      <listStyle name="Titulo 2" theCharacteristic="//@theDomainStyles/@theCharacteristicFactory/@listCharacteristic.1"/>
+      <listStyle name="Titulo 1" theCharacteristic="//@theDomainStyles/@theCharacteristicFactory/@listCharacteristic.0"/>
+      <listStyle name="Titulo 3" theCharacteristic="//@theDomainStyles/@theCharacteristicFactory/@listCharacteristic.2"/>
+    </theStyleFactory>
+    <theCharacteristicFactory>
+      <listCharacteristic name="C1" theSytle="//@theDomainStyles/@theStyleFactory/@listStyle.1">
+        <listProperties name="Font Size" value="14"/>
+      </listCharacteristic>
+      <listCharacteristic name="C2" theSytle="//@theDomainStyles/@theStyleFactory/@listStyle.0">
+        <listProperties name="Font Size" value="13"/>
+      </listCharacteristic>
+      <listCharacteristic name="C3" theSytle="//@theDomainStyles/@theStyleFactory/@listStyle.2">
+        <listProperties name="Font Size" value="12"/>
+      </listCharacteristic>
+    </theCharacteristicFactory>
+  </theDomainStyles>
+</styles:ModelFactoryStyles>

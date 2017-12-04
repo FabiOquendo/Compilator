@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated compilator -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="compilator.presentation.CompilatorModelWizardID"
+            name="%_UI_CompilatorModelWizard_label"
+            class="compilator.presentation.CompilatorModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/CompilatorModelFile.gif">
+         <description>%_UI_CompilatorModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated compilator -->
+      <editor
+            id="compilator.presentation.CompilatorEditorID"
+            name="%_UI_CompilatorEditor_label"
+            icon="icons/full/obj16/CompilatorModelFile.gif"
+            extensions="compilator"
+            class="compilator.presentation.CompilatorEditor"
+            contributorClass="compilator.presentation.CompilatorActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated compilator -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="compilator.domain.presentation.DomainModelWizardID"
+            name="%_UI_DomainModelWizard_label"
+            class="compilator.domain.presentation.DomainModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/DomainModelFile.gif">
+         <description>%_UI_DomainModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated compilator -->
+      <editor
+            id="compilator.domain.presentation.DomainEditorID"
+            name="%_UI_DomainEditor_label"
+            icon="icons/full/obj16/DomainModelFile.gif"
+            extensions="domain"
+            class="compilator.domain.presentation.DomainEditor"
+            contributorClass="compilator.domain.presentation.DomainActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated compilator -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="compilator.domain.expression.presentation.ExpressionModelWizardID"
+            name="%_UI_ExpressionModelWizard_label"
+            class="compilator.domain.expression.presentation.ExpressionModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/ExpressionModelFile.gif">
+         <description>%_UI_ExpressionModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated compilator -->
+      <editor
+            id="compilator.domain.expression.presentation.ExpressionEditorID"
+            name="%_UI_ExpressionEditor_label"
+            icon="icons/full/obj16/ExpressionModelFile.gif"
+            extensions="expression"
+            class="compilator.domain.expression.presentation.ExpressionEditor"
+            contributorClass="compilator.domain.expression.presentation.ExpressionActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated compilator -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="compilator.domain.expression.expressionmodel.presentation.ExpressionmodelModelWizardID"
+            name="%_UI_ExpressionmodelModelWizard_label"
+            class="compilator.domain.expression.expressionmodel.presentation.ExpressionmodelModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/ExpressionmodelModelFile.gif">
+         <description>%_UI_ExpressionmodelModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated compilator -->
+      <editor
+            id="compilator.domain.expression.expressionmodel.presentation.ExpressionmodelEditorID"
+            name="%_UI_ExpressionmodelEditor_label"
+            icon="icons/full/obj16/ExpressionmodelModelFile.gif"
+            extensions="expressionmodel"
+            class="compilator.domain.expression.expressionmodel.presentation.ExpressionmodelEditor"
+            contributorClass="compilator.domain.expression.expressionmodel.presentation.ExpressionmodelActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated compilator -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="compilator.domain.expression.expressionmodel.individualcomponent.presentation.IndividualcomponentModelWizardID"
+            name="%_UI_IndividualcomponentModelWizard_label"
+            class="compilator.domain.expression.expressionmodel.individualcomponent.presentation.IndividualcomponentModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/IndividualcomponentModelFile.gif">
+         <description>%_UI_IndividualcomponentModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated compilator -->
+      <editor
+            id="compilator.domain.expression.expressionmodel.individualcomponent.presentation.IndividualcomponentEditorID"
+            name="%_UI_IndividualcomponentEditor_label"
+            icon="icons/full/obj16/IndividualcomponentModelFile.gif"
+            extensions="individualcomponent"
+            class="compilator.domain.expression.expressionmodel.individualcomponent.presentation.IndividualcomponentEditor"
+            contributorClass="compilator.domain.expression.expressionmodel.individualcomponent.presentation.IndividualcomponentActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated compilator -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="compilator.domain.expression.expressionmodel.containercomponent.presentation.ContainercomponentModelWizardID"
+            name="%_UI_ContainercomponentModelWizard_label"
+            class="compilator.domain.expression.expressionmodel.containercomponent.presentation.ContainercomponentModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/ContainercomponentModelFile.gif">
+         <description>%_UI_ContainercomponentModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated compilator -->
+      <editor
+            id="compilator.domain.expression.expressionmodel.containercomponent.presentation.ContainercomponentEditorID"
+            name="%_UI_ContainercomponentEditor_label"
+            icon="icons/full/obj16/ContainercomponentModelFile.gif"
+            extensions="containercomponent"
+            class="compilator.domain.expression.expressionmodel.containercomponent.presentation.ContainercomponentEditor"
+            contributorClass="compilator.domain.expression.expressionmodel.containercomponent.presentation.ContainercomponentActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated compilator -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="compilator.domain.expression.sentence.presentation.SentenceModelWizardID"
+            name="%_UI_SentenceModelWizard_label"
+            class="compilator.domain.expression.sentence.presentation.SentenceModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/SentenceModelFile.gif">
+         <description>%_UI_SentenceModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated compilator -->
+      <editor
+            id="compilator.domain.expression.sentence.presentation.SentenceEditorID"
+            name="%_UI_SentenceEditor_label"
+            icon="icons/full/obj16/SentenceModelFile.gif"
+            extensions="sentence"
+            class="compilator.domain.expression.sentence.presentation.SentenceEditor"
+            contributorClass="compilator.domain.expression.sentence.presentation.SentenceActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated compilator -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="compilator.domain.shapes.presentation.ShapesModelWizardID"
+            name="%_UI_ShapesModelWizard_label"
+            class="compilator.domain.shapes.presentation.ShapesModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/ShapesModelFile.gif">
+         <description>%_UI_ShapesModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated compilator -->
+      <editor
+            id="compilator.domain.shapes.presentation.ShapesEditorID"
+            name="%_UI_ShapesEditor_label"
+            icon="icons/full/obj16/ShapesModelFile.gif"
+            extensions="shapes"
+            class="compilator.domain.shapes.presentation.ShapesEditor"
+            contributorClass="compilator.domain.shapes.presentation.ShapesActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated compilator -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="compilator.domain.generator.presentation.GeneratorModelWizardID"
+            name="%_UI_GeneratorModelWizard_label"
+            class="compilator.domain.generator.presentation.GeneratorModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/GeneratorModelFile.gif">
+         <description>%_UI_GeneratorModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated compilator -->
+      <editor
+            id="compilator.domain.generator.presentation.GeneratorEditorID"
+            name="%_UI_GeneratorEditor_label"
+            icon="icons/full/obj16/GeneratorModelFile.gif"
+            extensions="generator"
+            class="compilator.domain.generator.presentation.GeneratorEditor"
+            contributorClass="compilator.domain.generator.presentation.GeneratorActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated compilator -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="compilator.ui.presentation.UiModelWizardID"
+            name="%_UI_UiModelWizard_label"
+            class="compilator.ui.presentation.UiModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/UiModelFile.gif">
+         <description>%_UI_UiModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated compilator -->
+      <editor
+            id="compilator.ui.presentation.UiEditorID"
+            name="%_UI_UiEditor_label"
+            icon="icons/full/obj16/UiModelFile.gif"
+            extensions="ui"
+            class="compilator.ui.presentation.UiEditor"
+            contributorClass="compilator.ui.presentation.UiActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

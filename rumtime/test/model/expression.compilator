@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="ASCII"?>
+<compilator:ModelFactory xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:compilator="http:///compilator.ecore" xmlns:compilator.domain.expression.expressionmodel.containercomponent="http:///compilator/domain/expression/expressionmodel/containercomponent.ecore" xmlns:compilator.domain.expression.expressionmodel.individualcomponent="http:///compilator/domain/expression/expressionmodel/individualcomponent.ecore">
+  <theDomainCompilator theUI="//@theUI">
+    <listExpression/>
+    <theExpression>
+      <theSentence compressedSentence="Viaje|[Vuelo|[lbl_origen,txt_origen,lbl_destino,txt_destino],Vuelo|[lbl_origen,txt_origen,lbl_destino,txt_destino]]" fullSentence="Viaje|[Vuelo|[lbl_origen,txt_origen,lbl_destino,txt_destino],Vuelo|[lbl_origen,txt_origen,lbl_destino,txt_destino]]"/>
+      <theExpressionModel>
+        <listElements xsi:type="compilator.domain.expression.expressionmodel.containercomponent:Container" name="Viaje" orientation="|" isVisible="true">
+          <theStyle href="styles.styles#//@theDomainStyles/@theStyleFactory/@listStyle.1"/>
+          <listElements xsi:type="compilator.domain.expression.expressionmodel.containercomponent:Container" name="Vuelo" orientation="|" isVisible="true">
+            <theStyle href="styles.styles#//@theDomainStyles/@theStyleFactory/@listStyle.0"/>
+            <listElements xsi:type="compilator.domain.expression.expressionmodel.individualcomponent:Label" name="origen">
+              <theStyle href="styles.styles#//@theDomainStyles/@theStyleFactory/@listStyle.2"/>
+            </listElements>
+            <listElements xsi:type="compilator.domain.expression.expressionmodel.individualcomponent:TextField" name="origen">
+              <theStyle href="styles.styles#//@theDomainStyles/@theStyleFactory/@listStyle.2"/>
+            </listElements>
+            <listElements xsi:type="compilator.domain.expression.expressionmodel.individualcomponent:Label" name="destino">
+              <theStyle href="styles.styles#//@theDomainStyles/@theStyleFactory/@listStyle.2"/>
+            </listElements>
+            <listElements xsi:type="compilator.domain.expression.expressionmodel.individualcomponent:TextField" name="destino">
+              <theStyle href="styles.styles#//@theDomainStyles/@theStyleFactory/@listStyle.2"/>
+            </listElements>
+          </listElements>
+          <listElements xsi:type="compilator.domain.expression.expressionmodel.containercomponent:Container" name="Vuelo" orientation="|" isVisible="true">
+            <theStyle href="styles.styles#//@theDomainStyles/@theStyleFactory/@listStyle.0"/>
+            <listElements xsi:type="compilator.domain.expression.expressionmodel.individualcomponent:Label" name="origen">
+              <theStyle href="styles.styles#//@theDomainStyles/@theStyleFactory/@listStyle.2"/>
+            </listElements>
+            <listElements xsi:type="compilator.domain.expression.expressionmodel.individualcomponent:TextField" name="origen">
+              <theStyle href="styles.styles#//@theDomainStyles/@theStyleFactory/@listStyle.2"/>
+            </listElements>
+            <listElements xsi:type="compilator.domain.expression.expressionmodel.individualcomponent:Label" name="destino">
+              <theStyle href="styles.styles#//@theDomainStyles/@theStyleFactory/@listStyle.2"/>
+            </listElements>
+            <listElements xsi:type="compilator.domain.expression.expressionmodel.individualcomponent:TextField" name="destino">
+              <theStyle href="styles.styles#//@theDomainStyles/@theStyleFactory/@listStyle.2"/>
+            </listElements>
+          </listElements>
+        </listElements>
+      </theExpressionModel>
+    </theExpression>
+  </theDomainCompilator>
+  <theUI theDomain="//@theDomainCompilator">
+    <theCharacteristicstContainer/>
+    <StylesConainer/>
+    <ComponentsContainer/>
+    <theExpressionContainer/>
+    <theStyleAssigmentContainer/>
+  </theUI>
+</compilator:ModelFactory>

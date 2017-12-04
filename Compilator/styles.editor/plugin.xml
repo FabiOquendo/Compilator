@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated styles -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="styles.presentation.StylesModelWizardID"
+            name="%_UI_StylesModelWizard_label"
+            class="styles.presentation.StylesModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/StylesModelFile.gif">
+         <description>%_UI_StylesModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated styles -->
+      <editor
+            id="styles.presentation.StylesEditorID"
+            name="%_UI_StylesEditor_label"
+            icon="icons/full/obj16/StylesModelFile.gif"
+            extensions="styles"
+            class="styles.presentation.StylesEditor"
+            contributorClass="styles.presentation.StylesActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated styles -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="styles.domain.presentation.DomainModelWizardID"
+            name="%_UI_DomainModelWizard_label"
+            class="styles.domain.presentation.DomainModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/DomainModelFile.gif">
+         <description>%_UI_DomainModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated styles -->
+      <editor
+            id="styles.domain.presentation.DomainEditorID"
+            name="%_UI_DomainEditor_label"
+            icon="icons/full/obj16/DomainModelFile.gif"
+            extensions="domain"
+            class="styles.domain.presentation.DomainEditor"
+            contributorClass="styles.domain.presentation.DomainActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

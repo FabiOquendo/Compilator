@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/compilator/src" modelPluginID="compilator" modelName="Compilator"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.rose"
+    complianceLevel="5.0" copyrightFields="false" usedGenPackages="../../styles/model/styles.genmodel#//styles"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>D:\Compilador\Model\compilator.mdl</foreignModel>
+  <genPackages prefix="Compilator" disposableProviderFactory="true" ecorePackage="compilator.ecore#/">
+    <genClasses ecoreClass="compilator.ecore#//ModelFactory">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference compilator.ecore#//ModelFactory/theDomainCompilator"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference compilator.ecore#//ModelFactory/theUI"/>
+      <genOperations ecoreOperation="compilator.ecore#//ModelFactory/loadExpression"/>
+      <genOperations ecoreOperation="compilator.ecore#//ModelFactory/saveExpression"/>
+      <genOperations ecoreOperation="compilator.ecore#//ModelFactory/loadComponents"/>
+      <genOperations ecoreOperation="compilator.ecore#//ModelFactory/saveComponents"/>
+    </genClasses>
+    <nestedGenPackages prefix="Domain" disposableProviderFactory="true" ecorePackage="compilator.ecore#//domain">
+      <genClasses ecoreClass="compilator.ecore#//domain/Domain">
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference compilator.ecore#//domain/Domain/theModelFactory"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference compilator.ecore#//domain/Domain/theUI"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference compilator.ecore#//domain/Domain/listExpression"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference compilator.ecore#//domain/Domain/theExpression"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference compilator.ecore#//domain/Domain/Shapes"/>
+        <genOperations ecoreOperation="compilator.ecore#//domain/Domain/createComponent">
+          <genParameters ecoreParameter="compilator.ecore#//domain/Domain/createComponent/nameComponent"/>
+          <genParameters ecoreParameter="compilator.ecore#//domain/Domain/createComponent/expressionString"/>
+          <genParameters ecoreParameter="compilator.ecore#//domain/Domain/createComponent/tokens"/>
+          <genParameters ecoreParameter="compilator.ecore#//domain/Domain/createComponent/elementStyle"/>
+        </genOperations>
+        <genOperations ecoreOperation="compilator.ecore#//domain/Domain/createExpressionModel">
+          <genParameters ecoreParameter="compilator.ecore#//domain/Domain/createExpressionModel/expressionString"/>
+          <genParameters ecoreParameter="compilator.ecore#//domain/Domain/createExpressionModel/tokens"/>
+          <genParameters ecoreParameter="compilator.ecore#//domain/Domain/createExpressionModel/components"/>
+          <genParameters ecoreParameter="compilator.ecore#//domain/Domain/createExpressionModel/elementStyles"/>
+        </genOperations>
+        <genOperations ecoreOperation="compilator.ecore#//domain/Domain/unPackStyles"/>
+        <genOperations ecoreOperation="compilator.ecore#//domain/Domain/createEModelFromUnpackedExpression">
+          <genParameters ecoreParameter="compilator.ecore#//domain/Domain/createEModelFromUnpackedExpression/formatedString"/>
+          <genParameters ecoreParameter="compilator.ecore#//domain/Domain/createEModelFromUnpackedExpression/tokens"/>
+          <genParameters ecoreParameter="compilator.ecore#//domain/Domain/createEModelFromUnpackedExpression/components"/>
+          <genParameters ecoreParameter="compilator.ecore#//domain/Domain/createEModelFromUnpackedExpression/elementStyles"/>
+        </genOperations>
+      </genClasses>
+      <nestedGenPackages prefix="Expression" disposableProviderFactory="true" ecorePackage="compilator.ecore#//domain/expression">
+        <genClasses ecoreClass="compilator.ecore#//domain/expression/Expression">
+          <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference compilator.ecore#//domain/expression/Expression/theDomainContainer"/>
+          <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference compilator.ecore#//domain/expression/Expression/theDomain"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute compilator.ecore#//domain/expression/Expression/name"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference compilator.ecore#//domain/expression/Expression/theSentence"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference compilator.ecore#//domain/expression/Expression/theExpressionModel"/>
+        </genClasses>
+        <nestedGenPackages prefix="Expressionmodel" disposableProviderFactory="true"
+            ecorePackage="compilator.ecore#//domain/expression/expressionmodel">
+          <genClasses image="false" ecoreClass="compilator.ecore#//domain/expression/expressionmodel/Element">
+            <genFeatures createChild="false" ecoreFeature="ecore:EAttribute compilator.ecore#//domain/expression/expressionmodel/Element/name"/>
+            <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference compilator.ecore#//domain/expression/expressionmodel/Element/ContainerElement"/>
+            <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference compilator.ecore#//domain/expression/expressionmodel/Element/ExpressionModel"/>
+            <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                ecoreFeature="ecore:EReference compilator.ecore#//domain/expression/expressionmodel/Element/theStyle"/>
+            <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference compilator.ecore#//domain/expression/expressionmodel/Element/Component"/>
+          </genClasses>
+          <genClasses ecoreClass="compilator.ecore#//domain/expression/expressionmodel/ExpressionModel">
+            <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference compilator.ecore#//domain/expression/expressionmodel/ExpressionModel/Expression"/>
+            <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                ecoreFeature="ecore:EReference compilator.ecore#//domain/expression/expressionmodel/ExpressionModel/theSentence"/>
+            <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference compilator.ecore#//domain/expression/expressionmodel/ExpressionModel/listElements"/>
+          </genClasses>
+          <nestedGenPackages prefix="Individualcomponent" disposableProviderFactory="true"
+              ecorePackage="compilator.ecore#//domain/expression/expressionmodel/individualcomponent">
+            <genClasses ecoreClass="compilator.ecore#//domain/expression/expressionmodel/individualcomponent/Button"/>
+            <genClasses image="false" ecoreClass="compilator.ecore#//domain/expression/expressionmodel/individualcomponent/IndividualElement"/>
+            <genClasses ecoreClass="compilator.ecore#//domain/expression/expressionmodel/individualcomponent/Label">
+              <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference compilator.ecore#//domain/expression/expressionmodel/individualcomponent/Label/Attribute"/>
+            </genClasses>
+            <genClasses ecoreClass="compilator.ecore#//domain/expression/expressionmodel/individualcomponent/TextField">
+              <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference compilator.ecore#//domain/expression/expressionmodel/individualcomponent/TextField/Attribute"/>
+            </genClasses>
+            <genClasses ecoreClass="compilator.ecore#//domain/expression/expressionmodel/individualcomponent/Column">
+              <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference compilator.ecore#//domain/expression/expressionmodel/individualcomponent/Column/Table"/>
+            </genClasses>
+            <genClasses ecoreClass="compilator.ecore#//domain/expression/expressionmodel/individualcomponent/ComboBox">
+              <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference compilator.ecore#//domain/expression/expressionmodel/individualcomponent/ComboBox/theItem"/>
+            </genClasses>
+            <genClasses ecoreClass="compilator.ecore#//domain/expression/expressionmodel/individualcomponent/Table">
+              <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference compilator.ecore#//domain/expression/expressionmodel/individualcomponent/Table/listColumn"/>
+            </genClasses>
+            <genClasses ecoreClass="compilator.ecore#//domain/expression/expressionmodel/individualcomponent/Item">
+              <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference compilator.ecore#//domain/expression/expressionmodel/individualcomponent/Item/ComboBox"/>
+            </genClasses>
+            <genClasses ecoreClass="compilator.ecore#//domain/expression/expressionmodel/individualcomponent/Attribute">
+              <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference compilator.ecore#//domain/expression/expressionmodel/individualcomponent/Attribute/theTextField"/>
+              <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference compilator.ecore#//domain/expression/expressionmodel/individualcomponent/Attribute/theLabel"/>
+            </genClasses>
+          </nestedGenPackages>
+          <nestedGenPackages prefix="Containercomponent" disposableProviderFactory="true"
+              ecorePackage="compilator.ecore#//domain/expression/expressionmodel/containercomponent">
+            <genClasses image="false" ecoreClass="compilator.ecore#//domain/expression/expressionmodel/containercomponent/ContainerElement">
+              <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference compilator.ecore#//domain/expression/expressionmodel/containercomponent/ContainerElement/listElements"/>
+              <genFeatures createChild="false" ecoreFeature="ecore:EAttribute compilator.ecore#//domain/expression/expressionmodel/containercomponent/ContainerElement/orientation"/>
+              <genFeatures createChild="false" ecoreFeature="ecore:EAttribute compilator.ecore#//domain/expression/expressionmodel/containercomponent/ContainerElement/isVisible"/>
+            </genClasses>
+            <genClasses ecoreClass="compilator.ecore#//domain/expression/expressionmodel/containercomponent/Container"/>
+          </nestedGenPackages>
+          <nestedGenPackages prefix="Appearance" disposableProviderFactory="true"
+              ecorePackage="compilator.ecore#//domain/expression/expressionmodel/appearance"/>
+        </nestedGenPackages>
+        <nestedGenPackages prefix="Sentence" disposableProviderFactory="true" ecorePackage="compilator.ecore#//domain/expression/sentence">
+          <genClasses ecoreClass="compilator.ecore#//domain/expression/sentence/Sentence">
+            <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference compilator.ecore#//domain/expression/sentence/Sentence/Expression"/>
+            <genFeatures notify="false" createChild="false" propertySortChoices="true"
+                ecoreFeature="ecore:EReference compilator.ecore#//domain/expression/sentence/Sentence/theExpressionModel"/>
+            <genFeatures createChild="false" ecoreFeature="ecore:EAttribute compilator.ecore#//domain/expression/sentence/Sentence/compressedSentence"/>
+            <genFeatures createChild="false" ecoreFeature="ecore:EAttribute compilator.ecore#//domain/expression/sentence/Sentence/fullSentence"/>
+            <genFeatures createChild="false" ecoreFeature="ecore:EAttribute compilator.ecore#//domain/expression/sentence/Sentence/textStyles"/>
+            <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference compilator.ecore#//domain/expression/sentence/Sentence/Component"/>
+          </genClasses>
+        </nestedGenPackages>
+      </nestedGenPackages>
+      <nestedGenPackages prefix="Shapes" disposableProviderFactory="true" ecorePackage="compilator.ecore#//domain/shapes">
+        <genClasses ecoreClass="compilator.ecore#//domain/shapes/Shapes">
+          <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference compilator.ecore#//domain/shapes/Shapes/Domain"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference compilator.ecore#//domain/shapes/Shapes/listComponents"/>
+        </genClasses>
+        <genClasses ecoreClass="compilator.ecore#//domain/shapes/Component">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute compilator.ecore#//domain/shapes/Component/name"/>
+          <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference compilator.ecore#//domain/shapes/Component/Shapes"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference compilator.ecore#//domain/shapes/Component/theElement"/>
+          <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference compilator.ecore#//domain/shapes/Component/theSentence"/>
+        </genClasses>
+      </nestedGenPackages>
+      <nestedGenPackages prefix="Datatypes" disposableProviderFactory="true" ecorePackage="compilator.ecore#//domain/datatypes">
+        <nestedGenPackages prefix="Util" disposableProviderFactory="true" ecorePackage="compilator.ecore#//domain/datatypes/util">
+          <genDataTypes ecoreDataType="compilator.ecore#//domain/datatypes/util/TreeMap"/>
+          <genDataTypes ecoreDataType="compilator.ecore#//domain/datatypes/util/ArrayList"/>
+          <genDataTypes ecoreDataType="compilator.ecore#//domain/datatypes/util/TreeSet"/>
+          <genDataTypes ecoreDataType="compilator.ecore#//domain/datatypes/util/HashMap"/>
+        </nestedGenPackages>
+      </nestedGenPackages>
+      <nestedGenPackages prefix="Generator" disposableProviderFactory="true" ecorePackage="compilator.ecore#//domain/generator">
+        <genClasses ecoreClass="compilator.ecore#//domain/generator/ExpressionModelManager">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute compilator.ecore#//domain/generator/ExpressionModelManager/tokens"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute compilator.ecore#//domain/generator/ExpressionModelManager/body"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute compilator.ecore#//domain/generator/ExpressionModelManager/elementStyle"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference compilator.ecore#//domain/generator/ExpressionModelManager/expressionGenerator"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference compilator.ecore#//domain/generator/ExpressionModelManager/componentGenerator"/>
+          <genOperations ecoreOperation="compilator.ecore#//domain/generator/ExpressionModelManager/getName">
+            <genParameters ecoreParameter="compilator.ecore#//domain/generator/ExpressionModelManager/getName/s"/>
+          </genOperations>
+          <genOperations ecoreOperation="compilator.ecore#//domain/generator/ExpressionModelManager/createTable">
+            <genParameters ecoreParameter="compilator.ecore#//domain/generator/ExpressionModelManager/createTable/s"/>
+          </genOperations>
+          <genOperations ecoreOperation="compilator.ecore#//domain/generator/ExpressionModelManager/isContainer">
+            <genParameters ecoreParameter="compilator.ecore#//domain/generator/ExpressionModelManager/isContainer/s"/>
+          </genOperations>
+          <genOperations ecoreOperation="compilator.ecore#//domain/generator/ExpressionModelManager/createIndividualElement">
+            <genParameters ecoreParameter="compilator.ecore#//domain/generator/ExpressionModelManager/createIndividualElement/s"/>
+          </genOperations>
+          <genOperations ecoreOperation="compilator.ecore#//domain/generator/ExpressionModelManager/split">
+            <genParameters ecoreParameter="compilator.ecore#//domain/generator/ExpressionModelManager/split/s"/>
+          </genOperations>
+          <genOperations ecoreOperation="compilator.ecore#//domain/generator/ExpressionModelManager/createContainer">
+            <genParameters ecoreParameter="compilator.ecore#//domain/generator/ExpressionModelManager/createContainer/textElement"/>
+            <genParameters ecoreParameter="compilator.ecore#//domain/generator/ExpressionModelManager/createContainer/container"/>
+          </genOperations>
+          <genOperations ecoreOperation="compilator.ecore#//domain/generator/ExpressionModelManager/findStyleElement">
+            <genParameters ecoreParameter="compilator.ecore#//domain/generator/ExpressionModelManager/findStyleElement/element"/>
+          </genOperations>
+        </genClasses>
+        <genClasses ecoreClass="compilator.ecore#//domain/generator/ComponentModelGenerator">
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference compilator.ecore#//domain/generator/ComponentModelGenerator/expressionManager"/>
+          <genOperations ecoreOperation="compilator.ecore#//domain/generator/ComponentModelGenerator/exploreSentence">
+            <genParameters ecoreParameter="compilator.ecore#//domain/generator/ComponentModelGenerator/exploreSentence/s"/>
+            <genParameters ecoreParameter="compilator.ecore#//domain/generator/ComponentModelGenerator/exploreSentence/parent"/>
+          </genOperations>
+          <genOperations ecoreOperation="compilator.ecore#//domain/generator/ComponentModelGenerator/createComponent">
+            <genParameters ecoreParameter="compilator.ecore#//domain/generator/ComponentModelGenerator/createComponent/nameComponent"/>
+            <genParameters ecoreParameter="compilator.ecore#//domain/generator/ComponentModelGenerator/createComponent/formatedSentence"/>
+            <genParameters ecoreParameter="compilator.ecore#//domain/generator/ComponentModelGenerator/createComponent/unformatedSentence"/>
+          </genOperations>
+        </genClasses>
+        <genClasses ecoreClass="compilator.ecore#//domain/generator/ExpressionModelGenerator">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute compilator.ecore#//domain/generator/ExpressionModelGenerator/components"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute compilator.ecore#//domain/generator/ExpressionModelGenerator/textComponents"/>
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute compilator.ecore#//domain/generator/ExpressionModelGenerator/componentsStyles"/>
+          <genFeatures notify="false" createChild="false" propertySortChoices="true"
+              ecoreFeature="ecore:EReference compilator.ecore#//domain/generator/ExpressionModelGenerator/expressionManager"/>
+          <genOperations ecoreOperation="compilator.ecore#//domain/generator/ExpressionModelGenerator/exploreSentence">
+            <genParameters ecoreParameter="compilator.ecore#//domain/generator/ExpressionModelGenerator/exploreSentence/s"/>
+            <genParameters ecoreParameter="compilator.ecore#//domain/generator/ExpressionModelGenerator/exploreSentence/parent"/>
+          </genOperations>
+          <genOperations ecoreOperation="compilator.ecore#//domain/generator/ExpressionModelGenerator/createExpressionModel">
+            <genParameters ecoreParameter="compilator.ecore#//domain/generator/ExpressionModelGenerator/createExpressionModel/formatedSentence"/>
+            <genParameters ecoreParameter="compilator.ecore#//domain/generator/ExpressionModelGenerator/createExpressionModel/unformatedSentence"/>
+          </genOperations>
+          <genOperations ecoreOperation="compilator.ecore#//domain/generator/ExpressionModelGenerator/unpackStringExpression">
+            <genParameters ecoreParameter="compilator.ecore#//domain/generator/ExpressionModelGenerator/unpackStringExpression/model"/>
+          </genOperations>
+          <genOperations ecoreOperation="compilator.ecore#//domain/generator/ExpressionModelGenerator/getTextExpressionContainer">
+            <genParameters ecoreParameter="compilator.ecore#//domain/generator/ExpressionModelGenerator/getTextExpressionContainer/c"/>
+          </genOperations>
+          <genOperations ecoreOperation="compilator.ecore#//domain/generator/ExpressionModelGenerator/getTextElement">
+            <genParameters ecoreParameter="compilator.ecore#//domain/generator/ExpressionModelGenerator/getTextElement/element"/>
+          </genOperations>
+          <genOperations ecoreOperation="compilator.ecore#//domain/generator/ExpressionModelGenerator/getTableText">
+            <genParameters ecoreParameter="compilator.ecore#//domain/generator/ExpressionModelGenerator/getTableText/element"/>
+          </genOperations>
+          <genOperations ecoreOperation="compilator.ecore#//domain/generator/ExpressionModelGenerator/getComponentStyles">
+            <genParameters ecoreParameter="compilator.ecore#//domain/generator/ExpressionModelGenerator/getComponentStyles/element"/>
+          </genOperations>
+          <genOperations ecoreOperation="compilator.ecore#//domain/generator/ExpressionModelGenerator/getContainerStyles">
+            <genParameters ecoreParameter="compilator.ecore#//domain/generator/ExpressionModelGenerator/getContainerStyles/c"/>
+          </genOperations>
+          <genOperations ecoreOperation="compilator.ecore#//domain/generator/ExpressionModelGenerator/getTableStyle">
+            <genParameters ecoreParameter="compilator.ecore#//domain/generator/ExpressionModelGenerator/getTableStyle/element"/>
+          </genOperations>
+          <genOperations ecoreOperation="compilator.ecore#//domain/generator/ExpressionModelGenerator/getElementStyle">
+            <genParameters ecoreParameter="compilator.ecore#//domain/generator/ExpressionModelGenerator/getElementStyle/element"/>
+          </genOperations>
+          <genOperations ecoreOperation="compilator.ecore#//domain/generator/ExpressionModelGenerator/getTextComponentsStyles">
+            <genParameters ecoreParameter="compilator.ecore#//domain/generator/ExpressionModelGenerator/getTextComponentsStyles/elementStyles"/>
+          </genOperations>
+          <genOperations ecoreOperation="compilator.ecore#//domain/generator/ExpressionModelGenerator/fillAdditionalElementStyles">
+            <genParameters ecoreParameter="compilator.ecore#//domain/generator/ExpressionModelGenerator/fillAdditionalElementStyles/elementStyles"/>
+          </genOperations>
+          <genOperations ecoreOperation="compilator.ecore#//domain/generator/ExpressionModelGenerator/createEModelFromUnpackedExpression">
+            <genParameters ecoreParameter="compilator.ecore#//domain/generator/ExpressionModelGenerator/createEModelFromUnpackedExpression/formatedString"/>
+          </genOperations>
+          <genOperations ecoreOperation="compilator.ecore#//domain/generator/ExpressionModelGenerator/exploreUnpackedSentences">
+            <genParameters ecoreParameter="compilator.ecore#//domain/generator/ExpressionModelGenerator/exploreUnpackedSentences/s"/>
+            <genParameters ecoreParameter="compilator.ecore#//domain/generator/ExpressionModelGenerator/exploreUnpackedSentences/parent"/>
+          </genOperations>
+        </genClasses>
+      </nestedGenPackages>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Ui" disposableProviderFactory="true" ecorePackage="compilator.ecore#//ui">
+      <genClasses ecoreClass="compilator.ecore#//ui/UI">
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference compilator.ecore#//ui/UI/theModelFactory"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference compilator.ecore#//ui/UI/theDomain"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference compilator.ecore#//ui/UI/theCharacteristicstContainer"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference compilator.ecore#//ui/UI/StylesConainer"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference compilator.ecore#//ui/UI/ComponentsContainer"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference compilator.ecore#//ui/UI/theExpressionContainer"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference compilator.ecore#//ui/UI/theStyleAssigmentContainer"/>
+        <genOperations ecoreOperation="compilator.ecore#//ui/UI/createComponent">
+          <genParameters ecoreParameter="compilator.ecore#//ui/UI/createComponent/nameComponent"/>
+          <genParameters ecoreParameter="compilator.ecore#//ui/UI/createComponent/expressionString"/>
+          <genParameters ecoreParameter="compilator.ecore#//ui/UI/createComponent/tokens"/>
+          <genParameters ecoreParameter="compilator.ecore#//ui/UI/createComponent/elementStyle"/>
+        </genOperations>
+        <genOperations ecoreOperation="compilator.ecore#//ui/UI/createExpressionModel">
+          <genParameters ecoreParameter="compilator.ecore#//ui/UI/createExpressionModel/expressionString"/>
+          <genParameters ecoreParameter="compilator.ecore#//ui/UI/createExpressionModel/tokens"/>
+          <genParameters ecoreParameter="compilator.ecore#//ui/UI/createExpressionModel/components"/>
+          <genParameters ecoreParameter="compilator.ecore#//ui/UI/createExpressionModel/elementStyles"/>
+        </genOperations>
+        <genOperations ecoreOperation="compilator.ecore#//ui/UI/unPackStyles"/>
+        <genOperations ecoreOperation="compilator.ecore#//ui/UI/createEModelFromUnpackedExpression">
+          <genParameters ecoreParameter="compilator.ecore#//ui/UI/createEModelFromUnpackedExpression/formatedString"/>
+          <genParameters ecoreParameter="compilator.ecore#//ui/UI/createEModelFromUnpackedExpression/tokens"/>
+          <genParameters ecoreParameter="compilator.ecore#//ui/UI/createEModelFromUnpackedExpression/components"/>
+          <genParameters ecoreParameter="compilator.ecore#//ui/UI/createEModelFromUnpackedExpression/elementStyles"/>
+        </genOperations>
+      </genClasses>
+      <genClasses ecoreClass="compilator.ecore#//ui/StylesConainer">
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference compilator.ecore#//ui/StylesConainer/UI"/>
+        <genOperations ecoreOperation="compilator.ecore#//ui/StylesConainer/loadStyles">
+          <genParameters ecoreParameter="compilator.ecore#//ui/StylesConainer/loadStyles/mfStyles"/>
+        </genOperations>
+      </genClasses>
+      <genClasses ecoreClass="compilator.ecore#//ui/ComponentsContainer">
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference compilator.ecore#//ui/ComponentsContainer/UI"/>
+        <genOperations ecoreOperation="compilator.ecore#//ui/ComponentsContainer/createComponent">
+          <genParameters ecoreParameter="compilator.ecore#//ui/ComponentsContainer/createComponent/nameComponent"/>
+          <genParameters ecoreParameter="compilator.ecore#//ui/ComponentsContainer/createComponent/expressionString"/>
+          <genParameters ecoreParameter="compilator.ecore#//ui/ComponentsContainer/createComponent/tokens"/>
+          <genParameters ecoreParameter="compilator.ecore#//ui/ComponentsContainer/createComponent/elementStyle"/>
+        </genOperations>
+        <genOperations ecoreOperation="compilator.ecore#//ui/ComponentsContainer/getFormatedString">
+          <genParameters ecoreParameter="compilator.ecore#//ui/ComponentsContainer/getFormatedString/t"/>
+        </genOperations>
+      </genClasses>
+      <genClasses ecoreClass="compilator.ecore#//ui/CharacteristicstContainer">
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference compilator.ecore#//ui/CharacteristicstContainer/UI"/>
+      </genClasses>
+      <genClasses ecoreClass="compilator.ecore#//ui/ExpressionContainer">
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference compilator.ecore#//ui/ExpressionContainer/UI"/>
+        <genOperations ecoreOperation="compilator.ecore#//ui/ExpressionContainer/getFormatedString">
+          <genParameters ecoreParameter="compilator.ecore#//ui/ExpressionContainer/getFormatedString/t"/>
+        </genOperations>
+        <genOperations ecoreOperation="compilator.ecore#//ui/ExpressionContainer/createExpressionModel">
+          <genParameters ecoreParameter="compilator.ecore#//ui/ExpressionContainer/createExpressionModel/expressionString"/>
+          <genParameters ecoreParameter="compilator.ecore#//ui/ExpressionContainer/createExpressionModel/tokens"/>
+          <genParameters ecoreParameter="compilator.ecore#//ui/ExpressionContainer/createExpressionModel/components"/>
+          <genParameters ecoreParameter="compilator.ecore#//ui/ExpressionContainer/createExpressionModel/elementStyles"/>
+        </genOperations>
+        <genOperations ecoreOperation="compilator.ecore#//ui/ExpressionContainer/createEModelFromUnpackedExpression">
+          <genParameters ecoreParameter="compilator.ecore#//ui/ExpressionContainer/createEModelFromUnpackedExpression/expressionString"/>
+          <genParameters ecoreParameter="compilator.ecore#//ui/ExpressionContainer/createEModelFromUnpackedExpression/tokens"/>
+          <genParameters ecoreParameter="compilator.ecore#//ui/ExpressionContainer/createEModelFromUnpackedExpression/components"/>
+          <genParameters ecoreParameter="compilator.ecore#//ui/ExpressionContainer/createEModelFromUnpackedExpression/elementStyles"/>
+        </genOperations>
+      </genClasses>
+      <genClasses ecoreClass="compilator.ecore#//ui/StyleAssigmentContainer">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute compilator.ecore#//ui/StyleAssigmentContainer/text"/>
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference compilator.ecore#//ui/StyleAssigmentContainer/UI"/>
+        <genOperations ecoreOperation="compilator.ecore#//ui/StyleAssigmentContainer/unPackStyles"/>
+        <genOperations ecoreOperation="compilator.ecore#//ui/StyleAssigmentContainer/getStyleBody">
+          <genParameters ecoreParameter="compilator.ecore#//ui/StyleAssigmentContainer/getStyleBody/styleComponent"/>
+        </genOperations>
+        <genOperations ecoreOperation="compilator.ecore#//ui/StyleAssigmentContainer/getStyleName">
+          <genParameters ecoreParameter="compilator.ecore#//ui/StyleAssigmentContainer/getStyleName/styleComponent"/>
+        </genOperations>
+        <genOperations ecoreOperation="compilator.ecore#//ui/StyleAssigmentContainer/loadElementsStyles">
+          <genParameters ecoreParameter="compilator.ecore#//ui/StyleAssigmentContainer/loadElementsStyles/styles"/>
+        </genOperations>
+        <genOperations ecoreOperation="compilator.ecore#//ui/StyleAssigmentContainer/getFormatedString">
+          <genParameters ecoreParameter="compilator.ecore#//ui/StyleAssigmentContainer/getFormatedString/t"/>
+        </genOperations>
+      </genClasses>
+    </nestedGenPackages>
+  </genPackages>
+</genmodel:GenModel>

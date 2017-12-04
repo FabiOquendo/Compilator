@@ -1,0 +1,293 @@
+/**
+ * JavaCC template file created by SF JavaCC plugin 1.5.28+ wizard for JavaCC 1.5.0+
+ */
+options
+{
+  static = true;
+}
+
+PARSER_BEGIN(AnalizadorLexico)
+package Logica;
+import java.util.*;
+public class AnalizadorLexico
+{
+   private static Hashtable ST= new Hashtable();
+   private static String resultado="";
+   static int numero = 0;
+   static String ambito="";
+   private static void grabarLexema (int n, String token,  String lexema, int nL, int nC) {
+      System.out.printf("%-35s%-20s%-10s%-10s\n",n + "- Lexema:" + lexema, "	Token: "+  token , "	Linea: "+ nL , "	Columna: " + nC);
+   }  
+
+	
+   private static void grabarDatosPieza(int n, String token, Token pieza) {
+      grabarLexema(n, token, pieza.image, pieza.beginLine, pieza.beginColumn );      
+   }
+
+	public static String getResultado() {
+	  if(resultado.equals(""))
+	  resultado="No se han encontrado errores en el analisis";
+	  return resultado;
+	}
+	public static void setResultado(String a) {
+	  resultado=a;
+	}
+   public static Hashtable getSymbolTable() {
+      return  ST;
+   }
+
+   public static void reportarError(String mensaje) {
+     resultado+="Error Semantico en la seccion "+ ambito+"\n"+mensaje+"\n\n"; 
+   }
+
+   public static void validarDeclaracionEstilo(String componente,String estilo, String valor) {
+	if(estilo.equals("width")|estilo.equals("height")|estilo.equals("TamañoFuente"))
+	{
+	  if(!valor.equals("Tamaño")) {
+		reportarError("Se esperaba un Tamaño en px para definir la propiedad " + estilo+" del componente "+ componente);
+	  };
+	}
+	else if(estilo.equals("EstiloColor")) {
+	 if(!valor.equals("Color")) {
+		reportarError("Se esperaba un Color Hexadecimal para definir el " + estilo +" del componente "+ componente);
+	 };
+	}else if(estilo.equals("Fuente")) {
+	  if(!valor.equals("Fuente")) {
+		reportarError("Se esperaba una Fuente de letra para definir la " + estilo +" del componente "+ componente);
+	  };
+	}else if(estilo.equals("EstiloFuente")) {
+	  if(!valor.equals("EstiloFuente")) {
+		reportarError("Se esperaba un Estilo de fuente (bold, italic) para definir el " + estilo +" del componente "+ componente);
+	  };
+	}
+	
+   }
+
+ 
+   public static void validarDeclaracion(String token, String estilo) {
+     SymbolTable simbolo=(SymbolTable) ST.get(token);
+     if(simbolo!=null) {
+       String tipo=simbolo.getTipo();
+       if(tipo.equals("Tabla")){
+         if(!(estilo.equals("width")||estilo.equals("height")))
+         {
+           reportarError("el Componente "+ token+ " es una tabla y no puede tener asigandos valores distintos a width o height");
+           return;
+         };
+	   };
+	   if (tipo.equals("Patron")){
+           reportarError("el Componente "+ token+ "  es un Patron y no puede tener elementos de estilos asociados a el");
+		   return;    
+	   };
+	   if (tipo.equals("Variable")) {
+	     reportarError("el Componente "+ token+ "  es una Variable y no puede tener estilos asociados");
+	     return;
+	   };
+     }
+   };
+   public AnalizadorLexico() {}
+    
+  public static void main(String args []) throws ParseException
+  {
+    
+	try
+	{
+	   java.io.InputStream inputstream = new java.io.FileInputStream("src/archivoPrueba.shtml");
+       System.out.println("-------------------------------- Iniciando Análisis Léxico para el archivo archivoPrueba ----------------------------");
+       AnalizadorLexico parser = new AnalizadorLexico(inputstream);
+	   parser.Programa();
+ 
+		
+	   System.out.println("------------------------------------------------ Fin de análisis Léxico -------------------------------------------------");
+	   System.out.println("no se han hallado errores l\u00e9xicos");
+       String temp;
+      	SymbolTable temp2;
+		Enumeration t = ST.keys();
+
+     while ( t.hasMoreElements() == true ) {
+
+          temp = (String)t.nextElement();
+          temp2 = (SymbolTable)ST.get(temp);
+          System.out.println(temp);
+          if ( temp2.tipo != null )
+            System.out.println(" type = " + temp2.tipo);
+          if ( temp2.valor != null )
+            System.out.println(" value = " + temp2.valor);
+
+    }
+
+       
+    }catch(TokenMgrError te)
+	{
+	   System.err.println("Error");
+	   System.err.println(te.getMessage());
+	   
+	} 
+    catch(ParseException e)
+	{
+	   System.out.println("Analizador: Se han encontrado errores en el analisis.");
+	   System.out.println(e.getMessage());	   
+	}
+	catch (java.io.FileNotFoundException e) {
+		System.out.println("El archivo especificado no se encuentra o no se puede leer");
+	}
+  }
+}
+
+PARSER_END(AnalizadorLexico)
+
+/* Espacio en blanco, saltos de linea, tabulares */
+SKIP :
+{
+  " "
+| "\t"
+| "\n"
+| "\r"
+| "\f"
+}
+
+
+TOKEN : /* CONCATENACION */
+{
+ < ORIENTACION : "|"|"-" >
+| < BOLD : "bold" >
+| < ITALIC : "italic" >
+| < ARIAL : "arial" >
+| < TAHOMA : "tahoma" >
+| < PX: "px">
+| < IDENTIFICADOR : ["a"-"z","A"-"Z"] ( ["a"-"z","A"-"Z","0"-"9"] )* >
+| < COMBOBOX: "*"(< IDENTIFICADOR >)>
+| < CAMPOTEXTO:"txt_"(< IDENTIFICADOR >)>
+| < LABEL:"lbl_"(< IDENTIFICADOR >)>
+| < BOTON:"btn_" (< IDENTIFICADOR >)>
+| < PATRON:"$"(< IDENTIFICADOR >)>
+| < SIMBOLOASIGNACION: "=">
+| < SEPARADOR :",">
+| < ABRIRLLAVE: "{">
+| < CERRARLLAVE: "}">
+| < PUNTOYCOMA: ";" >
+| < SIMBOLOMENOR: "<" >
+| < SIMBOLOMAYOR: ">" >
+}
+
+TOKEN: /* COLORHEXADECIMAL */
+
+{
+ <  COLOR : [ "0"-"9","A"-"F","a"-"f"] >
+| < COLORHEXADECIMAL : "#" ( < COLOR > ) ( < COLOR > ) ( < COLOR > )( < COLOR > ) ( < COLOR > ) ( < COLOR > ) >
+}
+TOKEN: /*ESTILOS*/{
+< ESTILOCOLOR: ".color" >
+| < ESTILOWIDTH: ".width" >
+| < ESTILOHEIGHT: ".height" >
+| < ESTILOTIPOFUENTE: ".fuente" >
+| < ESTILOTAMFUENTE: ".tamFuente">
+| < ESTILOFUENTE: ".estiloFuente">
+| < #DIGIT : [ "0"-"9" ] >
+| < NUMERO : (< DIGIT >)+ >
+| < HIDEBORDER:"'" >
+}
+
+TOKEN: /*widgets,Declaraciones,Expresiones*/{
+< INICIOWIDGET:"wI/" >
+| < FINWIDGET : "/wF" >
+| < INICIODECLARACION : "dI/" >
+| < FINDECLARACION : "/dF" >
+| < INICIOEXPRESION : "eI/" >
+| < FINEXPRESION : "/eF" >
+}
+void Programa():{}
+{
+  	{ ST.clear(); }
+	 declaraciones() expresionFinal() widgets()
+}
+
+void widgets(): { ambito = "Widtget";} {
+	<INICIOWIDGET> [sentencias()] < FINWIDGET>
+}
+
+void declaraciones(): { ambito="Declaracion"; } {
+	< INICIODECLARACION > [sentencias()] < FINDECLARACION >
+}
+
+void expresionFinal(): { ambito="Expresion"; } {
+	< INICIOEXPRESION > sentencias() < FINEXPRESION >
+}
+void sentencias(): { }
+{
+  sentencia()[sentencias()]
+}
+void sentencia(): { }
+{
+   try {
+  LOOKAHEAD(2)
+  ListaComponentes()<PUNTOYCOMA>| LOOKAHEAD(2) declaracion()<PUNTOYCOMA>|asignacion()<PUNTOYCOMA>
+   }catch (ParseException e) {
+    resultado+="Error en: "+ambito+"\n"+e.toString()+"\n";
+    Token t;
+    do {
+      t = getNextToken();
+    } while (t.kind != PUNTOYCOMA);
+  }
+}
+void Interfaz():{
+ Token tkn;
+}
+{
+  
+  [tkn=<IDENTIFICADOR>{ST.put(tkn.image,new SymbolTable("INTERFAZ",tkn.image)); }][<ORIENTACION>]<ABRIRLLAVE>[ListaComponentes()]<CERRARLLAVE>
+
+}
+void ListaComponentes():{}
+{
+  Componente()[<SEPARADOR> ListaComponentes()]
+}
+String Componente(): {
+ Token tkn;
+ String aux;
+}
+{
+  LOOKAHEAD(2)
+  aux=Contenedor() {return aux; }|tkn=< CAMPOTEXTO > {ST.put(tkn.image,new SymbolTable("Campo de Texto",tkn.image)); return tkn.image;}|LOOKAHEAD(2) aux=Tabla() { return aux;}|tkn=< COMBOBOX > {ST.put(tkn.image,new SymbolTable("ComboBox",tkn.image)); return tkn.image; }
+  |tkn=< BOTON > {ST.put(tkn.image,new SymbolTable("Boton",tkn.image));return tkn.image; }|tkn=< LABEL >{ST.put(tkn.image,new SymbolTable("Label",tkn.image));return tkn.image; }
+  |tkn=< PATRON > {ST.put(tkn.image,new SymbolTable("Patron",tkn.image));return tkn.image; }|tkn=<IDENTIFICADOR >{if(ST.get(tkn.image)==null) reportarError("la Variabe: "+tkn.image+" No esta declarada previamente");return tkn.image;}
+}
+String Contenedor(): {Token tkn;}
+{
+  [tkn=<IDENTIFICADOR >{ST.put(tkn.image,new SymbolTable("Contenedor",tkn.image));}][<ORIENTACION >]"["[ListaComponentes()]"]"[< HIDEBORDER >] { return "contendor";}
+}
+String Tabla(): {Token tkn; }
+{
+ tkn= < IDENTIFICADOR >{ST.put(tkn.image,new SymbolTable("Tabla",tkn.image));}< SIMBOLOMENOR > Columnas() <  SIMBOLOMAYOR > {  return tkn.image; }
+}
+void Columnas(): {Token tkn; }
+{
+ tkn= < IDENTIFICADOR >{ST.put(tkn.image,new SymbolTable("Columna",tkn.image)); }[<SEPARADOR>Columnas()]
+}
+void declaracion(): {Token tkn; }
+{
+  tkn=< IDENTIFICADOR >{ST.put(tkn.image,new SymbolTable("Variable",tkn.image)); } < SIMBOLOASIGNACION >ListaComponentes()
+}
+void asignacion():{String token;String estilo;String valor;}
+{
+  token=Componente()estilo=propiedadesComponentes() {validarDeclaracion(token,estilo);}< SIMBOLOASIGNACION >valor=valor(){ validarDeclaracionEstilo(token,estilo,valor);}
+}
+String propiedadesComponentes(): {Token tkn; }
+{
+  tkn=<ESTILOWIDTH>{return "width"; }|
+  tkn=<ESTILOHEIGHT>{return "height"; }|
+  tkn=<ESTILOCOLOR>{return "EstiloColor"; }|
+  tkn=<ESTILOTIPOFUENTE>{return "Fuente"; } |
+  tkn=<ESTILOTAMFUENTE>{return "TamañoFuente"; } |
+  tkn=<ESTILOFUENTE>{return "EstiloFuente"; }
+}
+String valor(): {Token tkn; }
+{
+ < COLORHEXADECIMAL >{return "Color";}|
+ < BOLD >{return "EstiloFuente";}|
+ < ITALIC > { return "EstiloFuente";}|
+ < NUMERO >< PX >{return "Tamaño"; }|
+ < ARIAL>{return "Fuente"; }|
+ < TAHOMA >{return "Fuente";}
+} 
+  
