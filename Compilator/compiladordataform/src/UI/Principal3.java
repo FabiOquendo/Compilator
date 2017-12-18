@@ -828,19 +828,7 @@ public class Principal3 extends ViewPart {
 	}
 
 	public void createDataformDiagram(GenModel genModel){
-		DataFormModelGenerator dataFormModelGenerator = generator.gendataform.GendataformFactory.eINSTANCE.createDataFormModelGenerator();
-		mfToolDataform    = tooldataform.TooldataformFactory.eINSTANCE.createModelFactory();
-		project         = tooldataform.core.CoreFactory.eINSTANCE.createProject();
-		DataForm_Diagram dataformDiagram = dataFormModelGenerator.createDataFormModel(genModel);
-		
-		setBoundsGraphicalContainer(dataformDiagram.getTheInterface(), 10, 10 , 
-				dataformDiagram.getTheInterface().getListGraphicalContainer().get(0).getWidth()+20, 
-				dataformDiagram.getTheInterface().getListGraphicalContainer().get(0).getHeight()+100);	
-		dataformDiagram.setOwnedByProject(project);
-		project.getListDataFormDiagram().add(dataformDiagram);
-		mfToolDataform.getListProyecto().add(project); 
-		project.setTheModelFactory(mfToolDataform);
-		saveDF();
+
 	}
 	/**
 	 * <!-- begin-user-doc -->

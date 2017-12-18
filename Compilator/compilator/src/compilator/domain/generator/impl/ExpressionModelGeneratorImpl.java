@@ -452,28 +452,28 @@ public class ExpressionModelGeneratorImpl extends MinimalEObjectImpl.Container i
 	 * @generated
 	 */
 	public void getContainerStyles(final compilator.domain.expression.expressionmodel.containercomponent.Container c) {
-if(c.getTheStyle() != null) {
-	if(componentsStyles.containsKey(c.getTheStyle().getName())) {
-		TreeSet<String> set = (TreeSet<String>) componentsStyles.get(c.getTheStyle().getName());
-		set.add(c.getName());
-		componentsStyles.put(c.getTheStyle().getName(), set);
-	} else {
-		TreeSet<String> set = new TreeSet<String>();
-		set.add(c.getName());
-		componentsStyles.put(c.getTheStyle().getName(), set);
-	}
-}
-
-for(int i=0;i<c.getListElements().size();i++){
-	compilator.domain.expression.expressionmodel.Element element = c.getListElements().get(i);
-	if(element instanceof compilator.domain.expression.expressionmodel.containercomponent.Container){
-		getContainerStyles((compilator.domain.expression.expressionmodel.containercomponent.Container)element);
-	}else if(element instanceof compilator.domain.expression.expressionmodel.individualcomponent.Table) {
-		getTableStyle(element);
-	}else {
-		getElementStyle(element);
-	}
-}
+		if(c.getTheStyle() != null) {
+			if(componentsStyles.containsKey(c.getTheStyle().getName())) {
+				TreeSet<String> set = (TreeSet<String>) componentsStyles.get(c.getTheStyle().getName());
+				set.add(c.getName());
+				componentsStyles.put(c.getTheStyle().getName(), set);
+			} else {
+				TreeSet<String> set = new TreeSet<String>();
+				set.add(c.getName());
+				componentsStyles.put(c.getTheStyle().getName(), set);
+			}
+		}
+		
+		for(int i=0;i<c.getListElements().size();i++){
+			compilator.domain.expression.expressionmodel.Element element = c.getListElements().get(i);
+			if(element instanceof compilator.domain.expression.expressionmodel.containercomponent.Container){
+				getContainerStyles((compilator.domain.expression.expressionmodel.containercomponent.Container)element);
+			}else if(element instanceof compilator.domain.expression.expressionmodel.individualcomponent.Table) {
+				getTableStyle(element);
+			}else {
+				getElementStyle(element);
+			}
+		}
 	}
 
 	/**
@@ -482,38 +482,38 @@ for(int i=0;i<c.getListElements().size();i++){
 	 * @generated
 	 */
 	public void getTableStyle(final Element element) {
-compilator.domain.expression.expressionmodel.individualcomponent.Table table = 
-		(compilator.domain.expression.expressionmodel.individualcomponent.Table) element;
- 
- if(table.getTheStyle() != null) {
-	if(componentsStyles.containsKey(table.getTheStyle().getName())) {
-		TreeSet<String> set = (TreeSet<String>) componentsStyles.
-				get(table.getTheStyle().getName());
-		set.add(table.getName());
-		componentsStyles.put(table.getTheStyle().getName(), set);
-	} else {
-		TreeSet<String> set = new TreeSet<String>();
-		set.add(table.getName());
-		componentsStyles.put(table.getTheStyle().getName(), set);
-	}
-}
- 
-for(int i=0;i<table.getListColumn().size();i++){
-	compilator.domain.expression.expressionmodel.individualcomponent.Column column = table.
-			getListColumn().get(i);
-	if(column.getTheStyle() != null) {
-		if(componentsStyles.containsKey(column.getTheStyle().getName())) {
-			TreeSet<String> set = (TreeSet<String>) componentsStyles.
-					get(column.getTheStyle().getName());
-			set.add(column.getName());
-			componentsStyles.put(column.getTheStyle().getName(), set);
-		} else {
-			TreeSet<String> set = new TreeSet<String>();
-			set.add(column.getName());
-			componentsStyles.put(column.getTheStyle().getName(), set);
+		compilator.domain.expression.expressionmodel.individualcomponent.Table table = 
+				(compilator.domain.expression.expressionmodel.individualcomponent.Table) element;
+		 
+		 if(table.getTheStyle() != null) {
+			if(componentsStyles.containsKey(table.getTheStyle().getName())) {
+				TreeSet<String> set = (TreeSet<String>) componentsStyles.
+						get(table.getTheStyle().getName());
+				set.add(table.getName());
+				componentsStyles.put(table.getTheStyle().getName(), set);
+			} else {
+				TreeSet<String> set = new TreeSet<String>();
+				set.add(table.getName());
+				componentsStyles.put(table.getTheStyle().getName(), set);
+			}
 		}
-	}
-}
+		 
+		for(int i=0;i<table.getListColumn().size();i++){
+			compilator.domain.expression.expressionmodel.individualcomponent.Column column = table.
+					getListColumn().get(i);
+			if(column.getTheStyle() != null) {
+				if(componentsStyles.containsKey(column.getTheStyle().getName())) {
+					TreeSet<String> set = (TreeSet<String>) componentsStyles.
+							get(column.getTheStyle().getName());
+					set.add(column.getName());
+					componentsStyles.put(column.getTheStyle().getName(), set);
+				} else {
+					TreeSet<String> set = new TreeSet<String>();
+					set.add(column.getName());
+					componentsStyles.put(column.getTheStyle().getName(), set);
+				}
+			}
+		}
 	}
 
 	/**
@@ -522,17 +522,17 @@ for(int i=0;i<table.getListColumn().size();i++){
 	 * @generated
 	 */
 	public void getElementStyle(final Element element) {
-if(element.getTheStyle() != null) {
-	if(componentsStyles.containsKey(element.getTheStyle().getName())) {
-		TreeSet<String> set = (TreeSet<String>) componentsStyles.get(element.getTheStyle().getName());
-		set.add(getTextElement(element));
-		componentsStyles.put(element.getTheStyle().getName(), set);
-	} else {
-		TreeSet<String> set = new TreeSet<String>();
-		set.add(getTextElement(element));
-		componentsStyles.put(element.getTheStyle().getName(), set);
-	}
-}
+		if(element.getTheStyle() != null) {
+			if(componentsStyles.containsKey(element.getTheStyle().getName())) {
+				TreeSet<String> set = (TreeSet<String>) componentsStyles.get(element.getTheStyle().getName());
+				set.add(getTextElement(element));
+				componentsStyles.put(element.getTheStyle().getName(), set);
+			} else {
+				TreeSet<String> set = new TreeSet<String>();
+				set.add(getTextElement(element));
+				componentsStyles.put(element.getTheStyle().getName(), set);
+			}
+		}
 	}
 
 	/**

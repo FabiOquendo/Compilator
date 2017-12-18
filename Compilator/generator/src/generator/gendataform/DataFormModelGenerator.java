@@ -85,7 +85,7 @@ public interface DataFormModelGenerator extends EObject {
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='tooldataform.formmodel.concreta.DataForm_Diagram diagram = tooldataform.formmodel.concreta.\r\n\t\tConcretaFactory.eINSTANCE.createDataForm_Diagram();\r\ntooldataform.formmodel.concreta.Interface interFace  = tooldataform.formmodel.concreta.\r\n\t\tConcretaFactory.eINSTANCE.createInterface();\r\ninterFace.setName(\"Dataform Diagram\");\r\ndiagram.setTheInterface(interFace);\r\ndiagram.setName(\"model.tooldataform_diagram\");\r\n\r\nfor(int i=0;i&lt;genModel.getListGenElements().size();i++){\r\n\tGenElement element = genModel.getListGenElements().get(i);\r\n\t\r\n\tif(element instanceof GenContainer){\r\n\t\ttooldataform.formmodel.concreta.Container c = createToolDataFormContainer((GenContainer)element);\r\n\t\tinterFace.getListGraphicalContainer().add(c);\r\n\t}\r\n\telse if(element instanceof generator.genmodel.genindividualcomponent.gentable.GenTable || \r\n\t\t\telement instanceof generator.genmodel.genindividualcomponent.gencombobox.GenComboBox){\r\n\t\tinterFace.getListGraphicalContainer().add(createGraphicalContainer(element));\r\n\t}\r\n\telse{\r\n\t\tinterFace.getListIndividualElementDataForm().add(createIndividualElement(element));\r\n\t}\r\n}\r\nlevelContainer = new HashMap&lt;GraphicalContainer, Integer&gt;();\r\nsetLevelContainer(interFace);\r\nfor (int i = 0; i &lt; interFace.getListGraphicalContainer().size(); i++) {\r\n\tsetBoundsContainers(i, interFace.getListGraphicalContainer().get(i));\r\n}\r\nreturn diagram;'"
 	 * @generated
 	 */
-	DataForm_Diagram createDataFormModel(GenModel genModel);
+	DataForm_Diagram createDataFormModel(tooldataform.styles.domain.Domain domainStyle, GenModel genModel);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -94,7 +94,7 @@ public interface DataFormModelGenerator extends EObject {
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='tooldataform.formmodel.concreta.Container container= tooldataform.formmodel.concreta.\r\n\t\tConcretaFactory.eINSTANCE.createContainer();\r\ncontainer.setName(parent.getTheContainer().getName());\r\ncontainer.setPositionX(parent.getTheX().getValue());\r\ncontainer.setPositionY(parent.getTheY().getValue());\r\ncontainer.setWidth(parent.getTheWidth().getValue());\r\ncontainer.setHeight(parent.getTheHeight().getValue());\r\n\r\nfor(int i=0;i&lt;parent.getListGenElements().size();i++){\r\n\tGenElement element = parent.getListGenElements().get(i);\r\n\t\r\n\tif(element instanceof GenContainer){\r\n\t\ttooldataform.formmodel.concreta.Container c = createToolDataFormContainer((GenContainer)element);\r\n\t\tcontainer.getListGraphicalContainer().add(c);\r\n\t}\r\n\telse if(element instanceof generator.genmodel.genindividualcomponent.gentable.GenTable || \r\n\t\t\telement instanceof generator.genmodel.genindividualcomponent.gencombobox.GenComboBox){\r\n\t\tcontainer.getListGraphicalContainer().add(createGraphicalContainer(element));\r\n\t}\r\n\telse{\r\n\t\tcontainer.getListIndividualElementDataForm().add(createIndividualElement(element));\r\n\t}\r\n}\r\nreturn container;'"
 	 * @generated
 	 */
-	Container createToolDataFormContainer(GenContainer parent);
+	Container createToolDataFormContainer(tooldataform.styles.domain.Domain domainStyle, GenContainer parent);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -103,7 +103,7 @@ public interface DataFormModelGenerator extends EObject {
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='GraphicalIndividualEement individualElement=null;\r\n\r\nif(element instanceof generator.genmodel.genindividualcomponent.genbutton.GenButton){\r\n\tindividualElement = createButton((GenButton)element);\r\n}\r\nelse if(element instanceof generator.genmodel.genindividualcomponent.genlabel.GenLabel){\r\n\tindividualElement = createLabelView((GenLabel)element);\r\n}\r\nelse if(element instanceof generator.genmodel.genindividualcomponent.gentextfield.GenTextField){\r\n\tindividualElement = createTextView((GenTextField)element);\r\n}\r\n\r\n//Se valida si es null?\r\nindividualElement.setPositionX(element.getTheX().getValue());\r\nindividualElement.setPositionY(element.getTheY().getValue());\r\nindividualElement.setWidth(element.getTheWidth().getValue());\r\nindividualElement.setHeight(element.getTheHeight().getValue());\r\n\r\nreturn individualElement;'"
 	 * @generated
 	 */
-	GraphicalIndividualEement createIndividualElement(GenElement element);
+	GraphicalIndividualEement createIndividualElement(tooldataform.styles.domain.Domain domainStyle, GenElement element);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -112,7 +112,8 @@ public interface DataFormModelGenerator extends EObject {
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body=' tooldataform.formmodel.containers.GraphicalContainer container = null;\r\n \r\n if(element instanceof generator.genmodel.genindividualcomponent.gentable.GenTable ){\r\n\t \tcontainer  = createTableView((GenTable)element);\r\n }else if( element instanceof generator.genmodel.genindividualcomponent.gencombobox.GenComboBox){\r\n\t container = createComboView((GenComboBox)element);\r\n }\t\r\n \r\n //Se valida si es null?\r\n container.setPositionX(element.getTheX().getValue());\r\n container.setPositionY(element.getTheY().getValue());\r\n container.setWidth(element.getTheWidth().getValue());\r\n container.setHeight(element.getTheHeight().getValue());\r\n \r\n return container;'"
 	 * @generated
 	 */
-	GraphicalContainer createGraphicalContainer(GenElement element);
+	GraphicalContainer createGraphicalContainer(tooldataform.styles.domain.
+			Domain domainStyle, GenElement element);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -121,7 +122,7 @@ public interface DataFormModelGenerator extends EObject {
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='tooldataform.formmodel.concreta.Button button  = tooldataform.formmodel.concreta.\r\n\t\tConcretaFactory.eINSTANCE.createButton();\r\nbutton.setName(genButton.getTheButton().getName());\r\nreturn button;'"
 	 * @generated
 	 */
-	Button createButton(GenButton genButton);
+	Button createButton(tooldataform.styles.domain.Domain domainStyle, GenButton genButton);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -130,7 +131,8 @@ public interface DataFormModelGenerator extends EObject {
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='tooldataform.formmodel.concreta.ComboView combo  = tooldataform.formmodel.concreta.\r\n\t\tConcretaFactory.eINSTANCE.createComboView();\r\ncombo.setName(genCombo.getTheComboBox().getName());\r\nreturn combo;'"
 	 * @generated
 	 */
-	ComboView createComboView(GenComboBox genCombo);
+	ComboView createComboView(tooldataform.styles.domain.
+			Domain domainStyle, GenComboBox genCombo);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -139,7 +141,7 @@ public interface DataFormModelGenerator extends EObject {
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='tooldataform.formmodel.concreta.LabelView label  = tooldataform.formmodel.concreta.\r\n\t\tConcretaFactory.eINSTANCE.createLabelView();\r\nlabel.setName(genLabel.getTheLabel().getName());\r\nreturn label;'"
 	 * @generated
 	 */
-	LabelView createLabelView(GenLabel genLabel);
+	LabelView createLabelView(tooldataform.styles.domain.Domain domainStyle, GenLabel genLabel);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -148,7 +150,7 @@ public interface DataFormModelGenerator extends EObject {
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='tooldataform.formmodel.concreta.TextView text  = tooldataform.formmodel.concreta.\r\n\t\tConcretaFactory.eINSTANCE.createTextView();\r\ntext.setName(genText.getTheTextField().getName());\r\nreturn text;'"
 	 * @generated
 	 */
-	TextView createTextView(GenTextField genText);
+	TextView createTextView(tooldataform.styles.domain.Domain domainStyle, GenTextField genText);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -157,7 +159,8 @@ public interface DataFormModelGenerator extends EObject {
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='tooldataform.formmodel.concreta.TableView table = tooldataform.formmodel.concreta.\r\n\t\tConcretaFactory.eINSTANCE.createTableView();\r\ntable.setName(genTable.getTheTable().getName());\r\nfor(int i=0;i&lt;genTable.getListGenColumns().size();i++){\r\n\ttable.getListColumView().add(createColumView( (GenColumn)genTable.getListGenColumns().get(i)));\r\n}\r\nreturn table;'"
 	 * @generated
 	 */
-	TableView createTableView(GenTable genTable);
+	TableView createTableView(tooldataform.styles.domain.
+			Domain domainStyle, GenTable genTable);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -166,7 +169,7 @@ public interface DataFormModelGenerator extends EObject {
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='tooldataform.formmodel.concreta.ColumView column = tooldataform.formmodel.concreta.\r\n\t\tConcretaFactory.eINSTANCE.createColumView();\r\ncolumn.setWidth(genColumn.getTheWidth().getValue());\r\ncolumn.setName(genColumn.getTheColumn().getName());\r\nreturn column;'"
 	 * @generated
 	 */
-	ColumView createColumView(GenColumn genColumn);
+	ColumView createColumView(tooldataform.styles.domain.Domain domainStyle, GenColumn genColumn);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -184,6 +187,6 @@ public interface DataFormModelGenerator extends EObject {
 	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='int level = (int) levelContainer.get(container);\r\nif(container.getListGraphicalContainer().size() &gt; 0) {\r\n\tcontainer.setHeight(container.getHeight()+(60*level)+((container.getListGraphicalContainer().size()-1)*60));\r\n} else {\r\n\tcontainer.setHeight(container.getHeight()+(60*level));\r\n}\r\n\r\n//TODO SI LA ORINTACION (-) entonces\r\ncontainer.setPositionY(container.getPositionY()+60*index);\t\t\r\n\r\nfor(int i = 0; i &lt; container.getListGraphicalContainer().size(); i++) {\r\n\tsetBoundsContainers(i, container.getListGraphicalContainer().get(i));\r\n}'"
 	 * @generated
 	 */
-	void setBoundsContainers(Integer index, GraphicalContainer container);
+	void setBoundsContainers(Integer index, String orientacion, GraphicalContainer container);
 
 } // DataFormModelGenerator

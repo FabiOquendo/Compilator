@@ -215,92 +215,93 @@ public class GeneratorImpl extends MinimalEObjectImpl.Container implements Gener
 	 * @generated
 	 */
 	public GenContainer createGenContainer(final compilator.domain.expression.expressionmodel.containercomponent.Container container) {
-GenContainer genContainer = generator.genmodel.gencontainercomponent.gencontainer.
-		GencontainerFactory.eINSTANCE.createGenContainer();
-genContainer.setTheContainer(container);
-styles.domain.Propertie fontSize = null;
-EList<styles.domain.Propertie> listProperties = container.getTheStyle().
-		getTheCharacteristic().getListProperties();
-for (int i = 0; i < listProperties.size(); i++) {
-	if(listProperties.get(i).getName().equals("Font Size")) {
-		fontSize = listProperties.get(i);
-		break;
-	}
-}
-genContainer.createPropertiesContainer(fontSize);
-if(container.getTheStyle() != null) {
-	genContainer = (GenContainer) setApperances(container, genContainer);
-	for (int i = 0; i < listProperties.size(); i++) {
-		styles.domain.Propertie propertie = listProperties.get(i);
-		
-		if(propertie.getName().equals("Background")) {
-			generator.apperance.background.Background b = generator.apperance.background.
-					BackgroundFactory.eINSTANCE.createBackground();
-			b.setValue(propertie.getValue());
-			genContainer.setTheBackground(b);
+		GenContainer genContainer = generator.genmodel.gencontainercomponent.gencontainer.
+				GencontainerFactory.eINSTANCE.createGenContainer();
+		genContainer.setTheContainer(container);
+		styles.domain.Propertie fontSize = null;
+		EList<styles.domain.Propertie> listProperties = container.getTheStyle().
+				getTheCharacteristic().getListProperties();
+		for (int i = 0; i < listProperties.size(); i++) {
+			if(listProperties.get(i).getName().equals("Font Size")) {
+				fontSize = listProperties.get(i);
+				break;
+			}
 		}
-	}
-}
-
-int x, y;
-if(container.getIsVisible()){
-	x = 10; y = 10;
-} else {
-	x = 0; y = 0;
-}
-int xa=0,ya=0;
-int maxix=10,maxiy=10;
-
-for(int i =0 ;i< container.getListElements().size();i++){
-	compilator.domain.expression.expressionmodel.Element element = container.getListElements().get(i);
-	if(element instanceof compilator.domain.expression.expressionmodel.containercomponent.Container){
-		GenContainer c = createGenContainer((compilator.domain.expression.expressionmodel.
-				containercomponent.Container) element);
-		c.getTheX().setValue(new Integer(x)); c.getTheY().setValue(new Integer(y));
+String orientation = container.getOrientation();
+genContainer.createPropertiesContainer(orientation, fontSize);
+		if(container.getTheStyle() != null) {
+			genContainer = (GenContainer) setApperances(container, genContainer);
+			for (int i = 0; i < listProperties.size(); i++) {
+				styles.domain.Propertie propertie = listProperties.get(i);
+				
+				if(propertie.getName().equals("Background")) {
+					generator.apperance.background.Background b = generator.apperance.background.
+							BackgroundFactory.eINSTANCE.createBackground();
+					b.setValue(propertie.getValue());
+					genContainer.setTheBackground(b);
+				}
+			}
+		}
 		
-		genContainer.getListGenElements().add(c);
+		int x, y;
+		if(container.getIsVisible()){
+			x = 10; y = 10;
+		} else {
+			x = 0; y = 0;
+		}
+		int xa=0,ya=0;
+		int maxix=10,maxiy=10;
 		
-		xa = c.getTheWidth().getValue().intValue(); ya = c.getTheHeight().getValue().intValue(); 
-	}else{
-		GenIndividualElement ind = createGenIndividualElement(element);
-		ind.getTheX().setValue(new Integer(x)); ind.getTheY().setValue(new Integer(y));
+		for(int i =0 ;i< container.getListElements().size();i++){
+			compilator.domain.expression.expressionmodel.Element element = container.getListElements().get(i);
+			if(element instanceof compilator.domain.expression.expressionmodel.containercomponent.Container){
+				GenContainer c = createGenContainer((compilator.domain.expression.expressionmodel.
+						containercomponent.Container) element);
+				c.getTheX().setValue(new Integer(x)); c.getTheY().setValue(new Integer(y));
+				
+				genContainer.getListGenElements().add(c);
+				
+				xa = c.getTheWidth().getValue().intValue(); ya = c.getTheHeight().getValue().intValue(); 
+			}else{
+				GenIndividualElement ind = createGenIndividualElement(element);
+				ind.getTheX().setValue(new Integer(x)); ind.getTheY().setValue(new Integer(y));
+				
+				genContainer.getListGenElements().add(ind);
+				
+				xa = ind.getTheWidth().getValue().intValue(); ya = ind.getTheHeight().getValue().intValue();
+			}
+			
+			if(container.getOrientation().equals("|")){ 
+				x = x + xa + 10;
+				maxix = x;
+				maxiy = java.lang.Math.max(maxiy, ya+20) ;
+			}
+			else {
+				y = y + ya +10;
+				maxiy=y;
+				maxix = java.lang.Math.max(maxix,xa+20);
+			}
+		}
 		
-		genContainer.getListGenElements().add(ind);
+		if(!container.getIsVisible()){
+			if(container.getOrientation().equals("|")) {
+				maxix -= 10; maxiy -= 20;
+			} else {
+				maxix -= 20; maxiy -= 10;
+			}
+		}
 		
-		xa = ind.getTheWidth().getValue().intValue(); ya = ind.getTheHeight().getValue().intValue();
-	}
-	
-	if(container.getOrientation().equals("|")){ 
-		x = x + xa + 10;
-		maxix = x;
-		maxiy = java.lang.Math.max(maxiy, ya+20) ;
-	}
-	else {
-		y = y + ya +10;
-		maxiy=y;
-		maxix = java.lang.Math.max(maxix,xa+20);
-	}
-}
-
-if(!container.getIsVisible()){
-	if(container.getOrientation().equals("|")) {
-		maxix -= 10; maxiy -= 20;
-	} else {
-		maxix -= 20; maxiy -= 10;
-	}
-}
-
-generator.apperance.size.Height h = generator.apperance.size.SizeFactory.eINSTANCE.createHeight();
-h.setValue(new Integer(maxiy));
-generator.apperance.size.Width w = generator.apperance.size.SizeFactory.eINSTANCE.createWidth();
-w.setValue(new Integer(maxix));
-generator.apperance.position.X xx = generator.apperance.position.PositionFactory.eINSTANCE.createX();
-xx.setValue(0);
-generator.apperance.position.Y yy = generator.apperance.position.PositionFactory.eINSTANCE.createY();
-yy.setValue(0);
-genContainer.setTheHeight(h); genContainer.setTheWidth(w);
-genContainer.setTheX(xx); genContainer.setTheY(yy); 
-return genContainer;
+		generator.apperance.size.Height h = generator.apperance.size.SizeFactory.eINSTANCE.createHeight();
+		h.setValue(new Integer(maxiy));
+		generator.apperance.size.Width w = generator.apperance.size.SizeFactory.eINSTANCE.createWidth();
+		w.setValue(new Integer(maxix));
+		generator.apperance.position.X xx = generator.apperance.position.PositionFactory.eINSTANCE.createX();
+		xx.setValue(0);
+		generator.apperance.position.Y yy = generator.apperance.position.PositionFactory.eINSTANCE.createY();
+		yy.setValue(0);
+		genContainer.setTheHeight(h); genContainer.setTheWidth(w);
+		genContainer.setTheX(xx); genContainer.setTheY(yy); 
+		return genContainer;
 	}
 
 	/**
@@ -338,35 +339,35 @@ return genContainer;
 	 * @generated
 	 */
 	public GenButton createGenButton(final Button button) {
-GenButton genButton = generator.genmodel.genindividualcomponent.genbutton.
-		GenbuttonFactory.eINSTANCE.createGenButton();
-genButton.setTheButton(button);
-String text = button.getName();
-styles.domain.Propertie fontSize = null;
-EList<styles.domain.Propertie> listProperties = button.getTheStyle().
-		getTheCharacteristic().getListProperties();
-for (int i = 0; i < listProperties.size(); i++) {
-	if(listProperties.get(i).getName().equals("Font Size")) {
-		fontSize = listProperties.get(i);
-		break;
-	}
-}
-genButton.createPropertiesButton(text, fontSize);
-
-if(button.getTheStyle() != null) {
-	genButton = (GenButton) setApperances(button, genButton);
-	for (int i = 0; i < listProperties.size(); i++) {
-		styles.domain.Propertie propertie = listProperties.get(i);
-		
-		if(propertie.getName().equals("Alignment")) {
-			generator.apperance.alignment.Alignment a = generator.apperance.alignment.
-					AlignmentFactory.eINSTANCE.createAlignment();
-			a.setValue(propertie.getValue());
-			genButton.setTheAlignment(a);
+		GenButton genButton = generator.genmodel.genindividualcomponent.genbutton.
+				GenbuttonFactory.eINSTANCE.createGenButton();
+		genButton.setTheButton(button);
+		String text = button.getName();
+		styles.domain.Propertie fontSize = null;
+		EList<styles.domain.Propertie> listProperties = button.getTheStyle().
+				getTheCharacteristic().getListProperties();
+		for (int i = 0; i < listProperties.size(); i++) {
+			if(listProperties.get(i).getName().equals("Font Size")) {
+				fontSize = listProperties.get(i);
+				break;
+			}
 		}
-	}
-}
-return genButton;
+		genButton.createPropertiesButton(text, fontSize);
+		
+		if(button.getTheStyle() != null) {
+			genButton = (GenButton) setApperances(button, genButton);
+			for (int i = 0; i < listProperties.size(); i++) {
+				styles.domain.Propertie propertie = listProperties.get(i);
+				
+				if(propertie.getName().equals("Alignment")) {
+					generator.apperance.alignment.Alignment a = generator.apperance.alignment.
+							AlignmentFactory.eINSTANCE.createAlignment();
+					a.setValue(propertie.getValue());
+					genButton.setTheAlignment(a);
+				}
+			}
+		}
+		return genButton;
 	}
 
 	/**
@@ -375,35 +376,35 @@ return genButton;
 	 * @generated
 	 */
 	public GenColumn createGenColumn(final Column column) {
-GenColumn genColumn = generator.genmodel.genindividualcomponent.gencolunm.
-		GencolunmFactory.eINSTANCE.createGenColumn();
-genColumn.setTheColumn(column);
-String text = column.getName();
-styles.domain.Propertie fontSize = null;
-EList<styles.domain.Propertie> listProperties = column.getTheStyle().
-		getTheCharacteristic().getListProperties();
-for (int i = 0; i < listProperties.size(); i++) {
-	if(listProperties.get(i).getName().equals("Font Size")) {
-		fontSize = listProperties.get(i);
-		break;
-	}
-}			
-genColumn.createPropertiesColumn(text, fontSize);
-
-if(column.getTheStyle() != null) {
-	genColumn = (GenColumn) setApperances(column, genColumn);
-	for (int i = 0; i < listProperties.size(); i++) {
-		styles.domain.Propertie propertie = listProperties.get(i);
+		GenColumn genColumn = generator.genmodel.genindividualcomponent.gencolunm.
+				GencolunmFactory.eINSTANCE.createGenColumn();
+		genColumn.setTheColumn(column);
+		String text = column.getName();
+		styles.domain.Propertie fontSize = null;
+		EList<styles.domain.Propertie> listProperties = column.getTheStyle().
+				getTheCharacteristic().getListProperties();
+		for (int i = 0; i < listProperties.size(); i++) {
+			if(listProperties.get(i).getName().equals("Font Size")) {
+				fontSize = listProperties.get(i);
+				break;
+			}
+		}			
+		genColumn.createPropertiesColumn(text, fontSize);
 		
-		if(propertie.getName().equals("Alignment")) {
-			generator.apperance.alignment.Alignment a = generator.apperance.alignment.
-					AlignmentFactory.eINSTANCE.createAlignment();
-			a.setValue(propertie.getValue());
-			genColumn.setTheAlignment(a);
+		if(column.getTheStyle() != null) {
+			genColumn = (GenColumn) setApperances(column, genColumn);
+			for (int i = 0; i < listProperties.size(); i++) {
+				styles.domain.Propertie propertie = listProperties.get(i);
+				
+				if(propertie.getName().equals("Alignment")) {
+					generator.apperance.alignment.Alignment a = generator.apperance.alignment.
+							AlignmentFactory.eINSTANCE.createAlignment();
+					a.setValue(propertie.getValue());
+					genColumn.setTheAlignment(a);
+				}
+			}
 		}
-	}
-}
-return genColumn;
+		return genColumn;
 	}
 
 	/**
@@ -412,34 +413,34 @@ return genColumn;
 	 * @generated
 	 */
 	public GenComboBox createGenComboBox(final ComboBox combo) {
-GenComboBox genCombo = generator.genmodel.genindividualcomponent.gencombobox.
-		GencomboboxFactory.eINSTANCE.createGenComboBox();
-genCombo.setTheComboBox(combo);
-styles.domain.Propertie fontSize = null;
-EList<styles.domain.Propertie> listProperties = combo.getTheStyle().
-		getTheCharacteristic().getListProperties();
-for (int i = 0; i < listProperties.size(); i++) {
-	if(listProperties.get(i).getName().equals("Font Size")) {
-		fontSize = listProperties.get(i);
-		break;
-	}
-}
-genCombo.createPropertiesComboBox(fontSize);
-
-if(combo.getTheStyle() != null) {
-	genCombo = (GenComboBox) setApperances(combo, genCombo);
-	for (int i = 0; i < listProperties.size(); i++) {
-		styles.domain.Propertie propertie = listProperties.get(i);
-		
-		if(propertie.getName().equals("Background")) {
-			generator.apperance.background.Background b = generator.apperance.background.
-					BackgroundFactory.eINSTANCE.createBackground();
-			b.setValue(propertie.getValue());
-			genCombo.setTheBackground(b);
+		GenComboBox genCombo = generator.genmodel.genindividualcomponent.gencombobox.
+				GencomboboxFactory.eINSTANCE.createGenComboBox();
+		genCombo.setTheComboBox(combo);
+		styles.domain.Propertie fontSize = null;
+		EList<styles.domain.Propertie> listProperties = combo.getTheStyle().
+				getTheCharacteristic().getListProperties();
+		for (int i = 0; i < listProperties.size(); i++) {
+			if(listProperties.get(i).getName().equals("Font Size")) {
+				fontSize = listProperties.get(i);
+				break;
+			}
 		}
-	}
-}
-return genCombo;
+		genCombo.createPropertiesComboBox(fontSize);
+		
+		if(combo.getTheStyle() != null) {
+			genCombo = (GenComboBox) setApperances(combo, genCombo);
+			for (int i = 0; i < listProperties.size(); i++) {
+				styles.domain.Propertie propertie = listProperties.get(i);
+				
+				if(propertie.getName().equals("Background")) {
+					generator.apperance.background.Background b = generator.apperance.background.
+							BackgroundFactory.eINSTANCE.createBackground();
+					b.setValue(propertie.getValue());
+					genCombo.setTheBackground(b);
+				}
+			}
+		}
+		return genCombo;
 	}
 
 	/**
@@ -448,40 +449,40 @@ return genCombo;
 	 * @generated
 	 */
 	public GenLabel createGenLabel(final Label label) {
-GenLabel genLabel = generator.genmodel.genindividualcomponent.genlabel.
-		GenlabelFactory.eINSTANCE.createGenLabel();
-genLabel.setTheLabel(label);
-String text = label.getName();
-styles.domain.Propertie fontSize = null;
-EList<styles.domain.Propertie> listProperties = label.getTheStyle().
-		getTheCharacteristic().getListProperties();
-for (int i = 0; i < listProperties.size(); i++) {
-	if(listProperties.get(i).getName().equals("Font Size")) {
-		fontSize = listProperties.get(i);
-		break;
-	}
-}
-genLabel.createPropertiesLabel(text, fontSize);
-
-if(label.getTheStyle() != null) {
-	genLabel = (GenLabel) setApperances(label, genLabel);
-	for (int i = 0; i < listProperties.size(); i++) {
-		styles.domain.Propertie propertie = listProperties.get(i);
-		
-		if(propertie.getName().equals("Alignment")) {
-			generator.apperance.alignment.Alignment a = generator.apperance.alignment.
-					AlignmentFactory.eINSTANCE.createAlignment();
-			a.setValue(propertie.getValue());
-			genLabel.setTheAlignment(a);
-		} else if(propertie.getName().equals("Background")) {
-			generator.apperance.background.Background b = generator.apperance.background.
-					BackgroundFactory.eINSTANCE.createBackground();
-			b.setValue(propertie.getValue());
-			genLabel.setTheBackground(b);
+		GenLabel genLabel = generator.genmodel.genindividualcomponent.genlabel.
+				GenlabelFactory.eINSTANCE.createGenLabel();
+		genLabel.setTheLabel(label);
+		String text = label.getName();
+		styles.domain.Propertie fontSize = null;
+		EList<styles.domain.Propertie> listProperties = label.getTheStyle().
+				getTheCharacteristic().getListProperties();
+		for (int i = 0; i < listProperties.size(); i++) {
+			if(listProperties.get(i).getName().equals("Font Size")) {
+				fontSize = listProperties.get(i);
+				break;
+			}
 		}
-	}
-}
-return genLabel;
+		genLabel.createPropertiesLabel(text, fontSize);
+		
+		if(label.getTheStyle() != null) {
+			genLabel = (GenLabel) setApperances(label, genLabel);
+			for (int i = 0; i < listProperties.size(); i++) {
+				styles.domain.Propertie propertie = listProperties.get(i);
+				
+				if(propertie.getName().equals("Alignment")) {
+					generator.apperance.alignment.Alignment a = generator.apperance.alignment.
+							AlignmentFactory.eINSTANCE.createAlignment();
+					a.setValue(propertie.getValue());
+					genLabel.setTheAlignment(a);
+				} else if(propertie.getName().equals("Background")) {
+					generator.apperance.background.Background b = generator.apperance.background.
+							BackgroundFactory.eINSTANCE.createBackground();
+					b.setValue(propertie.getValue());
+					genLabel.setTheBackground(b);
+				}
+			}
+		}
+		return genLabel;
 	}
 
 	/**
@@ -490,46 +491,46 @@ return genLabel;
 	 * @generated
 	 */
 	public GenTable createGenTable(final Table table) {
-GenTable genTable = generator.genmodel.genindividualcomponent.gentable.
-		GentableFactory.eINSTANCE.createGenTable();
-genTable.setTheTable(table);
-int columnsWidth = 0;
-int columnHeight = 0;
-for(int i=0;i<table.getListColumn().size();i++){
-	GenColumn genColumn = createGenColumn(table.getListColumn().get(i));
-	columnsWidth += genColumn.getTheWidth().getValue();
-	columnHeight = genColumn.getTheHeight().getValue();
-	genTable.getListGenColumns().add(genColumn);
-}
-styles.domain.Propertie fontSize = null;
-EList<styles.domain.Propertie> listProperties = table.getTheStyle().
-		getTheCharacteristic().getListProperties();
-for (int i = 0; i < listProperties.size(); i++) {
-	if(listProperties.get(i).getName().equals("Font Size")) {
-		fontSize = listProperties.get(i);
-		break;
-	}
-}
-genTable.createPropertiesTable(columnHeight, columnsWidth, fontSize);
-if(table.getTheStyle() != null) {
-	genTable = (GenTable) setApperances(table, genTable);
-	for (int i = 0; i < listProperties.size(); i++) {
-		styles.domain.Propertie propertie = listProperties.get(i);
-		
-		if(propertie.getName().equals("Background")) {
-			generator.apperance.background.Background b = generator.apperance.background.
-					BackgroundFactory.eINSTANCE.createBackground();
-			b.setValue(propertie.getValue());
-			genTable.setTheBackground(b);
-		} else if(propertie.getName().equals("Lines Visible")) {
-			generator.apperance.linesvisible.LinesVisible l = generator.apperance.linesvisible.
-					LinesvisibleFactory.eINSTANCE.createLinesVisible();
-			l.setValue(propertie.getValue().equals("True"));
-			genTable.setTheLinesVisible(l);
+		GenTable genTable = generator.genmodel.genindividualcomponent.gentable.
+				GentableFactory.eINSTANCE.createGenTable();
+		genTable.setTheTable(table);
+		int columnsWidth = 0;
+		int columnHeight = 0;
+		for(int i=0;i<table.getListColumn().size();i++){
+			GenColumn genColumn = createGenColumn(table.getListColumn().get(i));
+			columnsWidth += genColumn.getTheWidth().getValue();
+			columnHeight = genColumn.getTheHeight().getValue();
+			genTable.getListGenColumns().add(genColumn);
 		}
-	}
-}
-return genTable;
+		styles.domain.Propertie fontSize = null;
+		EList<styles.domain.Propertie> listProperties = table.getTheStyle().
+				getTheCharacteristic().getListProperties();
+		for (int i = 0; i < listProperties.size(); i++) {
+			if(listProperties.get(i).getName().equals("Font Size")) {
+				fontSize = listProperties.get(i);
+				break;
+			}
+		}
+		genTable.createPropertiesTable(columnHeight, columnsWidth, fontSize);
+		if(table.getTheStyle() != null) {
+			genTable = (GenTable) setApperances(table, genTable);
+			for (int i = 0; i < listProperties.size(); i++) {
+				styles.domain.Propertie propertie = listProperties.get(i);
+				
+				if(propertie.getName().equals("Background")) {
+					generator.apperance.background.Background b = generator.apperance.background.
+							BackgroundFactory.eINSTANCE.createBackground();
+					b.setValue(propertie.getValue());
+					genTable.setTheBackground(b);
+				} else if(propertie.getName().equals("Lines Visible")) {
+					generator.apperance.linesvisible.LinesVisible l = generator.apperance.linesvisible.
+							LinesvisibleFactory.eINSTANCE.createLinesVisible();
+					l.setValue(propertie.getValue().equals("True"));
+					genTable.setTheLinesVisible(l);
+				}
+			}
+		}
+		return genTable;
 	}
 
 	/**
@@ -538,34 +539,34 @@ return genTable;
 	 * @generated
 	 */
 	public GenTextField createGenTextField(final TextField text) {
-GenTextField genText = generator.genmodel.genindividualcomponent.gentextfield.
-		GentextfieldFactory.eINSTANCE.createGenTextField();		
-genText.setTheTextField(text);
-styles.domain.Propertie fontSize = null;
-EList<styles.domain.Propertie> listProperties = text.getTheStyle().
-		getTheCharacteristic().getListProperties();
-for (int i = 0; i < listProperties.size(); i++) {
-	if(listProperties.get(i).getName().equals("Font Size")) {
-		fontSize = listProperties.get(i);
-		break;
-	}
-}
-genText.createPropertiesTextField(fontSize);
-
-if(text.getTheStyle() != null) {
-	genText = (GenTextField) setApperances(text, genText);
-	for (int i = 0; i < listProperties.size(); i++) {
-		styles.domain.Propertie propertie = listProperties.get(i);
-		
-		if(propertie.getName().equals("Background")) {
-			generator.apperance.background.Background b = generator.apperance.background.
-					BackgroundFactory.eINSTANCE.createBackground();
-			b.setValue(propertie.getValue());
-			genText.setTheBackground(b);
+		GenTextField genText = generator.genmodel.genindividualcomponent.gentextfield.
+				GentextfieldFactory.eINSTANCE.createGenTextField();		
+		genText.setTheTextField(text);
+		styles.domain.Propertie fontSize = null;
+		EList<styles.domain.Propertie> listProperties = text.getTheStyle().
+				getTheCharacteristic().getListProperties();
+		for (int i = 0; i < listProperties.size(); i++) {
+			if(listProperties.get(i).getName().equals("Font Size")) {
+				fontSize = listProperties.get(i);
+				break;
+			}
 		}
-	}
-}
-return genText;
+		genText.createPropertiesTextField(fontSize);
+		
+		if(text.getTheStyle() != null) {
+			genText = (GenTextField) setApperances(text, genText);
+			for (int i = 0; i < listProperties.size(); i++) {
+				styles.domain.Propertie propertie = listProperties.get(i);
+				
+				if(propertie.getName().equals("Background")) {
+					generator.apperance.background.Background b = generator.apperance.background.
+							BackgroundFactory.eINSTANCE.createBackground();
+					b.setValue(propertie.getValue());
+					genText.setTheBackground(b);
+				}
+			}
+		}
+		return genText;
 	}
 
 	/**

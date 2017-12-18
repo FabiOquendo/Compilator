@@ -77,7 +77,7 @@ public class AddPropertieDialog extends Dialog {
         combo.setBounds(70, 30, 130, 20);
         formToolkit.paintBordersFor(combo);
         String [] properties = {"X", "Y", "Width", "Height", "Font Color", "Font Type", "Font Size", "Alignment", 
-        		"Background", "Lines Visible"};
+        		"Background", "Lines Visible", "Orientation"};
         comboViewer.add(properties);
         combo.addSelectionListener(new SelectionAdapter() {
         	@Override

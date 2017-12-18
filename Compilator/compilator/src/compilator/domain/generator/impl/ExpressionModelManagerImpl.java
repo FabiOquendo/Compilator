@@ -344,29 +344,29 @@ public class ExpressionModelManagerImpl extends MinimalEObjectImpl.Container imp
 	 * @generated
 	 */
 	public Table createTable(final String s) {
-Table table = compilator.domain.expression.expressionmodel.
-		individualcomponent.IndividualcomponentFactory.eINSTANCE.createTable();
-String nameTable="",body="";
-int j =0;
-while(s.charAt(j)!='<'){ nameTable+=s.charAt(j);j++;} j++;
-while(s.charAt(j)!='>'){body+=s.charAt(j);j++;}
-
-styles.domain.Style style = findStyleElement(nameTable);
-if(style!=null) table.setTheStyle(style);
-
-String [] columns = body.split(",");
-
-for(int i=0;i<columns.length;i++){
-	compilator.domain.expression.expressionmodel.individualcomponent.
-		Column co = compilator.domain.expression.expressionmodel.individualcomponent.
-		IndividualcomponentFactory.eINSTANCE.createColumn();
-	co.setName(columns[i]);
-	styles.domain.Style styleColumn = findStyleElement(columns[i]);
-	if(styleColumn!=null) co.setTheStyle(styleColumn);
-	table.getListColumn().add(co);
-}
-table.setName(nameTable);
-return table;
+		Table table = compilator.domain.expression.expressionmodel.
+				individualcomponent.IndividualcomponentFactory.eINSTANCE.createTable();
+		String nameTable="",body="";
+		int j =0;
+		while(s.charAt(j)!='<'){ nameTable+=s.charAt(j);j++;} j++;
+		while(s.charAt(j)!='>'){body+=s.charAt(j);j++;}
+		
+		styles.domain.Style style = findStyleElement(nameTable);
+		if(style!=null) table.setTheStyle(style);
+		
+		String [] columns = body.split(",");
+		
+		for(int i=0;i<columns.length;i++){
+			compilator.domain.expression.expressionmodel.individualcomponent.
+				Column co = compilator.domain.expression.expressionmodel.individualcomponent.
+				IndividualcomponentFactory.eINSTANCE.createColumn();
+			co.setName(columns[i]);
+			styles.domain.Style styleColumn = findStyleElement(columns[i]);
+			if(styleColumn!=null) co.setTheStyle(styleColumn);
+			table.getListColumn().add(co);
+		}
+		table.setName(nameTable);
+		return table;
 	}
 
 	/**
@@ -384,41 +384,41 @@ return table;
 	 * @generated
 	 */
 	public Element createIndividualElement(final String s) {
-Element e=null;
-styles.domain.Style style;
-
-if(tokens.get(s)!=null && tokens.get(s).equals("Boton")){
-	compilator.domain.expression.expressionmodel.individualcomponent.Button b = compilator.domain.expression.expressionmodel.individualcomponent.IndividualcomponentFactory.eINSTANCE.createButton();
-	b.setName(getName(s));
-	style = findStyleElement(s);
-	if(style!=null) b.setTheStyle(style);
-	e=b;
-}
-else if(tokens.get(s)!=null && tokens.get(s).equals("ComboBox")){
-	compilator.domain.expression.expressionmodel.individualcomponent.ComboBox cb = compilator.domain.expression.expressionmodel.individualcomponent.IndividualcomponentFactory.eINSTANCE.createComboBox();
-	cb.setName(s.substring(1));
-	style = findStyleElement(cb.getName());
-	if(style!=null) cb.setTheStyle(style);
-	e=cb;
-}
-else if(tokens.get(s)!=null && tokens.get(s).equals("Campo de Texto")){
-	compilator.domain.expression.expressionmodel.individualcomponent.TextField txt = compilator.domain.expression.expressionmodel.individualcomponent.IndividualcomponentFactory.eINSTANCE.createTextField();
-	txt.setName(getName(s));
-	style = findStyleElement(s);
-	if(style!=null) txt.setTheStyle(style);
-	e = txt;
-}
-else if(tokens.get(s)!=null && tokens.get(s).equals("Label")){
-	compilator.domain.expression.expressionmodel.individualcomponent.Label l = compilator.domain.expression.expressionmodel.individualcomponent.IndividualcomponentFactory.eINSTANCE.createLabel();
-	l.setName(getName(s));
-	style = findStyleElement(s);
-	if(style!=null) l.setTheStyle(style);
-	e=l;
-}else if(s.contains("<")){
-	Table  t = createTable(s);
-	e = t;
-}
-return e;
+		Element e=null;
+		styles.domain.Style style;
+		
+		if(tokens.get(s)!=null && tokens.get(s).equals("Boton")){
+			compilator.domain.expression.expressionmodel.individualcomponent.Button b = compilator.domain.expression.expressionmodel.individualcomponent.IndividualcomponentFactory.eINSTANCE.createButton();
+			b.setName(getName(s));
+			style = findStyleElement(s);
+			if(style!=null) b.setTheStyle(style);
+			e=b;
+		}
+		else if(tokens.get(s)!=null && tokens.get(s).equals("ComboBox")){
+			compilator.domain.expression.expressionmodel.individualcomponent.ComboBox cb = compilator.domain.expression.expressionmodel.individualcomponent.IndividualcomponentFactory.eINSTANCE.createComboBox();
+			cb.setName(s.substring(1));
+			style = findStyleElement(cb.getName());
+			if(style!=null) cb.setTheStyle(style);
+			e=cb;
+		}
+		else if(tokens.get(s)!=null && tokens.get(s).equals("Campo de Texto")){
+			compilator.domain.expression.expressionmodel.individualcomponent.TextField txt = compilator.domain.expression.expressionmodel.individualcomponent.IndividualcomponentFactory.eINSTANCE.createTextField();
+			txt.setName(getName(s));
+			style = findStyleElement(s);
+			if(style!=null) txt.setTheStyle(style);
+			e = txt;
+		}
+		else if(tokens.get(s)!=null && tokens.get(s).equals("Label")){
+			compilator.domain.expression.expressionmodel.individualcomponent.Label l = compilator.domain.expression.expressionmodel.individualcomponent.IndividualcomponentFactory.eINSTANCE.createLabel();
+			l.setName(getName(s));
+			style = findStyleElement(s);
+			if(style!=null) l.setTheStyle(style);
+			e=l;
+		}else if(s.contains("<")){
+			Table  t = createTable(s);
+			e = t;
+		}
+		return e;
 	}
 
 	/**
@@ -450,38 +450,38 @@ return e;
 	 * @generated
 	 */
 	public String createContainer(final String textElement, final compilator.domain.expression.expressionmodel.containercomponent.Container container) {
-String nameContainer="";
-String body="";
-int j =0;
-
-while(textElement.charAt(j)!='['){
-	nameContainer+=textElement.charAt(j);
-	j++;
-}
-j++;
+		String nameContainer="";
+		String body="";
+		int j =0;
 		
-String orientation ="|";
-int lenghtName = nameContainer.length()-1;
-
-if(nameContainer.charAt( lenghtName)=='|' || nameContainer.charAt(lenghtName)=='-'){
-	orientation = nameContainer.charAt(lenghtName)+"";
-	nameContainer = nameContainer.substring(0, lenghtName);
-}
-
-styles.domain.Style style = findStyleElement(nameContainer);
-if(style!=null) container.setTheStyle(style);
-
-int f=0;
-while(textElement.charAt(j)!=']' || f!=0){
-	f = (textElement.charAt(j)=='[')? f+1:f;
-	f = (textElement.charAt(j)==']')? f-1:f;
-	body+=textElement.charAt(j);j++;
-}
-
-container.setName(nameContainer);
-container.setOrientation(orientation);
-container.setIsVisible( (textElement.charAt( textElement.length()-1)!=39 )  );
-return body;
+		while(textElement.charAt(j)!='['){
+			nameContainer+=textElement.charAt(j);
+			j++;
+		}
+		j++;
+				
+		String orientation ="|";
+		int lenghtName = nameContainer.length()-1;
+		
+		if(nameContainer.charAt( lenghtName)=='|' || nameContainer.charAt(lenghtName)=='-'){
+			orientation = nameContainer.charAt(lenghtName)+"";
+			nameContainer = nameContainer.substring(0, lenghtName);
+		}
+		
+		styles.domain.Style style = findStyleElement(nameContainer);
+		if(style!=null) container.setTheStyle(style);
+		
+		int f=0;
+		while(textElement.charAt(j)!=']' || f!=0){
+			f = (textElement.charAt(j)=='[')? f+1:f;
+			f = (textElement.charAt(j)==']')? f-1:f;
+			body+=textElement.charAt(j);j++;
+		}
+		
+		container.setName(nameContainer);
+		container.setOrientation(orientation);
+		container.setIsVisible( (textElement.charAt( textElement.length()-1)!=39 )  );
+		return body;
 	}
 
 	/**

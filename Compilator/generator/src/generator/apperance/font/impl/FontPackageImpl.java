@@ -24,6 +24,10 @@ import generator.apperance.linesvisible.LinesvisiblePackage;
 
 import generator.apperance.linesvisible.impl.LinesvisiblePackageImpl;
 
+import generator.apperance.orientation.OrientationPackage;
+
+import generator.apperance.orientation.impl.OrientationPackageImpl;
+
 import generator.apperance.position.PositionPackage;
 
 import generator.apperance.position.impl.PositionPackageImpl;
@@ -196,6 +200,7 @@ public class FontPackageImpl extends EPackageImpl implements FontPackage {
 		PositionPackageImpl thePositionPackage = (PositionPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(PositionPackage.eNS_URI) instanceof PositionPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(PositionPackage.eNS_URI) : PositionPackage.eINSTANCE);
 		SizePackageImpl theSizePackage = (SizePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(SizePackage.eNS_URI) instanceof SizePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SizePackage.eNS_URI) : SizePackage.eINSTANCE);
 		TitlesizePackageImpl theTitlesizePackage = (TitlesizePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TitlesizePackage.eNS_URI) instanceof TitlesizePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TitlesizePackage.eNS_URI) : TitlesizePackage.eINSTANCE);
+		OrientationPackageImpl theOrientationPackage = (OrientationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(OrientationPackage.eNS_URI) instanceof OrientationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(OrientationPackage.eNS_URI) : OrientationPackage.eINSTANCE);
 		GenmodelPackageImpl theGenmodelPackage = (GenmodelPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(GenmodelPackage.eNS_URI) instanceof GenmodelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(GenmodelPackage.eNS_URI) : GenmodelPackage.eINSTANCE);
 		GenindividualcomponentPackageImpl theGenindividualcomponentPackage = (GenindividualcomponentPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(GenindividualcomponentPackage.eNS_URI) instanceof GenindividualcomponentPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(GenindividualcomponentPackage.eNS_URI) : GenindividualcomponentPackage.eINSTANCE);
 		GenbuttonPackageImpl theGenbuttonPackage = (GenbuttonPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(GenbuttonPackage.eNS_URI) instanceof GenbuttonPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(GenbuttonPackage.eNS_URI) : GenbuttonPackage.eINSTANCE);
@@ -221,6 +226,7 @@ public class FontPackageImpl extends EPackageImpl implements FontPackage {
 		thePositionPackage.createPackageContents();
 		theSizePackage.createPackageContents();
 		theTitlesizePackage.createPackageContents();
+		theOrientationPackage.createPackageContents();
 		theGenmodelPackage.createPackageContents();
 		theGenindividualcomponentPackage.createPackageContents();
 		theGenbuttonPackage.createPackageContents();
@@ -246,6 +252,7 @@ public class FontPackageImpl extends EPackageImpl implements FontPackage {
 		thePositionPackage.initializePackageContents();
 		theSizePackage.initializePackageContents();
 		theTitlesizePackage.initializePackageContents();
+		theOrientationPackage.initializePackageContents();
 		theGenmodelPackage.initializePackageContents();
 		theGenindividualcomponentPackage.initializePackageContents();
 		theGenbuttonPackage.initializePackageContents();

@@ -236,6 +236,34 @@
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
+            id="generator.apperance.orientation.presentation.OrientationModelWizardID"
+            name="%_UI_OrientationModelWizard_label"
+            class="generator.apperance.orientation.presentation.OrientationModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/OrientationModelFile.gif">
+         <description>%_UI_OrientationModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated generator -->
+      <editor
+            id="generator.apperance.orientation.presentation.OrientationEditorID"
+            name="%_UI_OrientationEditor_label"
+            icon="icons/full/obj16/OrientationModelFile.gif"
+            extensions="orientation"
+            class="generator.apperance.orientation.presentation.OrientationEditor"
+            contributorClass="generator.apperance.orientation.presentation.OrientationActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated generator -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
             id="generator.genmodel.presentation.GenmodelModelWizardID"
             name="%_UI_GenmodelModelWizard_label"
             class="generator.genmodel.presentation.GenmodelModelWizard"

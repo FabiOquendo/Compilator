@@ -168,13 +168,22 @@ public interface GencontainerPackage extends EPackage {
 	int GEN_CONTAINER__THE_TITLE_HEIGHT = GencontainercomponentPackage.GEN_CONTAINER_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>The Orientation</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GEN_CONTAINER__THE_ORIENTATION = GencontainercomponentPackage.GEN_CONTAINER_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>The Container</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GEN_CONTAINER__THE_CONTAINER = GencontainercomponentPackage.GEN_CONTAINER_ELEMENT_FEATURE_COUNT + 1;
+	int GEN_CONTAINER__THE_CONTAINER = GencontainercomponentPackage.GEN_CONTAINER_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>The Background</b></em>' containment reference.
@@ -183,7 +192,7 @@ public interface GencontainerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GEN_CONTAINER__THE_BACKGROUND = GencontainercomponentPackage.GEN_CONTAINER_ELEMENT_FEATURE_COUNT + 2;
+	int GEN_CONTAINER__THE_BACKGROUND = GencontainercomponentPackage.GEN_CONTAINER_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Gen Container</em>' class.
@@ -192,7 +201,7 @@ public interface GencontainerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GEN_CONTAINER_FEATURE_COUNT = GencontainercomponentPackage.GEN_CONTAINER_ELEMENT_FEATURE_COUNT + 3;
+	int GEN_CONTAINER_FEATURE_COUNT = GencontainercomponentPackage.GEN_CONTAINER_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The operation id for the '<em>Create X</em>' operation.
@@ -343,6 +352,17 @@ public interface GencontainerPackage extends EPackage {
 	EReference getGenContainer_TheTitleHeight();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link generator.genmodel.gencontainercomponent.gencontainer.GenContainer#getTheOrientation <em>The Orientation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>The Orientation</em>'.
+	 * @see generator.genmodel.gencontainercomponent.gencontainer.GenContainer#getTheOrientation()
+	 * @see #getGenContainer()
+	 * @generated
+	 */
+	EReference getGenContainer_TheOrientation();
+
+	/**
 	 * Returns the meta object for the reference '{@link generator.genmodel.gencontainercomponent.gencontainer.GenContainer#getTheContainer <em>The Container</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -444,6 +464,14 @@ public interface GencontainerPackage extends EPackage {
 		 * @generated
 		 */
 		EReference GEN_CONTAINER__THE_TITLE_HEIGHT = eINSTANCE.getGenContainer_TheTitleHeight();
+
+		/**
+		 * The meta object literal for the '<em><b>The Orientation</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference GEN_CONTAINER__THE_ORIENTATION = eINSTANCE.getGenContainer_TheOrientation();
 
 		/**
 		 * The meta object literal for the '<em><b>The Container</b></em>' reference feature.

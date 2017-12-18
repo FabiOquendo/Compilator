@@ -24,6 +24,10 @@ import generator.apperance.linesvisible.LinesvisiblePackage;
 
 import generator.apperance.linesvisible.impl.LinesvisiblePackageImpl;
 
+import generator.apperance.orientation.OrientationPackage;
+
+import generator.apperance.orientation.impl.OrientationPackageImpl;
+
 import generator.apperance.position.PositionPackage;
 
 import generator.apperance.position.impl.PositionPackageImpl;
@@ -183,6 +187,7 @@ public class GencontainerPackageImpl extends EPackageImpl implements Gencontaine
 		SizePackageImpl theSizePackage = (SizePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(SizePackage.eNS_URI) instanceof SizePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(SizePackage.eNS_URI) : SizePackage.eINSTANCE);
 		FontPackageImpl theFontPackage = (FontPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(FontPackage.eNS_URI) instanceof FontPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(FontPackage.eNS_URI) : FontPackage.eINSTANCE);
 		TitlesizePackageImpl theTitlesizePackage = (TitlesizePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(TitlesizePackage.eNS_URI) instanceof TitlesizePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(TitlesizePackage.eNS_URI) : TitlesizePackage.eINSTANCE);
+		OrientationPackageImpl theOrientationPackage = (OrientationPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(OrientationPackage.eNS_URI) instanceof OrientationPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(OrientationPackage.eNS_URI) : OrientationPackage.eINSTANCE);
 		GenmodelPackageImpl theGenmodelPackage = (GenmodelPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(GenmodelPackage.eNS_URI) instanceof GenmodelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(GenmodelPackage.eNS_URI) : GenmodelPackage.eINSTANCE);
 		GenindividualcomponentPackageImpl theGenindividualcomponentPackage = (GenindividualcomponentPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(GenindividualcomponentPackage.eNS_URI) instanceof GenindividualcomponentPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(GenindividualcomponentPackage.eNS_URI) : GenindividualcomponentPackage.eINSTANCE);
 		GenbuttonPackageImpl theGenbuttonPackage = (GenbuttonPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(GenbuttonPackage.eNS_URI) instanceof GenbuttonPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(GenbuttonPackage.eNS_URI) : GenbuttonPackage.eINSTANCE);
@@ -208,6 +213,7 @@ public class GencontainerPackageImpl extends EPackageImpl implements Gencontaine
 		theSizePackage.createPackageContents();
 		theFontPackage.createPackageContents();
 		theTitlesizePackage.createPackageContents();
+		theOrientationPackage.createPackageContents();
 		theGenmodelPackage.createPackageContents();
 		theGenindividualcomponentPackage.createPackageContents();
 		theGenbuttonPackage.createPackageContents();
@@ -233,6 +239,7 @@ public class GencontainerPackageImpl extends EPackageImpl implements Gencontaine
 		theSizePackage.initializePackageContents();
 		theFontPackage.initializePackageContents();
 		theTitlesizePackage.initializePackageContents();
+		theOrientationPackage.initializePackageContents();
 		theGenmodelPackage.initializePackageContents();
 		theGenindividualcomponentPackage.initializePackageContents();
 		theGenbuttonPackage.initializePackageContents();
@@ -280,7 +287,7 @@ public class GencontainerPackageImpl extends EPackageImpl implements Gencontaine
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getGenContainer_TheContainer() {
+	public EReference getGenContainer_TheOrientation() {
 		return (EReference)genContainerEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -289,8 +296,17 @@ public class GencontainerPackageImpl extends EPackageImpl implements Gencontaine
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getGenContainer_TheBackground() {
+	public EReference getGenContainer_TheContainer() {
 		return (EReference)genContainerEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getGenContainer_TheBackground() {
+		return (EReference)genContainerEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -359,6 +375,7 @@ public class GencontainerPackageImpl extends EPackageImpl implements Gencontaine
 		// Create classes and their features
 		genContainerEClass = createEClass(GEN_CONTAINER);
 		createEReference(genContainerEClass, GEN_CONTAINER__THE_TITLE_HEIGHT);
+		createEReference(genContainerEClass, GEN_CONTAINER__THE_ORIENTATION);
 		createEReference(genContainerEClass, GEN_CONTAINER__THE_CONTAINER);
 		createEReference(genContainerEClass, GEN_CONTAINER__THE_BACKGROUND);
 		createEOperation(genContainerEClass, GEN_CONTAINER___CREATE_PROPERTIES_CONTAINER__PROPERTIE);
@@ -393,6 +410,7 @@ public class GencontainerPackageImpl extends EPackageImpl implements Gencontaine
 		// Obtain other dependent packages
 		GencontainercomponentPackage theGencontainercomponentPackage = (GencontainercomponentPackage)EPackage.Registry.INSTANCE.getEPackage(GencontainercomponentPackage.eNS_URI);
 		TitlesizePackage theTitlesizePackage = (TitlesizePackage)EPackage.Registry.INSTANCE.getEPackage(TitlesizePackage.eNS_URI);
+		OrientationPackage theOrientationPackage = (OrientationPackage)EPackage.Registry.INSTANCE.getEPackage(OrientationPackage.eNS_URI);
 		ContainercomponentPackage theContainercomponentPackage = (ContainercomponentPackage)EPackage.Registry.INSTANCE.getEPackage(ContainercomponentPackage.eNS_URI);
 		BackgroundPackage theBackgroundPackage = (BackgroundPackage)EPackage.Registry.INSTANCE.getEPackage(BackgroundPackage.eNS_URI);
 		DatatypesPackage theDatatypesPackage = (DatatypesPackage)EPackage.Registry.INSTANCE.getEPackage(DatatypesPackage.eNS_URI);
@@ -407,6 +425,7 @@ public class GencontainerPackageImpl extends EPackageImpl implements Gencontaine
 		// Initialize classes, features, and operations; add parameters
 		initEClass(genContainerEClass, GenContainer.class, "GenContainer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getGenContainer_TheTitleHeight(), theTitlesizePackage.getTitleHeight(), theTitlesizePackage.getTitleHeight_GenContainer(), "theTitleHeight", null, 1, 1, GenContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getGenContainer_TheOrientation(), theOrientationPackage.getOrientation(), theOrientationPackage.getOrientation_GenContainer(), "theOrientation", null, 1, 1, GenContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getGenContainer_TheContainer(), theContainercomponentPackage.getContainer(), null, "theContainer", null, 1, 1, GenContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getGenContainer_TheBackground(), theBackgroundPackage.getBackground(), theBackgroundPackage.getBackground_GenContainer(), "theBackground", null, 1, 1, GenContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

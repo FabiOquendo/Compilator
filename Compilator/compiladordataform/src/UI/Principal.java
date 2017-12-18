@@ -82,23 +82,6 @@ public class Principal extends ViewPart {
 	public static final String ID = "UI.Principal"; //$NON-NLS-1$
 	private final FormToolkit toolkit = new FormToolkit(Display.getCurrent());
 
-	ModelFactoryModel modelFactoryModel = ModelFactoryModel.getInstance();
-
-	private tooldataform.ModelFactory mfToolDataform;
-	private tooldataform.core.Project project;
-
-	private ModelFactory mfComponents;
-	private Domain domainComponents;
-	private UI uiComponents;
-	private ComponentsContainer componentsContainer;
-
-	private ModelFactory mfExpressions;
-	private Domain domainExpressions;
-	private UI uiExpressions;
-	private ExpressionContainer expressionContainer;
-
-	private ModelFactoryStyles mfStyles;
-
 	private TreeMap<String, String> tokens;
 	private TreeMap<String, Component> components;
 	public TreeMap<String, styles.domain.Style> styles;
@@ -138,6 +121,22 @@ public class Principal extends ViewPart {
 	private boolean increasing;
 
 	// TODO
+	ModelFactoryModel modelFactoryModel = ModelFactoryModel.getInstance();
+
+	private ModelFactoryStyles mfStyles;
+
+	private ModelFactory mfExpressions;
+	private Domain domainExpressions;
+	private UI uiExpressions;
+	private ExpressionContainer expressionContainer;
+
+	private ModelFactory mfComponents;
+	private Domain domainComponents;
+	private UI uiComponents;
+	private ComponentsContainer componentsContainer;
+
+	private tooldataform.ModelFactory mfToolDataform;
+	private tooldataform.core.Project project;
 
 	private Text txtNormalExpression;
 	private Text txtExpandedExpression;
@@ -164,8 +163,9 @@ public class Principal extends ViewPart {
 
 		mfExpressions = modelFactoryModel.getMfExpressions();
 		mfComponents = modelFactoryModel.getMfComponents();
-
 		mfStyles = modelFactoryModel.getMfStyles();
+		mfToolDataform = modelFactoryModel.getMfToolDataform();
+
 		theCharacteristicFactory = mfStyles.getTheDomainStyles().getTheCharacteristicFactory();
 
 		stylesAssigmentConainer = UiFactory.eINSTANCE.createStyleAssigmentContainer();
@@ -173,10 +173,8 @@ public class Principal extends ViewPart {
 
 		this.generatorGenModel = generator.GeneratorFactory.eINSTANCE.createGenerator();
 
-		mfToolDataform = TooldataformFactory.eINSTANCE.createModelFactory();
-		project = CoreFactory.eINSTANCE.createProject();
-		project.setTheModelFactory(mfToolDataform);
-		mfToolDataform.getListProyecto().add(project);
+		project = mfToolDataform.getListProyecto().get(0);
+
 		loadExpressionContainer();
 		loadComponentsContainer();
 	}
@@ -495,7 +493,7 @@ public class Principal extends ViewPart {
 		btnGenerateModel.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				//TODO SE AGREGAN LOS LABELS
+				// TODO SE AGREGAN LOS LABELS
 				txtNormalExpression.setText(stringTool.addLabelsToTexts(txtNormalExpression.getText()));
 				txtNormalExpression.setText(stringTool.addLabelsToCombos(txtNormalExpression.getText()));
 				unPackExpression();
@@ -510,27 +508,30 @@ public class Principal extends ViewPart {
 		btnGenerateGenModel.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				//TODO Ajuste de tamaño de fuente de las propiedades automatico
+				// TODO Ajuste de tamaño de fuente de las propiedades automatico
 				Shell shell = new Shell();
 				SetFontDialog dialog = new SetFontDialog(shell, true, 12, 1, false);
 				if (dialog.open() == Window.OK) {
-		            fontSize = dialog.getSize();
-		            intervalFontSize = dialog.getInterval();
-		            increasing = dialog.isIncreasing();
-		            if(!increasing && !dialog.isWarning() && fontSize-(intervalFontSize*3) < 8) {
-		            	JOptionPane.showMessageDialog(null, "Si el modelo tiene mas de tres niveles de granularidad"
-		            			+ " la letra sera muy pequeña y dificil de leer", null, JOptionPane.WARNING_MESSAGE);
-		            	SetFontDialog dialogW = new SetFontDialog(shell, increasing, fontSize, intervalFontSize, dialog.isWarning());
-		            	if (dialogW.open() == Window.OK) {
-		            		fontSize = dialogW.getSize();
-				            intervalFontSize = dialogW.getInterval();
-				            increasing = dialog.isIncreasing();
-				            createGenModel();
-		            	}
-		            	
-		            } else {
-			            createGenModel();
-		            }
+					fontSize = dialog.getSize();
+					intervalFontSize = dialog.getInterval();
+					increasing = dialog.isIncreasing();
+					if (!increasing && !dialog.isWarning() && fontSize - (intervalFontSize * 3) < 8) {
+						JOptionPane.showMessageDialog(null,
+								"Si el modelo tiene mas de tres niveles de granularidad"
+										+ " la letra sera muy pequeña y dificil de leer",
+								null, JOptionPane.WARNING_MESSAGE);
+						SetFontDialog dialogW = new SetFontDialog(shell, increasing, fontSize, intervalFontSize,
+								dialog.isWarning());
+						if (dialogW.open() == Window.OK) {
+							fontSize = dialogW.getSize();
+							intervalFontSize = dialogW.getInterval();
+							increasing = dialog.isIncreasing();
+							createGenModel();
+						}
+
+					} else {
+						createGenModel();
+					}
 				}
 			}
 		});
@@ -628,6 +629,7 @@ public class Principal extends ViewPart {
 		if (objectSelected instanceof StyleFactory) {
 			Action actionNewStyle = new Action("Estilo") {
 				private Shell shell = new Shell();
+
 				@Override
 				public void run() {
 					AddStyleDialog dialog = new AddStyleDialog(shell, theCharacteristicFactory);
@@ -652,9 +654,10 @@ public class Principal extends ViewPart {
 
 		if (objectSelected instanceof Style) {
 			styleSelected = (Style) objectSelected;
-			
+
 			Action actionEdit = new Action("Editar") {
 				private Shell shell = new Shell();
+
 				@Override
 				public void run() {
 					EditStyleDialog dialog = new EditStyleDialog(shell, styleSelected, theCharacteristicFactory);
@@ -710,6 +713,7 @@ public class Principal extends ViewPart {
 		if (objectSelected instanceof CharacteristicFactory) {
 			Action actionNewCharacteristic = new Action("Caracteristica") {
 				private Shell shell = new Shell();
+
 				@Override
 				public void run() {
 					AddCharacteristicDialog dialog = new AddCharacteristicDialog(shell);
@@ -730,6 +734,7 @@ public class Principal extends ViewPart {
 
 			Action actionNewPropertie = new Action("Propiedad") {
 				private Shell shell = new Shell();
+
 				@Override
 				public void run() {
 					AddPropertieDialog dialog = new AddPropertieDialog(shell);
@@ -761,6 +766,7 @@ public class Principal extends ViewPart {
 
 			Action actionEdit = new Action("Editar") {
 				private Shell shell = new Shell();
+
 				@Override
 				public void run() {
 					EditCharacteristicDialog dialog = new EditCharacteristicDialog(shell, characteristicSelected);
@@ -790,6 +796,7 @@ public class Principal extends ViewPart {
 
 			Action actionEdit = new Action("Editar") {
 				private Shell shell = new Shell();
+
 				@Override
 				public void run() {
 					EditPropertieDialog dialog = new EditPropertieDialog(shell, propertieSelected);
@@ -861,6 +868,7 @@ public class Principal extends ViewPart {
 
 			Action actionEdit = new Action("Editar") {
 				private Shell shell = new Shell();
+
 				@Override
 				public void run() {
 					EditComponentDialog dialog = new EditComponentDialog(shell, componentSelected);
@@ -893,6 +901,7 @@ public class Principal extends ViewPart {
 
 			Action actionEdit = new Action("Editar") {
 				private Shell shell = new Shell();
+
 				@Override
 				public void run() {
 					EditElementDialog dialog = new EditElementDialog(shell, elementSelected);
@@ -1010,17 +1019,17 @@ public class Principal extends ViewPart {
 	public void createDataformDiagram(GenModel genModel) {
 		DataFormModelGenerator dataFormModelGenerator = generator.gendataform.GendataformFactory.eINSTANCE
 				.createDataFormModelGenerator();
-		mfToolDataform = tooldataform.TooldataformFactory.eINSTANCE.createModelFactory();
-		project = tooldataform.core.CoreFactory.eINSTANCE.createProject();
-		DataForm_Diagram dataformDiagram = dataFormModelGenerator.createDataFormModel(genModel);
+		tooldataform.styles.domain.Domain domainStyle = project.getTheDomainStyles();
+		mfToolDataform.getListProyecto().get(0).getListDiagram().clear();
+		DataForm_Diagram dataformDiagram = dataFormModelGenerator.createDataFormModel(domainStyle, genModel);
 
 		setBoundsGraphicalContainer(dataformDiagram.getTheInterface(), 10, 10,
 				dataformDiagram.getTheInterface().getListGraphicalContainer().get(0).getWidth() + 20,
 				dataformDiagram.getTheInterface().getListGraphicalContainer().get(0).getHeight() + 100);
-		dataformDiagram.setOwnedByProject(project);
-		project.getListDataFormDiagram().add(dataformDiagram);
-		mfToolDataform.getListProyecto().add(project);
-		project.setTheModelFactory(mfToolDataform);
+//		dataformDiagram.setOwnedByProject(project);
+		mfToolDataform.getListProyecto().get(0).getListDiagram().add(dataformDiagram);
+//		mfToolDataform.getListProyecto().add(project);
+//		project.setTheModelFactory(mfToolDataform);
 		saveDF();
 	}
 

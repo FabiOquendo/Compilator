@@ -6,6 +6,7 @@ import compilator.CompilatorFactory;
 import compilator.ModelFactory;
 import styles.ModelFactoryStyles;
 import styles.StylesFactory;
+import tooldataform.TooldataformFactory;
 
 public class ModelFactoryModel extends Observable{
 
@@ -24,11 +25,13 @@ public class ModelFactoryModel extends Observable{
 		return SingletonHolder.eINSTANCE;
 	}
 	//------------------------------  Singleton ------------------------------------------------
+	ModelFactoryStyles mfStyles = StylesFactory.eINSTANCE.createModelFactoryStyles();
+	
 	ModelFactory mfExpressions = CompilatorFactory.eINSTANCE.createModelFactory();
 	
 	ModelFactory mfComponents = CompilatorFactory.eINSTANCE.createModelFactory();
 	
-	ModelFactoryStyles mfStyles = StylesFactory.eINSTANCE.createModelFactoryStyles();
+	tooldataform.ModelFactory mfToolDataform = TooldataformFactory.eINSTANCE.createModelFactory();
 	
 	
 	//__________________________________________
@@ -36,10 +39,11 @@ public class ModelFactoryModel extends Observable{
 	public ModelFactoryModel() {
 		//obtiene la ruta del rumtime
 		String url = org.eclipse.core.runtime.Platform.getInstanceLocation().getURL().getPath();
-		// TODO Auto-generated constructor stub
+
+		mfStyles = loadStylesModel();
 		mfExpressions = loadExpressionsModel();
 		mfComponents = loadComponentsModel();		
-		mfStyles = loadStylesModel();
+		mfToolDataform = loadDataformModel();
 		
 //		Resource eResource = modelFactoryBrowser.eResource();
 //		ResourceSet resourceSet = eResource.getResourceSet();
@@ -51,6 +55,9 @@ public class ModelFactoryModel extends Observable{
 //		}
 	}
 
+	///////////////////////////////////////////////////////////////////////
+	// STYLE MODEL
+	///////////////////////////////////////////////////////////////////////
 	public ModelFactoryStyles loadStylesModel() {
 		return mfStyles.load();
 	}
@@ -59,6 +66,18 @@ public class ModelFactoryModel extends Observable{
 		mfStyles.save();
 	}
 	
+	public ModelFactoryStyles getMfStyles() {
+		return mfStyles;
+	}
+
+	public void setMfStyles(ModelFactoryStyles mfStyles) {
+		this.mfStyles = mfStyles;
+	}
+	
+	
+	///////////////////////////////////////////////////////////////////////
+	// EXPRESSION MODEL
+	///////////////////////////////////////////////////////////////////////
 	public ModelFactory loadExpressionsModel() {
 		return mfExpressions.loadExpression();
 	}
@@ -67,20 +86,24 @@ public class ModelFactoryModel extends Observable{
 		mfExpressions.saveExpression();
 	}
 	
-	public ModelFactory loadComponentsModel() {
-		return mfComponents.loadComponents();
-	}
-	
-	public void saveComponentsModel() {
-		mfComponents.saveComponents();
-	}
-
 	public ModelFactory getMfExpressions() {
 		return mfExpressions;
 	}
 
 	public void setMfExpressions(ModelFactory mfExpressions) {
 		this.mfExpressions = mfExpressions;
+	}
+	
+	
+	///////////////////////////////////////////////////////////////////////
+	// COMPONENT MODEL
+	///////////////////////////////////////////////////////////////////////
+	public ModelFactory loadComponentsModel() {
+		return mfComponents.loadComponents();
+	}
+	
+	public void saveComponentsModel() {
+		mfComponents.saveComponents();
 	}
 
 	public ModelFactory getMfComponents() {
@@ -91,23 +114,59 @@ public class ModelFactoryModel extends Observable{
 		this.mfComponents = mfComponents;
 	}
 
-	public ModelFactoryStyles getMfStyles() {
-		return mfStyles;
+	
+	///////////////////////////////////////////////////////////////////////
+	// DATAFORM MODEL
+	///////////////////////////////////////////////////////////////////////
+	public tooldataform.ModelFactory loadDataformModel() {
+		tooldataform.ModelFactory modelFactory = null;
+		
+		org.eclipse.emf.common.util.URI uri = org.eclipse.emf.common.util.URI.createURI("platform:/resource/test/domain/model.tooldataform");
+		org.eclipse.emf.ecore.resource.ResourceSet resourceSet= new org.eclipse.emf.ecore.resource.impl.ResourceSetImpl();
+		org.eclipse.emf.ecore.resource.Resource resource = resourceSet.createResource(uri);
+		try {
+			resource.load(java.util.Collections.EMPTY_MAP);
+			modelFactory = (tooldataform.ModelFactory) resource.getContents().get(0);
+		} catch (java.io.IOException e) {
+			// TO-DO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return modelFactory;
+	}
+	
+	public void saveDataformModel() {
+		
+		org.eclipse.emf.common.util.URI uri = org.eclipse.emf.common.util.URI.createURI("platform:/resource/test/domain/model.tooldataform");
+		org.eclipse.emf.ecore.resource.ResourceSet resourceSet= new org.eclipse.emf.ecore.resource.impl.ResourceSetImpl();
+		org.eclipse.emf.ecore.resource.Resource resource = resourceSet.createResource(uri);
+		resource.getContents().add(mfToolDataform);
+		try {
+			resource.save(java.util.Collections.EMPTY_MAP);
+		} catch (java.io.IOException e) {
+			// TO-DO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public tooldataform.ModelFactory getMfToolDataform() {
+		return mfToolDataform;
 	}
 
-	public void setMfStyles(ModelFactoryStyles mfStyles) {
-		this.mfStyles = mfStyles;
+	public void setMfToolDataform(tooldataform.ModelFactory mfToolDataform) {
+		this.mfToolDataform = mfToolDataform;
 	}
+
 
 //	private String getPathBrowser() {
-//		// TODO Auto-generated method stub
+
 //		String path = "platform:/resource/"+getNombreProyecto()+"/model/browser.diagramclass";
 //		return path;
 //	}
 
 
 //		public ModelFactory cargarBrowserModel() {
-//			// TODO Auto-generated method stub
+
 //	
 //			ModelFactory modelFactory = null;
 //	
@@ -201,7 +260,6 @@ public class ModelFactoryModel extends Observable{
 //			resource.load(java.util.Collections.EMPTY_MAP);
 //
 //		} catch (IOException e) {
-//			// TODO Auto-generated catch block
 //			e.printStackTrace();
 //		}
 //		return resource;

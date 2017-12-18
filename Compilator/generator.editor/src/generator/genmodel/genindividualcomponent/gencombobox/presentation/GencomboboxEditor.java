@@ -182,6 +182,8 @@ import generator.apperance.font.provider.FontItemProviderAdapterFactory;
 
 import generator.apperance.linesvisible.provider.LinesvisibleItemProviderAdapterFactory;
 
+import generator.apperance.orientation.provider.OrientationItemProviderAdapterFactory;
+
 import generator.apperance.position.provider.PositionItemProviderAdapterFactory;
 
 import generator.apperance.size.provider.SizeItemProviderAdapterFactory;
@@ -764,6 +766,7 @@ public class GencomboboxEditor
 		adapterFactory.addAdapterFactory(new SizeItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new FontItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new TitlesizeItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new OrientationItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new GenmodelItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new GenindividualcomponentItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new GenbuttonItemProviderAdapterFactory());

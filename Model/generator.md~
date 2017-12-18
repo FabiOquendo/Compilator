@@ -4090,7 +4090,7 @@
 						origin_attachment 	(1347, 1240)
 						terminal_attachment 	(1347, 1088))))
 				    (object AssociationViewNew "$UNNAMED$6" @129
-					location   	(1913, 1284)
+					location   	(1913, 1253)
 					font       	(object Font
 					    size       	10
 					    face       	"Arial"
@@ -4106,7 +4106,7 @@
 					roleview_list 	(list RoleViews
 					    (object RoleView "theExpression" @130
 						Parent_View 	@129
-						location   	(567, 324)
+						location   	(567, 293)
 						font       	(object Font
 						    size       	10
 						    face       	"Arial"
@@ -4118,7 +4118,7 @@
 						    default_color 	TRUE)
 						label      	(object SegLabel @131
 						    Parent_View 	@130
-						    location   	(1689, 1526)
+						    location   	(1698, 1526)
 						    font       	(object Font
 							size       	10
 							face       	"Arial"
@@ -4143,15 +4143,15 @@
 						client     	@129
 						supplier   	@121
 						vertices   	(list Points
-						    (1913, 1284)
+						    (1913, 1253)
 						    (1913, 1483)
 						    (1493, 1483))
 						line_style 	3
-						origin_attachment 	(1913, 1284)
+						origin_attachment 	(1913, 1253)
 						terminal_attachment 	(1493, 1483)
 						label      	(object SegLabel @132
 						    Parent_View 	@130
-						    location   	(1545, 1450)
+						    location   	(1548, 1450)
 						    font       	(object Font
 							size       	10
 							face       	"Arial"
@@ -4172,7 +4172,7 @@
 						    orientation 	1))
 					    (object RoleView "theDomain" @133
 						Parent_View 	@129
-						location   	(567, 324)
+						location   	(567, 293)
 						font       	(object Font
 						    size       	10
 						    face       	"Arial"
@@ -4184,7 +4184,7 @@
 						    default_color 	TRUE)
 						label      	(object SegLabel @134
 						    Parent_View 	@133
-						    location   	(1648, 1014)
+						    location   	(1655, 950)
 						    font       	(object Font
 							size       	10
 							face       	"Arial"
@@ -4209,12 +4209,12 @@
 						client     	@129
 						supplier   	@122
 						vertices   	(list Points
-						    (1913, 1284)
-						    (1913, 1055)
-						    (1524, 1055))
+						    (1913, 1253)
+						    (1913, 991)
+						    (1524, 991))
 						line_style 	3
-						origin_attachment 	(1913, 1284)
-						terminal_attachment 	(1524, 1055))))))))
+						origin_attachment 	(1913, 1253)
+						terminal_attachment 	(1524, 991))))))))
 		    (object Class_Category "ui"
 			quid       	"5995EAB90352"
 			exportControl 	"Public"
@@ -5205,7 +5205,8 @@
 |		break;
 |	}
 |}
-|genContainer.createPropertiesContainer(fontSize);
+|String orientation = container.getOrientation();
+|genContainer.createPropertiesContainer(orientation, fontSize);
 |if(container.getTheStyle() != null) {
 |	genContainer = (GenContainer) setApperances(container, genContainer);
 |	for (int i = 0; i < listProperties.size(); i++) {
@@ -6920,24 +6921,6 @@
 						line_color 	3342489
 						fill_color 	13434879
 						quidu      	"59D2A9F4031B"
-						compartment 	(object Compartment
-						    Parent_View 	@223
-						    location   	(1702, 1174)
-						    font       	(object Font
-							size       	10
-							face       	"Arial"
-							bold       	FALSE
-							italics    	FALSE
-							underline  	FALSE
-							strike     	FALSE
-							color      	0
-							default_color 	TRUE)
-						    icon_style 	"Icon"
-						    fill_color 	16777215
-						    anchor     	2
-						    nlines     	2
-						    max_width  	325
-						    justify    	1)
 						width      	346
 						height     	186
 						annotation 	8
@@ -6968,24 +6951,6 @@
 						line_color 	3342489
 						fill_color 	13434879
 						quidu      	"59C1920C021B"
-						compartment 	(object Compartment
-						    Parent_View 	@224
-						    location   	(1634, 546)
-						    font       	(object Font
-							size       	10
-							face       	"Arial"
-							bold       	FALSE
-							italics    	FALSE
-							underline  	FALSE
-							strike     	FALSE
-							color      	0
-							default_color 	TRUE)
-						    icon_style 	"Icon"
-						    fill_color 	16777215
-						    anchor     	2
-						    nlines     	6
-						    max_width  	462
-						    justify    	1)
 						width      	484
 						height     	432
 						annotation 	8
@@ -8588,7 +8553,24 @@
 					class_attributes 	(list class_attribute_list
 					    (object ClassAttribute "value"
 						quid       	"5A25633502C6"
-						type       	"String"))))
+						type       	"String")))
+				    (object Association "$UNNAMED$81"
+					quid       	"5A25635F03AE"
+					roles      	(list role_list
+					    (object Role "theOrientation"
+						quid       	"5A25636001FC"
+						label      	"theOrientation"
+						supplier   	"Logical View::Generator::apperance::orientation::Orientation"
+						quidu      	"5A2562F10153"
+						client_cardinality 	(value cardinality "1")
+						Containment 	"By Value"
+						is_navigable 	TRUE)
+					    (object Role "$UNNAMED$82"
+						quid       	"5A25636001FE"
+						supplier   	"Logical View::Generator::genModel::genContainerComponent::genContainer::GenContainer"
+						quidu      	"59C19A7B0297"
+						is_navigable 	TRUE
+						is_aggregate 	TRUE))))
 				logical_presentations 	(list unit_reference_list
 				    (object ClassDiagram "Main"
 					quid       	"5A2562DE032F"
@@ -8625,24 +8607,6 @@
 						line_color 	3342489
 						fill_color 	13434879
 						quidu      	"5A2562F10153"
-						compartment 	(object Compartment
-						    Parent_View 	@288
-						    location   	(2022, 1001)
-						    font       	(object Font
-							size       	10
-							face       	"Arial"
-							bold       	FALSE
-							italics    	FALSE
-							underline  	FALSE
-							strike     	FALSE
-							color      	0
-							default_color 	TRUE)
-						    icon_style 	"Icon"
-						    fill_color 	13434879
-						    anchor     	2
-						    nlines     	2
-						    max_width  	293
-						    justify    	1)
 						width      	363
 						height     	200
 						annotation 	8
@@ -8663,7 +8627,7 @@
 						    default_color 	TRUE)
 						label      	(object ItemLabel
 						    Parent_View 	@289
-						    location   	(1908, 230)
+						    location   	(1908, 205)
 						    fill_color 	13434879
 						    nlines     	1
 						    max_width  	552
@@ -8673,28 +8637,104 @@
 						line_color 	3342489
 						fill_color 	13434879
 						quidu      	"59C19A7B0297"
-						compartment 	(object Compartment
-						    Parent_View 	@289
-						    location   	(1908, 335)
-						    font       	(object Font
-							size       	10
-							face       	"Arial"
-							bold       	FALSE
-							italics    	FALSE
-							underline  	FALSE
-							strike     	FALSE
-							color      	0
-							default_color 	TRUE)
-						    icon_style 	"Icon"
-						    fill_color 	13434879
-						    anchor     	2
-						    nlines     	5
-						    max_width  	550
-						    justify    	1)
 						width      	570
-						height     	382
+						height     	432
 						annotation 	8
-						autoResize 	TRUE))))))
+						autoResize 	TRUE)
+					    (object AssociationViewNew "$UNNAMED$81" @290
+						location   	(2194, 776)
+						font       	(object Font
+						    size       	10
+						    face       	"Arial"
+						    bold       	FALSE
+						    italics    	FALSE
+						    underline  	FALSE
+						    strike     	FALSE
+						    color      	0
+						    default_color 	TRUE)
+						stereotype 	TRUE
+						line_color 	3342489
+						quidu      	"5A25635F03AE"
+						roleview_list 	(list RoleViews
+						    (object RoleView "theOrientation" @291
+							Parent_View 	@290
+							location   	(10, 367)
+							font       	(object Font
+							    size       	10
+							    face       	"Arial"
+							    bold       	FALSE
+							    italics    	FALSE
+							    underline  	FALSE
+							    strike     	FALSE
+							    color      	0
+							    default_color 	TRUE)
+							label      	(object SegLabel @292
+							    Parent_View 	@291
+							    location   	(2039, 894)
+							    font       	(object Font
+								size       	10
+								face       	"Arial"
+								bold       	FALSE
+								italics    	FALSE
+								underline  	FALSE
+								strike     	FALSE
+								color      	0
+								default_color 	TRUE)
+							    anchor     	1
+							    anchor_loc 	1
+							    nlines     	1
+							    max_width  	281
+							    justify    	0
+							    label      	"+theOrientation"
+							    pctDist    	0.781818
+							    height     	156
+							    orientation 	1)
+							stereotype 	TRUE
+							line_color 	3342489
+							quidu      	"5A25636001FC"
+							client     	@290
+							supplier   	@288
+							vertices   	(list Points
+							    (2194, 776)
+							    (2194, 928))
+							line_style 	3
+							origin_attachment 	(2194, 776)
+							terminal_attachment 	(2194, 928)
+							label      	(object SegLabel @293
+							    Parent_View 	@291
+							    location   	(2221, 899)
+							    font       	(object Font
+								size       	10
+								face       	"Arial"
+								bold       	FALSE
+								italics    	FALSE
+								underline  	FALSE
+								strike     	FALSE
+								color      	0
+								default_color 	TRUE)
+							    anchor     	2
+							    anchor_loc 	1
+							    nlines     	1
+							    max_width  	15
+							    justify    	0
+							    label      	"1"
+							    pctDist    	0.818182
+							    height     	27
+							    orientation 	0))
+						    (object RoleView "$UNNAMED$82" @294
+							Parent_View 	@290
+							location   	(10, 367)
+							stereotype 	TRUE
+							line_color 	3342489
+							quidu      	"5A25636001FE"
+							client     	@290
+							supplier   	@289
+							vertices   	(list Points
+							    (2194, 776)
+							    (2194, 624))
+							line_style 	3
+							origin_attachment 	(2194, 776)
+							terminal_attachment 	(2194, 624)))))))))
 			logical_presentations 	(list unit_reference_list
 			    (object ClassDiagram "Main"
 				quid       	"59C043CF0067"
@@ -8705,7 +8745,7 @@
 				origin_x   	0
 				origin_y   	0
 				items      	(list diagram_item_list
-				    (object ClassView "Class" "Logical View::Generator::genModel::GenElement" @290
+				    (object ClassView "Class" "Logical View::Generator::genModel::GenElement" @295
 					ShowCompartmentStereotypes 	TRUE
 					IncludeAttribute 	TRUE
 					IncludeOperation 	TRUE
@@ -8720,7 +8760,7 @@
 					    color      	0
 					    default_color 	TRUE)
 					label      	(object ItemLabel
-					    Parent_View 	@290
+					    Parent_View 	@295
 					    location   	(1790, 730)
 					    fill_color 	13434879
 					    nlines     	1
@@ -8731,29 +8771,11 @@
 					line_color 	3342489
 					fill_color 	13434879
 					quidu      	"59C175E402CD"
-					compartment 	(object Compartment
-					    Parent_View 	@290
-					    location   	(1790, 835)
-					    font       	(object Font
-						size       	10
-						face       	"Arial"
-						bold       	FALSE
-						italics    	TRUE
-						underline  	FALSE
-						strike     	FALSE
-						color      	0
-						default_color 	TRUE)
-					    icon_style 	"Icon"
-					    fill_color 	16777215
-					    anchor     	2
-					    nlines     	10
-					    max_width  	375
-					    justify    	1)
 					width      	390
 					height     	632
 					annotation 	8
 					autoResize 	TRUE)
-				    (object CategoryView "Logical View::Generator::apperance::alignment" @291
+				    (object CategoryView "Logical View::Generator::apperance::alignment" @296
 					location   	(294, 256)
 					font       	(object Font
 					    size       	10
@@ -8765,7 +8787,7 @@
 					    color      	0
 					    default_color 	TRUE)
 					label      	(object ItemLabel
-					    Parent_View 	@291
+					    Parent_View 	@296
 					    location   	(150, 172)
 					    fill_color 	13434879
 					    nlines     	2
@@ -8778,7 +8800,7 @@
 					quidu      	"59D2A4FE023A"
 					width      	300
 					height     	180)
-				    (object CategoryView "Logical View::Generator::apperance::background" @292
+				    (object CategoryView "Logical View::Generator::apperance::background" @297
 					location   	(865, 259)
 					font       	(object Font
 					    size       	10
@@ -8790,7 +8812,7 @@
 					    color      	0
 					    default_color 	TRUE)
 					label      	(object ItemLabel
-					    Parent_View 	@292
+					    Parent_View 	@297
 					    location   	(721, 175)
 					    fill_color 	13434879
 					    nlines     	2
@@ -8803,7 +8825,7 @@
 					quidu      	"59D2A57B010B"
 					width      	300
 					height     	180)
-				    (object CategoryView "Logical View::Generator::apperance::linesVisible" @293
+				    (object CategoryView "Logical View::Generator::apperance::linesVisible" @298
 					location   	(1991, 284)
 					font       	(object Font
 					    size       	10
@@ -8815,7 +8837,7 @@
 					    color      	0
 					    default_color 	TRUE)
 					label      	(object ItemLabel
-					    Parent_View 	@293
+					    Parent_View 	@298
 					    location   	(1847, 200)
 					    fill_color 	13434879
 					    nlines     	2
@@ -8828,7 +8850,7 @@
 					quidu      	"59D2A9E403DB"
 					width      	300
 					height     	180)
-				    (object CategoryView "Logical View::Generator::apperance::Font" @294
+				    (object CategoryView "Logical View::Generator::apperance::Font" @299
 					location   	(1438, 275)
 					font       	(object Font
 					    size       	10
@@ -8840,7 +8862,7 @@
 					    color      	0
 					    default_color 	TRUE)
 					label      	(object ItemLabel
-					    Parent_View 	@294
+					    Parent_View 	@299
 					    location   	(1294, 191)
 					    fill_color 	13434879
 					    nlines     	2
@@ -8853,7 +8875,7 @@
 					quidu      	"59DBEBB303BD"
 					width      	300
 					height     	180)
-				    (object CategoryView "Logical View::Generator::apperance::Position" @295
+				    (object CategoryView "Logical View::Generator::apperance::Position" @300
 					location   	(2588, 287)
 					font       	(object Font
 					    size       	10
@@ -8865,7 +8887,7 @@
 					    color      	0
 					    default_color 	TRUE)
 					label      	(object ItemLabel
-					    Parent_View 	@295
+					    Parent_View 	@300
 					    location   	(2444, 203)
 					    fill_color 	13434879
 					    nlines     	2
@@ -8878,7 +8900,7 @@
 					quidu      	"59DBEB5902F5"
 					width      	300
 					height     	180)
-				    (object CategoryView "Logical View::Generator::apperance::Size" @296
+				    (object CategoryView "Logical View::Generator::apperance::Size" @301
 					location   	(3102, 287)
 					font       	(object Font
 					    size       	10
@@ -8890,7 +8912,7 @@
 					    color      	0
 					    default_color 	TRUE)
 					label      	(object ItemLabel
-					    Parent_View 	@296
+					    Parent_View 	@301
 					    location   	(2958, 203)
 					    fill_color 	13434879
 					    nlines     	2
@@ -8903,7 +8925,7 @@
 					quidu      	"59DBEB97011C"
 					width      	300
 					height     	180)
-				    (object CategoryView "Logical View::Generator::apperance::titleSize" @297
+				    (object CategoryView "Logical View::Generator::apperance::titleSize" @302
 					location   	(3637, 287)
 					font       	(object Font
 					    size       	10
@@ -8915,7 +8937,7 @@
 					    color      	0
 					    default_color 	TRUE)
 					label      	(object ItemLabel
-					    Parent_View 	@297
+					    Parent_View 	@302
 					    location   	(3493, 203)
 					    fill_color 	13434879
 					    nlines     	2
@@ -8928,7 +8950,7 @@
 					quidu      	"5A1D6ECE00BE"
 					width      	300
 					height     	180)
-				    (object CategoryView "Logical View::Generator::apperance::orientation" @298
+				    (object CategoryView "Logical View::Generator::apperance::orientation" @303
 					location   	(4120, 290)
 					font       	(object Font
 					    size       	10
@@ -8940,7 +8962,7 @@
 					    color      	0
 					    default_color 	TRUE)
 					label      	(object ItemLabel
-					    Parent_View 	@298
+					    Parent_View 	@303
 					    location   	(3976, 206)
 					    fill_color 	13434879
 					    nlines     	2
@@ -9084,7 +9106,7 @@
 						supplier   	"Logical View::Generator::genModel::GenElement"
 						quidu      	"59C175E402CD"))
 					abstract   	TRUE)
-				    (object Association "$UNNAMED$81"
+				    (object Association "$UNNAMED$83"
 					quid       	"59C193DA0187"
 					roles      	(list role_list
 					    (object Role "listGenColumns"
@@ -9095,7 +9117,7 @@
 						client_cardinality 	(value cardinality "*")
 						Containment 	"By Value"
 						is_navigable 	TRUE)
-					    (object Role "$UNNAMED$82"
+					    (object Role "$UNNAMED$84"
 						quid       	"59C193DA03D0"
 						supplier   	"Logical View::Generator::genModel::genIndividualComponent::genTable::GenTable"
 						quidu      	"59C1920C021B"
@@ -9184,7 +9206,7 @@
 							    )
 							opExportControl 	"Public"
 							uid        	0)))
-					    (object Association "$UNNAMED$83"
+					    (object Association "$UNNAMED$85"
 						quid       	"59C18FCE033F"
 						roles      	(list role_list
 						    (object Role "theButton"
@@ -9194,12 +9216,12 @@
 							quidu      	"599DEED701CD"
 							client_cardinality 	(value cardinality "1")
 							is_navigable 	TRUE)
-						    (object Role "$UNNAMED$84"
+						    (object Role "$UNNAMED$86"
 							quid       	"59C18FCF00FB"
 							supplier   	"Logical View::Generator::genModel::genIndividualComponent::genButton::GenButton"
 							quidu      	"59C18D290144"
 							is_aggregate 	TRUE)))
-					    (object Association "$UNNAMED$85"
+					    (object Association "$UNNAMED$87"
 						quid       	"59D2A3B30367"
 						roles      	(list role_list
 						    (object Role "theAlignment"
@@ -9210,7 +9232,7 @@
 							client_cardinality 	(value cardinality "1")
 							Containment 	"By Value"
 							is_navigable 	TRUE)
-						    (object Role "$UNNAMED$86"
+						    (object Role "$UNNAMED$88"
 							quid       	"59D2A3B402ED"
 							supplier   	"Logical View::Generator::genModel::genIndividualComponent::genButton::GenButton"
 							quidu      	"59C18D290144"
@@ -9226,7 +9248,7 @@
 						origin_x   	0
 						origin_y   	0
 						items      	(list diagram_item_list
-						    (object ClassView "Class" "Logical View::Compilator::domain::expression::expressionmodel::individualComponent::Button" @299
+						    (object ClassView "Class" "Logical View::Compilator::domain::expression::expressionmodel::individualComponent::Button" @304
 							ShowCompartmentStereotypes 	TRUE
 							IncludeAttribute 	TRUE
 							IncludeOperation 	TRUE
@@ -9241,7 +9263,7 @@
 							    color      	0
 							    default_color 	TRUE)
 							label      	(object ItemLabel
-							    Parent_View 	@299
+							    Parent_View 	@304
 							    location   	(434, 315)
 							    fill_color 	13434879
 							    nlines     	1
@@ -9256,7 +9278,7 @@
 							height     	172
 							annotation 	8
 							autoResize 	TRUE)
-						    (object ClassView "Class" "Logical View::Generator::genModel::genIndividualComponent::genButton::GenButton" @300
+						    (object ClassView "Class" "Logical View::Generator::genModel::genIndividualComponent::genButton::GenButton" @305
 							ShowCompartmentStereotypes 	TRUE
 							IncludeAttribute 	TRUE
 							IncludeOperation 	TRUE
@@ -9271,7 +9293,7 @@
 							    color      	0
 							    default_color 	TRUE)
 							label      	(object ItemLabel
-							    Parent_View 	@300
+							    Parent_View 	@305
 							    location   	(1330, 259)
 							    fill_color 	13434879
 							    nlines     	1
@@ -9286,7 +9308,7 @@
 							height     	286
 							annotation 	8
 							autoResize 	TRUE)
-						    (object AssociationViewNew "$UNNAMED$83" @301
+						    (object AssociationViewNew "$UNNAMED$85" @306
 							location   	(1089, 389)
 							font       	(object Font
 							    size       	10
@@ -9301,8 +9323,8 @@
 							line_color 	3342489
 							quidu      	"59C18FCE033F"
 							roleview_list 	(list RoleViews
-							    (object RoleView "theButton" @302
-								Parent_View 	@301
+							    (object RoleView "theButton" @307
+								Parent_View 	@306
 								location   	(-774, -229)
 								font       	(object Font
 								    size       	10
@@ -9313,8 +9335,8 @@
 								    strike     	FALSE
 								    color      	0
 								    default_color 	TRUE)
-								label      	(object SegLabel @303
-								    Parent_View 	@302
+								label      	(object SegLabel @308
+								    Parent_View 	@307
 								    location   	(955, 346)
 								    font       	(object Font
 									size       	10
@@ -9337,14 +9359,14 @@
 								stereotype 	TRUE
 								line_color 	3342489
 								quidu      	"59C18FCF00F9"
-								client     	@301
-								supplier   	@299
+								client     	@306
+								supplier   	@304
 								vertices   	(list Points
 								    (1089, 389)
 								    (859, 389))
 								line_style 	0
-								label      	(object SegLabel @304
-								    Parent_View 	@302
+								label      	(object SegLabel @309
+								    Parent_View 	@307
 								    location   	(883, 443)
 								    font       	(object Font
 									size       	10
@@ -9364,14 +9386,14 @@
 								    pctDist    	0.900000
 								    height     	54
 								    orientation 	0))
-							    (object RoleView "$UNNAMED$84" @305
-								Parent_View 	@301
+							    (object RoleView "$UNNAMED$86" @310
+								Parent_View 	@306
 								location   	(-774, -229)
 								stereotype 	TRUE
 								line_color 	3342489
 								quidu      	"59C18FCF00FB"
-								client     	@301
-								supplier   	@300
+								client     	@306
+								supplier   	@305
 								vertices   	(list Points
 								    (1089, 389)
 								    (1320, 389))
@@ -9459,7 +9481,7 @@
 							    )
 							opExportControl 	"Public"
 							uid        	0)))
-					    (object Association "$UNNAMED$87"
+					    (object Association "$UNNAMED$89"
 						quid       	"59C1905D00A4"
 						roles      	(list role_list
 						    (object Role "theColumn"
@@ -9469,12 +9491,12 @@
 							quidu      	"599DEF7E0074"
 							client_cardinality 	(value cardinality "1")
 							is_navigable 	TRUE)
-						    (object Role "$UNNAMED$88"
+						    (object Role "$UNNAMED$90"
 							quid       	"59C1905D02F5"
 							supplier   	"Logical View::Generator::genModel::genIndividualComponent::genColunm::GenColumn"
 							quidu      	"59C19033023D"
 							is_aggregate 	TRUE)))
-					    (object Association "$UNNAMED$89"
+					    (object Association "$UNNAMED$91"
 						quid       	"59D2A48B0374"
 						roles      	(list role_list
 						    (object Role "theAlignment"
@@ -9485,7 +9507,7 @@
 							client_cardinality 	(value cardinality "1")
 							Containment 	"By Value"
 							is_navigable 	TRUE)
-						    (object Role "$UNNAMED$90"
+						    (object Role "$UNNAMED$92"
 							quid       	"59D2A48D0321"
 							supplier   	"Logical View::Generator::genModel::genIndividualComponent::genColunm::GenColumn"
 							quidu      	"59C19033023D"
@@ -9501,7 +9523,7 @@
 						origin_x   	0
 						origin_y   	0
 						items      	(list diagram_item_list
-						    (object ClassView "Class" "Logical View::Compilator::domain::expression::expressionmodel::individualComponent::Column" @306
+						    (object ClassView "Class" "Logical View::Compilator::domain::expression::expressionmodel::individualComponent::Column" @311
 							ShowCompartmentStereotypes 	TRUE
 							IncludeAttribute 	TRUE
 							IncludeOperation 	TRUE
@@ -9516,7 +9538,7 @@
 							    color      	0
 							    default_color 	TRUE)
 							label      	(object ItemLabel
-							    Parent_View 	@306
+							    Parent_View 	@311
 							    location   	(612, 359)
 							    fill_color 	13434879
 							    nlines     	1
@@ -9531,7 +9553,7 @@
 							height     	172
 							annotation 	8
 							autoResize 	TRUE)
-						    (object ClassView "Class" "Logical View::Generator::genModel::genIndividualComponent::genColunm::GenColumn" @307
+						    (object ClassView "Class" "Logical View::Generator::genModel::genIndividualComponent::genColunm::GenColumn" @312
 							ShowCompartmentStereotypes 	TRUE
 							IncludeAttribute 	TRUE
 							IncludeOperation 	TRUE
@@ -9546,7 +9568,7 @@
 							    color      	0
 							    default_color 	TRUE)
 							label      	(object ItemLabel
-							    Parent_View 	@307
+							    Parent_View 	@312
 							    location   	(1496, 310)
 							    fill_color 	13434879
 							    nlines     	1
@@ -9561,7 +9583,7 @@
 							height     	286
 							annotation 	8
 							autoResize 	TRUE)
-						    (object AssociationViewNew "$UNNAMED$87" @308
+						    (object AssociationViewNew "$UNNAMED$89" @313
 							location   	(1261, 434)
 							font       	(object Font
 							    size       	10
@@ -9576,8 +9598,8 @@
 							line_color 	3342489
 							quidu      	"59C1905D00A4"
 							roleview_list 	(list RoleViews
-							    (object RoleView "theColumn" @309
-								Parent_View 	@308
+							    (object RoleView "theColumn" @314
+								Parent_View 	@313
 								location   	(-666, -235)
 								font       	(object Font
 								    size       	10
@@ -9588,8 +9610,8 @@
 								    strike     	FALSE
 								    color      	0
 								    default_color 	TRUE)
-								label      	(object SegLabel @310
-								    Parent_View 	@309
+								label      	(object SegLabel @315
+								    Parent_View 	@314
 								    location   	(1154, 388)
 								    font       	(object Font
 									size       	10
@@ -9612,16 +9634,16 @@
 								stereotype 	TRUE
 								line_color 	3342489
 								quidu      	"59C1905D02F3"
-								client     	@308
-								supplier   	@306
+								client     	@313
+								supplier   	@311
 								vertices   	(list Points
 								    (1261, 434)
 								    (1035, 434))
 								line_style 	3
 								origin_attachment 	(1261, 434)
 								terminal_attachment 	(1035, 434)
-								label      	(object SegLabel @311
-								    Parent_View 	@309
+								label      	(object SegLabel @316
+								    Parent_View 	@314
 								    location   	(1059, 488)
 								    font       	(object Font
 									size       	10
@@ -9641,14 +9663,14 @@
 								    pctDist    	0.900000
 								    height     	54
 								    orientation 	0))
-							    (object RoleView "$UNNAMED$88" @312
-								Parent_View 	@308
+							    (object RoleView "$UNNAMED$90" @317
+								Parent_View 	@313
 								location   	(-666, -235)
 								stereotype 	TRUE
 								line_color 	3342489
 								quidu      	"59C1905D02F5"
-								client     	@308
-								supplier   	@307
+								client     	@313
+								supplier   	@312
 								vertices   	(list Points
 								    (1261, 434)
 								    (1487, 434))
@@ -9732,7 +9754,7 @@
 							    )
 							opExportControl 	"Public"
 							uid        	0)))
-					    (object Association "$UNNAMED$91"
+					    (object Association "$UNNAMED$93"
 						quid       	"59C190BE0126"
 						roles      	(list role_list
 						    (object Role "theComboBox"
@@ -9742,7 +9764,7 @@
 							quidu      	"599DEFA400CC"
 							client_cardinality 	(value cardinality "1")
 							is_navigable 	TRUE)
-						    (object Role "$UNNAMED$92"
+						    (object Role "$UNNAMED$94"
 							quid       	"59C190BE0337"
 							supplier   	"Logical View::Generator::genModel::genIndividualComponent::genComboBox::GenComboBox"
 							quidu      	"59C190AB034E"
@@ -9757,7 +9779,7 @@
 						origin_x   	0
 						origin_y   	0
 						items      	(list diagram_item_list
-						    (object ClassView "Class" "Logical View::Compilator::domain::expression::expressionmodel::individualComponent::ComboBox" @313
+						    (object ClassView "Class" "Logical View::Compilator::domain::expression::expressionmodel::individualComponent::ComboBox" @318
 							ShowCompartmentStereotypes 	TRUE
 							IncludeAttribute 	TRUE
 							IncludeOperation 	TRUE
@@ -9772,7 +9794,7 @@
 							    color      	0
 							    default_color 	TRUE)
 							label      	(object ItemLabel
-							    Parent_View 	@313
+							    Parent_View 	@318
 							    location   	(470, 931)
 							    fill_color 	13434879
 							    nlines     	1
@@ -9787,7 +9809,7 @@
 							height     	172
 							annotation 	8
 							autoResize 	TRUE)
-						    (object ClassView "Class" "Logical View::Generator::genModel::genIndividualComponent::genComboBox::GenComboBox" @314
+						    (object ClassView "Class" "Logical View::Generator::genModel::genIndividualComponent::genComboBox::GenComboBox" @319
 							ShowCompartmentStereotypes 	TRUE
 							IncludeAttribute 	TRUE
 							IncludeOperation 	TRUE
@@ -9802,7 +9824,7 @@
 							    color      	0
 							    default_color 	TRUE)
 							label      	(object ItemLabel
-							    Parent_View 	@314
+							    Parent_View 	@319
 							    location   	(1389, 897)
 							    fill_color 	13434879
 							    nlines     	1
@@ -9817,7 +9839,7 @@
 							height     	236
 							annotation 	8
 							autoResize 	TRUE)
-						    (object AssociationViewNew "$UNNAMED$91" @315
+						    (object AssociationViewNew "$UNNAMED$93" @320
 							location   	(1137, 1003)
 							font       	(object Font
 							    size       	10
@@ -9832,8 +9854,8 @@
 							line_color 	3342489
 							quidu      	"59C190BE0126"
 							roleview_list 	(list RoleViews
-							    (object RoleView "theComboBox" @316
-								Parent_View 	@315
+							    (object RoleView "theComboBox" @321
+								Parent_View 	@320
 								location   	(-954, -10)
 								font       	(object Font
 								    size       	10
@@ -9844,8 +9866,8 @@
 								    strike     	FALSE
 								    color      	0
 								    default_color 	TRUE)
-								label      	(object SegLabel @317
-								    Parent_View 	@316
+								label      	(object SegLabel @322
+								    Parent_View 	@321
 								    location   	(1030, 960)
 								    font       	(object Font
 									size       	10
@@ -9868,16 +9890,16 @@
 								stereotype 	TRUE
 								line_color 	3342489
 								quidu      	"59C190BE0335"
-								client     	@315
-								supplier   	@313
+								client     	@320
+								supplier   	@318
 								vertices   	(list Points
 								    (1137, 1003)
 								    (895, 1003))
 								line_style 	3
 								origin_attachment 	(1137, 1003)
 								terminal_attachment 	(895, 1003)
-								label      	(object SegLabel @318
-								    Parent_View 	@316
+								label      	(object SegLabel @323
+								    Parent_View 	@321
 								    location   	(919, 1057)
 								    font       	(object Font
 									size       	10
@@ -9897,14 +9919,14 @@
 								    pctDist    	0.900000
 								    height     	54
 								    orientation 	0))
-							    (object RoleView "$UNNAMED$92" @319
-								Parent_View 	@315
+							    (object RoleView "$UNNAMED$94" @324
+								Parent_View 	@320
 								location   	(-954, -10)
 								stereotype 	TRUE
 								line_color 	3342489
 								quidu      	"59C190BE0337"
-								client     	@315
-								supplier   	@314
+								client     	@320
+								supplier   	@319
 								vertices   	(list Points
 								    (1137, 1003)
 								    (1380, 1003))
@@ -10010,7 +10032,7 @@
 							    )
 							opExportControl 	"Public"
 							uid        	0)))
-					    (object Association "$UNNAMED$93"
+					    (object Association "$UNNAMED$95"
 						quid       	"59C191D5007B"
 						roles      	(list role_list
 						    (object Role "theLabel"
@@ -10020,12 +10042,12 @@
 							quidu      	"599DEF6703BC"
 							client_cardinality 	(value cardinality "1")
 							is_navigable 	TRUE)
-						    (object Role "$UNNAMED$94"
+						    (object Role "$UNNAMED$96"
 							quid       	"59C191D502BD"
 							supplier   	"Logical View::Generator::genModel::genIndividualComponent::genLabel::GenLabel"
 							quidu      	"59C191C7001A"
 							is_aggregate 	TRUE)))
-					    (object Association "$UNNAMED$95"
+					    (object Association "$UNNAMED$97"
 						quid       	"59D2A401020A"
 						roles      	(list role_list
 						    (object Role "theAlignment"
@@ -10036,7 +10058,7 @@
 							client_cardinality 	(value cardinality "1")
 							Containment 	"By Value"
 							is_navigable 	TRUE)
-						    (object Role "$UNNAMED$96"
+						    (object Role "$UNNAMED$98"
 							quid       	"59D2A4020186"
 							supplier   	"Logical View::Generator::genModel::genIndividualComponent::genLabel::GenLabel"
 							quidu      	"59C191C7001A"
@@ -10052,7 +10074,7 @@
 						origin_x   	0
 						origin_y   	0
 						items      	(list diagram_item_list
-						    (object ClassView "Class" "Logical View::Compilator::domain::expression::expressionmodel::individualComponent::Label" @320
+						    (object ClassView "Class" "Logical View::Compilator::domain::expression::expressionmodel::individualComponent::Label" @325
 							ShowCompartmentStereotypes 	TRUE
 							IncludeAttribute 	TRUE
 							IncludeOperation 	TRUE
@@ -10067,7 +10089,7 @@
 							    color      	0
 							    default_color 	TRUE)
 							label      	(object ItemLabel
-							    Parent_View 	@320
+							    Parent_View 	@325
 							    location   	(671, 449)
 							    fill_color 	13434879
 							    nlines     	1
@@ -10082,7 +10104,7 @@
 							height     	172
 							annotation 	8
 							autoResize 	TRUE)
-						    (object ClassView "Class" "Logical View::Generator::genModel::genIndividualComponent::genLabel::GenLabel" @321
+						    (object ClassView "Class" "Logical View::Generator::genModel::genIndividualComponent::genLabel::GenLabel" @326
 							ShowCompartmentStereotypes 	TRUE
 							IncludeAttribute 	TRUE
 							IncludeOperation 	TRUE
@@ -10097,7 +10119,7 @@
 							    color      	0
 							    default_color 	TRUE)
 							label      	(object ItemLabel
-							    Parent_View 	@321
+							    Parent_View 	@326
 							    location   	(1678, 390)
 							    fill_color 	13434879
 							    nlines     	1
@@ -10112,7 +10134,7 @@
 							height     	286
 							annotation 	8
 							autoResize 	TRUE)
-						    (object AssociationViewNew "$UNNAMED$93" @322
+						    (object AssociationViewNew "$UNNAMED$95" @327
 							location   	(1382, 525)
 							font       	(object Font
 							    size       	10
@@ -10127,8 +10149,8 @@
 							line_color 	3342489
 							quidu      	"59C191D5007B"
 							roleview_list 	(list RoleViews
-							    (object RoleView "theLabel" @323
-								Parent_View 	@322
+							    (object RoleView "theLabel" @328
+								Parent_View 	@327
 								location   	(-559, -572)
 								font       	(object Font
 								    size       	10
@@ -10139,8 +10161,8 @@
 								    strike     	FALSE
 								    color      	0
 								    default_color 	TRUE)
-								label      	(object SegLabel @324
-								    Parent_View 	@323
+								label      	(object SegLabel @329
+								    Parent_View 	@328
 								    location   	(1204, 482)
 								    font       	(object Font
 									size       	10
@@ -10163,16 +10185,16 @@
 								stereotype 	TRUE
 								line_color 	3342489
 								quidu      	"59C191D502BB"
-								client     	@322
-								supplier   	@320
+								client     	@327
+								supplier   	@325
 								vertices   	(list Points
 								    (1382, 525)
 								    (1096, 525))
 								line_style 	3
 								origin_attachment 	(1382, 525)
 								terminal_attachment 	(1096, 525)
-								label      	(object SegLabel @325
-								    Parent_View 	@323
+								label      	(object SegLabel @330
+								    Parent_View 	@328
 								    location   	(1125, 579)
 								    font       	(object Font
 									size       	10
@@ -10192,14 +10214,14 @@
 								    pctDist    	0.900000
 								    height     	54
 								    orientation 	0))
-							    (object RoleView "$UNNAMED$94" @326
-								Parent_View 	@322
+							    (object RoleView "$UNNAMED$96" @331
+								Parent_View 	@327
 								location   	(-559, -572)
 								stereotype 	TRUE
 								line_color 	3342489
 								quidu      	"59C191D502BD"
-								client     	@322
-								supplier   	@321
+								client     	@327
+								supplier   	@326
 								vertices   	(list Points
 								    (1382, 525)
 								    (1669, 525))
@@ -10321,7 +10343,7 @@
 							    )
 							opExportControl 	"Public"
 							uid        	0)))
-					    (object Association "$UNNAMED$97"
+					    (object Association "$UNNAMED$99"
 						quid       	"59C1921801E6"
 						roles      	(list role_list
 						    (object Role "theTable"
@@ -10331,7 +10353,7 @@
 							quidu      	"599DF069002A"
 							client_cardinality 	(value cardinality "1")
 							is_navigable 	TRUE)
-						    (object Role "$UNNAMED$98"
+						    (object Role "$UNNAMED$100"
 							quid       	"59C1921900B0"
 							supplier   	"Logical View::Generator::genModel::genIndividualComponent::genTable::GenTable"
 							quidu      	"59C1920C021B"
@@ -10346,7 +10368,7 @@
 						origin_x   	932
 						origin_y   	0
 						items      	(list diagram_item_list
-						    (object ClassView "Class" "Logical View::Compilator::domain::expression::expressionmodel::individualComponent::Table" @327
+						    (object ClassView "Class" "Logical View::Compilator::domain::expression::expressionmodel::individualComponent::Table" @332
 							ShowCompartmentStereotypes 	TRUE
 							IncludeAttribute 	TRUE
 							IncludeOperation 	TRUE
@@ -10361,7 +10383,7 @@
 							    color      	0
 							    default_color 	TRUE)
 							label      	(object ItemLabel
-							    Parent_View 	@327
+							    Parent_View 	@332
 							    location   	(978, 1069)
 							    fill_color 	13434879
 							    nlines     	1
@@ -10376,7 +10398,7 @@
 							height     	172
 							annotation 	8
 							autoResize 	TRUE)
-						    (object ClassView "Class" "Logical View::Generator::genModel::genIndividualComponent::genTable::GenTable" @328
+						    (object ClassView "Class" "Logical View::Generator::genModel::genIndividualComponent::genTable::GenTable" @333
 							ShowCompartmentStereotypes 	TRUE
 							IncludeAttribute 	TRUE
 							IncludeOperation 	TRUE
@@ -10391,7 +10413,7 @@
 							    color      	0
 							    default_color 	TRUE)
 							label      	(object ItemLabel
-							    Parent_View 	@328
+							    Parent_View 	@333
 							    location   	(1811, 969)
 							    fill_color 	13434879
 							    nlines     	1
@@ -10406,7 +10428,7 @@
 							height     	386
 							annotation 	8
 							autoResize 	TRUE)
-						    (object AssociationViewNew "$UNNAMED$97" @329
+						    (object AssociationViewNew "$UNNAMED$99" @334
 							location   	(1601, 1144)
 							font       	(object Font
 							    size       	10
@@ -10421,8 +10443,8 @@
 							line_color 	3342489
 							quidu      	"59C1921801E6"
 							roleview_list 	(list RoleViews
-							    (object RoleView "theTable" @330
-								Parent_View 	@329
+							    (object RoleView "theTable" @335
+								Parent_View 	@334
 								location   	(-340, 31)
 								font       	(object Font
 								    size       	10
@@ -10433,8 +10455,8 @@
 								    strike     	FALSE
 								    color      	0
 								    default_color 	TRUE)
-								label      	(object SegLabel @331
-								    Parent_View 	@330
+								label      	(object SegLabel @336
+								    Parent_View 	@335
 								    location   	(1489, 1104)
 								    font       	(object Font
 									size       	10
@@ -10457,16 +10479,16 @@
 								stereotype 	TRUE
 								line_color 	3342489
 								quidu      	"59C1921900AE"
-								client     	@329
-								supplier   	@327
+								client     	@334
+								supplier   	@332
 								vertices   	(list Points
 								    (1601, 1144)
 								    (1401, 1144))
 								line_style 	3
 								origin_attachment 	(1601, 1144)
 								terminal_attachment 	(1401, 1144)
-								label      	(object SegLabel @332
-								    Parent_View 	@330
+								label      	(object SegLabel @337
+								    Parent_View 	@335
 								    location   	(1422, 1198)
 								    font       	(object Font
 									size       	10
@@ -10486,14 +10508,14 @@
 								    pctDist    	0.900000
 								    height     	54
 								    orientation 	0))
-							    (object RoleView "$UNNAMED$98" @333
-								Parent_View 	@329
+							    (object RoleView "$UNNAMED$100" @338
+								Parent_View 	@334
 								location   	(-340, 31)
 								stereotype 	TRUE
 								line_color 	3342489
 								quidu      	"59C1921900B0"
-								client     	@329
-								supplier   	@328
+								client     	@334
+								supplier   	@333
 								vertices   	(list Points
 								    (1601, 1144)
 								    (1802, 1144))
@@ -10577,7 +10599,7 @@
 							    )
 							opExportControl 	"Public"
 							uid        	0)))
-					    (object Association "$UNNAMED$99"
+					    (object Association "$UNNAMED$101"
 						quid       	"59C1925501C9"
 						roles      	(list role_list
 						    (object Role "theTextField"
@@ -10587,7 +10609,7 @@
 							quidu      	"599DEF72017D"
 							client_cardinality 	(value cardinality "1")
 							is_navigable 	TRUE)
-						    (object Role "$UNNAMED$100"
+						    (object Role "$UNNAMED$102"
 							quid       	"59C1925600C9"
 							supplier   	"Logical View::Generator::genModel::genIndividualComponent::genTextField::GenTextField"
 							quidu      	"59C192480109"
@@ -10602,7 +10624,7 @@
 						origin_x   	0
 						origin_y   	0
 						items      	(list diagram_item_list
-						    (object ClassView "Class" "Logical View::Compilator::domain::expression::expressionmodel::individualComponent::TextField" @334
+						    (object ClassView "Class" "Logical View::Compilator::domain::expression::expressionmodel::individualComponent::TextField" @339
 							ShowCompartmentStereotypes 	TRUE
 							IncludeAttribute 	TRUE
 							IncludeOperation 	TRUE
@@ -10617,7 +10639,7 @@
 							    color      	0
 							    default_color 	TRUE)
 							label      	(object ItemLabel
-							    Parent_View 	@334
+							    Parent_View 	@339
 							    location   	(627, 978)
 							    fill_color 	13434879
 							    nlines     	1
@@ -10632,7 +10654,7 @@
 							height     	172
 							annotation 	8
 							autoResize 	TRUE)
-						    (object ClassView "Class" "Logical View::Generator::genModel::genIndividualComponent::genTextField::GenTextField" @335
+						    (object ClassView "Class" "Logical View::Generator::genModel::genIndividualComponent::genTextField::GenTextField" @340
 							ShowCompartmentStereotypes 	TRUE
 							IncludeAttribute 	TRUE
 							IncludeOperation 	TRUE
@@ -10647,7 +10669,7 @@
 							    color      	0
 							    default_color 	TRUE)
 							label      	(object ItemLabel
-							    Parent_View 	@335
+							    Parent_View 	@340
 							    location   	(1545, 947)
 							    fill_color 	13434879
 							    nlines     	1
@@ -10662,7 +10684,7 @@
 							height     	236
 							annotation 	8
 							autoResize 	TRUE)
-						    (object AssociationViewNew "$UNNAMED$99" @336
+						    (object AssociationViewNew "$UNNAMED$101" @341
 							location   	(1293, 1052)
 							font       	(object Font
 							    size       	10
@@ -10677,8 +10699,8 @@
 							line_color 	3342489
 							quidu      	"59C1925501C9"
 							roleview_list 	(list RoleViews
-							    (object RoleView "theTextField" @337
-								Parent_View 	@336
+							    (object RoleView "theTextField" @342
+								Parent_View 	@341
 								location   	(-516, 46)
 								font       	(object Font
 								    size       	10
@@ -10689,8 +10711,8 @@
 								    strike     	FALSE
 								    color      	0
 								    default_color 	TRUE)
-								label      	(object SegLabel @338
-								    Parent_View 	@337
+								label      	(object SegLabel @343
+								    Parent_View 	@342
 								    location   	(1172, 1018)
 								    font       	(object Font
 									size       	10
@@ -10713,14 +10735,14 @@
 								stereotype 	TRUE
 								line_color 	3342489
 								quidu      	"59C1925600B9"
-								client     	@336
-								supplier   	@334
+								client     	@341
+								supplier   	@339
 								vertices   	(list Points
 								    (1293, 1052)
 								    (1052, 1052))
 								line_style 	0
-								label      	(object SegLabel @339
-								    Parent_View 	@337
+								label      	(object SegLabel @344
+								    Parent_View 	@342
 								    location   	(1076, 1106)
 								    font       	(object Font
 									size       	10
@@ -10740,14 +10762,14 @@
 								    pctDist    	0.900000
 								    height     	54
 								    orientation 	0))
-							    (object RoleView "$UNNAMED$100" @340
-								Parent_View 	@336
+							    (object RoleView "$UNNAMED$102" @345
+								Parent_View 	@341
 								location   	(-516, 46)
 								stereotype 	TRUE
 								line_color 	3342489
 								quidu      	"59C1925600C9"
-								client     	@336
-								supplier   	@335
+								client     	@341
+								supplier   	@340
 								vertices   	(list Points
 								    (1293, 1052)
 								    (1535, 1052))
@@ -10762,7 +10784,7 @@
 					origin_x   	1729
 					origin_y   	0
 					items      	(list diagram_item_list
-					    (object ClassView "Class" "Logical View::Generator::genModel::genIndividualComponent::GenIndividualElement" @341
+					    (object ClassView "Class" "Logical View::Generator::genModel::genIndividualComponent::GenIndividualElement" @346
 						ShowCompartmentStereotypes 	TRUE
 						IncludeAttribute 	TRUE
 						IncludeOperation 	TRUE
@@ -10777,7 +10799,7 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@341
+						    Parent_View 	@346
 						    location   	(1880, 605)
 						    fill_color 	13434879
 						    nlines     	1
@@ -10792,7 +10814,7 @@
 						height     	221
 						annotation 	8
 						autoResize 	TRUE)
-					    (object ClassView "Class" "Logical View::Generator::genModel::genIndividualComponent::genButton::GenButton" @342
+					    (object ClassView "Class" "Logical View::Generator::genModel::genIndividualComponent::genButton::GenButton" @347
 						ShowCompartmentStereotypes 	TRUE
 						IncludeAttribute 	TRUE
 						IncludeOperation 	TRUE
@@ -10807,7 +10829,7 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@342
+						    Parent_View 	@347
 						    location   	(1166, 1172)
 						    fill_color 	13434879
 						    nlines     	1
@@ -10822,7 +10844,7 @@
 						height     	356
 						annotation 	8
 						autoResize 	TRUE)
-					    (object ClassView "Class" "Logical View::Generator::genModel::genIndividualComponent::genLabel::GenLabel" @343
+					    (object ClassView "Class" "Logical View::Generator::genModel::genIndividualComponent::genLabel::GenLabel" @348
 						ShowCompartmentStereotypes 	TRUE
 						IncludeAttribute 	TRUE
 						IncludeOperation 	TRUE
@@ -10837,7 +10859,7 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@343
+						    Parent_View 	@348
 						    location   	(1857, 1147)
 						    fill_color 	13434879
 						    nlines     	1
@@ -10852,7 +10874,7 @@
 						height     	412
 						annotation 	8
 						autoResize 	TRUE)
-					    (object ClassView "Class" "Logical View::Generator::genModel::genIndividualComponent::genTextField::GenTextField" @344
+					    (object ClassView "Class" "Logical View::Generator::genModel::genIndividualComponent::genTextField::GenTextField" @349
 						ShowCompartmentStereotypes 	TRUE
 						IncludeAttribute 	TRUE
 						IncludeOperation 	TRUE
@@ -10867,7 +10889,7 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@344
+						    Parent_View 	@349
 						    location   	(2524, 1180)
 						    fill_color 	13434879
 						    nlines     	1
@@ -10882,7 +10904,7 @@
 						height     	356
 						annotation 	8
 						autoResize 	TRUE)
-					    (object ClassView "Class" "Logical View::Generator::genModel::genIndividualComponent::genComboBox::GenComboBox" @345
+					    (object ClassView "Class" "Logical View::Generator::genModel::genIndividualComponent::genComboBox::GenComboBox" @350
 						ShowCompartmentStereotypes 	TRUE
 						IncludeAttribute 	TRUE
 						IncludeOperation 	TRUE
@@ -10897,7 +10919,7 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@345
+						    Parent_View 	@350
 						    location   	(390, 1173)
 						    fill_color 	13434879
 						    nlines     	1
@@ -10912,7 +10934,7 @@
 						height     	356
 						annotation 	8
 						autoResize 	TRUE)
-					    (object ClassView "Class" "Logical View::Generator::genModel::genIndividualComponent::genColunm::GenColumn" @346
+					    (object ClassView "Class" "Logical View::Generator::genModel::genIndividualComponent::genColunm::GenColumn" @351
 						ShowCompartmentStereotypes 	TRUE
 						IncludeAttribute 	TRUE
 						IncludeOperation 	TRUE
@@ -10927,7 +10949,7 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@346
+						    Parent_View 	@351
 						    location   	(3947, 1678)
 						    fill_color 	13434879
 						    nlines     	1
@@ -10942,7 +10964,7 @@
 						height     	356
 						annotation 	8
 						autoResize 	TRUE)
-					    (object ClassView "Class" "Logical View::Generator::genModel::genIndividualComponent::genTable::GenTable" @347
+					    (object ClassView "Class" "Logical View::Generator::genModel::genIndividualComponent::genTable::GenTable" @352
 						ShowCompartmentStereotypes 	TRUE
 						IncludeAttribute 	TRUE
 						IncludeOperation 	TRUE
@@ -10957,7 +10979,7 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@347
+						    Parent_View 	@352
 						    location   	(3272, 1121)
 						    fill_color 	13434879
 						    nlines     	1
@@ -10972,7 +10994,7 @@
 						height     	472
 						annotation 	8
 						autoResize 	TRUE)
-					    (object AssociationViewNew "$UNNAMED$81" @348
+					    (object AssociationViewNew "$UNNAMED$83" @353
 						location   	(4176, 1361)
 						font       	(object Font
 						    size       	10
@@ -10987,8 +11009,8 @@
 						line_color 	3342489
 						quidu      	"59C193DA0187"
 						roleview_list 	(list RoleViews
-						    (object RoleView "listGenColumns" @349
-							Parent_View 	@348
+						    (object RoleView "listGenColumns" @354
+							Parent_View 	@353
 							location   	(418, -26)
 							font       	(object Font
 							    size       	10
@@ -10999,8 +11021,8 @@
 							    strike     	FALSE
 							    color      	0
 							    default_color 	TRUE)
-							label      	(object SegLabel @350
-							    Parent_View 	@349
+							label      	(object SegLabel @355
+							    Parent_View 	@354
 							    location   	(3989, 1629)
 							    font       	(object Font
 								size       	10
@@ -11023,16 +11045,16 @@
 							stereotype 	TRUE
 							line_color 	3342489
 							quidu      	"59C193DA03CE"
-							client     	@348
-							supplier   	@346
+							client     	@353
+							supplier   	@351
 							vertices   	(list Points
 							    (4176, 1361)
 							    (4176, 1666))
 							line_style 	3
 							origin_attachment 	(4176, 1361)
 							terminal_attachment 	(4176, 1666)
-							label      	(object SegLabel @351
-							    Parent_View 	@349
+							label      	(object SegLabel @356
+							    Parent_View 	@354
 							    location   	(4201, 1635)
 							    font       	(object Font
 								size       	10
@@ -11052,14 +11074,14 @@
 							    pctDist    	0.901685
 							    height     	25
 							    orientation 	0))
-						    (object RoleView "$UNNAMED$82" @352
-							Parent_View 	@348
+						    (object RoleView "$UNNAMED$84" @357
+							Parent_View 	@353
 							location   	(418, -26)
 							stereotype 	TRUE
 							line_color 	3342489
 							quidu      	"59C193DA03D0"
-							client     	@348
-							supplier   	@347
+							client     	@353
+							supplier   	@352
 							vertices   	(list Points
 							    (4176, 1361)
 							    (4176, 1301)
@@ -11067,7 +11089,7 @@
 							line_style 	3
 							origin_attachment 	(4176, 1361)
 							terminal_attachment 	(3821, 1301))))
-					    (object CategoryView "Logical View::Generator::genModel::genIndividualComponent::genButton" @353
+					    (object CategoryView "Logical View::Generator::genModel::genIndividualComponent::genButton" @358
 						location   	(1456, 1835)
 						font       	(object Font
 						    size       	10
@@ -11079,7 +11101,7 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@353
+						    Parent_View 	@358
 						    location   	(1186, 1727)
 						    fill_color 	13434879
 						    nlines     	2
@@ -11092,7 +11114,7 @@
 						quidu      	"59C18FA701E4"
 						width      	552
 						height     	228)
-					    (object CategoryView "Logical View::Generator::genModel::genIndividualComponent::genColunm" @354
+					    (object CategoryView "Logical View::Generator::genModel::genIndividualComponent::genColunm" @359
 						location   	(4246, 2250)
 						font       	(object Font
 						    size       	10
@@ -11104,7 +11126,7 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@354
+						    Parent_View 	@359
 						    location   	(3962, 2150)
 						    fill_color 	13434879
 						    nlines     	2
@@ -11117,7 +11139,7 @@
 						quidu      	"59C1901D0301"
 						width      	581
 						height     	213)
-					    (object CategoryView "Logical View::Generator::genModel::genIndividualComponent::genComboBox" @355
+					    (object CategoryView "Logical View::Generator::genModel::genIndividualComponent::genComboBox" @360
 						location   	(691, 1817)
 						font       	(object Font
 						    size       	10
@@ -11129,7 +11151,7 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@355
+						    Parent_View 	@360
 						    location   	(381, 1713)
 						    fill_color 	13434879
 						    nlines     	2
@@ -11142,7 +11164,7 @@
 						quidu      	"59C19091032A"
 						width      	633
 						height     	220)
-					    (object CategoryView "Logical View::Generator::genModel::genIndividualComponent::genLabel" @356
+					    (object CategoryView "Logical View::Generator::genModel::genIndividualComponent::genLabel" @361
 						location   	(2136, 1806)
 						font       	(object Font
 						    size       	10
@@ -11154,7 +11176,7 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@356
+						    Parent_View 	@361
 						    location   	(1899, 1669)
 						    fill_color 	13434879
 						    nlines     	2
@@ -11167,7 +11189,7 @@
 						quidu      	"59C191970318"
 						width      	486
 						height     	286)
-					    (object CategoryView "Logical View::Generator::genModel::genIndividualComponent::genTable" @357
+					    (object CategoryView "Logical View::Generator::genModel::genIndividualComponent::genTable" @362
 						location   	(3544, 1824)
 						font       	(object Font
 						    size       	10
@@ -11179,7 +11201,7 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@357
+						    Parent_View 	@362
 						    location   	(3278, 1713)
 						    fill_color 	13434879
 						    nlines     	2
@@ -11192,7 +11214,7 @@
 						quidu      	"59C191EA00F8"
 						width      	544
 						height     	235)
-					    (object CategoryView "Logical View::Generator::genModel::genIndividualComponent::genTextField" @358
+					    (object CategoryView "Logical View::Generator::genModel::genIndividualComponent::genTextField" @363
 						location   	(2827, 1802)
 						font       	(object Font
 						    size       	10
@@ -11204,7 +11226,7 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@358
+						    Parent_View 	@363
 						    location   	(2546, 1658)
 						    fill_color 	13434879
 						    nlines     	2
@@ -11217,24 +11239,24 @@
 						quidu      	"59C1922E027C"
 						width      	574
 						height     	301)
-					    (object InheritView "" @359
+					    (object InheritView "" @364
 						stereotype 	TRUE
 						line_color 	3342489
 						quidu      	"59C192AC000E"
-						client     	@343
-						supplier   	@341
+						client     	@348
+						supplier   	@346
 						vertices   	(list Points
 						    (2154, 1134)
 						    (2154, 812))
 						line_style 	3
 						origin_attachment 	(2154, 1134)
 						terminal_attachment 	(2154, 812))
-					    (object InheritView "" @360
+					    (object InheritView "" @365
 						stereotype 	TRUE
 						line_color 	3342489
 						quidu      	"59C192A801D5"
-						client     	@345
-						supplier   	@341
+						client     	@350
+						supplier   	@346
 						vertices   	(list Points
 						    (732, 1161)
 						    (732, 1034)
@@ -11243,12 +11265,12 @@
 						line_style 	3
 						origin_attachment 	(732, 1161)
 						terminal_attachment 	(2154, 812))
-					    (object InheritView "" @361
+					    (object InheritView "" @366
 						stereotype 	TRUE
 						line_color 	3342489
 						quidu      	"59C18D4600D3"
-						client     	@342
-						supplier   	@341
+						client     	@347
+						supplier   	@346
 						vertices   	(list Points
 						    (1445, 1160)
 						    (1445, 1034)
@@ -11257,12 +11279,12 @@
 						line_style 	3
 						origin_attachment 	(1445, 1160)
 						terminal_attachment 	(2154, 812))
-					    (object InheritView "" @362
+					    (object InheritView "" @367
 						stereotype 	TRUE
 						line_color 	3342489
 						quidu      	"59C192AF03D3"
-						client     	@344
-						supplier   	@341
+						client     	@349
+						supplier   	@346
 						vertices   	(list Points
 						    (2831, 1168)
 						    (2831, 1034)
@@ -11271,12 +11293,12 @@
 						line_style 	3
 						origin_attachment 	(2831, 1168)
 						terminal_attachment 	(2154, 812))
-					    (object InheritView "" @363
+					    (object InheritView "" @368
 						stereotype 	TRUE
 						line_color 	3342489
 						quidu      	"59C192B40046"
-						client     	@347
-						supplier   	@341
+						client     	@352
+						supplier   	@346
 						vertices   	(list Points
 						    (3559, 1108)
 						    (3559, 1034)
@@ -11285,12 +11307,12 @@
 						line_style 	3
 						origin_attachment 	(3559, 1108)
 						terminal_attachment 	(2154, 812))
-					    (object InheritView "" @364
+					    (object InheritView "" @369
 						stereotype 	TRUE
 						line_color 	3342489
 						quidu      	"59C192BF017F"
-						client     	@346
-						supplier   	@341
+						client     	@351
+						supplier   	@346
 						vertices   	(list Points
 						    (4298, 1666)
 						    (4298, 1033)
@@ -11326,6 +11348,9 @@
 						    (object Operation "createPropertiesContainer"
 							quid       	"5A011CCC0017"
 							parameters 	(list Parameters
+							    (object Parameter "orientation"
+								quid       	"5A25AF67013B"
+								type       	"String")
 							    (object Parameter "fontSize"
 								quid       	"5A1DB54F0267"
 								type       	"Propertie"
@@ -11335,8 +11360,9 @@
 							    PDL        	
 |super.createProperties();
 |createBackground();
+|createOrientation();
 |createTitleHeight();
-|setDefaultContainer(fontSize);
+|setDefaultContainer(orientation, fontSize);
 							    )
 							opExportControl 	"Public"
 							uid        	0)
@@ -11347,6 +11373,16 @@
 							    PDL        	
 |Background b = generator.apperance.background.BackgroundFactory.eINSTANCE.createBackground();
 |this.setTheBackground(b);
+							    )
+							opExportControl 	"Public"
+							uid        	0)
+						    (object Operation "createOrientation"
+							quid       	"5A25AF9300C4"
+							concurrency 	"Sequential"
+							semantics  	(object Semantic_Info
+							    PDL        	
+|Orientation o = generator.apperance.orientation.OrientationFactory.eINSTANCE.createOrientation();
+|this.setTheOrientation(o);
 							    )
 							opExportControl 	"Public"
 							uid        	0)
@@ -11385,6 +11421,11 @@
 |	b.setValue("#FFFFFF");
 |	this.setTheBackground(b);
 |} 
+|if(this.getTheOrientation() == null || this.getTheOrientation().getValue() == null) {
+|	generator.apperance.orientation.Orientation o = generator.apperance.orientation.OrientationFactory.eINSTANCE.createOrientation();
+|	o.setValue(orientation);
+|	this.setTheOrientation(o);
+|} 
 |if(this.getTheTitleHeight() == null || this.getTheTitleHeight().getValue() == null) {
 |	generator.apperance.titlesize.TitleHeight th = generator.apperance.titlesize.TitlesizeFactory.eINSTANCE.createTitleHeight();
 |	int h = 20;
@@ -11398,7 +11439,7 @@
 							    )
 							opExportControl 	"Public"
 							uid        	0)))
-					    (object Association "$UNNAMED$101"
+					    (object Association "$UNNAMED$103"
 						quid       	"59C19BCD00FB"
 						roles      	(list role_list
 						    (object Role "theContainer"
@@ -11408,12 +11449,12 @@
 							quidu      	"599DF30F017D"
 							client_cardinality 	(value cardinality "1")
 							is_navigable 	TRUE)
-						    (object Role "$UNNAMED$102"
+						    (object Role "$UNNAMED$104"
 							quid       	"59C19BCD02F5"
 							supplier   	"Logical View::Generator::genModel::genContainerComponent::genContainer::GenContainer"
 							quidu      	"59C19A7B0297"
 							is_aggregate 	TRUE)))
-					    (object Association "$UNNAMED$103"
+					    (object Association "$UNNAMED$105"
 						quid       	"5A01210901F8"
 						roles      	(list role_list
 						    (object Role "theBackground"
@@ -11424,7 +11465,7 @@
 							client_cardinality 	(value cardinality "1")
 							Containment 	"By Value"
 							is_navigable 	TRUE)
-						    (object Role "$UNNAMED$104"
+						    (object Role "$UNNAMED$106"
 							quid       	"5A01210A00F6"
 							supplier   	"Logical View::Generator::genModel::genContainerComponent::genContainer::GenContainer"
 							quidu      	"59C19A7B0297"
@@ -11440,7 +11481,7 @@
 						origin_x   	0
 						origin_y   	0
 						items      	(list diagram_item_list
-						    (object ClassView "Class" "Logical View::Compilator::domain::expression::expressionmodel::containerComponent::Container" @365
+						    (object ClassView "Class" "Logical View::Compilator::domain::expression::expressionmodel::containerComponent::Container" @370
 							ShowCompartmentStereotypes 	TRUE
 							IncludeAttribute 	TRUE
 							IncludeOperation 	TRUE
@@ -11455,7 +11496,7 @@
 							    color      	0
 							    default_color 	TRUE)
 							label      	(object ItemLabel
-							    Parent_View 	@365
+							    Parent_View 	@370
 							    location   	(785, 1034)
 							    fill_color 	13434879
 							    nlines     	1
@@ -11470,7 +11511,7 @@
 							height     	172
 							annotation 	8
 							autoResize 	TRUE)
-						    (object ClassView "Class" "Logical View::Generator::apperance::background::Background" @366
+						    (object ClassView "Class" "Logical View::Generator::apperance::background::Background" @371
 							ShowCompartmentStereotypes 	TRUE
 							IncludeAttribute 	TRUE
 							IncludeOperation 	TRUE
@@ -11485,7 +11526,7 @@
 							    color      	0
 							    default_color 	TRUE)
 							label      	(object ItemLabel
-							    Parent_View 	@366
+							    Parent_View 	@371
 							    location   	(1784, 1561)
 							    fill_color 	13434879
 							    nlines     	1
@@ -11500,7 +11541,7 @@
 							height     	232
 							annotation 	8
 							autoResize 	TRUE)
-						    (object ClassView "Class" "Logical View::Generator::genModel::genContainerComponent::genContainer::GenContainer" @367
+						    (object ClassView "Class" "Logical View::Generator::genModel::genContainerComponent::genContainer::GenContainer" @372
 							ShowCompartmentStereotypes 	TRUE
 							IncludeAttribute 	TRUE
 							IncludeOperation 	TRUE
@@ -11515,7 +11556,7 @@
 							    color      	0
 							    default_color 	TRUE)
 							label      	(object ItemLabel
-							    Parent_View 	@367
+							    Parent_View 	@372
 							    location   	(1652, 997)
 							    fill_color 	13434879
 							    nlines     	1
@@ -11530,7 +11571,7 @@
 							height     	286
 							annotation 	8
 							autoResize 	TRUE)
-						    (object AssociationViewNew "$UNNAMED$101" @368
+						    (object AssociationViewNew "$UNNAMED$103" @373
 							location   	(1421, 1113)
 							font       	(object Font
 							    size       	10
@@ -11545,8 +11586,8 @@
 							line_color 	3342489
 							quidu      	"59C19BCD00FB"
 							roleview_list 	(list RoleViews
-							    (object RoleView "theContainer" @369
-								Parent_View 	@368
+							    (object RoleView "theContainer" @374
+								Parent_View 	@373
 								location   	(-685, -12)
 								font       	(object Font
 								    size       	10
@@ -11557,8 +11598,8 @@
 								    strike     	FALSE
 								    color      	0
 								    default_color 	TRUE)
-								label      	(object SegLabel @370
-								    Parent_View 	@369
+								label      	(object SegLabel @375
+								    Parent_View 	@374
 								    location   	(1338, 1069)
 								    font       	(object Font
 									size       	10
@@ -11581,16 +11622,16 @@
 								stereotype 	TRUE
 								line_color 	3342489
 								quidu      	"59C19BCD02F3"
-								client     	@368
-								supplier   	@365
+								client     	@373
+								supplier   	@370
 								vertices   	(list Points
 								    (1421, 1113)
 								    (1200, 1113))
 								line_style 	3
 								origin_attachment 	(1421, 1113)
 								terminal_attachment 	(1200, 1113)
-								label      	(object SegLabel @371
-								    Parent_View 	@369
+								label      	(object SegLabel @376
+								    Parent_View 	@374
 								    location   	(1222, 1167)
 								    font       	(object Font
 									size       	10
@@ -11610,21 +11651,21 @@
 								    pctDist    	0.900000
 								    height     	54
 								    orientation 	0))
-							    (object RoleView "$UNNAMED$102" @372
-								Parent_View 	@368
+							    (object RoleView "$UNNAMED$104" @377
+								Parent_View 	@373
 								location   	(-685, -12)
 								stereotype 	TRUE
 								line_color 	3342489
 								quidu      	"59C19BCD02F5"
-								client     	@368
-								supplier   	@367
+								client     	@373
+								supplier   	@372
 								vertices   	(list Points
 								    (1421, 1113)
 								    (1643, 1113))
 								line_style 	3
 								origin_attachment 	(1421, 1113)
 								terminal_attachment 	(1643, 1113))))
-						    (object AssociationViewNew "$UNNAMED$103" @373
+						    (object AssociationViewNew "$UNNAMED$105" @378
 							location   	(1928, 1409)
 							font       	(object Font
 							    size       	10
@@ -11639,8 +11680,8 @@
 							line_color 	3342489
 							quidu      	"5A01210901F8"
 							roleview_list 	(list RoleViews
-							    (object RoleView "theBackground" @374
-								Parent_View 	@373
+							    (object RoleView "theBackground" @379
+								Parent_View 	@378
 								location   	(0, 281)
 								font       	(object Font
 								    size       	10
@@ -11651,8 +11692,8 @@
 								    strike     	FALSE
 								    color      	0
 								    default_color 	TRUE)
-								label      	(object SegLabel @375
-								    Parent_View 	@374
+								label      	(object SegLabel @380
+								    Parent_View 	@379
 								    location   	(1762, 1520)
 								    font       	(object Font
 									size       	10
@@ -11675,14 +11716,14 @@
 								stereotype 	TRUE
 								line_color 	3342489
 								quidu      	"5A01210A00F1"
-								client     	@373
-								supplier   	@366
+								client     	@378
+								supplier   	@371
 								vertices   	(list Points
 								    (1928, 1409)
 								    (1928, 1548))
 								line_style 	0
-								label      	(object SegLabel @376
-								    Parent_View 	@374
+								label      	(object SegLabel @381
+								    Parent_View 	@379
 								    location   	(1957, 1523)
 								    font       	(object Font
 									size       	10
@@ -11702,14 +11743,14 @@
 								    pctDist    	0.820144
 								    height     	29
 								    orientation 	0))
-							    (object RoleView "$UNNAMED$104" @377
-								Parent_View 	@373
+							    (object RoleView "$UNNAMED$106" @382
+								Parent_View 	@378
 								location   	(0, 281)
 								stereotype 	TRUE
 								line_color 	3342489
 								quidu      	"5A01210A00F6"
-								client     	@373
-								supplier   	@367
+								client     	@378
+								supplier   	@372
 								vertices   	(list Points
 								    (1928, 1409)
 								    (1928, 1271))
@@ -11724,7 +11765,7 @@
 					origin_x   	0
 					origin_y   	0
 					items      	(list diagram_item_list
-					    (object ClassView "Class" "Logical View::Generator::genModel::genContainerComponent::GenContainerElement" @378
+					    (object ClassView "Class" "Logical View::Generator::genModel::genContainerComponent::GenContainerElement" @383
 						ShowCompartmentStereotypes 	TRUE
 						IncludeAttribute 	TRUE
 						IncludeOperation 	TRUE
@@ -11739,7 +11780,7 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@378
+						    Parent_View 	@383
 						    location   	(1882, 705)
 						    fill_color 	13434879
 						    nlines     	1
@@ -11754,7 +11795,7 @@
 						height     	126
 						annotation 	8
 						autoResize 	TRUE)
-					    (object ClassView "Class" "Logical View::Generator::genModel::genContainerComponent::genContainer::GenContainer" @379
+					    (object ClassView "Class" "Logical View::Generator::genModel::genContainerComponent::genContainer::GenContainer" @384
 						ShowCompartmentStereotypes 	TRUE
 						IncludeAttribute 	TRUE
 						IncludeOperation 	TRUE
@@ -11769,8 +11810,8 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@379
-						    location   	(1804, 974)
+						    Parent_View 	@384
+						    location   	(1804, 949)
 						    fill_color 	13434879
 						    nlines     	1
 						    max_width  	552
@@ -11781,20 +11822,20 @@
 						fill_color 	13434879
 						quidu      	"59C19A7B0297"
 						width      	570
-						height     	382
+						height     	432
 						annotation 	8
 						autoResize 	TRUE)
-					    (object InheritView "" @380
+					    (object InheritView "" @385
 						stereotype 	TRUE
 						line_color 	3342489
 						quidu      	"59C19B120261"
-						client     	@379
-						supplier   	@378
+						client     	@384
+						supplier   	@383
 						vertices   	(list Points
-						    (2082, 962)
+						    (2082, 937)
 						    (2082, 818))
 						line_style 	3
-						origin_attachment 	(2082, 962)
+						origin_attachment 	(2082, 937)
 						terminal_attachment 	(2082, 818)))))))
 			logical_presentations 	(list unit_reference_list
 			    (object ClassDiagram "Main"
@@ -11806,7 +11847,7 @@
 				origin_x   	0
 				origin_y   	0
 				items      	(list diagram_item_list
-				    (object ClassView "Class" "Logical View::Generator::genModel::genIndividualComponent::GenIndividualElement" @381
+				    (object ClassView "Class" "Logical View::Generator::genModel::genIndividualComponent::GenIndividualElement" @386
 					ShowCompartmentStereotypes 	TRUE
 					IncludeAttribute 	TRUE
 					IncludeOperation 	TRUE
@@ -11821,7 +11862,7 @@
 					    color      	0
 					    default_color 	TRUE)
 					label      	(object ItemLabel
-					    Parent_View 	@381
+					    Parent_View 	@386
 					    location   	(1629, 1315)
 					    fill_color 	13434879
 					    nlines     	1
@@ -11836,7 +11877,7 @@
 					height     	172
 					annotation 	8
 					autoResize 	TRUE)
-				    (object ClassView "Class" "Logical View::Generator::genModel::genContainerComponent::GenContainerElement" @382
+				    (object ClassView "Class" "Logical View::Generator::genModel::genContainerComponent::GenContainerElement" @387
 					ShowCompartmentStereotypes 	TRUE
 					IncludeAttribute 	TRUE
 					IncludeOperation 	TRUE
@@ -11851,7 +11892,7 @@
 					    color      	0
 					    default_color 	TRUE)
 					label      	(object ItemLabel
-					    Parent_View 	@382
+					    Parent_View 	@387
 					    location   	(1632, 601)
 					    fill_color 	13434879
 					    nlines     	1
@@ -11866,7 +11907,7 @@
 					height     	172
 					annotation 	8
 					autoResize 	TRUE)
-				    (object ClassView "Class" "Logical View::Generator::genModel::GenElement" @383
+				    (object ClassView "Class" "Logical View::Generator::genModel::GenElement" @388
 					ShowCompartmentStereotypes 	TRUE
 					IncludeAttribute 	TRUE
 					IncludeOperation 	TRUE
@@ -11881,7 +11922,7 @@
 					    color      	0
 					    default_color 	TRUE)
 					label      	(object ItemLabel
-					    Parent_View 	@383
+					    Parent_View 	@388
 					    location   	(912, 791)
 					    fill_color 	13434879
 					    nlines     	1
@@ -11892,36 +11933,18 @@
 					line_color 	3342489
 					fill_color 	13434879
 					quidu      	"59C175E402CD"
-					compartment 	(object Compartment
-					    Parent_View 	@383
-					    location   	(912, 852)
-					    font       	(object Font
-						size       	10
-						face       	"Arial"
-						bold       	FALSE
-						italics    	TRUE
-						underline  	FALSE
-						strike     	FALSE
-						color      	0
-						default_color 	TRUE)
-					    icon_style 	"Icon"
-					    fill_color 	16777215
-					    anchor     	2
-					    nlines     	10
-					    max_width  	369
-					    justify    	1)
 					width      	390
 					height     	586
 					annotation 	8
 					autoResize 	TRUE)
-				    (object AssociationViewNew "$UNNAMED$51" @384
+				    (object AssociationViewNew "$UNNAMED$51" @389
 					location   	(1298, 652)
 					stereotype 	TRUE
 					line_color 	3342489
 					quidu      	"59C177810331"
 					roleview_list 	(list RoleViews
-					    (object RoleView "$UNNAMED$52" @385
-						Parent_View 	@384
+					    (object RoleView "$UNNAMED$52" @390
+						Parent_View 	@389
 						location   	(-302, -23)
 						font       	(object Font
 						    size       	10
@@ -11932,8 +11955,8 @@
 						    strike     	FALSE
 						    color      	0
 						    default_color 	TRUE)
-						label      	(object SegLabel @386
-						    Parent_View 	@385
+						label      	(object SegLabel @391
+						    Parent_View 	@390
 						    location   	(1558, 611)
 						    font       	(object Font
 							size       	10
@@ -11957,16 +11980,16 @@
 						stereotype 	TRUE
 						line_color 	3342489
 						quidu      	"59C1778300BD"
-						client     	@384
-						supplier   	@382
+						client     	@389
+						supplier   	@387
 						vertices   	(list Points
 						    (1298, 652)
 						    (1623, 652))
 						line_style 	3
 						origin_attachment 	(1298, 652)
 						terminal_attachment 	(1623, 652))
-					    (object RoleView "listGenElements" @387
-						Parent_View 	@384
+					    (object RoleView "listGenElements" @392
+						Parent_View 	@389
 						location   	(-302, -23)
 						font       	(object Font
 						    size       	10
@@ -11977,8 +12000,8 @@
 						    strike     	FALSE
 						    color      	0
 						    default_color 	TRUE)
-						label      	(object SegLabel @388
-						    Parent_View 	@387
+						label      	(object SegLabel @393
+						    Parent_View 	@392
 						    location   	(920, 747)
 						    font       	(object Font
 							size       	10
@@ -12001,8 +12024,8 @@
 						stereotype 	TRUE
 						line_color 	3342489
 						quidu      	"59C1778300BB"
-						client     	@384
-						supplier   	@383
+						client     	@389
+						supplier   	@388
 						vertices   	(list Points
 						    (1298, 652)
 						    (1100, 652)
@@ -12010,8 +12033,8 @@
 						line_style 	3
 						origin_attachment 	(1298, 652)
 						terminal_attachment 	(1100, 779)
-						label      	(object SegLabel @389
-						    Parent_View 	@387
+						label      	(object SegLabel @394
+						    Parent_View 	@392
 						    location   	(1139, 759)
 						    font       	(object Font
 							size       	10
@@ -12031,7 +12054,7 @@
 						    pctDist    	0.938017
 						    height     	39
 						    orientation 	0))))
-				    (object CategoryView "Logical View::Generator::genModel::genIndividualComponent" @390
+				    (object CategoryView "Logical View::Generator::genModel::genIndividualComponent" @395
 					location   	(618, 318)
 					font       	(object Font
 					    size       	10
@@ -12043,7 +12066,7 @@
 					    color      	0
 					    default_color 	TRUE)
 					label      	(object ItemLabel
-					    Parent_View 	@390
+					    Parent_View 	@395
 					    location   	(378, 234)
 					    fill_color 	13434879
 					    nlines     	2
@@ -12056,7 +12079,7 @@
 					quidu      	"59C18CE50064"
 					width      	493
 					height     	181)
-				    (object CategoryView "Logical View::Generator::genModel::genContainerComponent" @391
+				    (object CategoryView "Logical View::Generator::genModel::genContainerComponent" @396
 					location   	(2459, 347)
 					font       	(object Font
 					    size       	10
@@ -12068,7 +12091,7 @@
 					    color      	0
 					    default_color 	TRUE)
 					label      	(object ItemLabel
-					    Parent_View 	@391
+					    Parent_View 	@396
 					    location   	(2212, 247)
 					    fill_color 	13434879
 					    nlines     	2
@@ -12081,12 +12104,12 @@
 					quidu      	"59C199ED022A"
 					width      	507
 					height     	212)
-				    (object InheritView "" @392
+				    (object InheritView "" @397
 					stereotype 	TRUE
 					line_color 	3342489
 					quidu      	"59C1776102B3"
-					client     	@382
-					supplier   	@383
+					client     	@387
+					supplier   	@388
 					vertices   	(list Points
 					    (1871, 761)
 					    (1871, 1072)
@@ -12094,12 +12117,12 @@
 					line_style 	3
 					origin_attachment 	(1871, 761)
 					terminal_attachment 	(1293, 1072))
-				    (object InheritView "" @393
+				    (object InheritView "" @398
 					stereotype 	TRUE
 					line_color 	3342489
 					quidu      	"59C1776401C3"
-					client     	@381
-					supplier   	@383
+					client     	@386
+					supplier   	@388
 					vertices   	(list Points
 					    (1870, 1303)
 					    (1870, 1072)
@@ -12169,7 +12192,7 @@
 				origin_x   	0
 				origin_y   	0
 				items      	(list diagram_item_list
-				    (object ClassView "Class" "Logical View::Generator::enumeration::Weight" @394
+				    (object ClassView "Class" "Logical View::Generator::enumeration::Weight" @399
 					ShowCompartmentStereotypes 	TRUE
 					IncludeAttribute 	TRUE
 					IncludeOperation 	TRUE
@@ -12184,7 +12207,7 @@
 					    color      	0
 					    default_color 	TRUE)
 					label      	(object ItemLabel
-					    Parent_View 	@394
+					    Parent_View 	@399
 					    location   	(152, 239)
 					    fill_color 	13434879
 					    nlines     	1
@@ -12192,7 +12215,7 @@
 					    justify    	0
 					    label      	"Weight")
 					stereotype 	(object ItemLabel
-					    Parent_View 	@394
+					    Parent_View 	@399
 					    location   	(152, 189)
 					    fill_color 	13434879
 					    anchor     	10
@@ -12208,7 +12231,7 @@
 					height     	442
 					annotation 	8
 					autoResize 	TRUE)
-				    (object ClassView "Class" "Logical View::Generator::enumeration::Height" @395
+				    (object ClassView "Class" "Logical View::Generator::enumeration::Height" @400
 					ShowCompartmentStereotypes 	TRUE
 					IncludeAttribute 	TRUE
 					IncludeOperation 	TRUE
@@ -12223,7 +12246,7 @@
 					    color      	0
 					    default_color 	TRUE)
 					label      	(object ItemLabel
-					    Parent_View 	@395
+					    Parent_View 	@400
 					    location   	(862, 238)
 					    fill_color 	13434879
 					    nlines     	1
@@ -12231,7 +12254,7 @@
 					    justify    	0
 					    label      	"Height")
 					stereotype 	(object ItemLabel
-					    Parent_View 	@395
+					    Parent_View 	@400
 					    location   	(862, 188)
 					    fill_color 	13434879
 					    anchor     	10
@@ -12345,6 +12368,20 @@
 					class_attributes 	(list class_attribute_list
 					    (object ClassAttribute "tooldataform.formmodel.concreta.Interface"
 						quid       	"59FA937A01CF"
+						stereotype 	"javaclass")))
+				    (object Class "DomanStyle"
+					quid       	"5A33018201A7"
+					stereotype 	"dataType"
+					class_attributes 	(list class_attribute_list
+					    (object ClassAttribute "tooldataform.styles.domain.Domain"
+						quid       	"5A33019F010E"
+						stereotype 	"javaclass")))
+				    (object Class "Style"
+					quid       	"5A3307CC030E"
+					stereotype 	"dataType"
+					class_attributes 	(list class_attribute_list
+					    (object ClassAttribute "tooldataform.styles.domain.Style"
+						quid       	"5A3307DB01F4"
 						stereotype 	"javaclass"))))
 				logical_presentations 	(list unit_reference_list
 				    (object ClassDiagram "Main"
@@ -12356,7 +12393,7 @@
 					origin_x   	0
 					origin_y   	635
 					items      	(list diagram_item_list
-					    (object ClassView "Class" "Logical View::Generator::dataTypes::dataTypesDataForm::GraphicalContainer" @396
+					    (object ClassView "Class" "Logical View::Generator::dataTypes::dataTypesDataForm::GraphicalContainer" @401
 						ShowCompartmentStereotypes 	TRUE
 						IncludeAttribute 	TRUE
 						IncludeOperation 	TRUE
@@ -12371,7 +12408,7 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@396
+						    Parent_View 	@401
 						    location   	(150, 719)
 						    fill_color 	13434879
 						    nlines     	1
@@ -12379,7 +12416,7 @@
 						    justify    	0
 						    label      	"GraphicalContainer")
 						stereotype 	(object ItemLabel
-						    Parent_View 	@396
+						    Parent_View 	@401
 						    location   	(150, 669)
 						    fill_color 	13434879
 						    anchor     	10
@@ -12395,7 +12432,7 @@
 						height     	237
 						annotation 	8
 						autoResize 	TRUE)
-					    (object ClassView "Class" "Logical View::Generator::dataTypes::dataTypesDataForm::Container" @397
+					    (object ClassView "Class" "Logical View::Generator::dataTypes::dataTypesDataForm::Container" @402
 						ShowCompartmentStereotypes 	TRUE
 						IncludeAttribute 	TRUE
 						IncludeOperation 	TRUE
@@ -12410,7 +12447,7 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@397
+						    Parent_View 	@402
 						    location   	(146, 1048)
 						    fill_color 	13434879
 						    nlines     	1
@@ -12418,7 +12455,7 @@
 						    justify    	0
 						    label      	"Container")
 						stereotype 	(object ItemLabel
-						    Parent_View 	@397
+						    Parent_View 	@402
 						    location   	(146, 998)
 						    fill_color 	13434879
 						    anchor     	10
@@ -12434,7 +12471,7 @@
 						height     	262
 						annotation 	8
 						autoResize 	TRUE)
-					    (object ClassView "Class" "Logical View::Generator::dataTypes::dataTypesDataForm::DataForm_Diagram" @398
+					    (object ClassView "Class" "Logical View::Generator::dataTypes::dataTypesDataForm::DataForm_Diagram" @403
 						ShowCompartmentStereotypes 	TRUE
 						IncludeAttribute 	TRUE
 						IncludeOperation 	TRUE
@@ -12449,7 +12486,7 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@398
+						    Parent_View 	@403
 						    location   	(159, 381)
 						    fill_color 	13434879
 						    nlines     	1
@@ -12457,7 +12494,7 @@
 						    justify    	0
 						    label      	"DataForm_Diagram")
 						stereotype 	(object ItemLabel
-						    Parent_View 	@398
+						    Parent_View 	@403
 						    location   	(159, 331)
 						    fill_color 	13434879
 						    anchor     	10
@@ -12473,7 +12510,7 @@
 						height     	231
 						annotation 	8
 						autoResize 	TRUE)
-					    (object ClassView "Class" "Logical View::Generator::dataTypes::dataTypesDataForm::GraphicalIndividualEement" @399
+					    (object ClassView "Class" "Logical View::Generator::dataTypes::dataTypesDataForm::GraphicalIndividualEement" @404
 						ShowCompartmentStereotypes 	TRUE
 						IncludeAttribute 	TRUE
 						IncludeOperation 	TRUE
@@ -12488,7 +12525,7 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@399
+						    Parent_View 	@404
 						    location   	(146, 1376)
 						    fill_color 	13434879
 						    nlines     	1
@@ -12496,7 +12533,7 @@
 						    justify    	0
 						    label      	"GraphicalIndividualEement")
 						stereotype 	(object ItemLabel
-						    Parent_View 	@399
+						    Parent_View 	@404
 						    location   	(146, 1326)
 						    fill_color 	13434879
 						    anchor     	10
@@ -12512,7 +12549,7 @@
 						height     	242
 						annotation 	8
 						autoResize 	TRUE)
-					    (object ClassView "Class" "Logical View::Generator::dataTypes::dataTypesDataForm::Button" @400
+					    (object ClassView "Class" "Logical View::Generator::dataTypes::dataTypesDataForm::Button" @405
 						ShowCompartmentStereotypes 	TRUE
 						IncludeAttribute 	TRUE
 						IncludeOperation 	TRUE
@@ -12527,7 +12564,7 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@400
+						    Parent_View 	@405
 						    location   	(1647, 379)
 						    fill_color 	13434879
 						    nlines     	1
@@ -12535,7 +12572,7 @@
 						    justify    	0
 						    label      	"Button")
 						stereotype 	(object ItemLabel
-						    Parent_View 	@400
+						    Parent_View 	@405
 						    location   	(1647, 329)
 						    fill_color 	13434879
 						    anchor     	10
@@ -12551,7 +12588,7 @@
 						height     	237
 						annotation 	8
 						autoResize 	TRUE)
-					    (object ClassView "Class" "Logical View::Generator::dataTypes::dataTypesDataForm::ComboView" @401
+					    (object ClassView "Class" "Logical View::Generator::dataTypes::dataTypesDataForm::ComboView" @406
 						ShowCompartmentStereotypes 	TRUE
 						IncludeAttribute 	TRUE
 						IncludeOperation 	TRUE
@@ -12566,7 +12603,7 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@401
+						    Parent_View 	@406
 						    location   	(1613, 706)
 						    fill_color 	13434879
 						    nlines     	1
@@ -12574,7 +12611,7 @@
 						    justify    	0
 						    label      	"ComboView")
 						stereotype 	(object ItemLabel
-						    Parent_View 	@401
+						    Parent_View 	@406
 						    location   	(1613, 656)
 						    fill_color 	13434879
 						    anchor     	10
@@ -12590,7 +12627,7 @@
 						height     	244
 						annotation 	8
 						autoResize 	TRUE)
-					    (object ClassView "Class" "Logical View::Generator::dataTypes::dataTypesDataForm::LabelView" @402
+					    (object ClassView "Class" "Logical View::Generator::dataTypes::dataTypesDataForm::LabelView" @407
 						ShowCompartmentStereotypes 	TRUE
 						IncludeAttribute 	TRUE
 						IncludeOperation 	TRUE
@@ -12605,7 +12642,7 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@402
+						    Parent_View 	@407
 						    location   	(1600, 1043)
 						    fill_color 	13434879
 						    nlines     	1
@@ -12613,7 +12650,7 @@
 						    justify    	0
 						    label      	"LabelView")
 						stereotype 	(object ItemLabel
-						    Parent_View 	@402
+						    Parent_View 	@407
 						    location   	(1600, 993)
 						    fill_color 	13434879
 						    anchor     	10
@@ -12629,7 +12666,7 @@
 						height     	257
 						annotation 	8
 						autoResize 	TRUE)
-					    (object ClassView "Class" "Logical View::Generator::dataTypes::dataTypesDataForm::TextView" @403
+					    (object ClassView "Class" "Logical View::Generator::dataTypes::dataTypesDataForm::TextView" @408
 						ShowCompartmentStereotypes 	TRUE
 						IncludeAttribute 	TRUE
 						IncludeOperation 	TRUE
@@ -12644,7 +12681,7 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@403
+						    Parent_View 	@408
 						    location   	(1600, 1372)
 						    fill_color 	13434879
 						    nlines     	1
@@ -12652,7 +12689,7 @@
 						    justify    	0
 						    label      	"TextView")
 						stereotype 	(object ItemLabel
-						    Parent_View 	@403
+						    Parent_View 	@408
 						    location   	(1600, 1322)
 						    fill_color 	13434879
 						    anchor     	10
@@ -12668,7 +12705,7 @@
 						height     	243
 						annotation 	8
 						autoResize 	TRUE)
-					    (object ClassView "Class" "Logical View::Generator::dataTypes::dataTypesDataForm::TableView" @404
+					    (object ClassView "Class" "Logical View::Generator::dataTypes::dataTypesDataForm::TableView" @409
 						ShowCompartmentStereotypes 	TRUE
 						IncludeAttribute 	TRUE
 						IncludeOperation 	TRUE
@@ -12683,7 +12720,7 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@404
+						    Parent_View 	@409
 						    location   	(143, 1665)
 						    fill_color 	13434879
 						    nlines     	1
@@ -12691,7 +12728,7 @@
 						    justify    	0
 						    label      	"TableView")
 						stereotype 	(object ItemLabel
-						    Parent_View 	@404
+						    Parent_View 	@409
 						    location   	(143, 1615)
 						    fill_color 	13434879
 						    anchor     	10
@@ -12707,7 +12744,7 @@
 						height     	250
 						annotation 	8
 						autoResize 	TRUE)
-					    (object ClassView "Class" "Logical View::Generator::dataTypes::dataTypesDataForm::ColumView" @405
+					    (object ClassView "Class" "Logical View::Generator::dataTypes::dataTypesDataForm::ColumView" @410
 						ShowCompartmentStereotypes 	TRUE
 						IncludeAttribute 	TRUE
 						IncludeOperation 	TRUE
@@ -12722,7 +12759,7 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@405
+						    Parent_View 	@410
 						    location   	(1610, 1656)
 						    fill_color 	13434879
 						    nlines     	1
@@ -12730,7 +12767,7 @@
 						    justify    	0
 						    label      	"ColumView")
 						stereotype 	(object ItemLabel
-						    Parent_View 	@405
+						    Parent_View 	@410
 						    location   	(1610, 1606)
 						    fill_color 	13434879
 						    anchor     	10
@@ -12746,7 +12783,7 @@
 						height     	244
 						annotation 	8
 						autoResize 	TRUE)
-					    (object ClassView "Class" "Logical View::Generator::dataTypes::dataTypesDataForm::ModelFactory" @406
+					    (object ClassView "Class" "Logical View::Generator::dataTypes::dataTypesDataForm::ModelFactory" @411
 						ShowCompartmentStereotypes 	TRUE
 						IncludeAttribute 	TRUE
 						IncludeOperation 	TRUE
@@ -12761,7 +12798,7 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@406
+						    Parent_View 	@411
 						    location   	(1613, 1962)
 						    fill_color 	13434879
 						    nlines     	1
@@ -12769,7 +12806,7 @@
 						    justify    	0
 						    label      	"ModelFactory")
 						stereotype 	(object ItemLabel
-						    Parent_View 	@406
+						    Parent_View 	@411
 						    location   	(1613, 1912)
 						    fill_color 	13434879
 						    anchor     	10
@@ -12785,7 +12822,7 @@
 						height     	262
 						annotation 	8
 						autoResize 	TRUE)
-					    (object ClassView "Class" "Logical View::Generator::dataTypes::dataTypesDataForm::Interface" @407
+					    (object ClassView "Class" "Logical View::Generator::dataTypes::dataTypesDataForm::Interface" @412
 						ShowCompartmentStereotypes 	TRUE
 						IncludeAttribute 	TRUE
 						IncludeOperation 	TRUE
@@ -12800,7 +12837,7 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@407
+						    Parent_View 	@412
 						    location   	(147, 1971)
 						    fill_color 	13434879
 						    nlines     	1
@@ -12808,7 +12845,7 @@
 						    justify    	0
 						    label      	"Interface")
 						stereotype 	(object ItemLabel
-						    Parent_View 	@407
+						    Parent_View 	@412
 						    location   	(147, 1921)
 						    fill_color 	13434879
 						    anchor     	10
@@ -12822,6 +12859,84 @@
 						quidu      	"59FA937A01CE"
 						width      	1425
 						height     	244
+						annotation 	8
+						autoResize 	TRUE)
+					    (object ClassView "Class" "Logical View::Generator::dataTypes::dataTypesDataForm::DomanStyle" @413
+						ShowCompartmentStereotypes 	TRUE
+						IncludeAttribute 	TRUE
+						IncludeOperation 	TRUE
+						location   	(645, 2340)
+						font       	(object Font
+						    size       	10
+						    face       	"Arial"
+						    bold       	FALSE
+						    italics    	FALSE
+						    underline  	FALSE
+						    strike     	FALSE
+						    color      	0
+						    default_color 	TRUE)
+						label      	(object ItemLabel
+						    Parent_View 	@413
+						    location   	(159, 2281)
+						    fill_color 	13434879
+						    nlines     	1
+						    max_width  	972
+						    justify    	0
+						    label      	"DomanStyle")
+						stereotype 	(object ItemLabel
+						    Parent_View 	@413
+						    location   	(159, 2231)
+						    fill_color 	13434879
+						    anchor     	10
+						    nlines     	1
+						    max_width  	972
+						    justify    	0
+						    label      	"<<dataType>>")
+						icon_style 	"Icon"
+						line_color 	3342489
+						fill_color 	13434879
+						quidu      	"5A33018201A7"
+						width      	990
+						height     	242
+						annotation 	8
+						autoResize 	TRUE)
+					    (object ClassView "Class" "Logical View::Generator::dataTypes::dataTypesDataForm::Style" @414
+						ShowCompartmentStereotypes 	TRUE
+						IncludeAttribute 	TRUE
+						IncludeOperation 	TRUE
+						location   	(1644, 2342)
+						font       	(object Font
+						    size       	10
+						    face       	"Arial"
+						    bold       	FALSE
+						    italics    	FALSE
+						    underline  	FALSE
+						    strike     	FALSE
+						    color      	0
+						    default_color 	TRUE)
+						label      	(object ItemLabel
+						    Parent_View 	@414
+						    location   	(1180, 2283)
+						    fill_color 	13434879
+						    nlines     	1
+						    max_width  	928
+						    justify    	0
+						    label      	"Style")
+						stereotype 	(object ItemLabel
+						    Parent_View 	@414
+						    location   	(1180, 2233)
+						    fill_color 	13434879
+						    anchor     	10
+						    nlines     	1
+						    max_width  	928
+						    justify    	0
+						    label      	"<<dataType>>")
+						icon_style 	"Icon"
+						line_color 	3342489
+						fill_color 	13434879
+						quidu      	"5A3307CC030E"
+						width      	946
+						height     	242
 						annotation 	8
 						autoResize 	TRUE)))))
 			    (object Class_Category "dataTypesGmf"
@@ -12859,7 +12974,7 @@
 					origin_x   	0
 					origin_y   	66
 					items      	(list diagram_item_list
-					    (object ClassView "Class" "Logical View::Generator::dataTypes::dataTypesGmf::Bounds" @408
+					    (object ClassView "Class" "Logical View::Generator::dataTypes::dataTypesGmf::Bounds" @415
 						ShowCompartmentStereotypes 	TRUE
 						IncludeAttribute 	TRUE
 						IncludeOperation 	TRUE
@@ -12874,7 +12989,7 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@408
+						    Parent_View 	@415
 						    location   	(206, 352)
 						    fill_color 	13434879
 						    nlines     	1
@@ -12882,7 +12997,7 @@
 						    justify    	0
 						    label      	"Bounds")
 						stereotype 	(object ItemLabel
-						    Parent_View 	@408
+						    Parent_View 	@415
 						    location   	(206, 302)
 						    fill_color 	13434879
 						    anchor     	10
@@ -12898,7 +13013,7 @@
 						height     	242
 						annotation 	8
 						autoResize 	TRUE)
-					    (object ClassView "Class" "Logical View::Generator::dataTypes::dataTypesGmf::Diagram" @409
+					    (object ClassView "Class" "Logical View::Generator::dataTypes::dataTypesGmf::Diagram" @416
 						ShowCompartmentStereotypes 	TRUE
 						IncludeAttribute 	TRUE
 						IncludeOperation 	TRUE
@@ -12913,7 +13028,7 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@409
+						    Parent_View 	@416
 						    location   	(218, 735)
 						    fill_color 	13434879
 						    nlines     	1
@@ -12921,7 +13036,7 @@
 						    justify    	0
 						    label      	"Diagram")
 						stereotype 	(object ItemLabel
-						    Parent_View 	@409
+						    Parent_View 	@416
 						    location   	(218, 685)
 						    fill_color 	13434879
 						    anchor     	10
@@ -12937,7 +13052,7 @@
 						height     	242
 						annotation 	8
 						autoResize 	TRUE)
-					    (object ClassView "Class" "Logical View::Generator::dataTypes::dataTypesGmf::Node" @410
+					    (object ClassView "Class" "Logical View::Generator::dataTypes::dataTypesGmf::Node" @417
 						ShowCompartmentStereotypes 	TRUE
 						IncludeAttribute 	TRUE
 						IncludeOperation 	TRUE
@@ -12952,7 +13067,7 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@410
+						    Parent_View 	@417
 						    location   	(231, 1100)
 						    fill_color 	13434879
 						    nlines     	1
@@ -12960,7 +13075,7 @@
 						    justify    	0
 						    label      	"Node")
 						stereotype 	(object ItemLabel
-						    Parent_View 	@410
+						    Parent_View 	@417
 						    location   	(231, 1050)
 						    fill_color 	13434879
 						    anchor     	10
@@ -12986,7 +13101,7 @@
 				origin_x   	0
 				origin_y   	0
 				items      	(list diagram_item_list
-				    (object ClassView "Class" "Logical View::Generator::dataTypes::Propertie" @411
+				    (object ClassView "Class" "Logical View::Generator::dataTypes::Propertie" @418
 					ShowCompartmentStereotypes 	TRUE
 					IncludeAttribute 	TRUE
 					IncludeOperation 	TRUE
@@ -13001,7 +13116,7 @@
 					    color      	0
 					    default_color 	TRUE)
 					label      	(object ItemLabel
-					    Parent_View 	@411
+					    Parent_View 	@418
 					    location   	(885, 1400)
 					    fill_color 	13434879
 					    nlines     	1
@@ -13009,7 +13124,7 @@
 					    justify    	0
 					    label      	"Propertie")
 					stereotype 	(object ItemLabel
-					    Parent_View 	@411
+					    Parent_View 	@418
 					    location   	(885, 1350)
 					    fill_color 	13434879
 					    anchor     	10
@@ -13359,6 +13474,10 @@
 				    (object Operation "createDataFormModel"
 					quid       	"59FA8E1900A0"
 					parameters 	(list Parameters
+					    (object Parameter "domainStyle"
+						quid       	"5A3301F9030F"
+						type       	"DomanStyle"
+						quidu      	"5A33018201A7")
 					    (object Parameter "genModel"
 						quid       	"59FA8E2D00D0"
 						type       	"GenModel"
@@ -13376,18 +13495,25 @@
 |diagram.setName("model.tooldataform_diagram");
 |
 |for(int i=0;i<genModel.getListGenElements().size();i++){
-|	GenElement element = genModel.getListGenElements().get(i);
-|	
-|	if(element instanceof GenContainer){
-|		tooldataform.formmodel.concreta.Container c = createToolDataFormContainer((GenContainer)element);
-|		interFace.getListGraphicalContainer().add(c);
-|	}
-|	else if(element instanceof generator.genmodel.genindividualcomponent.gentable.GenTable || 
-|			element instanceof generator.genmodel.genindividualcomponent.gencombobox.GenComboBox){
-|		interFace.getListGraphicalContainer().add(createGraphicalContainer(element));
+|	GenElement genElement = genModel.getListGenElements().get(i);
+|
+|	if(genElement instanceof GenContainer){
+|		tooldataform.formmodel.concreta.Container container = createToolDataFormContainer(
+|				domainStyle, (GenContainer) genElement);
+|		interFace.getListGraphicalContainer().add(container);
+|	}else if(genElement instanceof generator.genmodel.genindividualcomponent.gentable.GenTable) {
+|		tooldataform.formmodel.concreta.TableView tableView = (TableView) 
+|				createGraphicalContainer(domainStyle, genElement);
+|		interFace.getListGraphicalContainer().add(tableView);
+|	} 
+|	else if(genElement instanceof generator.genmodel.genindividualcomponent.gencombobox.GenComboBox) {
+|		tooldataform.formmodel.concreta.ComboView comboView = (ComboView) 
+|				createGraphicalContainer(domainStyle, genElement);
+|		interFace.getListGraphicalContainer().add(comboView);
 |	}
 |	else{
-|		interFace.getListIndividualElementDataForm().add(createIndividualElement(element));
+|		interFace.getListIndividualElementDataForm().add(
+|				createIndividualElement(domainStyle, genElement));
 |	}
 |}
 |levelContainer = new HashMap<GraphicalContainer, Integer>();
@@ -13396,6 +13522,7 @@
 |	setBoundsContainers(i, interFace.getListGraphicalContainer().get(i));
 |}
 |return diagram;
+|
 					    )
 					opExportControl 	"Public"
 					uid        	0
@@ -13403,6 +13530,10 @@
 				    (object Operation "createToolDataFormContainer"
 					quid       	"59FA8E5C0217"
 					parameters 	(list Parameters
+					    (object Parameter "domainStyle"
+						quid       	"5A33025B00EF"
+						type       	"DomanStyle"
+						quidu      	"5A33018201A7")
 					    (object Parameter "parent"
 						quid       	"59FA8E960136"
 						type       	"GenContainer"
@@ -13411,27 +13542,54 @@
 					concurrency 	"Sequential"
 					semantics  	(object Semantic_Info
 					    PDL        	
-|tooldataform.formmodel.concreta.Container container= tooldataform.formmodel.concreta.
-|		ConcretaFactory.eINSTANCE.createContainer();
+|tooldataform.formmodel.concreta.Container container = tooldataform.formmodel.concreta.ConcretaFactory.eINSTANCE
+|		.createContainer();
 |container.setName(parent.getTheContainer().getName());
 |container.setPositionX(parent.getTheX().getValue());
 |container.setPositionY(parent.getTheY().getValue());
 |container.setWidth(parent.getTheWidth().getValue());
 |container.setHeight(parent.getTheHeight().getValue());
 |
-|for(int i=0;i<parent.getListGenElements().size();i++){
+|Style style = parent.getTheContainer().getTheStyle();
+|Characteristic characteristic = style.getTheCharacteristic();
+|
+|tooldataform.styles.domain.Style styleDF = searchStyle(domainStyle, style.getName());
+|domainStyle.getTheStyleFactory().getListStyle().remove(styleDF);
+|
+|styleDF = DomainFactory.eINSTANCE.createStyle();
+|tooldataform.styles.domain.Characteristic characteristicDF = DomainFactory.eINSTANCE.createCharacteristic();
+|styleDF.setName(style.getName());
+|characteristicDF.setName(characteristic.getName());
+|EList<Propertie> lisProperties = characteristic.getListProperties();
+|for (int i = 0; i < lisProperties.size(); i++) {
+|	tooldataform.styles.domain.Propertie propertieDF = DomainFactory.eINSTANCE.createPropertie();
+|	propertieDF.setName(lisProperties.get(i).getName());
+|	propertieDF.setValue(lisProperties.get(i).getValue());
+|	characteristicDF.getListProperties().add(propertieDF);
+|}
+|tooldataform.styles.domain.Propertie propertieDF = DomainFactory.eINSTANCE.createPropertie();
+|propertieDF.setName("Orientation");
+|propertieDF.setValue(parent.getTheContainer().getOrientation());
+|characteristicDF.getListProperties().add(propertieDF);
+|
+|domainStyle.getTheStyleFactory().getListStyle().add(styleDF);
+|domainStyle.getTheCharacteristicFactory().getListCharacteristic().add(characteristicDF);
+|styleDF.setTheCharacteristic(characteristicDF);
+|
+|container.setTheStyle(styleDF);
+|
+|for (int i = 0; i < parent.getListGenElements().size(); i++) {
 |	GenElement element = parent.getListGenElements().get(i);
-|	
-|	if(element instanceof GenContainer){
-|		tooldataform.formmodel.concreta.Container c = createToolDataFormContainer((GenContainer)element);
+|
+|	if (element instanceof GenContainer) {
+|		tooldataform.formmodel.concreta.Container c = createToolDataFormContainer(domainStyle,
+|				(GenContainer) element);
 |		container.getListGraphicalContainer().add(c);
-|	}
-|	else if(element instanceof generator.genmodel.genindividualcomponent.gentable.GenTable || 
-|			element instanceof generator.genmodel.genindividualcomponent.gencombobox.GenComboBox){
-|		container.getListGraphicalContainer().add(createGraphicalContainer(element));
-|	}
-|	else{
-|		container.getListIndividualElementDataForm().add(createIndividualElement(element));
+|	} else if (element instanceof generator.genmodel.genindividualcomponent.gentable.GenTable
+|			|| element instanceof generator.genmodel.genindividualcomponent.gencombobox.GenComboBox) {
+|		container.getListGraphicalContainer().add(createGraphicalContainer(domainStyle, element));
+|	} else {
+|		container.getListIndividualElementDataForm().add(createIndividualElement(domainStyle, element));
 |	}
 |}
 |return container;
@@ -13442,6 +13600,10 @@
 				    (object Operation "createIndividualElement"
 					quid       	"59FA8FC80102"
 					parameters 	(list Parameters
+					    (object Parameter "domainStyle"
+						quid       	"5A3302DA018E"
+						type       	"DomanStyle"
+						quidu      	"5A33018201A7")
 					    (object Parameter "element"
 						quid       	"59FA8FDA0323"
 						type       	"GenElement"
@@ -13450,19 +13612,16 @@
 					concurrency 	"Sequential"
 					semantics  	(object Semantic_Info
 					    PDL        	
-|GraphicalIndividualEement individualElement=null;
+|GraphicalIndividualEement individualElement = null;
 |
-|if(element instanceof generator.genmodel.genindividualcomponent.genbutton.GenButton){
-|	individualElement = createButton((GenButton)element);
-|}
-|else if(element instanceof generator.genmodel.genindividualcomponent.genlabel.GenLabel){
-|	individualElement = createLabelView((GenLabel)element);
-|}
-|else if(element instanceof generator.genmodel.genindividualcomponent.gentextfield.GenTextField){
-|	individualElement = createTextView((GenTextField)element);
+|if (element instanceof generator.genmodel.genindividualcomponent.genbutton.GenButton) {
+|	individualElement = createButton(domainStyle, (GenButton) element);
+|} else if (element instanceof generator.genmodel.genindividualcomponent.genlabel.GenLabel) {
+|	individualElement = createLabelView(domainStyle, (GenLabel) element);
+|} else if (element instanceof generator.genmodel.genindividualcomponent.gentextfield.GenTextField) {
+|	individualElement = createTextView(domainStyle, (GenTextField) element);
 |}
 |
-|//Se valida si es null?
 |individualElement.setPositionX(element.getTheX().getValue());
 |individualElement.setPositionY(element.getTheY().getValue());
 |individualElement.setWidth(element.getTheWidth().getValue());
@@ -13476,6 +13635,10 @@
 				    (object Operation "createGraphicalContainer"
 					quid       	"59FA90090382"
 					parameters 	(list Parameters
+					    (object Parameter "domainStyle"
+						quid       	"5A3303A70203"
+						type       	"DomanStyle"
+						quidu      	"5A33018201A7")
 					    (object Parameter "element"
 						quid       	"59FA902102DA"
 						type       	"GenElement"
@@ -13484,21 +13647,22 @@
 					concurrency 	"Sequential"
 					semantics  	(object Semantic_Info
 					    PDL        	
-| tooldataform.formmodel.containers.GraphicalContainer container = null;
-| 
-| if(element instanceof generator.genmodel.genindividualcomponent.gentable.GenTable ){
-|	 	container  = createTableView((GenTable)element);
-| }else if( element instanceof generator.genmodel.genindividualcomponent.gencombobox.GenComboBox){
-|	 container = createComboView((GenComboBox)element);
-| }	
-| 
-| //Se valida si es null?
-| container.setPositionX(element.getTheX().getValue());
-| container.setPositionY(element.getTheY().getValue());
-| container.setWidth(element.getTheWidth().getValue());
-| container.setHeight(element.getTheHeight().getValue());
-| 
-| return container;
+|tooldataform.formmodel.containers.GraphicalContainer container = null;
+|
+|if (element instanceof generator.genmodel.genindividualcomponent.gentable.GenTable) {
+|	GenTable genTable = (GenTable) element;
+|	container = createTableView(domainStyle, (GenTable) element);
+|} else if (element instanceof generator.genmodel.genindividualcomponent.gencombobox.GenComboBox) {
+|	GenComboBox genComboBox = (GenComboBox) element;
+|	container = createComboView(domainStyle, (GenComboBox) element);
+|}
+|
+|container.setPositionX(element.getTheX().getValue());
+|container.setPositionY(element.getTheY().getValue());
+|container.setWidth(element.getTheWidth().getValue());
+|container.setHeight(element.getTheHeight().getValue());
+|
+|return container;
 					    )
 					opExportControl 	"Public"
 					uid        	0
@@ -13506,6 +13670,10 @@
 				    (object Operation "createButton"
 					quid       	"59FA9059025A"
 					parameters 	(list Parameters
+					    (object Parameter "domainStyle"
+						quid       	"5A3303C703CC"
+						type       	"DomanStyle"
+						quidu      	"5A33018201A7")
 					    (object Parameter "genButton"
 						quid       	"59FA9079010A"
 						type       	"GenButton"
@@ -13514,8 +13682,30 @@
 					concurrency 	"Sequential"
 					semantics  	(object Semantic_Info
 					    PDL        	
-|tooldataform.formmodel.concreta.Button button  = tooldataform.formmodel.concreta.
-|		ConcretaFactory.eINSTANCE.createButton();
+|tooldataform.formmodel.concreta.Button button = tooldataform.formmodel.concreta.ConcretaFactory.eINSTANCE
+|		.createButton();
+|Style style = genButton.getTheButton().getTheStyle();
+|Characteristic characteristic = style.getTheCharacteristic();
+|
+|tooldataform.styles.domain.Style styleDF = searchStyle(domainStyle, style.getName());
+|domainStyle.getTheStyleFactory().getListStyle().remove(styleDF);
+|
+|styleDF = DomainFactory.eINSTANCE.createStyle();
+|tooldataform.styles.domain.Characteristic characteristicDF = DomainFactory.eINSTANCE.createCharacteristic();
+|styleDF.setName(style.getName());
+|characteristicDF.setName(characteristic.getName());
+|EList<Propertie> lisProperties = characteristic.getListProperties();
+|for (int i = 0; i < lisProperties.size(); i++) {
+|	tooldataform.styles.domain.Propertie propertieDF = DomainFactory.eINSTANCE.createPropertie();
+|	propertieDF.setName(lisProperties.get(i).getName());
+|	propertieDF.setValue(lisProperties.get(i).getValue());
+|	characteristicDF.getListProperties().add(propertieDF);
+|}
+|domainStyle.getTheStyleFactory().getListStyle().add(styleDF);
+|domainStyle.getTheCharacteristicFactory().getListCharacteristic().add(characteristicDF);
+|styleDF.setTheCharacteristic(characteristicDF);
+|
+|button.setTheStyle(styleDF);
 |button.setName(genButton.getTheButton().getName());
 |return button;
 					    )
@@ -13525,6 +13715,10 @@
 				    (object Operation "createComboView"
 					quid       	"59FA90910318"
 					parameters 	(list Parameters
+					    (object Parameter "domainStyle"
+						quid       	"5A330462018A"
+						type       	"DomanStyle"
+						quidu      	"5A33018201A7")
 					    (object Parameter "genCombo"
 						quid       	"59FA90AC0149"
 						type       	"GenComboBox"
@@ -13533,8 +13727,30 @@
 					concurrency 	"Sequential"
 					semantics  	(object Semantic_Info
 					    PDL        	
-|tooldataform.formmodel.concreta.ComboView combo  = tooldataform.formmodel.concreta.
-|		ConcretaFactory.eINSTANCE.createComboView();
+|tooldataform.formmodel.concreta.ComboView combo = tooldataform.formmodel.concreta.ConcretaFactory.eINSTANCE
+|		.createComboView();
+|Style style = genCombo.getTheComboBox().getTheStyle();
+|Characteristic characteristic = style.getTheCharacteristic();
+|
+|tooldataform.styles.domain.Style styleDF = searchStyle(domainStyle, style.getName());
+|domainStyle.getTheStyleFactory().getListStyle().remove(styleDF);
+|
+|styleDF = DomainFactory.eINSTANCE.createStyle();
+|tooldataform.styles.domain.Characteristic characteristicDF = DomainFactory.eINSTANCE.createCharacteristic();
+|styleDF.setName(style.getName());
+|characteristicDF.setName(characteristic.getName());
+|EList<Propertie> lisProperties = characteristic.getListProperties();
+|for (int i = 0; i < lisProperties.size(); i++) {
+|	tooldataform.styles.domain.Propertie propertieDF = DomainFactory.eINSTANCE.createPropertie();
+|	propertieDF.setName(lisProperties.get(i).getName());
+|	propertieDF.setValue(lisProperties.get(i).getValue());
+|	characteristicDF.getListProperties().add(propertieDF);
+|}
+|domainStyle.getTheStyleFactory().getListStyle().add(styleDF);
+|domainStyle.getTheCharacteristicFactory().getListCharacteristic().add(characteristicDF);
+|styleDF.setTheCharacteristic(characteristicDF);
+|
+|combo.setTheStyle(styleDF);
 |combo.setName(genCombo.getTheComboBox().getName());
 |return combo;
 					    )
@@ -13544,6 +13760,10 @@
 				    (object Operation "createLabelView"
 					quid       	"59FA90C403D8"
 					parameters 	(list Parameters
+					    (object Parameter "domainStyle"
+						quid       	"5A33048D0223"
+						type       	"DomanStyle"
+						quidu      	"5A33018201A7")
 					    (object Parameter "genLabel"
 						quid       	"59FA90D30328"
 						type       	"GenLabel"
@@ -13552,8 +13772,30 @@
 					concurrency 	"Sequential"
 					semantics  	(object Semantic_Info
 					    PDL        	
-|tooldataform.formmodel.concreta.LabelView label  = tooldataform.formmodel.concreta.
-|		ConcretaFactory.eINSTANCE.createLabelView();
+|tooldataform.formmodel.concreta.LabelView label = tooldataform.formmodel.concreta.ConcretaFactory.eINSTANCE
+|		.createLabelView();
+|Style style = genLabel.getTheLabel().getTheStyle();
+|Characteristic characteristic = style.getTheCharacteristic();
+|
+|tooldataform.styles.domain.Style styleDF = searchStyle(domainStyle, style.getName());
+|domainStyle.getTheStyleFactory().getListStyle().remove(styleDF);
+|
+|styleDF = DomainFactory.eINSTANCE.createStyle();
+|tooldataform.styles.domain.Characteristic characteristicDF = DomainFactory.eINSTANCE.createCharacteristic();
+|styleDF.setName(style.getName());
+|characteristicDF.setName(characteristic.getName());
+|EList<Propertie> lisProperties = characteristic.getListProperties();
+|for (int i = 0; i < lisProperties.size(); i++) {
+|	tooldataform.styles.domain.Propertie propertieDF = DomainFactory.eINSTANCE.createPropertie();
+|	propertieDF.setName(lisProperties.get(i).getName());
+|	propertieDF.setValue(lisProperties.get(i).getValue());
+|	characteristicDF.getListProperties().add(propertieDF);
+|}
+|domainStyle.getTheStyleFactory().getListStyle().add(styleDF);
+|domainStyle.getTheCharacteristicFactory().getListCharacteristic().add(characteristicDF);
+|styleDF.setTheCharacteristic(characteristicDF);
+|
+|label.setTheStyle(styleDF);
 |label.setName(genLabel.getTheLabel().getName());
 |return label;
 					    )
@@ -13563,6 +13805,10 @@
 				    (object Operation "createTextView"
 					quid       	"59FA90F203E0"
 					parameters 	(list Parameters
+					    (object Parameter "domainStyle"
+						quid       	"5A3305300261"
+						type       	"DomanStyle"
+						quidu      	"5A33018201A7")
 					    (object Parameter "genText"
 						quid       	"59FA91050117"
 						type       	"GenTextField"
@@ -13571,8 +13817,30 @@
 					concurrency 	"Sequential"
 					semantics  	(object Semantic_Info
 					    PDL        	
-|tooldataform.formmodel.concreta.TextView text  = tooldataform.formmodel.concreta.
-|		ConcretaFactory.eINSTANCE.createTextView();
+|tooldataform.formmodel.concreta.TextView text = tooldataform.formmodel.concreta.ConcretaFactory.eINSTANCE
+|		.createTextView();
+|Style style = genText.getTheTextField().getTheStyle();
+|Characteristic characteristic = style.getTheCharacteristic();
+|
+|tooldataform.styles.domain.Style styleDF = searchStyle(domainStyle, style.getName());
+|domainStyle.getTheStyleFactory().getListStyle().remove(styleDF);
+|
+|styleDF = DomainFactory.eINSTANCE.createStyle();
+|tooldataform.styles.domain.Characteristic characteristicDF = DomainFactory.eINSTANCE.createCharacteristic();
+|styleDF.setName(style.getName());
+|characteristicDF.setName(characteristic.getName());
+|EList<Propertie> lisProperties = characteristic.getListProperties();
+|for (int i = 0; i < lisProperties.size(); i++) {
+|	tooldataform.styles.domain.Propertie propertieDF = DomainFactory.eINSTANCE.createPropertie();
+|	propertieDF.setName(lisProperties.get(i).getName());
+|	propertieDF.setValue(lisProperties.get(i).getValue());
+|	characteristicDF.getListProperties().add(propertieDF);
+|}
+|domainStyle.getTheStyleFactory().getListStyle().add(styleDF);
+|domainStyle.getTheCharacteristicFactory().getListCharacteristic().add(characteristicDF);
+|styleDF.setTheCharacteristic(characteristicDF);
+| 
+|text.setTheStyle(styleDF);
 |text.setName(genText.getTheTextField().getName());
 |return text;
 					    )
@@ -13582,6 +13850,10 @@
 				    (object Operation "createTableView"
 					quid       	"59FA912E026F"
 					parameters 	(list Parameters
+					    (object Parameter "domainStyle"
+						quid       	"5A33055303AA"
+						type       	"DomanStyle"
+						quidu      	"5A33018201A7")
 					    (object Parameter "genTable"
 						quid       	"59FA913F024F"
 						type       	"GenTable"
@@ -13590,11 +13862,33 @@
 					concurrency 	"Sequential"
 					semantics  	(object Semantic_Info
 					    PDL        	
-|tooldataform.formmodel.concreta.TableView table = tooldataform.formmodel.concreta.
-|		ConcretaFactory.eINSTANCE.createTableView();
+|tooldataform.formmodel.concreta.TableView table = tooldataform.formmodel.concreta.ConcretaFactory.eINSTANCE
+|		.createTableView();
+|Style style = genTable.getTheTable().getTheStyle();
+|Characteristic characteristic = style.getTheCharacteristic();
+|
+|tooldataform.styles.domain.Style styleDF = searchStyle(domainStyle, style.getName());
+|domainStyle.getTheStyleFactory().getListStyle().remove(styleDF);
+|
+|styleDF = DomainFactory.eINSTANCE.createStyle();
+|tooldataform.styles.domain.Characteristic characteristicDF = DomainFactory.eINSTANCE.createCharacteristic();
+|styleDF.setName(style.getName());
+|characteristicDF.setName(characteristic.getName());
+|EList<Propertie> lisProperties = characteristic.getListProperties();
+|for (int i = 0; i < lisProperties.size(); i++) {
+|	tooldataform.styles.domain.Propertie propertieDF = DomainFactory.eINSTANCE.createPropertie();
+|	propertieDF.setName(lisProperties.get(i).getName());
+|	propertieDF.setValue(lisProperties.get(i).getValue());
+|	characteristicDF.getListProperties().add(propertieDF);
+|}
+|domainStyle.getTheStyleFactory().getListStyle().add(styleDF);
+|domainStyle.getTheCharacteristicFactory().getListCharacteristic().add(characteristicDF);
+|styleDF.setTheCharacteristic(characteristicDF);
+| 
+|table.setTheStyle(styleDF);
 |table.setName(genTable.getTheTable().getName());
-|for(int i=0;i<genTable.getListGenColumns().size();i++){
-|	table.getListColumView().add(createColumView( (GenColumn)genTable.getListGenColumns().get(i)));
+|for (int i = 0; i < genTable.getListGenColumns().size(); i++) {
+|	table.getListColumView().add(createColumView(domainStyle, (GenColumn) genTable.getListGenColumns().get(i)));
 |}
 |return table;
 					    )
@@ -13604,6 +13898,10 @@
 				    (object Operation "createColumView"
 					quid       	"59FA915902FF"
 					parameters 	(list Parameters
+					    (object Parameter "domainStyle"
+						quid       	"5A3305990198"
+						type       	"DomanStyle"
+						quidu      	"5A33018201A7")
 					    (object Parameter "genColumn"
 						quid       	"59FA91640166"
 						type       	"GenColumn"
@@ -13612,9 +13910,30 @@
 					concurrency 	"Sequential"
 					semantics  	(object Semantic_Info
 					    PDL        	
-|tooldataform.formmodel.concreta.ColumView column = tooldataform.formmodel.concreta.
-|		ConcretaFactory.eINSTANCE.createColumView();
-|column.setWidth(genColumn.getTheWidth().getValue());
+|tooldataform.formmodel.concreta.ColumView column = tooldataform.formmodel.concreta.ConcretaFactory.eINSTANCE
+|		.createColumView();
+|Style style = genColumn.getTheColumn().getTheStyle();
+|Characteristic characteristic = style.getTheCharacteristic();
+|
+|tooldataform.styles.domain.Style styleDF = searchStyle(domainStyle, style.getName());
+|domainStyle.getTheStyleFactory().getListStyle().remove(styleDF);
+|
+|styleDF = DomainFactory.eINSTANCE.createStyle();
+|tooldataform.styles.domain.Characteristic characteristicDF = DomainFactory.eINSTANCE.createCharacteristic();
+|styleDF.setName(style.getName());
+|characteristicDF.setName(characteristic.getName());
+|EList<Propertie> lisProperties = characteristic.getListProperties();
+|for (int i = 0; i < lisProperties.size(); i++) {
+|	tooldataform.styles.domain.Propertie propertieDF = DomainFactory.eINSTANCE.createPropertie();
+|	propertieDF.setName(lisProperties.get(i).getName());
+|	propertieDF.setValue(lisProperties.get(i).getValue());
+|	characteristicDF.getListProperties().add(propertieDF);
+|}
+|domainStyle.getTheStyleFactory().getListStyle().add(styleDF);
+|domainStyle.getTheCharacteristicFactory().getListCharacteristic().add(characteristicDF);
+|styleDF.setTheCharacteristic(characteristicDF);
+|
+|column.setTheStyle(styleDF);
 |column.setName(genColumn.getTheColumn().getName());
 |return column;
 					    )
@@ -13632,16 +13951,16 @@
 					concurrency 	"Sequential"
 					semantics  	(object Semantic_Info
 					    PDL        	
-|if(container.getListGraphicalContainer().size() == 0) {
+|if (container.getListGraphicalContainer().size() == 0) {
 |	levelContainer.put(container, 1);
 |	return 1;
 |} else {
 |	int max = 0;
-|	for(int i = 0; i < container.getListGraphicalContainer().size(); i++) {
+|	for (int i = 0; i < container.getListGraphicalContainer().size(); i++) {
 |		max = Math.max(max, setLevelContainer(container.getListGraphicalContainer().get(i)));
 |	}
-|	levelContainer.put(container, max+1);
-|	return max+1;
+|	levelContainer.put(container, max + 1);
+|	return max + 1;
 |}
 					    )
 					opExportControl 	"Public"
@@ -13652,6 +13971,9 @@
 					    (object Parameter "index"
 						quid       	"5A1F0BEF00A7"
 						type       	"Integer")
+					    (object Parameter "orientation"
+						quid       	"5A3821C603A1"
+						type       	"String")
 					    (object Parameter "container"
 						quid       	"5A1D66FE0123"
 						type       	"GraphicalContainer"
@@ -13660,18 +13982,63 @@
 					semantics  	(object Semantic_Info
 					    PDL        	
 |int level = (int) levelContainer.get(container);
-|if(container.getListGraphicalContainer().size() > 0) {
-|	container.setHeight(container.getHeight()+(60*level)+((container.getListGraphicalContainer().size()-1)*60));
+|if (container.getListGraphicalContainer().size() > 0) {
+|	container.setHeight(container.getHeight() + (65 * level) + 
+|			((container.getListGraphicalContainer().size() - 1) * 60));
 |} else {
-|	container.setHeight(container.getHeight()+(60*level));
+|	container.setHeight(container.getHeight() + (65 * level));
 |}
 |
-|//TODO SI LA ORINTACION (-) entonces
-|container.setPositionY(container.getPositionY()+60*index);		
+|if (orientation.equals("-"))
+|	container.setPositionY(container.getPositionY() + 65 * index);
 |
-|for(int i = 0; i < container.getListGraphicalContainer().size(); i++) {
-|	setBoundsContainers(i, container.getListGraphicalContainer().get(i));
+|for (int i = 0; i < container.getListGraphicalContainer().size(); i++) {
+|	setBoundsContainers(i, getOrientation(container.getTheStyle()), 
+|			container.getListGraphicalContainer().get(i));
 |}
+					    )
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "getOrientation"
+					quid       	"5A33075A0097"
+					parameters 	(list Parameters
+					    (object Parameter "style"
+						quid       	"5A3308130096"
+						type       	"Style"
+						quidu      	"5A3307CC030E"))
+					concurrency 	"Sequential"
+					semantics  	(object Semantic_Info
+					    PDL        	
+|tooldataform.styles.domain.Characteristic characteristic = style.getTheCharacteristic();
+|EList<tooldataform.styles.domain.Propertie> listProperties = characteristic.getListProperties();
+|for (int i = 0; i < listProperties.size(); i++) {
+|	if (listProperties.get(i).getName().equals("Orientation")) {
+|		return listProperties.get(i).getValue();
+|	}
+|}
+|return null;
+					    )
+					opExportControl 	"Public"
+					uid        	0)
+				    (object Operation "searchStyle"
+					quid       	"5A3822560250"
+					parameters 	(list Parameters
+					    (object Parameter "domain"
+						quid       	"5A3822620118"
+						type       	"DomanStyle"
+						quidu      	"5A33018201A7")
+					    (object Parameter "styleName"
+						quid       	"5A38227803D0"
+						type       	"String"))
+					concurrency 	"Sequential"
+					semantics  	(object Semantic_Info
+					    PDL        	
+|EList<tooldataform.styles.domain.Style> lisStyles = domain.getTheStyleFactory().getListStyle();
+|for (int i = 0; i < lisStyles.size(); i++) {
+|	if(lisStyles.get(i).getName().equals(styleName))
+|		return lisStyles.get(i);
+|}
+|return null;
 					    )
 					opExportControl 	"Public"
 					uid        	0))
@@ -13690,7 +14057,7 @@
 				origin_x   	122
 				origin_y   	191
 				items      	(list diagram_item_list
-				    (object ClassView "Class" "Logical View::Generator::genDataForm::DataFormDiagramGenerator" @412
+				    (object ClassView "Class" "Logical View::Generator::genDataForm::DataFormDiagramGenerator" @419
 					ShowCompartmentStereotypes 	TRUE
 					IncludeAttribute 	TRUE
 					IncludeOperation 	TRUE
@@ -13705,7 +14072,7 @@
 					    color      	0
 					    default_color 	TRUE)
 					label      	(object ItemLabel
-					    Parent_View 	@412
+					    Parent_View 	@419
 					    location   	(343, 322)
 					    fill_color 	13434879
 					    nlines     	1
@@ -13716,11 +14083,29 @@
 					line_color 	3342489
 					fill_color 	13434879
 					quidu      	"59FA89F00344"
+					compartment 	(object Compartment
+					    Parent_View 	@419
+					    location   	(343, 383)
+					    font       	(object Font
+						size       	10
+						face       	"Arial"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    icon_style 	"Icon"
+					    fill_color 	16777215
+					    anchor     	2
+					    nlines     	13
+					    max_width  	753
+					    justify    	1)
 					width      	768
 					height     	736
 					annotation 	8
 					autoResize 	TRUE)
-				    (object ClassView "Class" "Logical View::Generator::genDataForm::DataFormModelGenerator" @413
+				    (object ClassView "Class" "Logical View::Generator::genDataForm::DataFormModelGenerator" @420
 					ShowCompartmentStereotypes 	TRUE
 					IncludeAttribute 	TRUE
 					IncludeOperation 	TRUE
@@ -13735,8 +14120,8 @@
 					    color      	0
 					    default_color 	TRUE)
 					label      	(object ItemLabel
-					    Parent_View 	@413
-					    location   	(1195, 291)
+					    Parent_View 	@420
+					    location   	(1195, 241)
 					    fill_color 	13434879
 					    nlines     	1
 					    max_width  	616
@@ -13746,8 +14131,26 @@
 					line_color 	3342489
 					fill_color 	13434879
 					quidu      	"59FA8DC800E4"
+					compartment 	(object Compartment
+					    Parent_View 	@420
+					    location   	(1195, 302)
+					    font       	(object Font
+						size       	10
+						face       	"Arial"
+						bold       	FALSE
+						italics    	FALSE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    icon_style 	"Icon"
+					    fill_color 	16777215
+					    anchor     	2
+					    nlines     	16
+					    max_width  	613
+					    justify    	1)
 					width      	634
-					height     	786
+					height     	886
 					annotation 	8
 					autoResize 	TRUE))))))
 		logical_presentations 	(list unit_reference_list
@@ -13760,7 +14163,7 @@
 			origin_x   	1294
 			origin_y   	0
 			items      	(list diagram_item_list
-			    (object CategoryView "Logical View::Generator::apperance" @414
+			    (object CategoryView "Logical View::Generator::apperance" @421
 				location   	(665, 240)
 				font       	(object Font
 				    size       	10
@@ -13772,7 +14175,7 @@
 				    color      	0
 				    default_color 	TRUE)
 				label      	(object ItemLabel
-				    Parent_View 	@414
+				    Parent_View 	@421
 				    location   	(521, 156)
 				    fill_color 	13434879
 				    nlines     	2
@@ -13785,7 +14188,7 @@
 				quidu      	"59C043AF027E"
 				width      	300
 				height     	180)
-			    (object CategoryView "Logical View::Generator::genModel" @415
+			    (object CategoryView "Logical View::Generator::genModel" @422
 				location   	(2117, 262)
 				font       	(object Font
 				    size       	10
@@ -13797,7 +14200,7 @@
 				    color      	0
 				    default_color 	TRUE)
 				label      	(object ItemLabel
-				    Parent_View 	@415
+				    Parent_View 	@422
 				    location   	(1973, 178)
 				    fill_color 	13434879
 				    nlines     	2
@@ -13810,7 +14213,7 @@
 				quidu      	"59C189BB034D"
 				width      	300
 				height     	180)
-			    (object ClassView "Class" "Logical View::Compilator::domain::expression::Expression" @416
+			    (object ClassView "Class" "Logical View::Compilator::domain::expression::Expression" @423
 				ShowCompartmentStereotypes 	TRUE
 				IncludeAttribute 	TRUE
 				IncludeOperation 	TRUE
@@ -13825,7 +14228,7 @@
 				    color      	0
 				    default_color 	TRUE)
 				label      	(object ItemLabel
-				    Parent_View 	@416
+				    Parent_View 	@423
 				    location   	(615, 808)
 				    fill_color 	13434879
 				    nlines     	1
@@ -13837,7 +14240,7 @@
 				fill_color 	13434879
 				quidu      	"5995F40A0149"
 				compartment 	(object Compartment
-				    Parent_View 	@416
+				    Parent_View 	@423
 				    location   	(615, 913)
 				    font       	(object Font
 					size       	10
@@ -13852,13 +14255,13 @@
 				    fill_color 	16777215
 				    anchor     	2
 				    nlines     	2
-				    max_width  	291
+				    max_width  	303
 				    justify    	1)
 				width      	312
 				height     	232
 				annotation 	8
 				autoResize 	TRUE)
-			    (object ClassView "Class" "Logical View::Generator::Generator" @417
+			    (object ClassView "Class" "Logical View::Generator::Generator" @424
 				ShowCompartmentStereotypes 	TRUE
 				IncludeAttribute 	TRUE
 				IncludeOperation 	TRUE
@@ -13873,7 +14276,7 @@
 				    color      	0
 				    default_color 	TRUE)
 				label      	(object ItemLabel
-				    Parent_View 	@417
+				    Parent_View 	@424
 				    location   	(1053, 100)
 				    fill_color 	13434879
 				    nlines     	1
@@ -13885,7 +14288,7 @@
 				fill_color 	13434879
 				quidu      	"59BF30590259"
 				compartment 	(object Compartment
-				    Parent_View 	@417
+				    Parent_View 	@424
 				    location   	(1053, 161)
 				    font       	(object Font
 					size       	10
@@ -13900,13 +14303,13 @@
 				    fill_color 	16777215
 				    anchor     	2
 				    nlines     	13
-				    max_width  	572
+				    max_width  	584
 				    justify    	1)
 				width      	592
 				height     	736
 				annotation 	8
 				autoResize 	TRUE)
-			    (object AssociationViewNew "$UNNAMED$45" @418
+			    (object AssociationViewNew "$UNNAMED$45" @425
 				location   	(741, 525)
 				font       	(object Font
 				    size       	10
@@ -13921,8 +14324,8 @@
 				line_color 	3342489
 				quidu      	"59C042C6026D"
 				roleview_list 	(list RoleViews
-				    (object RoleView "theExpression" @419
-					Parent_View 	@418
+				    (object RoleView "theExpression" @426
+					Parent_View 	@425
 					location   	(-1409, 288)
 					font       	(object Font
 					    size       	10
@@ -13933,8 +14336,8 @@
 					    strike     	FALSE
 					    color      	0
 					    default_color 	TRUE)
-					label      	(object SegLabel @420
-					    Parent_View 	@419
+					label      	(object SegLabel @427
+					    Parent_View 	@426
 					    location   	(576, 722)
 					    font       	(object Font
 						size       	10
@@ -13957,16 +14360,16 @@
 					stereotype 	TRUE
 					line_color 	3342489
 					quidu      	"59C042C701D1"
-					client     	@418
-					supplier   	@416
+					client     	@425
+					supplier   	@423
 					vertices   	(list Points
 					    (741, 525)
-					    (741, 796))
+					    (741, 795))
 					line_style 	3
 					origin_attachment 	(741, 525)
-					terminal_attachment 	(741, 796)
-					label      	(object SegLabel @421
-					    Parent_View 	@419
+					terminal_attachment 	(741, 795)
+					label      	(object SegLabel @428
+					    Parent_View 	@426
 					    location   	(791, 728)
 					    font       	(object Font
 						size       	10
@@ -13986,14 +14389,14 @@
 					    pctDist    	0.754306
 					    height     	50
 					    orientation 	0))
-				    (object RoleView "$UNNAMED$46" @422
-					Parent_View 	@418
+				    (object RoleView "$UNNAMED$46" @429
+					Parent_View 	@425
 					location   	(-1409, 288)
 					stereotype 	TRUE
 					line_color 	3342489
 					quidu      	"59C042C701D3"
-					client     	@418
-					supplier   	@417
+					client     	@425
+					supplier   	@424
 					vertices   	(list Points
 					    (741, 525)
 					    (741, 465)
@@ -14001,7 +14404,7 @@
 					line_style 	3
 					origin_attachment 	(741, 525)
 					terminal_attachment 	(1044, 465))))
-			    (object ClassView "Class" "Logical View::Generator::genModel::GenElement" @423
+			    (object ClassView "Class" "Logical View::Generator::genModel::GenElement" @430
 				ShowCompartmentStereotypes 	TRUE
 				IncludeAttribute 	TRUE
 				IncludeOperation 	TRUE
@@ -14016,7 +14419,7 @@
 				    color      	0
 				    default_color 	TRUE)
 				label      	(object ItemLabel
-				    Parent_View 	@423
+				    Parent_View 	@430
 				    location   	(1731, 1221)
 				    fill_color 	13434879
 				    nlines     	1
@@ -14028,7 +14431,7 @@
 				fill_color 	13434879
 				quidu      	"59C175E402CD"
 				compartment 	(object Compartment
-				    Parent_View 	@423
+				    Parent_View 	@430
 				    location   	(1731, 1326)
 				    font       	(object Font
 					size       	10
@@ -14043,13 +14446,13 @@
 				    fill_color 	16777215
 				    anchor     	2
 				    nlines     	10
-				    max_width  	369
+				    max_width  	381
 				    justify    	1)
 				width      	390
 				height     	632
 				annotation 	8
 				autoResize 	TRUE)
-			    (object ClassView "Class" "Logical View::Generator::genModel::GenModel" @424
+			    (object ClassView "Class" "Logical View::Generator::genModel::GenModel" @431
 				ShowCompartmentStereotypes 	TRUE
 				IncludeAttribute 	TRUE
 				IncludeOperation 	TRUE
@@ -14064,7 +14467,7 @@
 				    color      	0
 				    default_color 	TRUE)
 				label      	(object ItemLabel
-				    Parent_View 	@424
+				    Parent_View 	@431
 				    location   	(1799, 778)
 				    fill_color 	13434879
 				    nlines     	1
@@ -14079,8 +14482,8 @@
 				height     	172
 				annotation 	8
 				autoResize 	TRUE)
-			    (object AssociationViewNew "$UNNAMED$47" @425
-				location   	(1947, 516)
+			    (object AssociationViewNew "$UNNAMED$47" @432
+				location   	(1887, 456)
 				font       	(object Font
 				    size       	10
 				    face       	"Arial"
@@ -14094,9 +14497,9 @@
 				line_color 	3342489
 				quidu      	"59C57D2F01E6"
 				roleview_list 	(list RoleViews
-				    (object RoleView "theGenModel" @426
-					Parent_View 	@425
-					location   	(550, 51)
+				    (object RoleView "theGenModel" @433
+					Parent_View 	@432
+					location   	(490, -9)
 					font       	(object Font
 					    size       	10
 					    face       	"Arial"
@@ -14106,9 +14509,9 @@
 					    strike     	FALSE
 					    color      	0
 					    default_color 	TRUE)
-					label      	(object SegLabel @427
-					    Parent_View 	@426
-					    location   	(1772, 725)
+					label      	(object SegLabel @434
+					    Parent_View 	@433
+					    location   	(1772, 705)
 					    font       	(object Font
 						size       	10
 						face       	"Arial"
@@ -14130,17 +14533,18 @@
 					stereotype 	TRUE
 					line_color 	3342489
 					quidu      	"59C57D30001B"
-					client     	@425
-					supplier   	@424
+					client     	@432
+					supplier   	@431
 					vertices   	(list Points
-					    (1947, 516)
+					    (1887, 456)
+					    (1947, 456)
 					    (1947, 766))
 					line_style 	3
-					origin_attachment 	(1947, 516)
+					origin_attachment 	(1887, 456)
 					terminal_attachment 	(1947, 766)
-					label      	(object SegLabel @428
-					    Parent_View 	@426
-					    location   	(2001, 740)
+					label      	(object SegLabel @435
+					    Parent_View 	@433
+					    location   	(2001, 728)
 					    font       	(object Font
 						size       	10
 						face       	"Arial"
@@ -14159,22 +14563,21 @@
 					    pctDist    	0.900000
 					    height     	54
 					    orientation 	0))
-				    (object RoleView "$UNNAMED$48" @429
-					Parent_View 	@425
-					location   	(550, 51)
+				    (object RoleView "$UNNAMED$48" @436
+					Parent_View 	@432
+					location   	(490, -9)
 					stereotype 	TRUE
 					line_color 	3342489
 					quidu      	"59C57D30001D"
-					client     	@425
-					supplier   	@417
+					client     	@432
+					supplier   	@424
 					vertices   	(list Points
-					    (1947, 516)
-					    (1947, 456)
+					    (1887, 456)
 					    (1636, 456))
 					line_style 	3
-					origin_attachment 	(1947, 516)
+					origin_attachment 	(1887, 456)
 					terminal_attachment 	(1636, 456))))
-			    (object AssociationViewNew "$UNNAMED$49" @430
+			    (object AssociationViewNew "$UNNAMED$49" @437
 				location   	(1925, 1073)
 				font       	(object Font
 				    size       	10
@@ -14189,8 +14592,8 @@
 				line_color 	3342489
 				quidu      	"59C57D69038E"
 				roleview_list 	(list RoleViews
-				    (object RoleView "listGenElements" @431
-					Parent_View 	@430
+				    (object RoleView "listGenElements" @438
+					Parent_View 	@437
 					location   	(116, 223)
 					font       	(object Font
 					    size       	10
@@ -14201,8 +14604,8 @@
 					    strike     	FALSE
 					    color      	0
 					    default_color 	TRUE)
-					label      	(object SegLabel @432
-					    Parent_View 	@431
+					label      	(object SegLabel @439
+					    Parent_View 	@438
 					    location   	(1747, 1154)
 					    font       	(object Font
 						size       	10
@@ -14225,16 +14628,16 @@
 					stereotype 	TRUE
 					line_color 	3342489
 					quidu      	"59C57D6A0148"
-					client     	@430
-					supplier   	@423
+					client     	@437
+					supplier   	@430
 					vertices   	(list Points
 					    (1925, 1073)
 					    (1925, 1209))
 					line_style 	3
 					origin_attachment 	(1925, 1073)
 					terminal_attachment 	(1925, 1209)
-					label      	(object SegLabel @433
-					    Parent_View 	@431
+					label      	(object SegLabel @440
+					    Parent_View 	@438
 					    location   	(1979, 1195)
 					    font       	(object Font
 						size       	10
@@ -14254,20 +14657,45 @@
 					    pctDist    	0.900000
 					    height     	54
 					    orientation 	0))
-				    (object RoleView "$UNNAMED$50" @434
-					Parent_View 	@430
+				    (object RoleView "$UNNAMED$50" @441
+					Parent_View 	@437
 					location   	(116, 223)
 					stereotype 	TRUE
 					line_color 	3342489
 					quidu      	"59C57D6A014B"
-					client     	@430
-					supplier   	@424
+					client     	@437
+					supplier   	@431
 					vertices   	(list Points
 					    (1925, 1073)
 					    (1925, 938))
 					line_style 	3
 					origin_attachment 	(1925, 1073)
-					terminal_attachment 	(1925, 938)))))))))
+					terminal_attachment 	(1925, 938))))
+			    (object CategoryView "Logical View::Generator::genDataForm" @442
+				location   	(2756, 256)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object ItemLabel
+				    Parent_View 	@442
+				    location   	(2612, 172)
+				    fill_color 	13434879
+				    nlines     	2
+				    max_width  	288
+				    justify    	0
+				    label      	"genDataForm")
+				icon_style 	"Icon"
+				line_color 	3342489
+				fill_color 	13434879
+				quidu      	"59FA89C40394"
+				width      	300
+				height     	180))))))
 	logical_presentations 	(list unit_reference_list
 	    (object ClassDiagram "Main"
 		quid       	"5995EA21000E"
@@ -14278,7 +14706,7 @@
 		origin_x   	1019
 		origin_y   	0
 		items      	(list diagram_item_list
-		    (object CategoryView "Logical View::Generator" @435
+		    (object CategoryView "Logical View::Generator" @443
 			location   	(1916, 569)
 			font       	(object Font
 			    size       	10
@@ -14290,7 +14718,7 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@435
+			    Parent_View 	@443
 			    location   	(1772, 485)
 			    fill_color 	13434879
 			    nlines     	2
@@ -14303,7 +14731,7 @@
 			quidu      	"59BF2F3E0009"
 			width      	300
 			height     	180)
-		    (object CategoryView "Logical View::Compilator" @436
+		    (object CategoryView "Logical View::Compilator" @444
 			location   	(872, 562)
 			font       	(object Font
 			    size       	10
@@ -14315,7 +14743,7 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@436
+			    Parent_View 	@444
 			    location   	(728, 478)
 			    fill_color 	13434879
 			    nlines     	2

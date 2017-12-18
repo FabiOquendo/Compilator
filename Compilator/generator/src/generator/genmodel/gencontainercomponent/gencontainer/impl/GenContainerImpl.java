@@ -5,6 +5,9 @@ package generator.genmodel.gencontainercomponent.gencontainer.impl;
 import generator.apperance.background.Background;
 import generator.apperance.background.BackgroundPackage;
 
+import generator.apperance.orientation.Orientation;
+import generator.apperance.orientation.OrientationPackage;
+
 import generator.apperance.titlesize.TitleHeight;
 import generator.apperance.titlesize.TitlesizePackage;
 
@@ -36,6 +39,7 @@ import styles.domain.Propertie;
  * </p>
  * <ul>
  *   <li>{@link generator.genmodel.gencontainercomponent.gencontainer.impl.GenContainerImpl#getTheTitleHeight <em>The Title Height</em>}</li>
+ *   <li>{@link generator.genmodel.gencontainercomponent.gencontainer.impl.GenContainerImpl#getTheOrientation <em>The Orientation</em>}</li>
  *   <li>{@link generator.genmodel.gencontainercomponent.gencontainer.impl.GenContainerImpl#getTheContainer <em>The Container</em>}</li>
  *   <li>{@link generator.genmodel.gencontainercomponent.gencontainer.impl.GenContainerImpl#getTheBackground <em>The Background</em>}</li>
  * </ul>
@@ -52,6 +56,16 @@ public class GenContainerImpl extends GenContainerElementImpl implements GenCont
 	 * @ordered
 	 */
 	protected TitleHeight theTitleHeight;
+
+	/**
+	 * The cached value of the '{@link #getTheOrientation() <em>The Orientation</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTheOrientation()
+	 * @generated
+	 * @ordered
+	 */
+	protected Orientation theOrientation;
 
 	/**
 	 * The cached value of the '{@link #getTheContainer() <em>The Container</em>}' reference.
@@ -140,6 +154,49 @@ public class GenContainerImpl extends GenContainerElementImpl implements GenCont
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Orientation getTheOrientation() {
+		return theOrientation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetTheOrientation(Orientation newTheOrientation, NotificationChain msgs) {
+		Orientation oldTheOrientation = theOrientation;
+		theOrientation = newTheOrientation;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GencontainerPackage.GEN_CONTAINER__THE_ORIENTATION, oldTheOrientation, newTheOrientation);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTheOrientation(Orientation newTheOrientation) {
+		if (newTheOrientation != theOrientation) {
+			NotificationChain msgs = null;
+			if (theOrientation != null)
+				msgs = ((InternalEObject)theOrientation).eInverseRemove(this, OrientationPackage.ORIENTATION__GEN_CONTAINER, Orientation.class, msgs);
+			if (newTheOrientation != null)
+				msgs = ((InternalEObject)newTheOrientation).eInverseAdd(this, OrientationPackage.ORIENTATION__GEN_CONTAINER, Orientation.class, msgs);
+			msgs = basicSetTheOrientation(newTheOrientation, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GencontainerPackage.GEN_CONTAINER__THE_ORIENTATION, newTheOrientation, newTheOrientation));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public compilator.domain.expression.expressionmodel.containercomponent.Container getTheContainer() {
 		if (theContainer != null && theContainer.eIsProxy()) {
 			InternalEObject oldTheContainer = (InternalEObject)theContainer;
@@ -221,11 +278,12 @@ public class GenContainerImpl extends GenContainerElementImpl implements GenCont
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void createPropertiesContainer(final Propertie fontSize) {
-		super.createProperties();
-		createBackground();
-		createTitleHeight();
-		setDefaultContainer(fontSize);
+	public void createPropertiesContainer(String orientation, final Propertie fontSize) {
+super.createProperties();
+createBackground();
+createOrientation();
+createTitleHeight();
+setDefaultContainer(orientation, fontSize);
 	}
 
 	/**
@@ -236,6 +294,11 @@ public class GenContainerImpl extends GenContainerElementImpl implements GenCont
 	public void createBackground() {
 		Background b = generator.apperance.background.BackgroundFactory.eINSTANCE.createBackground();
 		this.setTheBackground(b);
+	}
+	
+	public void createOrientation() {
+Orientation o = generator.apperance.orientation.OrientationFactory.eINSTANCE.createOrientation();
+this.setTheOrientation(o);
 	}
 
 	/**
@@ -253,7 +316,7 @@ public class GenContainerImpl extends GenContainerElementImpl implements GenCont
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setDefaultContainer(final Propertie fontSize) {
+	public void setDefaultContainer(String orientation, final Propertie fontSize) {
 		if(this.getTheWidth() == null || this.getTheWidth().getValue() == null) {
 			generator.apperance.size.Width w = generator.apperance.size.SizeFactory.eINSTANCE.createWidth();
 			w.setValue(100);
@@ -268,7 +331,12 @@ public class GenContainerImpl extends GenContainerElementImpl implements GenCont
 			generator.apperance.background.Background b = generator.apperance.background.BackgroundFactory.eINSTANCE.createBackground();
 			b.setValue("#FFFFFF");
 			this.setTheBackground(b);
-		} 
+		}
+if(this.getTheOrientation() == null || this.getTheOrientation().getValue() == null) {
+	generator.apperance.orientation.Orientation o = generator.apperance.orientation.OrientationFactory.eINSTANCE.createOrientation();
+	o.setValue(orientation);
+	this.setTheOrientation(o);
+} 
 		if(this.getTheTitleHeight() == null || this.getTheTitleHeight().getValue() == null) {
 			generator.apperance.titlesize.TitleHeight th = generator.apperance.titlesize.TitlesizeFactory.eINSTANCE.createTitleHeight();
 			int h = 20;
@@ -293,6 +361,10 @@ public class GenContainerImpl extends GenContainerElementImpl implements GenCont
 				if (theTitleHeight != null)
 					msgs = ((InternalEObject)theTitleHeight).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GencontainerPackage.GEN_CONTAINER__THE_TITLE_HEIGHT, null, msgs);
 				return basicSetTheTitleHeight((TitleHeight)otherEnd, msgs);
+			case GencontainerPackage.GEN_CONTAINER__THE_ORIENTATION:
+				if (theOrientation != null)
+					msgs = ((InternalEObject)theOrientation).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GencontainerPackage.GEN_CONTAINER__THE_ORIENTATION, null, msgs);
+				return basicSetTheOrientation((Orientation)otherEnd, msgs);
 			case GencontainerPackage.GEN_CONTAINER__THE_BACKGROUND:
 				if (theBackground != null)
 					msgs = ((InternalEObject)theBackground).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - GencontainerPackage.GEN_CONTAINER__THE_BACKGROUND, null, msgs);
@@ -311,6 +383,8 @@ public class GenContainerImpl extends GenContainerElementImpl implements GenCont
 		switch (featureID) {
 			case GencontainerPackage.GEN_CONTAINER__THE_TITLE_HEIGHT:
 				return basicSetTheTitleHeight(null, msgs);
+			case GencontainerPackage.GEN_CONTAINER__THE_ORIENTATION:
+				return basicSetTheOrientation(null, msgs);
 			case GencontainerPackage.GEN_CONTAINER__THE_BACKGROUND:
 				return basicSetTheBackground(null, msgs);
 		}
@@ -327,6 +401,8 @@ public class GenContainerImpl extends GenContainerElementImpl implements GenCont
 		switch (featureID) {
 			case GencontainerPackage.GEN_CONTAINER__THE_TITLE_HEIGHT:
 				return getTheTitleHeight();
+			case GencontainerPackage.GEN_CONTAINER__THE_ORIENTATION:
+				return getTheOrientation();
 			case GencontainerPackage.GEN_CONTAINER__THE_CONTAINER:
 				if (resolve) return getTheContainer();
 				return basicGetTheContainer();
@@ -346,6 +422,9 @@ public class GenContainerImpl extends GenContainerElementImpl implements GenCont
 		switch (featureID) {
 			case GencontainerPackage.GEN_CONTAINER__THE_TITLE_HEIGHT:
 				setTheTitleHeight((TitleHeight)newValue);
+				return;
+			case GencontainerPackage.GEN_CONTAINER__THE_ORIENTATION:
+				setTheOrientation((Orientation)newValue);
 				return;
 			case GencontainerPackage.GEN_CONTAINER__THE_CONTAINER:
 				setTheContainer((compilator.domain.expression.expressionmodel.containercomponent.Container)newValue);
@@ -368,6 +447,9 @@ public class GenContainerImpl extends GenContainerElementImpl implements GenCont
 			case GencontainerPackage.GEN_CONTAINER__THE_TITLE_HEIGHT:
 				setTheTitleHeight((TitleHeight)null);
 				return;
+			case GencontainerPackage.GEN_CONTAINER__THE_ORIENTATION:
+				setTheOrientation((Orientation)null);
+				return;
 			case GencontainerPackage.GEN_CONTAINER__THE_CONTAINER:
 				setTheContainer((compilator.domain.expression.expressionmodel.containercomponent.Container)null);
 				return;
@@ -388,6 +470,8 @@ public class GenContainerImpl extends GenContainerElementImpl implements GenCont
 		switch (featureID) {
 			case GencontainerPackage.GEN_CONTAINER__THE_TITLE_HEIGHT:
 				return theTitleHeight != null;
+			case GencontainerPackage.GEN_CONTAINER__THE_ORIENTATION:
+				return theOrientation != null;
 			case GencontainerPackage.GEN_CONTAINER__THE_CONTAINER:
 				return theContainer != null;
 			case GencontainerPackage.GEN_CONTAINER__THE_BACKGROUND:
@@ -405,7 +489,7 @@ public class GenContainerImpl extends GenContainerElementImpl implements GenCont
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 			case GencontainerPackage.GEN_CONTAINER___CREATE_PROPERTIES_CONTAINER__PROPERTIE:
-				createPropertiesContainer((Propertie)arguments.get(0));
+				createPropertiesContainer((String)arguments.get(0), (Propertie)arguments.get(1));
 				return null;
 			case GencontainerPackage.GEN_CONTAINER___CREATE_BACKGROUND:
 				createBackground();
@@ -414,7 +498,7 @@ public class GenContainerImpl extends GenContainerElementImpl implements GenCont
 				createTitleHeight();
 				return null;
 			case GencontainerPackage.GEN_CONTAINER___SET_DEFAULT_CONTAINER__PROPERTIE:
-				setDefaultContainer((Propertie)arguments.get(0));
+				setDefaultContainer((String)arguments.get(0), (Propertie)arguments.get(1));
 				return null;
 		}
 		return super.eInvoke(operationID, arguments);

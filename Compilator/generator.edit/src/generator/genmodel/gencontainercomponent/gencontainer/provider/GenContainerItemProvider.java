@@ -5,6 +5,8 @@ package generator.genmodel.gencontainercomponent.gencontainer.provider;
 
 import generator.apperance.background.BackgroundFactory;
 
+import generator.apperance.orientation.OrientationFactory;
+
 import generator.apperance.titlesize.TitlesizeFactory;
 
 import generator.genmodel.gencontainercomponent.gencontainer.GenContainer;
@@ -96,6 +98,7 @@ public class GenContainerItemProvider extends GenContainerElementItemProvider {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(GencontainerPackage.Literals.GEN_CONTAINER__THE_TITLE_HEIGHT);
+			childrenFeatures.add(GencontainerPackage.Literals.GEN_CONTAINER__THE_ORIENTATION);
 			childrenFeatures.add(GencontainerPackage.Literals.GEN_CONTAINER__THE_BACKGROUND);
 		}
 		return childrenFeatures;
@@ -150,6 +153,7 @@ public class GenContainerItemProvider extends GenContainerElementItemProvider {
 
 		switch (notification.getFeatureID(GenContainer.class)) {
 			case GencontainerPackage.GEN_CONTAINER__THE_TITLE_HEIGHT:
+			case GencontainerPackage.GEN_CONTAINER__THE_ORIENTATION:
 			case GencontainerPackage.GEN_CONTAINER__THE_BACKGROUND:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -172,6 +176,11 @@ public class GenContainerItemProvider extends GenContainerElementItemProvider {
 			(createChildParameter
 				(GencontainerPackage.Literals.GEN_CONTAINER__THE_TITLE_HEIGHT,
 				 TitlesizeFactory.eINSTANCE.createTitleHeight()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(GencontainerPackage.Literals.GEN_CONTAINER__THE_ORIENTATION,
+				 OrientationFactory.eINSTANCE.createOrientation()));
 
 		newChildDescriptors.add
 			(createChildParameter
