@@ -25,6 +25,8 @@ import junit.textui.TestRunner;
  *   <li>{@link generator.gendataform.DataFormDiagramGenerator#initComponents(tooldataform.formmodel.containers.GraphicalContainer, org.eclipse.gmf.runtime.notation.Node) <em>Init Components</em>}</li>
  *   <li>{@link generator.gendataform.DataFormDiagramGenerator#createBounds(int, int, int, int) <em>Create Bounds</em>}</li>
  *   <li>{@link generator.gendataform.DataFormDiagramGenerator#openDiagram(org.eclipse.gmf.runtime.notation.Diagram) <em>Open Diagram</em>}</li>
+ *   <li>{@link generator.gendataform.DataFormDiagramGenerator#getFontDataformElement(tooldataform.formmodel.concreta.ModelElementDataForm) <em>Get Font Dataform Element</em>}</li>
+ *   <li>{@link generator.gendataform.DataFormDiagramGenerator#getFontSizeDataformElement(tooldataform.formmodel.concreta.ModelElementDataForm) <em>Get Font Size Dataform Element</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -212,6 +214,32 @@ public class DataFormDiagramGeneratorTest extends TestCase {
 	 * @generated
 	 */
 	public void testOpenDiagram__Diagram() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link generator.gendataform.DataFormDiagramGenerator#getFontDataformElement(tooldataform.formmodel.concreta.ModelElementDataForm) <em>Get Font Dataform Element</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see generator.gendataform.DataFormDiagramGenerator#getFontDataformElement(tooldataform.formmodel.concreta.ModelElementDataForm)
+	 * @generated
+	 */
+	public void testGetFontDataformElement__ModelElementDataForm() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link generator.gendataform.DataFormDiagramGenerator#getFontSizeDataformElement(tooldataform.formmodel.concreta.ModelElementDataForm) <em>Get Font Size Dataform Element</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see generator.gendataform.DataFormDiagramGenerator#getFontSizeDataformElement(tooldataform.formmodel.concreta.ModelElementDataForm)
+	 * @generated
+	 */
+	public void testGetFontSizeDataformElement__ModelElementDataForm() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

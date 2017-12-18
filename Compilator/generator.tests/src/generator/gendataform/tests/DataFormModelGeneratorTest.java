@@ -16,18 +16,20 @@ import junit.textui.TestRunner;
  * <p>
  * The following operations are tested:
  * <ul>
- *   <li>{@link generator.gendataform.DataFormModelGenerator#createDataFormModel(generator.genmodel.GenModel) <em>Create Data Form Model</em>}</li>
- *   <li>{@link generator.gendataform.DataFormModelGenerator#createToolDataFormContainer(generator.genmodel.gencontainercomponent.gencontainer.GenContainer) <em>Create Tool Data Form Container</em>}</li>
- *   <li>{@link generator.gendataform.DataFormModelGenerator#createIndividualElement(generator.genmodel.GenElement) <em>Create Individual Element</em>}</li>
- *   <li>{@link generator.gendataform.DataFormModelGenerator#createGraphicalContainer(generator.genmodel.GenElement) <em>Create Graphical Container</em>}</li>
- *   <li>{@link generator.gendataform.DataFormModelGenerator#createButton(generator.genmodel.genindividualcomponent.genbutton.GenButton) <em>Create Button</em>}</li>
- *   <li>{@link generator.gendataform.DataFormModelGenerator#createComboView(generator.genmodel.genindividualcomponent.gencombobox.GenComboBox) <em>Create Combo View</em>}</li>
- *   <li>{@link generator.gendataform.DataFormModelGenerator#createLabelView(generator.genmodel.genindividualcomponent.genlabel.GenLabel) <em>Create Label View</em>}</li>
- *   <li>{@link generator.gendataform.DataFormModelGenerator#createTextView(generator.genmodel.genindividualcomponent.gentextfield.GenTextField) <em>Create Text View</em>}</li>
- *   <li>{@link generator.gendataform.DataFormModelGenerator#createTableView(generator.genmodel.genindividualcomponent.gentable.GenTable) <em>Create Table View</em>}</li>
- *   <li>{@link generator.gendataform.DataFormModelGenerator#createColumView(generator.genmodel.genindividualcomponent.gencolunm.GenColumn) <em>Create Colum View</em>}</li>
+ *   <li>{@link generator.gendataform.DataFormModelGenerator#createDataFormModel(tooldataform.styles.domain.Domain, generator.genmodel.GenModel) <em>Create Data Form Model</em>}</li>
+ *   <li>{@link generator.gendataform.DataFormModelGenerator#createToolDataFormContainer(tooldataform.styles.domain.Domain, generator.genmodel.gencontainercomponent.gencontainer.GenContainer) <em>Create Tool Data Form Container</em>}</li>
+ *   <li>{@link generator.gendataform.DataFormModelGenerator#createIndividualElement(tooldataform.styles.domain.Domain, generator.genmodel.GenElement) <em>Create Individual Element</em>}</li>
+ *   <li>{@link generator.gendataform.DataFormModelGenerator#createGraphicalContainer(tooldataform.styles.domain.Domain, generator.genmodel.GenElement) <em>Create Graphical Container</em>}</li>
+ *   <li>{@link generator.gendataform.DataFormModelGenerator#createButton(tooldataform.styles.domain.Domain, generator.genmodel.genindividualcomponent.genbutton.GenButton) <em>Create Button</em>}</li>
+ *   <li>{@link generator.gendataform.DataFormModelGenerator#createComboView(tooldataform.styles.domain.Domain, generator.genmodel.genindividualcomponent.gencombobox.GenComboBox) <em>Create Combo View</em>}</li>
+ *   <li>{@link generator.gendataform.DataFormModelGenerator#createLabelView(tooldataform.styles.domain.Domain, generator.genmodel.genindividualcomponent.genlabel.GenLabel) <em>Create Label View</em>}</li>
+ *   <li>{@link generator.gendataform.DataFormModelGenerator#createTextView(tooldataform.styles.domain.Domain, generator.genmodel.genindividualcomponent.gentextfield.GenTextField) <em>Create Text View</em>}</li>
+ *   <li>{@link generator.gendataform.DataFormModelGenerator#createTableView(tooldataform.styles.domain.Domain, generator.genmodel.genindividualcomponent.gentable.GenTable) <em>Create Table View</em>}</li>
+ *   <li>{@link generator.gendataform.DataFormModelGenerator#createColumView(tooldataform.styles.domain.Domain, generator.genmodel.genindividualcomponent.gencolunm.GenColumn) <em>Create Colum View</em>}</li>
  *   <li>{@link generator.gendataform.DataFormModelGenerator#setLevelContainer(tooldataform.formmodel.containers.GraphicalContainer) <em>Set Level Container</em>}</li>
- *   <li>{@link generator.gendataform.DataFormModelGenerator#setBoundsContainers(java.lang.Integer, tooldataform.formmodel.containers.GraphicalContainer) <em>Set Bounds Containers</em>}</li>
+ *   <li>{@link generator.gendataform.DataFormModelGenerator#setBoundsContainers(java.lang.Integer, java.lang.String, tooldataform.formmodel.containers.GraphicalContainer) <em>Set Bounds Containers</em>}</li>
+ *   <li>{@link generator.gendataform.DataFormModelGenerator#getOrientation(tooldataform.styles.domain.Style) <em>Get Orientation</em>}</li>
+ *   <li>{@link generator.gendataform.DataFormModelGenerator#searchStyle(tooldataform.styles.domain.Domain, java.lang.String) <em>Search Style</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -104,130 +106,130 @@ public class DataFormModelGeneratorTest extends TestCase {
 	}
 
 	/**
-	 * Tests the '{@link generator.gendataform.DataFormModelGenerator#createDataFormModel(generator.genmodel.GenModel) <em>Create Data Form Model</em>}' operation.
+	 * Tests the '{@link generator.gendataform.DataFormModelGenerator#createDataFormModel(tooldataform.styles.domain.Domain, generator.genmodel.GenModel) <em>Create Data Form Model</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see generator.gendataform.DataFormModelGenerator#createDataFormModel(generator.genmodel.GenModel)
+	 * @see generator.gendataform.DataFormModelGenerator#createDataFormModel(tooldataform.styles.domain.Domain, generator.genmodel.GenModel)
 	 * @generated
 	 */
-	public void testCreateDataFormModel__GenModel() {
+	public void testCreateDataFormModel__Domain_GenModel() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}
 
 	/**
-	 * Tests the '{@link generator.gendataform.DataFormModelGenerator#createToolDataFormContainer(generator.genmodel.gencontainercomponent.gencontainer.GenContainer) <em>Create Tool Data Form Container</em>}' operation.
+	 * Tests the '{@link generator.gendataform.DataFormModelGenerator#createToolDataFormContainer(tooldataform.styles.domain.Domain, generator.genmodel.gencontainercomponent.gencontainer.GenContainer) <em>Create Tool Data Form Container</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see generator.gendataform.DataFormModelGenerator#createToolDataFormContainer(generator.genmodel.gencontainercomponent.gencontainer.GenContainer)
+	 * @see generator.gendataform.DataFormModelGenerator#createToolDataFormContainer(tooldataform.styles.domain.Domain, generator.genmodel.gencontainercomponent.gencontainer.GenContainer)
 	 * @generated
 	 */
-	public void testCreateToolDataFormContainer__GenContainer() {
+	public void testCreateToolDataFormContainer__Domain_GenContainer() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}
 
 	/**
-	 * Tests the '{@link generator.gendataform.DataFormModelGenerator#createIndividualElement(generator.genmodel.GenElement) <em>Create Individual Element</em>}' operation.
+	 * Tests the '{@link generator.gendataform.DataFormModelGenerator#createIndividualElement(tooldataform.styles.domain.Domain, generator.genmodel.GenElement) <em>Create Individual Element</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see generator.gendataform.DataFormModelGenerator#createIndividualElement(generator.genmodel.GenElement)
+	 * @see generator.gendataform.DataFormModelGenerator#createIndividualElement(tooldataform.styles.domain.Domain, generator.genmodel.GenElement)
 	 * @generated
 	 */
-	public void testCreateIndividualElement__GenElement() {
+	public void testCreateIndividualElement__Domain_GenElement() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}
 
 	/**
-	 * Tests the '{@link generator.gendataform.DataFormModelGenerator#createGraphicalContainer(generator.genmodel.GenElement) <em>Create Graphical Container</em>}' operation.
+	 * Tests the '{@link generator.gendataform.DataFormModelGenerator#createGraphicalContainer(tooldataform.styles.domain.Domain, generator.genmodel.GenElement) <em>Create Graphical Container</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see generator.gendataform.DataFormModelGenerator#createGraphicalContainer(generator.genmodel.GenElement)
+	 * @see generator.gendataform.DataFormModelGenerator#createGraphicalContainer(tooldataform.styles.domain.Domain, generator.genmodel.GenElement)
 	 * @generated
 	 */
-	public void testCreateGraphicalContainer__GenElement() {
+	public void testCreateGraphicalContainer__Domain_GenElement() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}
 
 	/**
-	 * Tests the '{@link generator.gendataform.DataFormModelGenerator#createButton(generator.genmodel.genindividualcomponent.genbutton.GenButton) <em>Create Button</em>}' operation.
+	 * Tests the '{@link generator.gendataform.DataFormModelGenerator#createButton(tooldataform.styles.domain.Domain, generator.genmodel.genindividualcomponent.genbutton.GenButton) <em>Create Button</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see generator.gendataform.DataFormModelGenerator#createButton(generator.genmodel.genindividualcomponent.genbutton.GenButton)
+	 * @see generator.gendataform.DataFormModelGenerator#createButton(tooldataform.styles.domain.Domain, generator.genmodel.genindividualcomponent.genbutton.GenButton)
 	 * @generated
 	 */
-	public void testCreateButton__GenButton() {
+	public void testCreateButton__Domain_GenButton() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}
 
 	/**
-	 * Tests the '{@link generator.gendataform.DataFormModelGenerator#createComboView(generator.genmodel.genindividualcomponent.gencombobox.GenComboBox) <em>Create Combo View</em>}' operation.
+	 * Tests the '{@link generator.gendataform.DataFormModelGenerator#createComboView(tooldataform.styles.domain.Domain, generator.genmodel.genindividualcomponent.gencombobox.GenComboBox) <em>Create Combo View</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see generator.gendataform.DataFormModelGenerator#createComboView(generator.genmodel.genindividualcomponent.gencombobox.GenComboBox)
+	 * @see generator.gendataform.DataFormModelGenerator#createComboView(tooldataform.styles.domain.Domain, generator.genmodel.genindividualcomponent.gencombobox.GenComboBox)
 	 * @generated
 	 */
-	public void testCreateComboView__GenComboBox() {
+	public void testCreateComboView__Domain_GenComboBox() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}
 
 	/**
-	 * Tests the '{@link generator.gendataform.DataFormModelGenerator#createLabelView(generator.genmodel.genindividualcomponent.genlabel.GenLabel) <em>Create Label View</em>}' operation.
+	 * Tests the '{@link generator.gendataform.DataFormModelGenerator#createLabelView(tooldataform.styles.domain.Domain, generator.genmodel.genindividualcomponent.genlabel.GenLabel) <em>Create Label View</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see generator.gendataform.DataFormModelGenerator#createLabelView(generator.genmodel.genindividualcomponent.genlabel.GenLabel)
+	 * @see generator.gendataform.DataFormModelGenerator#createLabelView(tooldataform.styles.domain.Domain, generator.genmodel.genindividualcomponent.genlabel.GenLabel)
 	 * @generated
 	 */
-	public void testCreateLabelView__GenLabel() {
+	public void testCreateLabelView__Domain_GenLabel() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}
 
 	/**
-	 * Tests the '{@link generator.gendataform.DataFormModelGenerator#createTextView(generator.genmodel.genindividualcomponent.gentextfield.GenTextField) <em>Create Text View</em>}' operation.
+	 * Tests the '{@link generator.gendataform.DataFormModelGenerator#createTextView(tooldataform.styles.domain.Domain, generator.genmodel.genindividualcomponent.gentextfield.GenTextField) <em>Create Text View</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see generator.gendataform.DataFormModelGenerator#createTextView(generator.genmodel.genindividualcomponent.gentextfield.GenTextField)
+	 * @see generator.gendataform.DataFormModelGenerator#createTextView(tooldataform.styles.domain.Domain, generator.genmodel.genindividualcomponent.gentextfield.GenTextField)
 	 * @generated
 	 */
-	public void testCreateTextView__GenTextField() {
+	public void testCreateTextView__Domain_GenTextField() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}
 
 	/**
-	 * Tests the '{@link generator.gendataform.DataFormModelGenerator#createTableView(generator.genmodel.genindividualcomponent.gentable.GenTable) <em>Create Table View</em>}' operation.
+	 * Tests the '{@link generator.gendataform.DataFormModelGenerator#createTableView(tooldataform.styles.domain.Domain, generator.genmodel.genindividualcomponent.gentable.GenTable) <em>Create Table View</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see generator.gendataform.DataFormModelGenerator#createTableView(generator.genmodel.genindividualcomponent.gentable.GenTable)
+	 * @see generator.gendataform.DataFormModelGenerator#createTableView(tooldataform.styles.domain.Domain, generator.genmodel.genindividualcomponent.gentable.GenTable)
 	 * @generated
 	 */
-	public void testCreateTableView__GenTable() {
+	public void testCreateTableView__Domain_GenTable() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}
 
 	/**
-	 * Tests the '{@link generator.gendataform.DataFormModelGenerator#createColumView(generator.genmodel.genindividualcomponent.gencolunm.GenColumn) <em>Create Colum View</em>}' operation.
+	 * Tests the '{@link generator.gendataform.DataFormModelGenerator#createColumView(tooldataform.styles.domain.Domain, generator.genmodel.genindividualcomponent.gencolunm.GenColumn) <em>Create Colum View</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see generator.gendataform.DataFormModelGenerator#createColumView(generator.genmodel.genindividualcomponent.gencolunm.GenColumn)
+	 * @see generator.gendataform.DataFormModelGenerator#createColumView(tooldataform.styles.domain.Domain, generator.genmodel.genindividualcomponent.gencolunm.GenColumn)
 	 * @generated
 	 */
-	public void testCreateColumView__GenColumn() {
+	public void testCreateColumView__Domain_GenColumn() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
@@ -247,13 +249,39 @@ public class DataFormModelGeneratorTest extends TestCase {
 	}
 
 	/**
-	 * Tests the '{@link generator.gendataform.DataFormModelGenerator#setBoundsContainers(java.lang.Integer, tooldataform.formmodel.containers.GraphicalContainer) <em>Set Bounds Containers</em>}' operation.
+	 * Tests the '{@link generator.gendataform.DataFormModelGenerator#setBoundsContainers(java.lang.Integer, java.lang.String, tooldataform.formmodel.containers.GraphicalContainer) <em>Set Bounds Containers</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see generator.gendataform.DataFormModelGenerator#setBoundsContainers(java.lang.Integer, tooldataform.formmodel.containers.GraphicalContainer)
+	 * @see generator.gendataform.DataFormModelGenerator#setBoundsContainers(java.lang.Integer, java.lang.String, tooldataform.formmodel.containers.GraphicalContainer)
 	 * @generated
 	 */
-	public void testSetBoundsContainers__Integer_GraphicalContainer() {
+	public void testSetBoundsContainers__Integer_String_GraphicalContainer() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link generator.gendataform.DataFormModelGenerator#getOrientation(tooldataform.styles.domain.Style) <em>Get Orientation</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see generator.gendataform.DataFormModelGenerator#getOrientation(tooldataform.styles.domain.Style)
+	 * @generated
+	 */
+	public void testGetOrientation__Style() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link generator.gendataform.DataFormModelGenerator#searchStyle(tooldataform.styles.domain.Domain, java.lang.String) <em>Search Style</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see generator.gendataform.DataFormModelGenerator#searchStyle(tooldataform.styles.domain.Domain, java.lang.String)
+	 * @generated
+	 */
+	public void testSearchStyle__Domain_String() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

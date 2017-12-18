@@ -291,7 +291,7 @@ public interface GencontainerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GEN_CONTAINER___CREATE_PROPERTIES_CONTAINER__PROPERTIE = GencontainercomponentPackage.GEN_CONTAINER_ELEMENT_OPERATION_COUNT + 0;
+	int GEN_CONTAINER___CREATE_PROPERTIES_CONTAINER__STRING_PROPERTIE = GencontainercomponentPackage.GEN_CONTAINER_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>Create Background</em>' operation.
@@ -303,13 +303,22 @@ public interface GencontainerPackage extends EPackage {
 	int GEN_CONTAINER___CREATE_BACKGROUND = GencontainercomponentPackage.GEN_CONTAINER_ELEMENT_OPERATION_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Create Orientation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GEN_CONTAINER___CREATE_ORIENTATION = GencontainercomponentPackage.GEN_CONTAINER_ELEMENT_OPERATION_COUNT + 2;
+
+	/**
 	 * The operation id for the '<em>Create Title Height</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GEN_CONTAINER___CREATE_TITLE_HEIGHT = GencontainercomponentPackage.GEN_CONTAINER_ELEMENT_OPERATION_COUNT + 2;
+	int GEN_CONTAINER___CREATE_TITLE_HEIGHT = GencontainercomponentPackage.GEN_CONTAINER_ELEMENT_OPERATION_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>Set Default Container</em>' operation.
@@ -318,7 +327,7 @@ public interface GencontainerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GEN_CONTAINER___SET_DEFAULT_CONTAINER__PROPERTIE = GencontainercomponentPackage.GEN_CONTAINER_ELEMENT_OPERATION_COUNT + 3;
+	int GEN_CONTAINER___SET_DEFAULT_CONTAINER__PROPERTIE = GencontainercomponentPackage.GEN_CONTAINER_ELEMENT_OPERATION_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Gen Container</em>' class.
@@ -327,7 +336,7 @@ public interface GencontainerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GEN_CONTAINER_OPERATION_COUNT = GencontainercomponentPackage.GEN_CONTAINER_ELEMENT_OPERATION_COUNT + 4;
+	int GEN_CONTAINER_OPERATION_COUNT = GencontainercomponentPackage.GEN_CONTAINER_ELEMENT_OPERATION_COUNT + 5;
 
 
 	/**
@@ -385,14 +394,14 @@ public interface GencontainerPackage extends EPackage {
 	EReference getGenContainer_TheBackground();
 
 	/**
-	 * Returns the meta object for the '{@link generator.genmodel.gencontainercomponent.gencontainer.GenContainer#createPropertiesContainer(styles.domain.Propertie) <em>Create Properties Container</em>}' operation.
+	 * Returns the meta object for the '{@link generator.genmodel.gencontainercomponent.gencontainer.GenContainer#createPropertiesContainer(java.lang.String, styles.domain.Propertie) <em>Create Properties Container</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Create Properties Container</em>' operation.
-	 * @see generator.genmodel.gencontainercomponent.gencontainer.GenContainer#createPropertiesContainer(styles.domain.Propertie)
+	 * @see generator.genmodel.gencontainercomponent.gencontainer.GenContainer#createPropertiesContainer(java.lang.String, styles.domain.Propertie)
 	 * @generated
 	 */
-	EOperation getGenContainer__CreatePropertiesContainer__Propertie();
+	EOperation getGenContainer__CreatePropertiesContainer__String_Propertie();
 
 	/**
 	 * Returns the meta object for the '{@link generator.genmodel.gencontainercomponent.gencontainer.GenContainer#createBackground() <em>Create Background</em>}' operation.
@@ -403,6 +412,16 @@ public interface GencontainerPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getGenContainer__CreateBackground();
+
+	/**
+	 * Returns the meta object for the '{@link generator.genmodel.gencontainercomponent.gencontainer.GenContainer#createOrientation() <em>Create Orientation</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Create Orientation</em>' operation.
+	 * @see generator.genmodel.gencontainercomponent.gencontainer.GenContainer#createOrientation()
+	 * @generated
+	 */
+	EOperation getGenContainer__CreateOrientation();
 
 	/**
 	 * Returns the meta object for the '{@link generator.genmodel.gencontainercomponent.gencontainer.GenContainer#createTitleHeight() <em>Create Title Height</em>}' operation.
@@ -495,7 +514,7 @@ public interface GencontainerPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation GEN_CONTAINER___CREATE_PROPERTIES_CONTAINER__PROPERTIE = eINSTANCE.getGenContainer__CreatePropertiesContainer__Propertie();
+		EOperation GEN_CONTAINER___CREATE_PROPERTIES_CONTAINER__STRING_PROPERTIE = eINSTANCE.getGenContainer__CreatePropertiesContainer__String_Propertie();
 
 		/**
 		 * The meta object literal for the '<em><b>Create Background</b></em>' operation.
@@ -504,6 +523,14 @@ public interface GencontainerPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation GEN_CONTAINER___CREATE_BACKGROUND = eINSTANCE.getGenContainer__CreateBackground();
+
+		/**
+		 * The meta object literal for the '<em><b>Create Orientation</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation GEN_CONTAINER___CREATE_ORIENTATION = eINSTANCE.getGenContainer__CreateOrientation();
 
 		/**
 		 * The meta object literal for the '<em><b>Create Title Height</b></em>' operation.

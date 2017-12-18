@@ -278,12 +278,12 @@ public class GenContainerImpl extends GenContainerElementImpl implements GenCont
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void createPropertiesContainer(String orientation, final Propertie fontSize) {
-super.createProperties();
-createBackground();
-createOrientation();
-createTitleHeight();
-setDefaultContainer(orientation, fontSize);
+	public void createPropertiesContainer(final String orientation, final Propertie fontSize) {
+		super.createProperties();
+		createBackground();
+		createOrientation();
+		createTitleHeight();
+		setDefaultContainer(orientation, fontSize);
 	}
 
 	/**
@@ -295,10 +295,15 @@ setDefaultContainer(orientation, fontSize);
 		Background b = generator.apperance.background.BackgroundFactory.eINSTANCE.createBackground();
 		this.setTheBackground(b);
 	}
-	
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public void createOrientation() {
-Orientation o = generator.apperance.orientation.OrientationFactory.eINSTANCE.createOrientation();
-this.setTheOrientation(o);
+		Orientation o = generator.apperance.orientation.OrientationFactory.eINSTANCE.createOrientation();
+		this.setTheOrientation(o);
 	}
 
 	/**
@@ -331,12 +336,12 @@ this.setTheOrientation(o);
 			generator.apperance.background.Background b = generator.apperance.background.BackgroundFactory.eINSTANCE.createBackground();
 			b.setValue("#FFFFFF");
 			this.setTheBackground(b);
-		}
-if(this.getTheOrientation() == null || this.getTheOrientation().getValue() == null) {
-	generator.apperance.orientation.Orientation o = generator.apperance.orientation.OrientationFactory.eINSTANCE.createOrientation();
-	o.setValue(orientation);
-	this.setTheOrientation(o);
-} 
+		} 
+		if(this.getTheOrientation() == null || this.getTheOrientation().getValue() == null) {
+			generator.apperance.orientation.Orientation o = generator.apperance.orientation.OrientationFactory.eINSTANCE.createOrientation();
+			o.setValue(orientation);
+			this.setTheOrientation(o);
+		} 
 		if(this.getTheTitleHeight() == null || this.getTheTitleHeight().getValue() == null) {
 			generator.apperance.titlesize.TitleHeight th = generator.apperance.titlesize.TitlesizeFactory.eINSTANCE.createTitleHeight();
 			int h = 20;
@@ -488,11 +493,14 @@ if(this.getTheOrientation() == null || this.getTheOrientation().getValue() == nu
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case GencontainerPackage.GEN_CONTAINER___CREATE_PROPERTIES_CONTAINER__PROPERTIE:
+			case GencontainerPackage.GEN_CONTAINER___CREATE_PROPERTIES_CONTAINER__STRING_PROPERTIE:
 				createPropertiesContainer((String)arguments.get(0), (Propertie)arguments.get(1));
 				return null;
 			case GencontainerPackage.GEN_CONTAINER___CREATE_BACKGROUND:
 				createBackground();
+				return null;
+			case GencontainerPackage.GEN_CONTAINER___CREATE_ORIENTATION:
+				createOrientation();
 				return null;
 			case GencontainerPackage.GEN_CONTAINER___CREATE_TITLE_HEIGHT:
 				createTitleHeight();

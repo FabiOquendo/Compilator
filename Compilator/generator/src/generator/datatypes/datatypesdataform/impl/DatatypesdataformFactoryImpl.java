@@ -22,10 +22,14 @@ import tooldataform.formmodel.concreta.DataForm_Diagram;
 import tooldataform.formmodel.concreta.GraphicalIndividualEement;
 import tooldataform.formmodel.concreta.Interface;
 import tooldataform.formmodel.concreta.LabelView;
+import tooldataform.formmodel.concreta.ModelElementDataForm;
 import tooldataform.formmodel.concreta.TableView;
 import tooldataform.formmodel.concreta.TextView;
 
 import tooldataform.formmodel.containers.GraphicalContainer;
+
+import tooldataform.styles.domain.Domain;
+import tooldataform.styles.domain.Style;
 
 /**
  * <!-- begin-user-doc -->
@@ -108,6 +112,12 @@ public class DatatypesdataformFactoryImpl extends EFactoryImpl implements Dataty
 				return createModelFactoryFromString(eDataType, initialValue);
 			case DatatypesdataformPackage.INTERFACE:
 				return createInterfaceFromString(eDataType, initialValue);
+			case DatatypesdataformPackage.DOMAN_STYLE:
+				return createDomanStyleFromString(eDataType, initialValue);
+			case DatatypesdataformPackage.STYLE:
+				return createStyleFromString(eDataType, initialValue);
+			case DatatypesdataformPackage.MODEL_ELEMENT_DATA_FORM:
+				return createModelElementDataFormFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -145,6 +155,12 @@ public class DatatypesdataformFactoryImpl extends EFactoryImpl implements Dataty
 				return convertModelFactoryToString(eDataType, instanceValue);
 			case DatatypesdataformPackage.INTERFACE:
 				return convertInterfaceToString(eDataType, instanceValue);
+			case DatatypesdataformPackage.DOMAN_STYLE:
+				return convertDomanStyleToString(eDataType, instanceValue);
+			case DatatypesdataformPackage.STYLE:
+				return convertStyleToString(eDataType, instanceValue);
+			case DatatypesdataformPackage.MODEL_ELEMENT_DATA_FORM:
+				return convertModelElementDataFormToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -363,6 +379,60 @@ public class DatatypesdataformFactoryImpl extends EFactoryImpl implements Dataty
 	 * @generated
 	 */
 	public String convertInterfaceToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Domain createDomanStyleFromString(EDataType eDataType, String initialValue) {
+		return (Domain)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertDomanStyleToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Style createStyleFromString(EDataType eDataType, String initialValue) {
+		return (Style)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertStyleToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ModelElementDataForm createModelElementDataFormFromString(EDataType eDataType, String initialValue) {
+		return (ModelElementDataForm)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertModelElementDataFormToString(EDataType eDataType, Object instanceValue) {
 		return super.convertToString(eDataType, instanceValue);
 	}
 

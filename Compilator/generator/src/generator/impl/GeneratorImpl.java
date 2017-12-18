@@ -227,8 +227,8 @@ public class GeneratorImpl extends MinimalEObjectImpl.Container implements Gener
 				break;
 			}
 		}
-String orientation = container.getOrientation();
-genContainer.createPropertiesContainer(orientation, fontSize);
+		String orientation = container.getOrientation();
+		genContainer.createPropertiesContainer(orientation, fontSize);
 		if(container.getTheStyle() != null) {
 			genContainer = (GenContainer) setApperances(container, genContainer);
 			for (int i = 0; i < listProperties.size(); i++) {

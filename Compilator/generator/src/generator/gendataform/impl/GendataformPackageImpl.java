@@ -394,6 +394,24 @@ public class GendataformPackageImpl extends EPackageImpl implements GendataformP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getDataFormDiagramGenerator__GetFontDataformElement__ModelElementDataForm() {
+		return dataFormDiagramGeneratorEClass.getEOperations().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDataFormDiagramGenerator__GetFontSizeDataformElement__ModelElementDataForm() {
+		return dataFormDiagramGeneratorEClass.getEOperations().get(10);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getDataFormModelGenerator() {
 		return dataFormModelGeneratorEClass;
 	}
@@ -412,7 +430,7 @@ public class GendataformPackageImpl extends EPackageImpl implements GendataformP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getDataFormModelGenerator__CreateDataFormModel__GenModel() {
+	public EOperation getDataFormModelGenerator__CreateDataFormModel__Domain_GenModel() {
 		return dataFormModelGeneratorEClass.getEOperations().get(0);
 	}
 
@@ -421,7 +439,7 @@ public class GendataformPackageImpl extends EPackageImpl implements GendataformP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getDataFormModelGenerator__CreateToolDataFormContainer__GenContainer() {
+	public EOperation getDataFormModelGenerator__CreateToolDataFormContainer__Domain_GenContainer() {
 		return dataFormModelGeneratorEClass.getEOperations().get(1);
 	}
 
@@ -430,7 +448,7 @@ public class GendataformPackageImpl extends EPackageImpl implements GendataformP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getDataFormModelGenerator__CreateIndividualElement__GenElement() {
+	public EOperation getDataFormModelGenerator__CreateIndividualElement__Domain_GenElement() {
 		return dataFormModelGeneratorEClass.getEOperations().get(2);
 	}
 
@@ -439,7 +457,7 @@ public class GendataformPackageImpl extends EPackageImpl implements GendataformP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getDataFormModelGenerator__CreateGraphicalContainer__GenElement() {
+	public EOperation getDataFormModelGenerator__CreateGraphicalContainer__Domain_GenElement() {
 		return dataFormModelGeneratorEClass.getEOperations().get(3);
 	}
 
@@ -448,7 +466,7 @@ public class GendataformPackageImpl extends EPackageImpl implements GendataformP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getDataFormModelGenerator__CreateButton__GenButton() {
+	public EOperation getDataFormModelGenerator__CreateButton__Domain_GenButton() {
 		return dataFormModelGeneratorEClass.getEOperations().get(4);
 	}
 
@@ -457,7 +475,7 @@ public class GendataformPackageImpl extends EPackageImpl implements GendataformP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getDataFormModelGenerator__CreateComboView__GenComboBox() {
+	public EOperation getDataFormModelGenerator__CreateComboView__Domain_GenComboBox() {
 		return dataFormModelGeneratorEClass.getEOperations().get(5);
 	}
 
@@ -466,7 +484,7 @@ public class GendataformPackageImpl extends EPackageImpl implements GendataformP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getDataFormModelGenerator__CreateLabelView__GenLabel() {
+	public EOperation getDataFormModelGenerator__CreateLabelView__Domain_GenLabel() {
 		return dataFormModelGeneratorEClass.getEOperations().get(6);
 	}
 
@@ -475,7 +493,7 @@ public class GendataformPackageImpl extends EPackageImpl implements GendataformP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getDataFormModelGenerator__CreateTextView__GenTextField() {
+	public EOperation getDataFormModelGenerator__CreateTextView__Domain_GenTextField() {
 		return dataFormModelGeneratorEClass.getEOperations().get(7);
 	}
 
@@ -484,7 +502,7 @@ public class GendataformPackageImpl extends EPackageImpl implements GendataformP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getDataFormModelGenerator__CreateTableView__GenTable() {
+	public EOperation getDataFormModelGenerator__CreateTableView__Domain_GenTable() {
 		return dataFormModelGeneratorEClass.getEOperations().get(8);
 	}
 
@@ -493,7 +511,7 @@ public class GendataformPackageImpl extends EPackageImpl implements GendataformP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getDataFormModelGenerator__CreateColumView__GenColumn() {
+	public EOperation getDataFormModelGenerator__CreateColumView__Domain_GenColumn() {
 		return dataFormModelGeneratorEClass.getEOperations().get(9);
 	}
 
@@ -511,8 +529,26 @@ public class GendataformPackageImpl extends EPackageImpl implements GendataformP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getDataFormModelGenerator__SetBoundsContainers__Integer_GraphicalContainer() {
+	public EOperation getDataFormModelGenerator__SetBoundsContainers__Integer_String_GraphicalContainer() {
 		return dataFormModelGeneratorEClass.getEOperations().get(11);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDataFormModelGenerator__GetOrientation__Style() {
+		return dataFormModelGeneratorEClass.getEOperations().get(12);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getDataFormModelGenerator__SearchStyle__Domain_String() {
+		return dataFormModelGeneratorEClass.getEOperations().get(13);
 	}
 
 	/**
@@ -556,21 +592,25 @@ public class GendataformPackageImpl extends EPackageImpl implements GendataformP
 		createEOperation(dataFormDiagramGeneratorEClass, DATA_FORM_DIAGRAM_GENERATOR___INIT_COMPONENTS__GRAPHICALCONTAINER_NODE);
 		createEOperation(dataFormDiagramGeneratorEClass, DATA_FORM_DIAGRAM_GENERATOR___CREATE_BOUNDS__INT_INT_INT_INT);
 		createEOperation(dataFormDiagramGeneratorEClass, DATA_FORM_DIAGRAM_GENERATOR___OPEN_DIAGRAM__DIAGRAM);
+		createEOperation(dataFormDiagramGeneratorEClass, DATA_FORM_DIAGRAM_GENERATOR___GET_FONT_DATAFORM_ELEMENT__MODELELEMENTDATAFORM);
+		createEOperation(dataFormDiagramGeneratorEClass, DATA_FORM_DIAGRAM_GENERATOR___GET_FONT_SIZE_DATAFORM_ELEMENT__MODELELEMENTDATAFORM);
 
 		dataFormModelGeneratorEClass = createEClass(DATA_FORM_MODEL_GENERATOR);
 		createEAttribute(dataFormModelGeneratorEClass, DATA_FORM_MODEL_GENERATOR__LEVEL_CONTAINER);
-		createEOperation(dataFormModelGeneratorEClass, DATA_FORM_MODEL_GENERATOR___CREATE_DATA_FORM_MODEL__GENMODEL);
-		createEOperation(dataFormModelGeneratorEClass, DATA_FORM_MODEL_GENERATOR___CREATE_TOOL_DATA_FORM_CONTAINER__GENCONTAINER);
-		createEOperation(dataFormModelGeneratorEClass, DATA_FORM_MODEL_GENERATOR___CREATE_INDIVIDUAL_ELEMENT__GENELEMENT);
-		createEOperation(dataFormModelGeneratorEClass, DATA_FORM_MODEL_GENERATOR___CREATE_GRAPHICAL_CONTAINER__GENELEMENT);
-		createEOperation(dataFormModelGeneratorEClass, DATA_FORM_MODEL_GENERATOR___CREATE_BUTTON__GENBUTTON);
-		createEOperation(dataFormModelGeneratorEClass, DATA_FORM_MODEL_GENERATOR___CREATE_COMBO_VIEW__GENCOMBOBOX);
-		createEOperation(dataFormModelGeneratorEClass, DATA_FORM_MODEL_GENERATOR___CREATE_LABEL_VIEW__GENLABEL);
-		createEOperation(dataFormModelGeneratorEClass, DATA_FORM_MODEL_GENERATOR___CREATE_TEXT_VIEW__GENTEXTFIELD);
-		createEOperation(dataFormModelGeneratorEClass, DATA_FORM_MODEL_GENERATOR___CREATE_TABLE_VIEW__GENTABLE);
-		createEOperation(dataFormModelGeneratorEClass, DATA_FORM_MODEL_GENERATOR___CREATE_COLUM_VIEW__GENCOLUMN);
+		createEOperation(dataFormModelGeneratorEClass, DATA_FORM_MODEL_GENERATOR___CREATE_DATA_FORM_MODEL__DOMAIN_GENMODEL);
+		createEOperation(dataFormModelGeneratorEClass, DATA_FORM_MODEL_GENERATOR___CREATE_TOOL_DATA_FORM_CONTAINER__DOMAIN_GENCONTAINER);
+		createEOperation(dataFormModelGeneratorEClass, DATA_FORM_MODEL_GENERATOR___CREATE_INDIVIDUAL_ELEMENT__DOMAIN_GENELEMENT);
+		createEOperation(dataFormModelGeneratorEClass, DATA_FORM_MODEL_GENERATOR___CREATE_GRAPHICAL_CONTAINER__DOMAIN_GENELEMENT);
+		createEOperation(dataFormModelGeneratorEClass, DATA_FORM_MODEL_GENERATOR___CREATE_BUTTON__DOMAIN_GENBUTTON);
+		createEOperation(dataFormModelGeneratorEClass, DATA_FORM_MODEL_GENERATOR___CREATE_COMBO_VIEW__DOMAIN_GENCOMBOBOX);
+		createEOperation(dataFormModelGeneratorEClass, DATA_FORM_MODEL_GENERATOR___CREATE_LABEL_VIEW__DOMAIN_GENLABEL);
+		createEOperation(dataFormModelGeneratorEClass, DATA_FORM_MODEL_GENERATOR___CREATE_TEXT_VIEW__DOMAIN_GENTEXTFIELD);
+		createEOperation(dataFormModelGeneratorEClass, DATA_FORM_MODEL_GENERATOR___CREATE_TABLE_VIEW__DOMAIN_GENTABLE);
+		createEOperation(dataFormModelGeneratorEClass, DATA_FORM_MODEL_GENERATOR___CREATE_COLUM_VIEW__DOMAIN_GENCOLUMN);
 		createEOperation(dataFormModelGeneratorEClass, DATA_FORM_MODEL_GENERATOR___SET_LEVEL_CONTAINER__GRAPHICALCONTAINER);
-		createEOperation(dataFormModelGeneratorEClass, DATA_FORM_MODEL_GENERATOR___SET_BOUNDS_CONTAINERS__INTEGER_GRAPHICALCONTAINER);
+		createEOperation(dataFormModelGeneratorEClass, DATA_FORM_MODEL_GENERATOR___SET_BOUNDS_CONTAINERS__INTEGER_STRING_GRAPHICALCONTAINER);
+		createEOperation(dataFormModelGeneratorEClass, DATA_FORM_MODEL_GENERATOR___GET_ORIENTATION__STYLE);
+		createEOperation(dataFormModelGeneratorEClass, DATA_FORM_MODEL_GENERATOR___SEARCH_STYLE__DOMAIN_STRING);
 	}
 
 	/**
@@ -649,45 +689,69 @@ public class GendataformPackageImpl extends EPackageImpl implements GendataformP
 		op = initEOperation(getDataFormDiagramGenerator__OpenDiagram__Diagram(), null, "openDiagram", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theDatatypesgmfPackage.getDiagram(), "diag", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		op = initEOperation(getDataFormDiagramGenerator__GetFontDataformElement__ModelElementDataForm(), ecorePackage.getEString(), "getFontDataformElement", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theDatatypesdataformPackage.getModelElementDataForm(), "element", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getDataFormDiagramGenerator__GetFontSizeDataformElement__ModelElementDataForm(), ecorePackage.getEIntegerObject(), "getFontSizeDataformElement", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theDatatypesdataformPackage.getModelElementDataForm(), "element", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(dataFormModelGeneratorEClass, DataFormModelGenerator.class, "DataFormModelGenerator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDataFormModelGenerator_LevelContainer(), theUtilPackage.getHashMap(), "levelContainer", null, 0, 1, DataFormModelGenerator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		op = initEOperation(getDataFormModelGenerator__CreateDataFormModel__GenModel(), theDatatypesdataformPackage.getDataForm_Diagram(), "createDataFormModel", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getDataFormModelGenerator__CreateDataFormModel__Domain_GenModel(), theDatatypesdataformPackage.getDataForm_Diagram(), "createDataFormModel", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theDatatypesdataformPackage.getDomanStyle(), "domainStyle", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theGenmodelPackage.getGenModel(), "genModel", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getDataFormModelGenerator__CreateToolDataFormContainer__GenContainer(), theDatatypesdataformPackage.getContainer(), "createToolDataFormContainer", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getDataFormModelGenerator__CreateToolDataFormContainer__Domain_GenContainer(), theDatatypesdataformPackage.getContainer(), "createToolDataFormContainer", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theDatatypesdataformPackage.getDomanStyle(), "domainStyle", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theGencontainerPackage.getGenContainer(), "parent", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getDataFormModelGenerator__CreateIndividualElement__GenElement(), theDatatypesdataformPackage.getGraphicalIndividualEement(), "createIndividualElement", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getDataFormModelGenerator__CreateIndividualElement__Domain_GenElement(), theDatatypesdataformPackage.getGraphicalIndividualEement(), "createIndividualElement", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theDatatypesdataformPackage.getDomanStyle(), "domainStyle", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theGenmodelPackage.getGenElement(), "element", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getDataFormModelGenerator__CreateGraphicalContainer__GenElement(), theDatatypesdataformPackage.getGraphicalContainer(), "createGraphicalContainer", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getDataFormModelGenerator__CreateGraphicalContainer__Domain_GenElement(), theDatatypesdataformPackage.getGraphicalContainer(), "createGraphicalContainer", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theDatatypesdataformPackage.getDomanStyle(), "domainStyle", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theGenmodelPackage.getGenElement(), "element", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getDataFormModelGenerator__CreateButton__GenButton(), theDatatypesdataformPackage.getButton(), "createButton", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getDataFormModelGenerator__CreateButton__Domain_GenButton(), theDatatypesdataformPackage.getButton(), "createButton", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theDatatypesdataformPackage.getDomanStyle(), "domainStyle", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theGenbuttonPackage.getGenButton(), "genButton", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getDataFormModelGenerator__CreateComboView__GenComboBox(), theDatatypesdataformPackage.getComboView(), "createComboView", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getDataFormModelGenerator__CreateComboView__Domain_GenComboBox(), theDatatypesdataformPackage.getComboView(), "createComboView", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theDatatypesdataformPackage.getDomanStyle(), "domainStyle", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theGencomboboxPackage.getGenComboBox(), "genCombo", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getDataFormModelGenerator__CreateLabelView__GenLabel(), theDatatypesdataformPackage.getLabelView(), "createLabelView", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getDataFormModelGenerator__CreateLabelView__Domain_GenLabel(), theDatatypesdataformPackage.getLabelView(), "createLabelView", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theDatatypesdataformPackage.getDomanStyle(), "domainStyle", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theGenlabelPackage.getGenLabel(), "genLabel", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getDataFormModelGenerator__CreateTextView__GenTextField(), theDatatypesdataformPackage.getTextView(), "createTextView", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getDataFormModelGenerator__CreateTextView__Domain_GenTextField(), theDatatypesdataformPackage.getTextView(), "createTextView", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theDatatypesdataformPackage.getDomanStyle(), "domainStyle", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theGentextfieldPackage.getGenTextField(), "genText", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getDataFormModelGenerator__CreateTableView__GenTable(), theDatatypesdataformPackage.getTableView(), "createTableView", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getDataFormModelGenerator__CreateTableView__Domain_GenTable(), theDatatypesdataformPackage.getTableView(), "createTableView", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theDatatypesdataformPackage.getDomanStyle(), "domainStyle", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theGentablePackage.getGenTable(), "genTable", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getDataFormModelGenerator__CreateColumView__GenColumn(), theDatatypesdataformPackage.getColumView(), "createColumView", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getDataFormModelGenerator__CreateColumView__Domain_GenColumn(), theDatatypesdataformPackage.getColumView(), "createColumView", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theDatatypesdataformPackage.getDomanStyle(), "domainStyle", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theGencolunmPackage.getGenColumn(), "genColumn", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		op = initEOperation(getDataFormModelGenerator__SetLevelContainer__GraphicalContainer(), ecorePackage.getEIntegerObject(), "setLevelContainer", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theDatatypesdataformPackage.getGraphicalContainer(), "container", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getDataFormModelGenerator__SetBoundsContainers__Integer_GraphicalContainer(), null, "setBoundsContainers", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getDataFormModelGenerator__SetBoundsContainers__Integer_String_GraphicalContainer(), null, "setBoundsContainers", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEIntegerObject(), "index", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "orientation", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theDatatypesdataformPackage.getGraphicalContainer(), "container", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getDataFormModelGenerator__GetOrientation__Style(), null, "getOrientation", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theDatatypesdataformPackage.getStyle(), "style", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getDataFormModelGenerator__SearchStyle__Domain_String(), null, "searchStyle", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theDatatypesdataformPackage.getDomanStyle(), "domain", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "styleName", 0, 1, IS_UNIQUE, IS_ORDERED);
 	}
 
 } //GendataformPackageImpl

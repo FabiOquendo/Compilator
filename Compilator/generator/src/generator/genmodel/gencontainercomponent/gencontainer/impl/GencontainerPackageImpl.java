@@ -314,7 +314,7 @@ public class GencontainerPackageImpl extends EPackageImpl implements Gencontaine
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getGenContainer__CreatePropertiesContainer__Propertie() {
+	public EOperation getGenContainer__CreatePropertiesContainer__String_Propertie() {
 		return genContainerEClass.getEOperations().get(0);
 	}
 
@@ -332,7 +332,7 @@ public class GencontainerPackageImpl extends EPackageImpl implements Gencontaine
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getGenContainer__CreateTitleHeight() {
+	public EOperation getGenContainer__CreateOrientation() {
 		return genContainerEClass.getEOperations().get(2);
 	}
 
@@ -341,8 +341,17 @@ public class GencontainerPackageImpl extends EPackageImpl implements Gencontaine
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getGenContainer__SetDefaultContainer__Propertie() {
+	public EOperation getGenContainer__CreateTitleHeight() {
 		return genContainerEClass.getEOperations().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getGenContainer__SetDefaultContainer__Propertie() {
+		return genContainerEClass.getEOperations().get(4);
 	}
 
 	/**
@@ -378,8 +387,9 @@ public class GencontainerPackageImpl extends EPackageImpl implements Gencontaine
 		createEReference(genContainerEClass, GEN_CONTAINER__THE_ORIENTATION);
 		createEReference(genContainerEClass, GEN_CONTAINER__THE_CONTAINER);
 		createEReference(genContainerEClass, GEN_CONTAINER__THE_BACKGROUND);
-		createEOperation(genContainerEClass, GEN_CONTAINER___CREATE_PROPERTIES_CONTAINER__PROPERTIE);
+		createEOperation(genContainerEClass, GEN_CONTAINER___CREATE_PROPERTIES_CONTAINER__STRING_PROPERTIE);
 		createEOperation(genContainerEClass, GEN_CONTAINER___CREATE_BACKGROUND);
+		createEOperation(genContainerEClass, GEN_CONTAINER___CREATE_ORIENTATION);
 		createEOperation(genContainerEClass, GEN_CONTAINER___CREATE_TITLE_HEIGHT);
 		createEOperation(genContainerEClass, GEN_CONTAINER___SET_DEFAULT_CONTAINER__PROPERTIE);
 	}
@@ -429,10 +439,13 @@ public class GencontainerPackageImpl extends EPackageImpl implements Gencontaine
 		initEReference(getGenContainer_TheContainer(), theContainercomponentPackage.getContainer(), null, "theContainer", null, 1, 1, GenContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getGenContainer_TheBackground(), theBackgroundPackage.getBackground(), theBackgroundPackage.getBackground_GenContainer(), "theBackground", null, 1, 1, GenContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		EOperation op = initEOperation(getGenContainer__CreatePropertiesContainer__Propertie(), null, "createPropertiesContainer", 0, 1, IS_UNIQUE, IS_ORDERED);
+		EOperation op = initEOperation(getGenContainer__CreatePropertiesContainer__String_Propertie(), null, "createPropertiesContainer", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "orientation", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theDatatypesPackage.getPropertie(), "fontSize", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEOperation(getGenContainer__CreateBackground(), null, "createBackground", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getGenContainer__CreateOrientation(), null, "createOrientation", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEOperation(getGenContainer__CreateTitleHeight(), null, "createTitleHeight", 0, 1, IS_UNIQUE, IS_ORDERED);
 

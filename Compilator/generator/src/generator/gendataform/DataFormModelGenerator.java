@@ -35,6 +35,9 @@ import tooldataform.formmodel.concreta.TextView;
 
 import tooldataform.formmodel.containers.GraphicalContainer;
 
+import tooldataform.styles.domain.Domain;
+import tooldataform.styles.domain.Style;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Data Form Model Generator</b></em>'.
@@ -81,101 +84,98 @@ public interface DataFormModelGenerator extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model dataType="generator.datatypes.datatypesdataform.DataForm_Diagram"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='tooldataform.formmodel.concreta.DataForm_Diagram diagram = tooldataform.formmodel.concreta.\r\n\t\tConcretaFactory.eINSTANCE.createDataForm_Diagram();\r\ntooldataform.formmodel.concreta.Interface interFace  = tooldataform.formmodel.concreta.\r\n\t\tConcretaFactory.eINSTANCE.createInterface();\r\ninterFace.setName(\"Dataform Diagram\");\r\ndiagram.setTheInterface(interFace);\r\ndiagram.setName(\"model.tooldataform_diagram\");\r\n\r\nfor(int i=0;i&lt;genModel.getListGenElements().size();i++){\r\n\tGenElement element = genModel.getListGenElements().get(i);\r\n\t\r\n\tif(element instanceof GenContainer){\r\n\t\ttooldataform.formmodel.concreta.Container c = createToolDataFormContainer((GenContainer)element);\r\n\t\tinterFace.getListGraphicalContainer().add(c);\r\n\t}\r\n\telse if(element instanceof generator.genmodel.genindividualcomponent.gentable.GenTable || \r\n\t\t\telement instanceof generator.genmodel.genindividualcomponent.gencombobox.GenComboBox){\r\n\t\tinterFace.getListGraphicalContainer().add(createGraphicalContainer(element));\r\n\t}\r\n\telse{\r\n\t\tinterFace.getListIndividualElementDataForm().add(createIndividualElement(element));\r\n\t}\r\n}\r\nlevelContainer = new HashMap&lt;GraphicalContainer, Integer&gt;();\r\nsetLevelContainer(interFace);\r\nfor (int i = 0; i &lt; interFace.getListGraphicalContainer().size(); i++) {\r\n\tsetBoundsContainers(i, interFace.getListGraphicalContainer().get(i));\r\n}\r\nreturn diagram;'"
+	 * @model dataType="generator.datatypes.datatypesdataform.DataForm_Diagram" domainStyleDataType="generator.datatypes.datatypesdataform.DomanStyle"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='tooldataform.formmodel.concreta.DataForm_Diagram diagram = tooldataform.formmodel.concreta.\r\n\t\tConcretaFactory.eINSTANCE.createDataForm_Diagram();\r\ntooldataform.formmodel.concreta.Interface interFace  = tooldataform.formmodel.concreta.\r\n\t\tConcretaFactory.eINSTANCE.createInterface();\r\ninterFace.setName(\"Dataform Diagram\");\r\ndiagram.setTheInterface(interFace);\r\ndiagram.setName(\"model.tooldataform_diagram\");\r\n\r\nfor(int i=0;i&lt;genModel.getListGenElements().size();i++){\r\n\tGenElement genElement = genModel.getListGenElements().get(i);\r\n\r\n\tif(genElement instanceof GenContainer){\r\n\t\ttooldataform.formmodel.concreta.Container container = createToolDataFormContainer(\r\n\t\t\t\tdomainStyle, (GenContainer) genElement);\r\n\t\tinterFace.getListGraphicalContainer().add(container);\r\n\t}else if(genElement instanceof generator.genmodel.genindividualcomponent.gentable.GenTable) {\r\n\t\ttooldataform.formmodel.concreta.TableView tableView = (TableView) \r\n\t\t\t\tcreateGraphicalContainer(domainStyle, genElement);\r\n\t\tinterFace.getListGraphicalContainer().add(tableView);\r\n\t} \r\n\telse if(genElement instanceof generator.genmodel.genindividualcomponent.gencombobox.GenComboBox) {\r\n\t\ttooldataform.formmodel.concreta.ComboView comboView = (ComboView) \r\n\t\t\t\tcreateGraphicalContainer(domainStyle, genElement);\r\n\t\tinterFace.getListGraphicalContainer().add(comboView);\r\n\t}\r\n\telse{\r\n\t\tinterFace.getListIndividualElementDataForm().add(\r\n\t\t\t\tcreateIndividualElement(domainStyle, genElement));\r\n\t}\r\n}\r\nlevelContainer = new HashMap&lt;GraphicalContainer, Integer&gt;();\r\nsetLevelContainer(interFace);\r\nfor (int i = 0; i &lt; interFace.getListGraphicalContainer().size(); i++) {\r\n\tsetBoundsContainers(i, interFace.getListGraphicalContainer().get(i));\r\n}\r\nreturn diagram;\r\n'"
 	 * @generated
 	 */
-	DataForm_Diagram createDataFormModel(tooldataform.styles.domain.Domain domainStyle, GenModel genModel);
+	DataForm_Diagram createDataFormModel(Domain domainStyle, GenModel genModel);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model dataType="generator.datatypes.datatypesdataform.Container"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='tooldataform.formmodel.concreta.Container container= tooldataform.formmodel.concreta.\r\n\t\tConcretaFactory.eINSTANCE.createContainer();\r\ncontainer.setName(parent.getTheContainer().getName());\r\ncontainer.setPositionX(parent.getTheX().getValue());\r\ncontainer.setPositionY(parent.getTheY().getValue());\r\ncontainer.setWidth(parent.getTheWidth().getValue());\r\ncontainer.setHeight(parent.getTheHeight().getValue());\r\n\r\nfor(int i=0;i&lt;parent.getListGenElements().size();i++){\r\n\tGenElement element = parent.getListGenElements().get(i);\r\n\t\r\n\tif(element instanceof GenContainer){\r\n\t\ttooldataform.formmodel.concreta.Container c = createToolDataFormContainer((GenContainer)element);\r\n\t\tcontainer.getListGraphicalContainer().add(c);\r\n\t}\r\n\telse if(element instanceof generator.genmodel.genindividualcomponent.gentable.GenTable || \r\n\t\t\telement instanceof generator.genmodel.genindividualcomponent.gencombobox.GenComboBox){\r\n\t\tcontainer.getListGraphicalContainer().add(createGraphicalContainer(element));\r\n\t}\r\n\telse{\r\n\t\tcontainer.getListIndividualElementDataForm().add(createIndividualElement(element));\r\n\t}\r\n}\r\nreturn container;'"
+	 * @model dataType="generator.datatypes.datatypesdataform.Container" domainStyleDataType="generator.datatypes.datatypesdataform.DomanStyle"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='tooldataform.formmodel.concreta.Container container = tooldataform.formmodel.concreta.ConcretaFactory.eINSTANCE\r\n\t\t.createContainer();\r\ncontainer.setName(parent.getTheContainer().getName());\r\ncontainer.setPositionX(parent.getTheX().getValue());\r\ncontainer.setPositionY(parent.getTheY().getValue());\r\ncontainer.setWidth(parent.getTheWidth().getValue());\r\ncontainer.setHeight(parent.getTheHeight().getValue());\r\n\r\nStyle style = parent.getTheContainer().getTheStyle();\r\nCharacteristic characteristic = style.getTheCharacteristic();\r\n\r\ntooldataform.styles.domain.Style styleDF = searchStyle(domainStyle, style.getName());\r\ndomainStyle.getTheStyleFactory().getListStyle().remove(styleDF);\r\n\r\nstyleDF = DomainFactory.eINSTANCE.createStyle();\r\ntooldataform.styles.domain.Characteristic characteristicDF = DomainFactory.eINSTANCE.createCharacteristic();\r\nstyleDF.setName(style.getName());\r\ncharacteristicDF.setName(characteristic.getName());\r\nEList&lt;Propertie&gt; lisProperties = characteristic.getListProperties();\r\nfor (int i = 0; i &lt; lisProperties.size(); i++) {\r\n\ttooldataform.styles.domain.Propertie propertieDF = DomainFactory.eINSTANCE.createPropertie();\r\n\tpropertieDF.setName(lisProperties.get(i).getName());\r\n\tpropertieDF.setValue(lisProperties.get(i).getValue());\r\n\tcharacteristicDF.getListProperties().add(propertieDF);\r\n}\r\ntooldataform.styles.domain.Propertie propertieDF = DomainFactory.eINSTANCE.createPropertie();\r\npropertieDF.setName(\"Orientation\");\r\npropertieDF.setValue(parent.getTheContainer().getOrientation());\r\ncharacteristicDF.getListProperties().add(propertieDF);\r\n\r\ndomainStyle.getTheStyleFactory().getListStyle().add(styleDF);\r\ndomainStyle.getTheCharacteristicFactory().getListCharacteristic().add(characteristicDF);\r\nstyleDF.setTheCharacteristic(characteristicDF);\r\n\r\ncontainer.setTheStyle(styleDF);\r\n\r\nfor (int i = 0; i &lt; parent.getListGenElements().size(); i++) {\r\n\tGenElement element = parent.getListGenElements().get(i);\r\n\r\n\tif (element instanceof GenContainer) {\r\n\t\ttooldataform.formmodel.concreta.Container c = createToolDataFormContainer(domainStyle,\r\n\t\t\t\t(GenContainer) element);\r\n\t\tcontainer.getListGraphicalContainer().add(c);\r\n\t} else if (element instanceof generator.genmodel.genindividualcomponent.gentable.GenTable\r\n\t\t\t|| element instanceof generator.genmodel.genindividualcomponent.gencombobox.GenComboBox) {\r\n\t\tcontainer.getListGraphicalContainer().add(createGraphicalContainer(domainStyle, element));\r\n\t} else {\r\n\t\tcontainer.getListIndividualElementDataForm().add(createIndividualElement(domainStyle, element));\r\n\t}\r\n}\r\nreturn container;'"
 	 * @generated
 	 */
-	Container createToolDataFormContainer(tooldataform.styles.domain.Domain domainStyle, GenContainer parent);
+	Container createToolDataFormContainer(Domain domainStyle, GenContainer parent);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model dataType="generator.datatypes.datatypesdataform.GraphicalIndividualEement"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='GraphicalIndividualEement individualElement=null;\r\n\r\nif(element instanceof generator.genmodel.genindividualcomponent.genbutton.GenButton){\r\n\tindividualElement = createButton((GenButton)element);\r\n}\r\nelse if(element instanceof generator.genmodel.genindividualcomponent.genlabel.GenLabel){\r\n\tindividualElement = createLabelView((GenLabel)element);\r\n}\r\nelse if(element instanceof generator.genmodel.genindividualcomponent.gentextfield.GenTextField){\r\n\tindividualElement = createTextView((GenTextField)element);\r\n}\r\n\r\n//Se valida si es null?\r\nindividualElement.setPositionX(element.getTheX().getValue());\r\nindividualElement.setPositionY(element.getTheY().getValue());\r\nindividualElement.setWidth(element.getTheWidth().getValue());\r\nindividualElement.setHeight(element.getTheHeight().getValue());\r\n\r\nreturn individualElement;'"
+	 * @model dataType="generator.datatypes.datatypesdataform.GraphicalIndividualEement" domainStyleDataType="generator.datatypes.datatypesdataform.DomanStyle"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='GraphicalIndividualEement individualElement = null;\r\n\r\nif (element instanceof generator.genmodel.genindividualcomponent.genbutton.GenButton) {\r\n\tindividualElement = createButton(domainStyle, (GenButton) element);\r\n} else if (element instanceof generator.genmodel.genindividualcomponent.genlabel.GenLabel) {\r\n\tindividualElement = createLabelView(domainStyle, (GenLabel) element);\r\n} else if (element instanceof generator.genmodel.genindividualcomponent.gentextfield.GenTextField) {\r\n\tindividualElement = createTextView(domainStyle, (GenTextField) element);\r\n}\r\n\r\nindividualElement.setPositionX(element.getTheX().getValue());\r\nindividualElement.setPositionY(element.getTheY().getValue());\r\nindividualElement.setWidth(element.getTheWidth().getValue());\r\nindividualElement.setHeight(element.getTheHeight().getValue());\r\n\r\nreturn individualElement;'"
 	 * @generated
 	 */
-	GraphicalIndividualEement createIndividualElement(tooldataform.styles.domain.Domain domainStyle, GenElement element);
+	GraphicalIndividualEement createIndividualElement(Domain domainStyle, GenElement element);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model dataType="generator.datatypes.datatypesdataform.GraphicalContainer"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body=' tooldataform.formmodel.containers.GraphicalContainer container = null;\r\n \r\n if(element instanceof generator.genmodel.genindividualcomponent.gentable.GenTable ){\r\n\t \tcontainer  = createTableView((GenTable)element);\r\n }else if( element instanceof generator.genmodel.genindividualcomponent.gencombobox.GenComboBox){\r\n\t container = createComboView((GenComboBox)element);\r\n }\t\r\n \r\n //Se valida si es null?\r\n container.setPositionX(element.getTheX().getValue());\r\n container.setPositionY(element.getTheY().getValue());\r\n container.setWidth(element.getTheWidth().getValue());\r\n container.setHeight(element.getTheHeight().getValue());\r\n \r\n return container;'"
+	 * @model dataType="generator.datatypes.datatypesdataform.GraphicalContainer" domainStyleDataType="generator.datatypes.datatypesdataform.DomanStyle"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='tooldataform.formmodel.containers.GraphicalContainer container = null;\r\n\r\nif (element instanceof generator.genmodel.genindividualcomponent.gentable.GenTable) {\r\n\tGenTable genTable = (GenTable) element;\r\n\tcontainer = createTableView(domainStyle, (GenTable) element);\r\n} else if (element instanceof generator.genmodel.genindividualcomponent.gencombobox.GenComboBox) {\r\n\tGenComboBox genComboBox = (GenComboBox) element;\r\n\tcontainer = createComboView(domainStyle, (GenComboBox) element);\r\n}\r\n\r\ncontainer.setPositionX(element.getTheX().getValue());\r\ncontainer.setPositionY(element.getTheY().getValue());\r\ncontainer.setWidth(element.getTheWidth().getValue());\r\ncontainer.setHeight(element.getTheHeight().getValue());\r\n\r\nreturn container;'"
 	 * @generated
 	 */
-	GraphicalContainer createGraphicalContainer(tooldataform.styles.domain.
-			Domain domainStyle, GenElement element);
+	GraphicalContainer createGraphicalContainer(Domain domainStyle, GenElement element);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model dataType="generator.datatypes.datatypesdataform.Button"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='tooldataform.formmodel.concreta.Button button  = tooldataform.formmodel.concreta.\r\n\t\tConcretaFactory.eINSTANCE.createButton();\r\nbutton.setName(genButton.getTheButton().getName());\r\nreturn button;'"
+	 * @model dataType="generator.datatypes.datatypesdataform.Button" domainStyleDataType="generator.datatypes.datatypesdataform.DomanStyle"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='tooldataform.formmodel.concreta.Button button = tooldataform.formmodel.concreta.ConcretaFactory.eINSTANCE\r\n\t\t.createButton();\r\nStyle style = genButton.getTheButton().getTheStyle();\r\nCharacteristic characteristic = style.getTheCharacteristic();\r\n\r\ntooldataform.styles.domain.Style styleDF = searchStyle(domainStyle, style.getName());\r\ndomainStyle.getTheStyleFactory().getListStyle().remove(styleDF);\r\n\r\nstyleDF = DomainFactory.eINSTANCE.createStyle();\r\ntooldataform.styles.domain.Characteristic characteristicDF = DomainFactory.eINSTANCE.createCharacteristic();\r\nstyleDF.setName(style.getName());\r\ncharacteristicDF.setName(characteristic.getName());\r\nEList&lt;Propertie&gt; lisProperties = characteristic.getListProperties();\r\nfor (int i = 0; i &lt; lisProperties.size(); i++) {\r\n\ttooldataform.styles.domain.Propertie propertieDF = DomainFactory.eINSTANCE.createPropertie();\r\n\tpropertieDF.setName(lisProperties.get(i).getName());\r\n\tpropertieDF.setValue(lisProperties.get(i).getValue());\r\n\tcharacteristicDF.getListProperties().add(propertieDF);\r\n}\r\ndomainStyle.getTheStyleFactory().getListStyle().add(styleDF);\r\ndomainStyle.getTheCharacteristicFactory().getListCharacteristic().add(characteristicDF);\r\nstyleDF.setTheCharacteristic(characteristicDF);\r\n\r\nbutton.setTheStyle(styleDF);\r\nbutton.setName(genButton.getTheButton().getName());\r\nreturn button;'"
 	 * @generated
 	 */
-	Button createButton(tooldataform.styles.domain.Domain domainStyle, GenButton genButton);
+	Button createButton(Domain domainStyle, GenButton genButton);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model dataType="generator.datatypes.datatypesdataform.ComboView"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='tooldataform.formmodel.concreta.ComboView combo  = tooldataform.formmodel.concreta.\r\n\t\tConcretaFactory.eINSTANCE.createComboView();\r\ncombo.setName(genCombo.getTheComboBox().getName());\r\nreturn combo;'"
+	 * @model dataType="generator.datatypes.datatypesdataform.ComboView" domainStyleDataType="generator.datatypes.datatypesdataform.DomanStyle"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='tooldataform.formmodel.concreta.ComboView combo = tooldataform.formmodel.concreta.ConcretaFactory.eINSTANCE\r\n\t\t.createComboView();\r\nStyle style = genCombo.getTheComboBox().getTheStyle();\r\nCharacteristic characteristic = style.getTheCharacteristic();\r\n\r\ntooldataform.styles.domain.Style styleDF = searchStyle(domainStyle, style.getName());\r\ndomainStyle.getTheStyleFactory().getListStyle().remove(styleDF);\r\n\r\nstyleDF = DomainFactory.eINSTANCE.createStyle();\r\ntooldataform.styles.domain.Characteristic characteristicDF = DomainFactory.eINSTANCE.createCharacteristic();\r\nstyleDF.setName(style.getName());\r\ncharacteristicDF.setName(characteristic.getName());\r\nEList&lt;Propertie&gt; lisProperties = characteristic.getListProperties();\r\nfor (int i = 0; i &lt; lisProperties.size(); i++) {\r\n\ttooldataform.styles.domain.Propertie propertieDF = DomainFactory.eINSTANCE.createPropertie();\r\n\tpropertieDF.setName(lisProperties.get(i).getName());\r\n\tpropertieDF.setValue(lisProperties.get(i).getValue());\r\n\tcharacteristicDF.getListProperties().add(propertieDF);\r\n}\r\ndomainStyle.getTheStyleFactory().getListStyle().add(styleDF);\r\ndomainStyle.getTheCharacteristicFactory().getListCharacteristic().add(characteristicDF);\r\nstyleDF.setTheCharacteristic(characteristicDF);\r\n\r\ncombo.setTheStyle(styleDF);\r\ncombo.setName(genCombo.getTheComboBox().getName());\r\nreturn combo;'"
 	 * @generated
 	 */
-	ComboView createComboView(tooldataform.styles.domain.
-			Domain domainStyle, GenComboBox genCombo);
+	ComboView createComboView(Domain domainStyle, GenComboBox genCombo);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model dataType="generator.datatypes.datatypesdataform.LabelView"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='tooldataform.formmodel.concreta.LabelView label  = tooldataform.formmodel.concreta.\r\n\t\tConcretaFactory.eINSTANCE.createLabelView();\r\nlabel.setName(genLabel.getTheLabel().getName());\r\nreturn label;'"
+	 * @model dataType="generator.datatypes.datatypesdataform.LabelView" domainStyleDataType="generator.datatypes.datatypesdataform.DomanStyle"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='tooldataform.formmodel.concreta.LabelView label = tooldataform.formmodel.concreta.ConcretaFactory.eINSTANCE\r\n\t\t.createLabelView();\r\nStyle style = genLabel.getTheLabel().getTheStyle();\r\nCharacteristic characteristic = style.getTheCharacteristic();\r\n\r\ntooldataform.styles.domain.Style styleDF = searchStyle(domainStyle, style.getName());\r\ndomainStyle.getTheStyleFactory().getListStyle().remove(styleDF);\r\n\r\nstyleDF = DomainFactory.eINSTANCE.createStyle();\r\ntooldataform.styles.domain.Characteristic characteristicDF = DomainFactory.eINSTANCE.createCharacteristic();\r\nstyleDF.setName(style.getName());\r\ncharacteristicDF.setName(characteristic.getName());\r\nEList&lt;Propertie&gt; lisProperties = characteristic.getListProperties();\r\nfor (int i = 0; i &lt; lisProperties.size(); i++) {\r\n\ttooldataform.styles.domain.Propertie propertieDF = DomainFactory.eINSTANCE.createPropertie();\r\n\tpropertieDF.setName(lisProperties.get(i).getName());\r\n\tpropertieDF.setValue(lisProperties.get(i).getValue());\r\n\tcharacteristicDF.getListProperties().add(propertieDF);\r\n}\r\ndomainStyle.getTheStyleFactory().getListStyle().add(styleDF);\r\ndomainStyle.getTheCharacteristicFactory().getListCharacteristic().add(characteristicDF);\r\nstyleDF.setTheCharacteristic(characteristicDF);\r\n\r\nlabel.setTheStyle(styleDF);\r\nlabel.setName(genLabel.getTheLabel().getName());\r\nreturn label;'"
 	 * @generated
 	 */
-	LabelView createLabelView(tooldataform.styles.domain.Domain domainStyle, GenLabel genLabel);
+	LabelView createLabelView(Domain domainStyle, GenLabel genLabel);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model dataType="generator.datatypes.datatypesdataform.TextView"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='tooldataform.formmodel.concreta.TextView text  = tooldataform.formmodel.concreta.\r\n\t\tConcretaFactory.eINSTANCE.createTextView();\r\ntext.setName(genText.getTheTextField().getName());\r\nreturn text;'"
+	 * @model dataType="generator.datatypes.datatypesdataform.TextView" domainStyleDataType="generator.datatypes.datatypesdataform.DomanStyle"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='tooldataform.formmodel.concreta.TextView text = tooldataform.formmodel.concreta.ConcretaFactory.eINSTANCE\r\n\t\t.createTextView();\r\nStyle style = genText.getTheTextField().getTheStyle();\r\nCharacteristic characteristic = style.getTheCharacteristic();\r\n\r\ntooldataform.styles.domain.Style styleDF = searchStyle(domainStyle, style.getName());\r\ndomainStyle.getTheStyleFactory().getListStyle().remove(styleDF);\r\n\r\nstyleDF = DomainFactory.eINSTANCE.createStyle();\r\ntooldataform.styles.domain.Characteristic characteristicDF = DomainFactory.eINSTANCE.createCharacteristic();\r\nstyleDF.setName(style.getName());\r\ncharacteristicDF.setName(characteristic.getName());\r\nEList&lt;Propertie&gt; lisProperties = characteristic.getListProperties();\r\nfor (int i = 0; i &lt; lisProperties.size(); i++) {\r\n\ttooldataform.styles.domain.Propertie propertieDF = DomainFactory.eINSTANCE.createPropertie();\r\n\tpropertieDF.setName(lisProperties.get(i).getName());\r\n\tpropertieDF.setValue(lisProperties.get(i).getValue());\r\n\tcharacteristicDF.getListProperties().add(propertieDF);\r\n}\r\ndomainStyle.getTheStyleFactory().getListStyle().add(styleDF);\r\ndomainStyle.getTheCharacteristicFactory().getListCharacteristic().add(characteristicDF);\r\nstyleDF.setTheCharacteristic(characteristicDF);\r\n \r\ntext.setTheStyle(styleDF);\r\ntext.setName(genText.getTheTextField().getName());\r\nreturn text;'"
 	 * @generated
 	 */
-	TextView createTextView(tooldataform.styles.domain.Domain domainStyle, GenTextField genText);
+	TextView createTextView(Domain domainStyle, GenTextField genText);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model dataType="generator.datatypes.datatypesdataform.TableView"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='tooldataform.formmodel.concreta.TableView table = tooldataform.formmodel.concreta.\r\n\t\tConcretaFactory.eINSTANCE.createTableView();\r\ntable.setName(genTable.getTheTable().getName());\r\nfor(int i=0;i&lt;genTable.getListGenColumns().size();i++){\r\n\ttable.getListColumView().add(createColumView( (GenColumn)genTable.getListGenColumns().get(i)));\r\n}\r\nreturn table;'"
+	 * @model dataType="generator.datatypes.datatypesdataform.TableView" domainStyleDataType="generator.datatypes.datatypesdataform.DomanStyle"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='tooldataform.formmodel.concreta.TableView table = tooldataform.formmodel.concreta.ConcretaFactory.eINSTANCE\r\n\t\t.createTableView();\r\nStyle style = genTable.getTheTable().getTheStyle();\r\nCharacteristic characteristic = style.getTheCharacteristic();\r\n\r\ntooldataform.styles.domain.Style styleDF = searchStyle(domainStyle, style.getName());\r\ndomainStyle.getTheStyleFactory().getListStyle().remove(styleDF);\r\n\r\nstyleDF = DomainFactory.eINSTANCE.createStyle();\r\ntooldataform.styles.domain.Characteristic characteristicDF = DomainFactory.eINSTANCE.createCharacteristic();\r\nstyleDF.setName(style.getName());\r\ncharacteristicDF.setName(characteristic.getName());\r\nEList&lt;Propertie&gt; lisProperties = characteristic.getListProperties();\r\nfor (int i = 0; i &lt; lisProperties.size(); i++) {\r\n\ttooldataform.styles.domain.Propertie propertieDF = DomainFactory.eINSTANCE.createPropertie();\r\n\tpropertieDF.setName(lisProperties.get(i).getName());\r\n\tpropertieDF.setValue(lisProperties.get(i).getValue());\r\n\tcharacteristicDF.getListProperties().add(propertieDF);\r\n}\r\ndomainStyle.getTheStyleFactory().getListStyle().add(styleDF);\r\ndomainStyle.getTheCharacteristicFactory().getListCharacteristic().add(characteristicDF);\r\nstyleDF.setTheCharacteristic(characteristicDF);\r\n \r\ntable.setTheStyle(styleDF);\r\ntable.setName(genTable.getTheTable().getName());\r\nfor (int i = 0; i &lt; genTable.getListGenColumns().size(); i++) {\r\n\ttable.getListColumView().add(createColumView(domainStyle, (GenColumn) genTable.getListGenColumns().get(i)));\r\n}\r\nreturn table;'"
 	 * @generated
 	 */
-	TableView createTableView(tooldataform.styles.domain.
-			Domain domainStyle, GenTable genTable);
+	TableView createTableView(Domain domainStyle, GenTable genTable);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model dataType="generator.datatypes.datatypesdataform.ColumView"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='tooldataform.formmodel.concreta.ColumView column = tooldataform.formmodel.concreta.\r\n\t\tConcretaFactory.eINSTANCE.createColumView();\r\ncolumn.setWidth(genColumn.getTheWidth().getValue());\r\ncolumn.setName(genColumn.getTheColumn().getName());\r\nreturn column;'"
+	 * @model dataType="generator.datatypes.datatypesdataform.ColumView" domainStyleDataType="generator.datatypes.datatypesdataform.DomanStyle"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='tooldataform.formmodel.concreta.ColumView column = tooldataform.formmodel.concreta.ConcretaFactory.eINSTANCE\r\n\t\t.createColumView();\r\nStyle style = genColumn.getTheColumn().getTheStyle();\r\nCharacteristic characteristic = style.getTheCharacteristic();\r\n\r\ntooldataform.styles.domain.Style styleDF = searchStyle(domainStyle, style.getName());\r\ndomainStyle.getTheStyleFactory().getListStyle().remove(styleDF);\r\n\r\nstyleDF = DomainFactory.eINSTANCE.createStyle();\r\ntooldataform.styles.domain.Characteristic characteristicDF = DomainFactory.eINSTANCE.createCharacteristic();\r\nstyleDF.setName(style.getName());\r\ncharacteristicDF.setName(characteristic.getName());\r\nEList&lt;Propertie&gt; lisProperties = characteristic.getListProperties();\r\nfor (int i = 0; i &lt; lisProperties.size(); i++) {\r\n\ttooldataform.styles.domain.Propertie propertieDF = DomainFactory.eINSTANCE.createPropertie();\r\n\tpropertieDF.setName(lisProperties.get(i).getName());\r\n\tpropertieDF.setValue(lisProperties.get(i).getValue());\r\n\tcharacteristicDF.getListProperties().add(propertieDF);\r\n}\r\ndomainStyle.getTheStyleFactory().getListStyle().add(styleDF);\r\ndomainStyle.getTheCharacteristicFactory().getListCharacteristic().add(characteristicDF);\r\nstyleDF.setTheCharacteristic(characteristicDF);\r\n\r\ncolumn.setTheStyle(styleDF);\r\ncolumn.setName(genColumn.getTheColumn().getName());\r\nreturn column;'"
 	 * @generated
 	 */
-	ColumView createColumView(tooldataform.styles.domain.Domain domainStyle, GenColumn genColumn);
+	ColumView createColumView(Domain domainStyle, GenColumn genColumn);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model containerDataType="generator.datatypes.datatypesdataform.GraphicalContainer"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='if(container.getListGraphicalContainer().size() == 0) {\r\n\tlevelContainer.put(container, 1);\r\n\treturn 1;\r\n} else {\r\n\tint max = 0;\r\n\tfor(int i = 0; i &lt; container.getListGraphicalContainer().size(); i++) {\r\n\t\tmax = Math.max(max, setLevelContainer(container.getListGraphicalContainer().get(i)));\r\n\t}\r\n\tlevelContainer.put(container, max+1);\r\n\treturn max+1;\r\n}'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='if (container.getListGraphicalContainer().size() == 0) {\r\n\tlevelContainer.put(container, 1);\r\n\treturn 1;\r\n} else {\r\n\tint max = 0;\r\n\tfor (int i = 0; i &lt; container.getListGraphicalContainer().size(); i++) {\r\n\t\tmax = Math.max(max, setLevelContainer(container.getListGraphicalContainer().get(i)));\r\n\t}\r\n\tlevelContainer.put(container, max + 1);\r\n\treturn max + 1;\r\n}'"
 	 * @generated
 	 */
 	Integer setLevelContainer(GraphicalContainer container);
@@ -184,9 +184,27 @@ public interface DataFormModelGenerator extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model containerDataType="generator.datatypes.datatypesdataform.GraphicalContainer"
-	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='int level = (int) levelContainer.get(container);\r\nif(container.getListGraphicalContainer().size() &gt; 0) {\r\n\tcontainer.setHeight(container.getHeight()+(60*level)+((container.getListGraphicalContainer().size()-1)*60));\r\n} else {\r\n\tcontainer.setHeight(container.getHeight()+(60*level));\r\n}\r\n\r\n//TODO SI LA ORINTACION (-) entonces\r\ncontainer.setPositionY(container.getPositionY()+60*index);\t\t\r\n\r\nfor(int i = 0; i &lt; container.getListGraphicalContainer().size(); i++) {\r\n\tsetBoundsContainers(i, container.getListGraphicalContainer().get(i));\r\n}'"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='int level = (int) levelContainer.get(container);\r\nif (container.getListGraphicalContainer().size() &gt; 0) {\r\n\tcontainer.setHeight(container.getHeight() + (65 * level) + \r\n\t\t\t((container.getListGraphicalContainer().size() - 1) * 60));\r\n} else {\r\n\tcontainer.setHeight(container.getHeight() + (65 * level));\r\n}\r\n\r\nif (orientation.equals(\"-\"))\r\n\tcontainer.setPositionY(container.getPositionY() + 65 * index);\r\n\r\nfor (int i = 0; i &lt; container.getListGraphicalContainer().size(); i++) {\r\n\tsetBoundsContainers(i, getOrientation(container.getTheStyle()), \r\n\t\t\tcontainer.getListGraphicalContainer().get(i));\r\n}'"
 	 * @generated
 	 */
-	void setBoundsContainers(Integer index, String orientacion, GraphicalContainer container);
+	void setBoundsContainers(Integer index, String orientation, GraphicalContainer container);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model styleDataType="generator.datatypes.datatypesdataform.Style"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='tooldataform.styles.domain.Characteristic characteristic = style.getTheCharacteristic();\r\nEList&lt;tooldataform.styles.domain.Propertie&gt; listProperties = characteristic.getListProperties();\r\nfor (int i = 0; i &lt; listProperties.size(); i++) {\r\n\tif (listProperties.get(i).getName().equals(\"Orientation\")) {\r\n\t\treturn listProperties.get(i).getValue();\r\n\t}\r\n}\r\nreturn null;'"
+	 * @generated
+	 */
+	String getOrientation(Style style);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model domainDataType="generator.datatypes.datatypesdataform.DomanStyle"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='EList&lt;tooldataform.styles.domain.Style&gt; lisStyles = domain.getTheStyleFactory().getListStyle();\r\nfor (int i = 0; i &lt; lisStyles.size(); i++) {\r\n\tif(lisStyles.get(i).getName().equals(styleName))\r\n\t\treturn lisStyles.get(i);\r\n}\r\nreturn null;'"
+	 * @generated
+	 */
+	tooldataform.styles.domain.Style searchStyle(Domain domain, String styleName);
 
 } // DataFormModelGenerator

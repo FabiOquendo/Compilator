@@ -117,10 +117,14 @@ import tooldataform.formmodel.concreta.DataForm_Diagram;
 import tooldataform.formmodel.concreta.GraphicalIndividualEement;
 import tooldataform.formmodel.concreta.Interface;
 import tooldataform.formmodel.concreta.LabelView;
+import tooldataform.formmodel.concreta.ModelElementDataForm;
 import tooldataform.formmodel.concreta.TableView;
 import tooldataform.formmodel.concreta.TextView;
 
 import tooldataform.formmodel.containers.GraphicalContainer;
+
+import tooldataform.styles.domain.Domain;
+import tooldataform.styles.domain.Style;
 
 /**
  * <!-- begin-user-doc -->
@@ -212,6 +216,27 @@ public class DatatypesdataformPackageImpl extends EPackageImpl implements Dataty
 	 * @generated
 	 */
 	private EDataType interfaceEDataType = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType domanStyleEDataType = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType styleEDataType = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType modelElementDataFormEDataType = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -463,6 +488,33 @@ public class DatatypesdataformPackageImpl extends EPackageImpl implements Dataty
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EDataType getDomanStyle() {
+		return domanStyleEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType getStyle() {
+		return styleEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType getModelElementDataForm() {
+		return modelElementDataFormEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public DatatypesdataformFactory getDatatypesdataformFactory() {
 		return (DatatypesdataformFactory)getEFactoryInstance();
 	}
@@ -498,6 +550,9 @@ public class DatatypesdataformPackageImpl extends EPackageImpl implements Dataty
 		columViewEDataType = createEDataType(COLUM_VIEW);
 		modelFactoryEDataType = createEDataType(MODEL_FACTORY);
 		interfaceEDataType = createEDataType(INTERFACE);
+		domanStyleEDataType = createEDataType(DOMAN_STYLE);
+		styleEDataType = createEDataType(STYLE);
+		modelElementDataFormEDataType = createEDataType(MODEL_ELEMENT_DATA_FORM);
 	}
 
 	/**
@@ -536,6 +591,9 @@ public class DatatypesdataformPackageImpl extends EPackageImpl implements Dataty
 		initEDataType(columViewEDataType, ColumView.class, "ColumView", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(modelFactoryEDataType, ModelFactory.class, "ModelFactory", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(interfaceEDataType, Interface.class, "Interface", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(domanStyleEDataType, Domain.class, "DomanStyle", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(styleEDataType, Style.class, "Style", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(modelElementDataFormEDataType, ModelElementDataForm.class, "ModelElementDataForm", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 	}
 
 } //DatatypesdataformPackageImpl

@@ -16,8 +16,9 @@ import junit.textui.TestRunner;
  * <p>
  * The following operations are tested:
  * <ul>
- *   <li>{@link generator.genmodel.gencontainercomponent.gencontainer.GenContainer#createPropertiesContainer(styles.domain.Propertie) <em>Create Properties Container</em>}</li>
+ *   <li>{@link generator.genmodel.gencontainercomponent.gencontainer.GenContainer#createPropertiesContainer(java.lang.String, styles.domain.Propertie) <em>Create Properties Container</em>}</li>
  *   <li>{@link generator.genmodel.gencontainercomponent.gencontainer.GenContainer#createBackground() <em>Create Background</em>}</li>
+ *   <li>{@link generator.genmodel.gencontainercomponent.gencontainer.GenContainer#createOrientation() <em>Create Orientation</em>}</li>
  *   <li>{@link generator.genmodel.gencontainercomponent.gencontainer.GenContainer#createTitleHeight() <em>Create Title Height</em>}</li>
  *   <li>{@link generator.genmodel.gencontainercomponent.gencontainer.GenContainer#setDefaultContainer(styles.domain.Propertie) <em>Set Default Container</em>}</li>
  * </ul>
@@ -79,13 +80,13 @@ public class GenContainerTest extends GenContainerElementTest {
 	}
 
 	/**
-	 * Tests the '{@link generator.genmodel.gencontainercomponent.gencontainer.GenContainer#createPropertiesContainer(styles.domain.Propertie) <em>Create Properties Container</em>}' operation.
+	 * Tests the '{@link generator.genmodel.gencontainercomponent.gencontainer.GenContainer#createPropertiesContainer(java.lang.String, styles.domain.Propertie) <em>Create Properties Container</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see generator.genmodel.gencontainercomponent.gencontainer.GenContainer#createPropertiesContainer(styles.domain.Propertie)
+	 * @see generator.genmodel.gencontainercomponent.gencontainer.GenContainer#createPropertiesContainer(java.lang.String, styles.domain.Propertie)
 	 * @generated
 	 */
-	public void testCreatePropertiesContainer__Propertie() {
+	public void testCreatePropertiesContainer__String_Propertie() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
@@ -99,6 +100,19 @@ public class GenContainerTest extends GenContainerElementTest {
 	 * @generated
 	 */
 	public void testCreateBackground() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link generator.genmodel.gencontainercomponent.gencontainer.GenContainer#createOrientation() <em>Create Orientation</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see generator.genmodel.gencontainercomponent.gencontainer.GenContainer#createOrientation()
+	 * @generated
+	 */
+	public void testCreateOrientation() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

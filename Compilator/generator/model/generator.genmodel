@@ -262,9 +262,11 @@
                 ecoreFeature="ecore:EReference generator.ecore#//genmodel/gencontainercomponent/gencontainer/GenContainer/theContainer"/>
             <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference generator.ecore#//genmodel/gencontainercomponent/gencontainer/GenContainer/theBackground"/>
             <genOperations ecoreOperation="generator.ecore#//genmodel/gencontainercomponent/gencontainer/GenContainer/createPropertiesContainer">
+              <genParameters ecoreParameter="generator.ecore#//genmodel/gencontainercomponent/gencontainer/GenContainer/createPropertiesContainer/orientation"/>
               <genParameters ecoreParameter="generator.ecore#//genmodel/gencontainercomponent/gencontainer/GenContainer/createPropertiesContainer/fontSize"/>
             </genOperations>
             <genOperations ecoreOperation="generator.ecore#//genmodel/gencontainercomponent/gencontainer/GenContainer/createBackground"/>
+            <genOperations ecoreOperation="generator.ecore#//genmodel/gencontainercomponent/gencontainer/GenContainer/createOrientation"/>
             <genOperations ecoreOperation="generator.ecore#//genmodel/gencontainercomponent/gencontainer/GenContainer/createTitleHeight"/>
             <genOperations ecoreOperation="generator.ecore#//genmodel/gencontainercomponent/gencontainer/GenContainer/setDefaultContainer">
               <genParameters ecoreParameter="generator.ecore#//genmodel/gencontainercomponent/gencontainer/GenContainer/setDefaultContainer/fontSize"/>
@@ -305,6 +307,9 @@
         <genDataTypes ecoreDataType="generator.ecore#//datatypes/datatypesdataform/ColumView"/>
         <genDataTypes ecoreDataType="generator.ecore#//datatypes/datatypesdataform/ModelFactory"/>
         <genDataTypes ecoreDataType="generator.ecore#//datatypes/datatypesdataform/Interface"/>
+        <genDataTypes ecoreDataType="generator.ecore#//datatypes/datatypesdataform/DomanStyle"/>
+        <genDataTypes ecoreDataType="generator.ecore#//datatypes/datatypesdataform/Style"/>
+        <genDataTypes ecoreDataType="generator.ecore#//datatypes/datatypesdataform/ModelElementDataForm"/>
       </nestedGenPackages>
       <nestedGenPackages prefix="Datatypesgmf" disposableProviderFactory="true" ecorePackage="generator.ecore#//datatypes/datatypesgmf">
         <genDataTypes ecoreDataType="generator.ecore#//datatypes/datatypesgmf/Bounds"/>
@@ -342,37 +347,53 @@
         <genOperations ecoreOperation="generator.ecore#//gendataform/DataFormDiagramGenerator/openDiagram">
           <genParameters ecoreParameter="generator.ecore#//gendataform/DataFormDiagramGenerator/openDiagram/diag"/>
         </genOperations>
+        <genOperations ecoreOperation="generator.ecore#//gendataform/DataFormDiagramGenerator/getFontDataformElement">
+          <genParameters ecoreParameter="generator.ecore#//gendataform/DataFormDiagramGenerator/getFontDataformElement/element"/>
+        </genOperations>
+        <genOperations ecoreOperation="generator.ecore#//gendataform/DataFormDiagramGenerator/getFontSizeDataformElement">
+          <genParameters ecoreParameter="generator.ecore#//gendataform/DataFormDiagramGenerator/getFontSizeDataformElement/element"/>
+        </genOperations>
       </genClasses>
       <genClasses ecoreClass="generator.ecore#//gendataform/DataFormModelGenerator">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generator.ecore#//gendataform/DataFormModelGenerator/levelContainer"/>
         <genOperations ecoreOperation="generator.ecore#//gendataform/DataFormModelGenerator/createDataFormModel">
+          <genParameters ecoreParameter="generator.ecore#//gendataform/DataFormModelGenerator/createDataFormModel/domainStyle"/>
           <genParameters ecoreParameter="generator.ecore#//gendataform/DataFormModelGenerator/createDataFormModel/genModel"/>
         </genOperations>
         <genOperations ecoreOperation="generator.ecore#//gendataform/DataFormModelGenerator/createToolDataFormContainer">
+          <genParameters ecoreParameter="generator.ecore#//gendataform/DataFormModelGenerator/createToolDataFormContainer/domainStyle"/>
           <genParameters ecoreParameter="generator.ecore#//gendataform/DataFormModelGenerator/createToolDataFormContainer/parent"/>
         </genOperations>
         <genOperations ecoreOperation="generator.ecore#//gendataform/DataFormModelGenerator/createIndividualElement">
+          <genParameters ecoreParameter="generator.ecore#//gendataform/DataFormModelGenerator/createIndividualElement/domainStyle"/>
           <genParameters ecoreParameter="generator.ecore#//gendataform/DataFormModelGenerator/createIndividualElement/element"/>
         </genOperations>
         <genOperations ecoreOperation="generator.ecore#//gendataform/DataFormModelGenerator/createGraphicalContainer">
+          <genParameters ecoreParameter="generator.ecore#//gendataform/DataFormModelGenerator/createGraphicalContainer/domainStyle"/>
           <genParameters ecoreParameter="generator.ecore#//gendataform/DataFormModelGenerator/createGraphicalContainer/element"/>
         </genOperations>
         <genOperations ecoreOperation="generator.ecore#//gendataform/DataFormModelGenerator/createButton">
+          <genParameters ecoreParameter="generator.ecore#//gendataform/DataFormModelGenerator/createButton/domainStyle"/>
           <genParameters ecoreParameter="generator.ecore#//gendataform/DataFormModelGenerator/createButton/genButton"/>
         </genOperations>
         <genOperations ecoreOperation="generator.ecore#//gendataform/DataFormModelGenerator/createComboView">
+          <genParameters ecoreParameter="generator.ecore#//gendataform/DataFormModelGenerator/createComboView/domainStyle"/>
           <genParameters ecoreParameter="generator.ecore#//gendataform/DataFormModelGenerator/createComboView/genCombo"/>
         </genOperations>
         <genOperations ecoreOperation="generator.ecore#//gendataform/DataFormModelGenerator/createLabelView">
+          <genParameters ecoreParameter="generator.ecore#//gendataform/DataFormModelGenerator/createLabelView/domainStyle"/>
           <genParameters ecoreParameter="generator.ecore#//gendataform/DataFormModelGenerator/createLabelView/genLabel"/>
         </genOperations>
         <genOperations ecoreOperation="generator.ecore#//gendataform/DataFormModelGenerator/createTextView">
+          <genParameters ecoreParameter="generator.ecore#//gendataform/DataFormModelGenerator/createTextView/domainStyle"/>
           <genParameters ecoreParameter="generator.ecore#//gendataform/DataFormModelGenerator/createTextView/genText"/>
         </genOperations>
         <genOperations ecoreOperation="generator.ecore#//gendataform/DataFormModelGenerator/createTableView">
+          <genParameters ecoreParameter="generator.ecore#//gendataform/DataFormModelGenerator/createTableView/domainStyle"/>
           <genParameters ecoreParameter="generator.ecore#//gendataform/DataFormModelGenerator/createTableView/genTable"/>
         </genOperations>
         <genOperations ecoreOperation="generator.ecore#//gendataform/DataFormModelGenerator/createColumView">
+          <genParameters ecoreParameter="generator.ecore#//gendataform/DataFormModelGenerator/createColumView/domainStyle"/>
           <genParameters ecoreParameter="generator.ecore#//gendataform/DataFormModelGenerator/createColumView/genColumn"/>
         </genOperations>
         <genOperations ecoreOperation="generator.ecore#//gendataform/DataFormModelGenerator/setLevelContainer">
@@ -380,7 +401,15 @@
         </genOperations>
         <genOperations ecoreOperation="generator.ecore#//gendataform/DataFormModelGenerator/setBoundsContainers">
           <genParameters ecoreParameter="generator.ecore#//gendataform/DataFormModelGenerator/setBoundsContainers/index"/>
+          <genParameters ecoreParameter="generator.ecore#//gendataform/DataFormModelGenerator/setBoundsContainers/orientation"/>
           <genParameters ecoreParameter="generator.ecore#//gendataform/DataFormModelGenerator/setBoundsContainers/container"/>
+        </genOperations>
+        <genOperations ecoreOperation="generator.ecore#//gendataform/DataFormModelGenerator/getOrientation">
+          <genParameters ecoreParameter="generator.ecore#//gendataform/DataFormModelGenerator/getOrientation/style"/>
+        </genOperations>
+        <genOperations ecoreOperation="generator.ecore#//gendataform/DataFormModelGenerator/searchStyle">
+          <genParameters ecoreParameter="generator.ecore#//gendataform/DataFormModelGenerator/searchStyle/domain"/>
+          <genParameters ecoreParameter="generator.ecore#//gendataform/DataFormModelGenerator/searchStyle/styleName"/>
         </genOperations>
       </genClasses>
     </nestedGenPackages>

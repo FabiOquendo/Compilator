@@ -184,13 +184,31 @@ public interface GendataformPackage extends EPackage {
 	int DATA_FORM_DIAGRAM_GENERATOR___OPEN_DIAGRAM__DIAGRAM = 8;
 
 	/**
+	 * The operation id for the '<em>Get Font Dataform Element</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_FORM_DIAGRAM_GENERATOR___GET_FONT_DATAFORM_ELEMENT__MODELELEMENTDATAFORM = 9;
+
+	/**
+	 * The operation id for the '<em>Get Font Size Dataform Element</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_FORM_DIAGRAM_GENERATOR___GET_FONT_SIZE_DATAFORM_ELEMENT__MODELELEMENTDATAFORM = 10;
+
+	/**
 	 * The number of operations of the '<em>Data Form Diagram Generator</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_FORM_DIAGRAM_GENERATOR_OPERATION_COUNT = 9;
+	int DATA_FORM_DIAGRAM_GENERATOR_OPERATION_COUNT = 11;
 
 	/**
 	 * The meta object id for the '{@link generator.gendataform.impl.DataFormModelGeneratorImpl <em>Data Form Model Generator</em>}' class.
@@ -227,7 +245,7 @@ public interface GendataformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_FORM_MODEL_GENERATOR___CREATE_DATA_FORM_MODEL__GENMODEL = 0;
+	int DATA_FORM_MODEL_GENERATOR___CREATE_DATA_FORM_MODEL__DOMAIN_GENMODEL = 0;
 
 	/**
 	 * The operation id for the '<em>Create Tool Data Form Container</em>' operation.
@@ -236,7 +254,7 @@ public interface GendataformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_FORM_MODEL_GENERATOR___CREATE_TOOL_DATA_FORM_CONTAINER__GENCONTAINER = 1;
+	int DATA_FORM_MODEL_GENERATOR___CREATE_TOOL_DATA_FORM_CONTAINER__DOMAIN_GENCONTAINER = 1;
 
 	/**
 	 * The operation id for the '<em>Create Individual Element</em>' operation.
@@ -245,7 +263,7 @@ public interface GendataformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_FORM_MODEL_GENERATOR___CREATE_INDIVIDUAL_ELEMENT__GENELEMENT = 2;
+	int DATA_FORM_MODEL_GENERATOR___CREATE_INDIVIDUAL_ELEMENT__DOMAIN_GENELEMENT = 2;
 
 	/**
 	 * The operation id for the '<em>Create Graphical Container</em>' operation.
@@ -254,7 +272,7 @@ public interface GendataformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_FORM_MODEL_GENERATOR___CREATE_GRAPHICAL_CONTAINER__GENELEMENT = 3;
+	int DATA_FORM_MODEL_GENERATOR___CREATE_GRAPHICAL_CONTAINER__DOMAIN_GENELEMENT = 3;
 
 	/**
 	 * The operation id for the '<em>Create Button</em>' operation.
@@ -263,7 +281,7 @@ public interface GendataformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_FORM_MODEL_GENERATOR___CREATE_BUTTON__GENBUTTON = 4;
+	int DATA_FORM_MODEL_GENERATOR___CREATE_BUTTON__DOMAIN_GENBUTTON = 4;
 
 	/**
 	 * The operation id for the '<em>Create Combo View</em>' operation.
@@ -272,7 +290,7 @@ public interface GendataformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_FORM_MODEL_GENERATOR___CREATE_COMBO_VIEW__GENCOMBOBOX = 5;
+	int DATA_FORM_MODEL_GENERATOR___CREATE_COMBO_VIEW__DOMAIN_GENCOMBOBOX = 5;
 
 	/**
 	 * The operation id for the '<em>Create Label View</em>' operation.
@@ -281,7 +299,7 @@ public interface GendataformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_FORM_MODEL_GENERATOR___CREATE_LABEL_VIEW__GENLABEL = 6;
+	int DATA_FORM_MODEL_GENERATOR___CREATE_LABEL_VIEW__DOMAIN_GENLABEL = 6;
 
 	/**
 	 * The operation id for the '<em>Create Text View</em>' operation.
@@ -290,7 +308,7 @@ public interface GendataformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_FORM_MODEL_GENERATOR___CREATE_TEXT_VIEW__GENTEXTFIELD = 7;
+	int DATA_FORM_MODEL_GENERATOR___CREATE_TEXT_VIEW__DOMAIN_GENTEXTFIELD = 7;
 
 	/**
 	 * The operation id for the '<em>Create Table View</em>' operation.
@@ -299,7 +317,7 @@ public interface GendataformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_FORM_MODEL_GENERATOR___CREATE_TABLE_VIEW__GENTABLE = 8;
+	int DATA_FORM_MODEL_GENERATOR___CREATE_TABLE_VIEW__DOMAIN_GENTABLE = 8;
 
 	/**
 	 * The operation id for the '<em>Create Colum View</em>' operation.
@@ -308,7 +326,7 @@ public interface GendataformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_FORM_MODEL_GENERATOR___CREATE_COLUM_VIEW__GENCOLUMN = 9;
+	int DATA_FORM_MODEL_GENERATOR___CREATE_COLUM_VIEW__DOMAIN_GENCOLUMN = 9;
 
 	/**
 	 * The operation id for the '<em>Set Level Container</em>' operation.
@@ -326,7 +344,25 @@ public interface GendataformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_FORM_MODEL_GENERATOR___SET_BOUNDS_CONTAINERS__INTEGER_GRAPHICALCONTAINER = 11;
+	int DATA_FORM_MODEL_GENERATOR___SET_BOUNDS_CONTAINERS__INTEGER_STRING_GRAPHICALCONTAINER = 11;
+
+	/**
+	 * The operation id for the '<em>Get Orientation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_FORM_MODEL_GENERATOR___GET_ORIENTATION__STYLE = 12;
+
+	/**
+	 * The operation id for the '<em>Search Style</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_FORM_MODEL_GENERATOR___SEARCH_STYLE__DOMAIN_STRING = 13;
 
 	/**
 	 * The number of operations of the '<em>Data Form Model Generator</em>' class.
@@ -335,7 +371,7 @@ public interface GendataformPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_FORM_MODEL_GENERATOR_OPERATION_COUNT = 12;
+	int DATA_FORM_MODEL_GENERATOR_OPERATION_COUNT = 14;
 
 
 	/**
@@ -472,6 +508,26 @@ public interface GendataformPackage extends EPackage {
 	EOperation getDataFormDiagramGenerator__OpenDiagram__Diagram();
 
 	/**
+	 * Returns the meta object for the '{@link generator.gendataform.DataFormDiagramGenerator#getFontDataformElement(tooldataform.formmodel.concreta.ModelElementDataForm) <em>Get Font Dataform Element</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Font Dataform Element</em>' operation.
+	 * @see generator.gendataform.DataFormDiagramGenerator#getFontDataformElement(tooldataform.formmodel.concreta.ModelElementDataForm)
+	 * @generated
+	 */
+	EOperation getDataFormDiagramGenerator__GetFontDataformElement__ModelElementDataForm();
+
+	/**
+	 * Returns the meta object for the '{@link generator.gendataform.DataFormDiagramGenerator#getFontSizeDataformElement(tooldataform.formmodel.concreta.ModelElementDataForm) <em>Get Font Size Dataform Element</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Font Size Dataform Element</em>' operation.
+	 * @see generator.gendataform.DataFormDiagramGenerator#getFontSizeDataformElement(tooldataform.formmodel.concreta.ModelElementDataForm)
+	 * @generated
+	 */
+	EOperation getDataFormDiagramGenerator__GetFontSizeDataformElement__ModelElementDataForm();
+
+	/**
 	 * Returns the meta object for class '{@link generator.gendataform.DataFormModelGenerator <em>Data Form Model Generator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -493,104 +549,104 @@ public interface GendataformPackage extends EPackage {
 	EAttribute getDataFormModelGenerator_LevelContainer();
 
 	/**
-	 * Returns the meta object for the '{@link generator.gendataform.DataFormModelGenerator#createDataFormModel(generator.genmodel.GenModel) <em>Create Data Form Model</em>}' operation.
+	 * Returns the meta object for the '{@link generator.gendataform.DataFormModelGenerator#createDataFormModel(tooldataform.styles.domain.Domain, generator.genmodel.GenModel) <em>Create Data Form Model</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Create Data Form Model</em>' operation.
-	 * @see generator.gendataform.DataFormModelGenerator#createDataFormModel(generator.genmodel.GenModel)
+	 * @see generator.gendataform.DataFormModelGenerator#createDataFormModel(tooldataform.styles.domain.Domain, generator.genmodel.GenModel)
 	 * @generated
 	 */
-	EOperation getDataFormModelGenerator__CreateDataFormModel__GenModel();
+	EOperation getDataFormModelGenerator__CreateDataFormModel__Domain_GenModel();
 
 	/**
-	 * Returns the meta object for the '{@link generator.gendataform.DataFormModelGenerator#createToolDataFormContainer(generator.genmodel.gencontainercomponent.gencontainer.GenContainer) <em>Create Tool Data Form Container</em>}' operation.
+	 * Returns the meta object for the '{@link generator.gendataform.DataFormModelGenerator#createToolDataFormContainer(tooldataform.styles.domain.Domain, generator.genmodel.gencontainercomponent.gencontainer.GenContainer) <em>Create Tool Data Form Container</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Create Tool Data Form Container</em>' operation.
-	 * @see generator.gendataform.DataFormModelGenerator#createToolDataFormContainer(generator.genmodel.gencontainercomponent.gencontainer.GenContainer)
+	 * @see generator.gendataform.DataFormModelGenerator#createToolDataFormContainer(tooldataform.styles.domain.Domain, generator.genmodel.gencontainercomponent.gencontainer.GenContainer)
 	 * @generated
 	 */
-	EOperation getDataFormModelGenerator__CreateToolDataFormContainer__GenContainer();
+	EOperation getDataFormModelGenerator__CreateToolDataFormContainer__Domain_GenContainer();
 
 	/**
-	 * Returns the meta object for the '{@link generator.gendataform.DataFormModelGenerator#createIndividualElement(generator.genmodel.GenElement) <em>Create Individual Element</em>}' operation.
+	 * Returns the meta object for the '{@link generator.gendataform.DataFormModelGenerator#createIndividualElement(tooldataform.styles.domain.Domain, generator.genmodel.GenElement) <em>Create Individual Element</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Create Individual Element</em>' operation.
-	 * @see generator.gendataform.DataFormModelGenerator#createIndividualElement(generator.genmodel.GenElement)
+	 * @see generator.gendataform.DataFormModelGenerator#createIndividualElement(tooldataform.styles.domain.Domain, generator.genmodel.GenElement)
 	 * @generated
 	 */
-	EOperation getDataFormModelGenerator__CreateIndividualElement__GenElement();
+	EOperation getDataFormModelGenerator__CreateIndividualElement__Domain_GenElement();
 
 	/**
-	 * Returns the meta object for the '{@link generator.gendataform.DataFormModelGenerator#createGraphicalContainer(generator.genmodel.GenElement) <em>Create Graphical Container</em>}' operation.
+	 * Returns the meta object for the '{@link generator.gendataform.DataFormModelGenerator#createGraphicalContainer(tooldataform.styles.domain.Domain, generator.genmodel.GenElement) <em>Create Graphical Container</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Create Graphical Container</em>' operation.
-	 * @see generator.gendataform.DataFormModelGenerator#createGraphicalContainer(generator.genmodel.GenElement)
+	 * @see generator.gendataform.DataFormModelGenerator#createGraphicalContainer(tooldataform.styles.domain.Domain, generator.genmodel.GenElement)
 	 * @generated
 	 */
-	EOperation getDataFormModelGenerator__CreateGraphicalContainer__GenElement();
+	EOperation getDataFormModelGenerator__CreateGraphicalContainer__Domain_GenElement();
 
 	/**
-	 * Returns the meta object for the '{@link generator.gendataform.DataFormModelGenerator#createButton(generator.genmodel.genindividualcomponent.genbutton.GenButton) <em>Create Button</em>}' operation.
+	 * Returns the meta object for the '{@link generator.gendataform.DataFormModelGenerator#createButton(tooldataform.styles.domain.Domain, generator.genmodel.genindividualcomponent.genbutton.GenButton) <em>Create Button</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Create Button</em>' operation.
-	 * @see generator.gendataform.DataFormModelGenerator#createButton(generator.genmodel.genindividualcomponent.genbutton.GenButton)
+	 * @see generator.gendataform.DataFormModelGenerator#createButton(tooldataform.styles.domain.Domain, generator.genmodel.genindividualcomponent.genbutton.GenButton)
 	 * @generated
 	 */
-	EOperation getDataFormModelGenerator__CreateButton__GenButton();
+	EOperation getDataFormModelGenerator__CreateButton__Domain_GenButton();
 
 	/**
-	 * Returns the meta object for the '{@link generator.gendataform.DataFormModelGenerator#createComboView(generator.genmodel.genindividualcomponent.gencombobox.GenComboBox) <em>Create Combo View</em>}' operation.
+	 * Returns the meta object for the '{@link generator.gendataform.DataFormModelGenerator#createComboView(tooldataform.styles.domain.Domain, generator.genmodel.genindividualcomponent.gencombobox.GenComboBox) <em>Create Combo View</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Create Combo View</em>' operation.
-	 * @see generator.gendataform.DataFormModelGenerator#createComboView(generator.genmodel.genindividualcomponent.gencombobox.GenComboBox)
+	 * @see generator.gendataform.DataFormModelGenerator#createComboView(tooldataform.styles.domain.Domain, generator.genmodel.genindividualcomponent.gencombobox.GenComboBox)
 	 * @generated
 	 */
-	EOperation getDataFormModelGenerator__CreateComboView__GenComboBox();
+	EOperation getDataFormModelGenerator__CreateComboView__Domain_GenComboBox();
 
 	/**
-	 * Returns the meta object for the '{@link generator.gendataform.DataFormModelGenerator#createLabelView(generator.genmodel.genindividualcomponent.genlabel.GenLabel) <em>Create Label View</em>}' operation.
+	 * Returns the meta object for the '{@link generator.gendataform.DataFormModelGenerator#createLabelView(tooldataform.styles.domain.Domain, generator.genmodel.genindividualcomponent.genlabel.GenLabel) <em>Create Label View</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Create Label View</em>' operation.
-	 * @see generator.gendataform.DataFormModelGenerator#createLabelView(generator.genmodel.genindividualcomponent.genlabel.GenLabel)
+	 * @see generator.gendataform.DataFormModelGenerator#createLabelView(tooldataform.styles.domain.Domain, generator.genmodel.genindividualcomponent.genlabel.GenLabel)
 	 * @generated
 	 */
-	EOperation getDataFormModelGenerator__CreateLabelView__GenLabel();
+	EOperation getDataFormModelGenerator__CreateLabelView__Domain_GenLabel();
 
 	/**
-	 * Returns the meta object for the '{@link generator.gendataform.DataFormModelGenerator#createTextView(generator.genmodel.genindividualcomponent.gentextfield.GenTextField) <em>Create Text View</em>}' operation.
+	 * Returns the meta object for the '{@link generator.gendataform.DataFormModelGenerator#createTextView(tooldataform.styles.domain.Domain, generator.genmodel.genindividualcomponent.gentextfield.GenTextField) <em>Create Text View</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Create Text View</em>' operation.
-	 * @see generator.gendataform.DataFormModelGenerator#createTextView(generator.genmodel.genindividualcomponent.gentextfield.GenTextField)
+	 * @see generator.gendataform.DataFormModelGenerator#createTextView(tooldataform.styles.domain.Domain, generator.genmodel.genindividualcomponent.gentextfield.GenTextField)
 	 * @generated
 	 */
-	EOperation getDataFormModelGenerator__CreateTextView__GenTextField();
+	EOperation getDataFormModelGenerator__CreateTextView__Domain_GenTextField();
 
 	/**
-	 * Returns the meta object for the '{@link generator.gendataform.DataFormModelGenerator#createTableView(generator.genmodel.genindividualcomponent.gentable.GenTable) <em>Create Table View</em>}' operation.
+	 * Returns the meta object for the '{@link generator.gendataform.DataFormModelGenerator#createTableView(tooldataform.styles.domain.Domain, generator.genmodel.genindividualcomponent.gentable.GenTable) <em>Create Table View</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Create Table View</em>' operation.
-	 * @see generator.gendataform.DataFormModelGenerator#createTableView(generator.genmodel.genindividualcomponent.gentable.GenTable)
+	 * @see generator.gendataform.DataFormModelGenerator#createTableView(tooldataform.styles.domain.Domain, generator.genmodel.genindividualcomponent.gentable.GenTable)
 	 * @generated
 	 */
-	EOperation getDataFormModelGenerator__CreateTableView__GenTable();
+	EOperation getDataFormModelGenerator__CreateTableView__Domain_GenTable();
 
 	/**
-	 * Returns the meta object for the '{@link generator.gendataform.DataFormModelGenerator#createColumView(generator.genmodel.genindividualcomponent.gencolunm.GenColumn) <em>Create Colum View</em>}' operation.
+	 * Returns the meta object for the '{@link generator.gendataform.DataFormModelGenerator#createColumView(tooldataform.styles.domain.Domain, generator.genmodel.genindividualcomponent.gencolunm.GenColumn) <em>Create Colum View</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Create Colum View</em>' operation.
-	 * @see generator.gendataform.DataFormModelGenerator#createColumView(generator.genmodel.genindividualcomponent.gencolunm.GenColumn)
+	 * @see generator.gendataform.DataFormModelGenerator#createColumView(tooldataform.styles.domain.Domain, generator.genmodel.genindividualcomponent.gencolunm.GenColumn)
 	 * @generated
 	 */
-	EOperation getDataFormModelGenerator__CreateColumView__GenColumn();
+	EOperation getDataFormModelGenerator__CreateColumView__Domain_GenColumn();
 
 	/**
 	 * Returns the meta object for the '{@link generator.gendataform.DataFormModelGenerator#setLevelContainer(tooldataform.formmodel.containers.GraphicalContainer) <em>Set Level Container</em>}' operation.
@@ -603,14 +659,34 @@ public interface GendataformPackage extends EPackage {
 	EOperation getDataFormModelGenerator__SetLevelContainer__GraphicalContainer();
 
 	/**
-	 * Returns the meta object for the '{@link generator.gendataform.DataFormModelGenerator#setBoundsContainers(java.lang.Integer, tooldataform.formmodel.containers.GraphicalContainer) <em>Set Bounds Containers</em>}' operation.
+	 * Returns the meta object for the '{@link generator.gendataform.DataFormModelGenerator#setBoundsContainers(java.lang.Integer, java.lang.String, tooldataform.formmodel.containers.GraphicalContainer) <em>Set Bounds Containers</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Set Bounds Containers</em>' operation.
-	 * @see generator.gendataform.DataFormModelGenerator#setBoundsContainers(java.lang.Integer, tooldataform.formmodel.containers.GraphicalContainer)
+	 * @see generator.gendataform.DataFormModelGenerator#setBoundsContainers(java.lang.Integer, java.lang.String, tooldataform.formmodel.containers.GraphicalContainer)
 	 * @generated
 	 */
-	EOperation getDataFormModelGenerator__SetBoundsContainers__Integer_GraphicalContainer();
+	EOperation getDataFormModelGenerator__SetBoundsContainers__Integer_String_GraphicalContainer();
+
+	/**
+	 * Returns the meta object for the '{@link generator.gendataform.DataFormModelGenerator#getOrientation(tooldataform.styles.domain.Style) <em>Get Orientation</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Orientation</em>' operation.
+	 * @see generator.gendataform.DataFormModelGenerator#getOrientation(tooldataform.styles.domain.Style)
+	 * @generated
+	 */
+	EOperation getDataFormModelGenerator__GetOrientation__Style();
+
+	/**
+	 * Returns the meta object for the '{@link generator.gendataform.DataFormModelGenerator#searchStyle(tooldataform.styles.domain.Domain, java.lang.String) <em>Search Style</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Search Style</em>' operation.
+	 * @see generator.gendataform.DataFormModelGenerator#searchStyle(tooldataform.styles.domain.Domain, java.lang.String)
+	 * @generated
+	 */
+	EOperation getDataFormModelGenerator__SearchStyle__Domain_String();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -742,6 +818,22 @@ public interface GendataformPackage extends EPackage {
 		EOperation DATA_FORM_DIAGRAM_GENERATOR___OPEN_DIAGRAM__DIAGRAM = eINSTANCE.getDataFormDiagramGenerator__OpenDiagram__Diagram();
 
 		/**
+		 * The meta object literal for the '<em><b>Get Font Dataform Element</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DATA_FORM_DIAGRAM_GENERATOR___GET_FONT_DATAFORM_ELEMENT__MODELELEMENTDATAFORM = eINSTANCE.getDataFormDiagramGenerator__GetFontDataformElement__ModelElementDataForm();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Font Size Dataform Element</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DATA_FORM_DIAGRAM_GENERATOR___GET_FONT_SIZE_DATAFORM_ELEMENT__MODELELEMENTDATAFORM = eINSTANCE.getDataFormDiagramGenerator__GetFontSizeDataformElement__ModelElementDataForm();
+
+		/**
 		 * The meta object literal for the '{@link generator.gendataform.impl.DataFormModelGeneratorImpl <em>Data Form Model Generator</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -765,7 +857,7 @@ public interface GendataformPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation DATA_FORM_MODEL_GENERATOR___CREATE_DATA_FORM_MODEL__GENMODEL = eINSTANCE.getDataFormModelGenerator__CreateDataFormModel__GenModel();
+		EOperation DATA_FORM_MODEL_GENERATOR___CREATE_DATA_FORM_MODEL__DOMAIN_GENMODEL = eINSTANCE.getDataFormModelGenerator__CreateDataFormModel__Domain_GenModel();
 
 		/**
 		 * The meta object literal for the '<em><b>Create Tool Data Form Container</b></em>' operation.
@@ -773,7 +865,7 @@ public interface GendataformPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation DATA_FORM_MODEL_GENERATOR___CREATE_TOOL_DATA_FORM_CONTAINER__GENCONTAINER = eINSTANCE.getDataFormModelGenerator__CreateToolDataFormContainer__GenContainer();
+		EOperation DATA_FORM_MODEL_GENERATOR___CREATE_TOOL_DATA_FORM_CONTAINER__DOMAIN_GENCONTAINER = eINSTANCE.getDataFormModelGenerator__CreateToolDataFormContainer__Domain_GenContainer();
 
 		/**
 		 * The meta object literal for the '<em><b>Create Individual Element</b></em>' operation.
@@ -781,7 +873,7 @@ public interface GendataformPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation DATA_FORM_MODEL_GENERATOR___CREATE_INDIVIDUAL_ELEMENT__GENELEMENT = eINSTANCE.getDataFormModelGenerator__CreateIndividualElement__GenElement();
+		EOperation DATA_FORM_MODEL_GENERATOR___CREATE_INDIVIDUAL_ELEMENT__DOMAIN_GENELEMENT = eINSTANCE.getDataFormModelGenerator__CreateIndividualElement__Domain_GenElement();
 
 		/**
 		 * The meta object literal for the '<em><b>Create Graphical Container</b></em>' operation.
@@ -789,7 +881,7 @@ public interface GendataformPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation DATA_FORM_MODEL_GENERATOR___CREATE_GRAPHICAL_CONTAINER__GENELEMENT = eINSTANCE.getDataFormModelGenerator__CreateGraphicalContainer__GenElement();
+		EOperation DATA_FORM_MODEL_GENERATOR___CREATE_GRAPHICAL_CONTAINER__DOMAIN_GENELEMENT = eINSTANCE.getDataFormModelGenerator__CreateGraphicalContainer__Domain_GenElement();
 
 		/**
 		 * The meta object literal for the '<em><b>Create Button</b></em>' operation.
@@ -797,7 +889,7 @@ public interface GendataformPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation DATA_FORM_MODEL_GENERATOR___CREATE_BUTTON__GENBUTTON = eINSTANCE.getDataFormModelGenerator__CreateButton__GenButton();
+		EOperation DATA_FORM_MODEL_GENERATOR___CREATE_BUTTON__DOMAIN_GENBUTTON = eINSTANCE.getDataFormModelGenerator__CreateButton__Domain_GenButton();
 
 		/**
 		 * The meta object literal for the '<em><b>Create Combo View</b></em>' operation.
@@ -805,7 +897,7 @@ public interface GendataformPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation DATA_FORM_MODEL_GENERATOR___CREATE_COMBO_VIEW__GENCOMBOBOX = eINSTANCE.getDataFormModelGenerator__CreateComboView__GenComboBox();
+		EOperation DATA_FORM_MODEL_GENERATOR___CREATE_COMBO_VIEW__DOMAIN_GENCOMBOBOX = eINSTANCE.getDataFormModelGenerator__CreateComboView__Domain_GenComboBox();
 
 		/**
 		 * The meta object literal for the '<em><b>Create Label View</b></em>' operation.
@@ -813,7 +905,7 @@ public interface GendataformPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation DATA_FORM_MODEL_GENERATOR___CREATE_LABEL_VIEW__GENLABEL = eINSTANCE.getDataFormModelGenerator__CreateLabelView__GenLabel();
+		EOperation DATA_FORM_MODEL_GENERATOR___CREATE_LABEL_VIEW__DOMAIN_GENLABEL = eINSTANCE.getDataFormModelGenerator__CreateLabelView__Domain_GenLabel();
 
 		/**
 		 * The meta object literal for the '<em><b>Create Text View</b></em>' operation.
@@ -821,7 +913,7 @@ public interface GendataformPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation DATA_FORM_MODEL_GENERATOR___CREATE_TEXT_VIEW__GENTEXTFIELD = eINSTANCE.getDataFormModelGenerator__CreateTextView__GenTextField();
+		EOperation DATA_FORM_MODEL_GENERATOR___CREATE_TEXT_VIEW__DOMAIN_GENTEXTFIELD = eINSTANCE.getDataFormModelGenerator__CreateTextView__Domain_GenTextField();
 
 		/**
 		 * The meta object literal for the '<em><b>Create Table View</b></em>' operation.
@@ -829,7 +921,7 @@ public interface GendataformPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation DATA_FORM_MODEL_GENERATOR___CREATE_TABLE_VIEW__GENTABLE = eINSTANCE.getDataFormModelGenerator__CreateTableView__GenTable();
+		EOperation DATA_FORM_MODEL_GENERATOR___CREATE_TABLE_VIEW__DOMAIN_GENTABLE = eINSTANCE.getDataFormModelGenerator__CreateTableView__Domain_GenTable();
 
 		/**
 		 * The meta object literal for the '<em><b>Create Colum View</b></em>' operation.
@@ -837,7 +929,7 @@ public interface GendataformPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation DATA_FORM_MODEL_GENERATOR___CREATE_COLUM_VIEW__GENCOLUMN = eINSTANCE.getDataFormModelGenerator__CreateColumView__GenColumn();
+		EOperation DATA_FORM_MODEL_GENERATOR___CREATE_COLUM_VIEW__DOMAIN_GENCOLUMN = eINSTANCE.getDataFormModelGenerator__CreateColumView__Domain_GenColumn();
 
 		/**
 		 * The meta object literal for the '<em><b>Set Level Container</b></em>' operation.
@@ -853,7 +945,23 @@ public interface GendataformPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation DATA_FORM_MODEL_GENERATOR___SET_BOUNDS_CONTAINERS__INTEGER_GRAPHICALCONTAINER = eINSTANCE.getDataFormModelGenerator__SetBoundsContainers__Integer_GraphicalContainer();
+		EOperation DATA_FORM_MODEL_GENERATOR___SET_BOUNDS_CONTAINERS__INTEGER_STRING_GRAPHICALCONTAINER = eINSTANCE.getDataFormModelGenerator__SetBoundsContainers__Integer_String_GraphicalContainer();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Orientation</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DATA_FORM_MODEL_GENERATOR___GET_ORIENTATION__STYLE = eINSTANCE.getDataFormModelGenerator__GetOrientation__Style();
+
+		/**
+		 * The meta object literal for the '<em><b>Search Style</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DATA_FORM_MODEL_GENERATOR___SEARCH_STYLE__DOMAIN_STRING = eINSTANCE.getDataFormModelGenerator__SearchStyle__Domain_String();
 
 	}
 

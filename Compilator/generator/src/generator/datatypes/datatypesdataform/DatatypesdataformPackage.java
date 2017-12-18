@@ -174,6 +174,36 @@ public interface DatatypesdataformPackage extends EPackage {
 	 */
 	int INTERFACE = 11;
 
+	/**
+	 * The meta object id for the '<em>Doman Style</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see tooldataform.styles.domain.Domain
+	 * @see generator.datatypes.datatypesdataform.impl.DatatypesdataformPackageImpl#getDomanStyle()
+	 * @generated
+	 */
+	int DOMAN_STYLE = 12;
+
+	/**
+	 * The meta object id for the '<em>Style</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see tooldataform.styles.domain.Style
+	 * @see generator.datatypes.datatypesdataform.impl.DatatypesdataformPackageImpl#getStyle()
+	 * @generated
+	 */
+	int STYLE = 13;
+
+	/**
+	 * The meta object id for the '<em>Model Element Data Form</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see tooldataform.formmodel.concreta.ModelElementDataForm
+	 * @see generator.datatypes.datatypesdataform.impl.DatatypesdataformPackageImpl#getModelElementDataForm()
+	 * @generated
+	 */
+	int MODEL_ELEMENT_DATA_FORM = 14;
+
 
 	/**
 	 * Returns the meta object for data type '{@link tooldataform.formmodel.containers.GraphicalContainer <em>Graphical Container</em>}'.
@@ -306,6 +336,39 @@ public interface DatatypesdataformPackage extends EPackage {
 	 * @generated
 	 */
 	EDataType getInterface();
+
+	/**
+	 * Returns the meta object for data type '{@link tooldataform.styles.domain.Domain <em>Doman Style</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Doman Style</em>'.
+	 * @see tooldataform.styles.domain.Domain
+	 * @model instanceClass="tooldataform.styles.domain.Domain"
+	 * @generated
+	 */
+	EDataType getDomanStyle();
+
+	/**
+	 * Returns the meta object for data type '{@link tooldataform.styles.domain.Style <em>Style</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Style</em>'.
+	 * @see tooldataform.styles.domain.Style
+	 * @model instanceClass="tooldataform.styles.domain.Style"
+	 * @generated
+	 */
+	EDataType getStyle();
+
+	/**
+	 * Returns the meta object for data type '{@link tooldataform.formmodel.concreta.ModelElementDataForm <em>Model Element Data Form</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Model Element Data Form</em>'.
+	 * @see tooldataform.formmodel.concreta.ModelElementDataForm
+	 * @model instanceClass="tooldataform.formmodel.concreta.ModelElementDataForm"
+	 * @generated
+	 */
+	EDataType getModelElementDataForm();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -449,6 +512,36 @@ public interface DatatypesdataformPackage extends EPackage {
 		 * @generated
 		 */
 		EDataType INTERFACE = eINSTANCE.getInterface();
+
+		/**
+		 * The meta object literal for the '<em>Doman Style</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see tooldataform.styles.domain.Domain
+		 * @see generator.datatypes.datatypesdataform.impl.DatatypesdataformPackageImpl#getDomanStyle()
+		 * @generated
+		 */
+		EDataType DOMAN_STYLE = eINSTANCE.getDomanStyle();
+
+		/**
+		 * The meta object literal for the '<em>Style</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see tooldataform.styles.domain.Style
+		 * @see generator.datatypes.datatypesdataform.impl.DatatypesdataformPackageImpl#getStyle()
+		 * @generated
+		 */
+		EDataType STYLE = eINSTANCE.getStyle();
+
+		/**
+		 * The meta object literal for the '<em>Model Element Data Form</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see tooldataform.formmodel.concreta.ModelElementDataForm
+		 * @see generator.datatypes.datatypesdataform.impl.DatatypesdataformPackageImpl#getModelElementDataForm()
+		 * @generated
+		 */
+		EDataType MODEL_ELEMENT_DATA_FORM = eINSTANCE.getModelElementDataForm();
 
 	}
 
