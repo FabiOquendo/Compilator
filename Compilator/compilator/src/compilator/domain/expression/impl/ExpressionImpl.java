@@ -4,6 +4,7 @@ package compilator.domain.expression.impl;
 
 import compilator.domain.Domain;
 import compilator.domain.DomainPackage;
+import compilator.domain.Log;
 
 import compilator.domain.expression.Expression;
 import compilator.domain.expression.ExpressionPackage;
@@ -33,8 +34,8 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link compilator.domain.expression.impl.ExpressionImpl#getTheDomainContainer <em>The Domain Container</em>}</li>
  *   <li>{@link compilator.domain.expression.impl.ExpressionImpl#getTheDomain <em>The Domain</em>}</li>
+ *   <li>{@link compilator.domain.expression.impl.ExpressionImpl#getLog <em>Log</em>}</li>
  *   <li>{@link compilator.domain.expression.impl.ExpressionImpl#getName <em>Name</em>}</li>
  *   <li>{@link compilator.domain.expression.impl.ExpressionImpl#getTheSentence <em>The Sentence</em>}</li>
  *   <li>{@link compilator.domain.expression.impl.ExpressionImpl#getTheExpressionModel <em>The Expression Model</em>}</li>
@@ -107,47 +108,6 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Domain getTheDomainContainer() {
-		if (eContainerFeatureID() != ExpressionPackage.EXPRESSION__THE_DOMAIN_CONTAINER) return null;
-		return (Domain)eInternalContainer();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetTheDomainContainer(Domain newTheDomainContainer, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newTheDomainContainer, ExpressionPackage.EXPRESSION__THE_DOMAIN_CONTAINER, msgs);
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setTheDomainContainer(Domain newTheDomainContainer) {
-		if (newTheDomainContainer != eInternalContainer() || (eContainerFeatureID() != ExpressionPackage.EXPRESSION__THE_DOMAIN_CONTAINER && newTheDomainContainer != null)) {
-			if (EcoreUtil.isAncestor(this, newTheDomainContainer))
-				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-			NotificationChain msgs = null;
-			if (eInternalContainer() != null)
-				msgs = eBasicRemoveFromContainer(msgs);
-			if (newTheDomainContainer != null)
-				msgs = ((InternalEObject)newTheDomainContainer).eInverseAdd(this, DomainPackage.DOMAIN__LIST_EXPRESSION, Domain.class, msgs);
-			msgs = basicSetTheDomainContainer(newTheDomainContainer, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ExpressionPackage.EXPRESSION__THE_DOMAIN_CONTAINER, newTheDomainContainer, newTheDomainContainer));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Domain getTheDomain() {
 		if (eContainerFeatureID() != ExpressionPackage.EXPRESSION__THE_DOMAIN) return null;
 		return (Domain)eInternalContainer();
@@ -182,6 +142,47 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ExpressionPackage.EXPRESSION__THE_DOMAIN, newTheDomain, newTheDomain));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Log getLog() {
+		if (eContainerFeatureID() != ExpressionPackage.EXPRESSION__LOG) return null;
+		return (Log)eInternalContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetLog(Log newLog, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newLog, ExpressionPackage.EXPRESSION__LOG, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setLog(Log newLog) {
+		if (newLog != eInternalContainer() || (eContainerFeatureID() != ExpressionPackage.EXPRESSION__LOG && newLog != null)) {
+			if (EcoreUtil.isAncestor(this, newLog))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newLog != null)
+				msgs = ((InternalEObject)newLog).eInverseAdd(this, DomainPackage.LOG__LIST_EXPRESSIONS, Log.class, msgs);
+			msgs = basicSetLog(newLog, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ExpressionPackage.EXPRESSION__LOG, newLog, newLog));
 	}
 
 	/**
@@ -299,14 +300,14 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ExpressionPackage.EXPRESSION__THE_DOMAIN_CONTAINER:
-				if (eInternalContainer() != null)
-					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetTheDomainContainer((Domain)otherEnd, msgs);
 			case ExpressionPackage.EXPRESSION__THE_DOMAIN:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetTheDomain((Domain)otherEnd, msgs);
+			case ExpressionPackage.EXPRESSION__LOG:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetLog((Log)otherEnd, msgs);
 			case ExpressionPackage.EXPRESSION__THE_SENTENCE:
 				if (theSentence != null)
 					msgs = ((InternalEObject)theSentence).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ExpressionPackage.EXPRESSION__THE_SENTENCE, null, msgs);
@@ -327,10 +328,10 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ExpressionPackage.EXPRESSION__THE_DOMAIN_CONTAINER:
-				return basicSetTheDomainContainer(null, msgs);
 			case ExpressionPackage.EXPRESSION__THE_DOMAIN:
 				return basicSetTheDomain(null, msgs);
+			case ExpressionPackage.EXPRESSION__LOG:
+				return basicSetLog(null, msgs);
 			case ExpressionPackage.EXPRESSION__THE_SENTENCE:
 				return basicSetTheSentence(null, msgs);
 			case ExpressionPackage.EXPRESSION__THE_EXPRESSION_MODEL:
@@ -347,10 +348,10 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case ExpressionPackage.EXPRESSION__THE_DOMAIN_CONTAINER:
-				return eInternalContainer().eInverseRemove(this, DomainPackage.DOMAIN__LIST_EXPRESSION, Domain.class, msgs);
 			case ExpressionPackage.EXPRESSION__THE_DOMAIN:
 				return eInternalContainer().eInverseRemove(this, DomainPackage.DOMAIN__THE_EXPRESSION, Domain.class, msgs);
+			case ExpressionPackage.EXPRESSION__LOG:
+				return eInternalContainer().eInverseRemove(this, DomainPackage.LOG__LIST_EXPRESSIONS, Log.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -363,10 +364,10 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ExpressionPackage.EXPRESSION__THE_DOMAIN_CONTAINER:
-				return getTheDomainContainer();
 			case ExpressionPackage.EXPRESSION__THE_DOMAIN:
 				return getTheDomain();
+			case ExpressionPackage.EXPRESSION__LOG:
+				return getLog();
 			case ExpressionPackage.EXPRESSION__NAME:
 				return getName();
 			case ExpressionPackage.EXPRESSION__THE_SENTENCE:
@@ -385,11 +386,11 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ExpressionPackage.EXPRESSION__THE_DOMAIN_CONTAINER:
-				setTheDomainContainer((Domain)newValue);
-				return;
 			case ExpressionPackage.EXPRESSION__THE_DOMAIN:
 				setTheDomain((Domain)newValue);
+				return;
+			case ExpressionPackage.EXPRESSION__LOG:
+				setLog((Log)newValue);
 				return;
 			case ExpressionPackage.EXPRESSION__NAME:
 				setName((String)newValue);
@@ -412,11 +413,11 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ExpressionPackage.EXPRESSION__THE_DOMAIN_CONTAINER:
-				setTheDomainContainer((Domain)null);
-				return;
 			case ExpressionPackage.EXPRESSION__THE_DOMAIN:
 				setTheDomain((Domain)null);
+				return;
+			case ExpressionPackage.EXPRESSION__LOG:
+				setLog((Log)null);
 				return;
 			case ExpressionPackage.EXPRESSION__NAME:
 				setName(NAME_EDEFAULT);
@@ -439,10 +440,10 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ExpressionPackage.EXPRESSION__THE_DOMAIN_CONTAINER:
-				return getTheDomainContainer() != null;
 			case ExpressionPackage.EXPRESSION__THE_DOMAIN:
 				return getTheDomain() != null;
+			case ExpressionPackage.EXPRESSION__LOG:
+				return getLog() != null;
 			case ExpressionPackage.EXPRESSION__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case ExpressionPackage.EXPRESSION__THE_SENTENCE:

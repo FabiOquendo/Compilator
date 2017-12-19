@@ -7,6 +7,7 @@ import compilator.ModelFactory;
 
 import compilator.domain.Domain;
 import compilator.domain.DomainPackage;
+import compilator.domain.Log;
 
 import compilator.domain.expression.Expression;
 import compilator.domain.expression.ExpressionPackage;
@@ -19,7 +20,6 @@ import compilator.ui.UiPackage;
 
 import java.lang.reflect.InvocationTargetException;
 
-import java.util.Collection;
 import java.util.TreeMap;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -33,9 +33,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -47,8 +45,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link compilator.domain.impl.DomainImpl#getTheModelFactory <em>The Model Factory</em>}</li>
  *   <li>{@link compilator.domain.impl.DomainImpl#getTheUI <em>The UI</em>}</li>
- *   <li>{@link compilator.domain.impl.DomainImpl#getListExpression <em>List Expression</em>}</li>
  *   <li>{@link compilator.domain.impl.DomainImpl#getTheExpression <em>The Expression</em>}</li>
+ *   <li>{@link compilator.domain.impl.DomainImpl#getTheLog <em>The Log</em>}</li>
  *   <li>{@link compilator.domain.impl.DomainImpl#getShapes <em>Shapes</em>}</li>
  * </ul>
  *
@@ -66,16 +64,6 @@ public class DomainImpl extends MinimalEObjectImpl.Container implements Domain {
 	protected UI theUI;
 
 	/**
-	 * The cached value of the '{@link #getListExpression() <em>List Expression</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getListExpression()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Expression> listExpression;
-
-	/**
 	 * The cached value of the '{@link #getTheExpression() <em>The Expression</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -84,6 +72,16 @@ public class DomainImpl extends MinimalEObjectImpl.Container implements Domain {
 	 * @ordered
 	 */
 	protected Expression theExpression;
+
+	/**
+	 * The cached value of the '{@link #getTheLog() <em>The Log</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTheLog()
+	 * @generated
+	 * @ordered
+	 */
+	protected Log theLog;
 
 	/**
 	 * The cached value of the '{@link #getShapes() <em>Shapes</em>}' containment reference.
@@ -220,18 +218,6 @@ public class DomainImpl extends MinimalEObjectImpl.Container implements Domain {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Expression> getListExpression() {
-		if (listExpression == null) {
-			listExpression = new EObjectContainmentWithInverseEList<Expression>(Expression.class, this, DomainPackage.DOMAIN__LIST_EXPRESSION, ExpressionPackage.EXPRESSION__THE_DOMAIN_CONTAINER);
-		}
-		return listExpression;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Expression getTheExpression() {
 		return theExpression;
 	}
@@ -268,6 +254,49 @@ public class DomainImpl extends MinimalEObjectImpl.Container implements Domain {
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, DomainPackage.DOMAIN__THE_EXPRESSION, newTheExpression, newTheExpression));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Log getTheLog() {
+		return theLog;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetTheLog(Log newTheLog, NotificationChain msgs) {
+		Log oldTheLog = theLog;
+		theLog = newTheLog;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DomainPackage.DOMAIN__THE_LOG, oldTheLog, newTheLog);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTheLog(Log newTheLog) {
+		if (newTheLog != theLog) {
+			NotificationChain msgs = null;
+			if (theLog != null)
+				msgs = ((InternalEObject)theLog).eInverseRemove(this, DomainPackage.LOG__THE_DOMAIN, Log.class, msgs);
+			if (newTheLog != null)
+				msgs = ((InternalEObject)newTheLog).eInverseAdd(this, DomainPackage.LOG__THE_DOMAIN, Log.class, msgs);
+			msgs = basicSetTheLog(newTheLog, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DomainPackage.DOMAIN__THE_LOG, newTheLog, newTheLog));
 	}
 
 	/**
@@ -400,7 +429,6 @@ public class DomainImpl extends MinimalEObjectImpl.Container implements Domain {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -412,12 +440,14 @@ public class DomainImpl extends MinimalEObjectImpl.Container implements Domain {
 				if (theUI != null)
 					msgs = ((InternalEObject)theUI).eInverseRemove(this, UiPackage.UI__THE_DOMAIN, UI.class, msgs);
 				return basicSetTheUI((UI)otherEnd, msgs);
-			case DomainPackage.DOMAIN__LIST_EXPRESSION:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getListExpression()).basicAdd(otherEnd, msgs);
 			case DomainPackage.DOMAIN__THE_EXPRESSION:
 				if (theExpression != null)
 					msgs = ((InternalEObject)theExpression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DomainPackage.DOMAIN__THE_EXPRESSION, null, msgs);
 				return basicSetTheExpression((Expression)otherEnd, msgs);
+			case DomainPackage.DOMAIN__THE_LOG:
+				if (theLog != null)
+					msgs = ((InternalEObject)theLog).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DomainPackage.DOMAIN__THE_LOG, null, msgs);
+				return basicSetTheLog((Log)otherEnd, msgs);
 			case DomainPackage.DOMAIN__SHAPES:
 				if (shapes != null)
 					msgs = ((InternalEObject)shapes).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DomainPackage.DOMAIN__SHAPES, null, msgs);
@@ -438,10 +468,10 @@ public class DomainImpl extends MinimalEObjectImpl.Container implements Domain {
 				return basicSetTheModelFactory(null, msgs);
 			case DomainPackage.DOMAIN__THE_UI:
 				return basicSetTheUI(null, msgs);
-			case DomainPackage.DOMAIN__LIST_EXPRESSION:
-				return ((InternalEList<?>)getListExpression()).basicRemove(otherEnd, msgs);
 			case DomainPackage.DOMAIN__THE_EXPRESSION:
 				return basicSetTheExpression(null, msgs);
+			case DomainPackage.DOMAIN__THE_LOG:
+				return basicSetTheLog(null, msgs);
 			case DomainPackage.DOMAIN__SHAPES:
 				return basicSetShapes(null, msgs);
 		}
@@ -475,10 +505,10 @@ public class DomainImpl extends MinimalEObjectImpl.Container implements Domain {
 			case DomainPackage.DOMAIN__THE_UI:
 				if (resolve) return getTheUI();
 				return basicGetTheUI();
-			case DomainPackage.DOMAIN__LIST_EXPRESSION:
-				return getListExpression();
 			case DomainPackage.DOMAIN__THE_EXPRESSION:
 				return getTheExpression();
+			case DomainPackage.DOMAIN__THE_LOG:
+				return getTheLog();
 			case DomainPackage.DOMAIN__SHAPES:
 				return getShapes();
 		}
@@ -490,7 +520,6 @@ public class DomainImpl extends MinimalEObjectImpl.Container implements Domain {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -500,12 +529,11 @@ public class DomainImpl extends MinimalEObjectImpl.Container implements Domain {
 			case DomainPackage.DOMAIN__THE_UI:
 				setTheUI((UI)newValue);
 				return;
-			case DomainPackage.DOMAIN__LIST_EXPRESSION:
-				getListExpression().clear();
-				getListExpression().addAll((Collection<? extends Expression>)newValue);
-				return;
 			case DomainPackage.DOMAIN__THE_EXPRESSION:
 				setTheExpression((Expression)newValue);
+				return;
+			case DomainPackage.DOMAIN__THE_LOG:
+				setTheLog((Log)newValue);
 				return;
 			case DomainPackage.DOMAIN__SHAPES:
 				setShapes((Shapes)newValue);
@@ -528,11 +556,11 @@ public class DomainImpl extends MinimalEObjectImpl.Container implements Domain {
 			case DomainPackage.DOMAIN__THE_UI:
 				setTheUI((UI)null);
 				return;
-			case DomainPackage.DOMAIN__LIST_EXPRESSION:
-				getListExpression().clear();
-				return;
 			case DomainPackage.DOMAIN__THE_EXPRESSION:
 				setTheExpression((Expression)null);
+				return;
+			case DomainPackage.DOMAIN__THE_LOG:
+				setTheLog((Log)null);
 				return;
 			case DomainPackage.DOMAIN__SHAPES:
 				setShapes((Shapes)null);
@@ -553,10 +581,10 @@ public class DomainImpl extends MinimalEObjectImpl.Container implements Domain {
 				return getTheModelFactory() != null;
 			case DomainPackage.DOMAIN__THE_UI:
 				return theUI != null;
-			case DomainPackage.DOMAIN__LIST_EXPRESSION:
-				return listExpression != null && !listExpression.isEmpty();
 			case DomainPackage.DOMAIN__THE_EXPRESSION:
 				return theExpression != null;
+			case DomainPackage.DOMAIN__THE_LOG:
+				return theLog != null;
 			case DomainPackage.DOMAIN__SHAPES:
 				return shapes != null;
 		}

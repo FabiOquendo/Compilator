@@ -32,9 +32,11 @@ import Logica.SymbolTable;
 import Logica.TokenMgrError;
 import compilator.ModelFactory;
 import compilator.domain.Domain;
+import compilator.domain.expression.Expression;
 import compilator.domain.expression.expressionmodel.Element;
 import compilator.domain.expression.expressionmodel.ExpressionModel;
 import compilator.domain.expression.expressionmodel.containercomponent.Container;
+import compilator.domain.expression.sentence.Sentence;
 import compilator.domain.shapes.Component;
 import compilator.domain.shapes.Shapes;
 import compilator.ui.ComponentsContainer;
@@ -174,9 +176,16 @@ public class Principal extends ViewPart {
 		this.generatorGenModel = generator.GeneratorFactory.eINSTANCE.createGenerator();
 
 		project = mfToolDataform.getListProyecto().get(0);
+		
+		mfExpressions.getTheDomainCompilator().getTheLog().getListExpressions().clear();
+		mfExpressions.getTheDomainCompilator().getTheExpression().getTheSentence().setCompressedSentence("");
+		mfExpressions.getTheDomainCompilator().getTheExpression().getTheSentence().setFullSentence("");
+		mfExpressions.getTheDomainCompilator().getTheExpression().getTheExpressionModel().getListElements().clear();
+		mfExpressions.saveExpression();
 
 		loadExpressionContainer();
 		loadComponentsContainer();
+
 	}
 
 	public void loadComponentsContainer() {
@@ -473,6 +482,8 @@ public class Principal extends ViewPart {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				// TODO
+				
+				initDocumentStyle();
 			}
 		});
 		btnUp.setBounds(115, 290, 60, 40);
@@ -484,6 +495,15 @@ public class Principal extends ViewPart {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				// TODO
+				String id = JOptionPane.showInputDialog("Ingrese el identificador de la expresion");
+				Expression ex = compilator.domain.expression.ExpressionFactory.eINSTANCE.createExpression();
+				ex.setName(id);
+				Sentence se = compilator.domain.expression.sentence.SentenceFactory.eINSTANCE.createSentence();
+				se.setFullSentence(txtNormalExpression.getText());
+				ex.setTheSentence(se);
+				mfExpressions.getTheDomainCompilator().getTheLog().getListExpressions().add(ex);
+				modelFactoryModel.saveExpressionsModel();
+				initLog();
 			}
 		});
 		btnRight.setBounds(810, 500, 40, 60);
@@ -562,6 +582,8 @@ public class Principal extends ViewPart {
 		initCharacteristics();
 		initComponents();
 		initLithographicStyle();
+		initDocumentStyle();
+		initLog();
 	}
 
 	public void dispose() {
@@ -1220,6 +1242,26 @@ public class Principal extends ViewPart {
 		treeViewerLithographicStyle.setInput(mfStyles.getTheDomainStyles());
 		treeViewerLithographicStyle.remove(mfStyles.getTheDomainStyles().getTheCharacteristicFactory());
 		treeViewerLithographicStyle.expandAll();
+	}
+	
+	private void initDocumentStyle() {
+		TreeLabelProviderBrowserDoc labelProvider = new TreeLabelProviderBrowserDoc();
+		treeViewerDocumentStyle.setLabelProvider(labelProvider); // add for decorator and tooltip support
+		adapterFactoryContentProvider = new AdapterFactoryContentProvider(getAdapterFactory());
+		treeViewerDocumentStyle.setContentProvider(adapterFactoryContentProvider);
+		treeViewerDocumentStyle.setInput(mfExpressions.getTheDomainCompilator().getTheExpression());
+		treeViewerDocumentStyle.remove(mfExpressions.getTheDomainCompilator().getTheExpression().getTheSentence());
+		treeViewerDocumentStyle.expandAll();
+	}
+	
+	private void initLog() {
+		TreeLabelProviderBrowserLog labelProvider = new TreeLabelProviderBrowserLog();
+		treeViewerLog.setLabelProvider(labelProvider); // add for decorator and tooltip support
+		adapterFactoryContentProvider = new AdapterFactoryContentProvider(getAdapterFactory());
+		treeViewerLog.setContentProvider(adapterFactoryContentProvider);
+		treeViewerLog.setInput(mfExpressions.getTheDomainCompilator());
+		treeViewerLog.remove(mfExpressions.getTheDomainCompilator().getTheExpression());
+		treeViewerLog.expandAll();
 	}
 
 	private void initComponents() {

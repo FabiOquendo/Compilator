@@ -67,22 +67,22 @@ public interface ExpressionPackage extends EPackage {
 	int EXPRESSION = 0;
 
 	/**
-	 * The feature id for the '<em><b>The Domain Container</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXPRESSION__THE_DOMAIN_CONTAINER = 0;
-
-	/**
 	 * The feature id for the '<em><b>The Domain</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXPRESSION__THE_DOMAIN = 1;
+	int EXPRESSION__THE_DOMAIN = 0;
+
+	/**
+	 * The feature id for the '<em><b>Log</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPRESSION__LOG = 1;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -141,17 +141,6 @@ public interface ExpressionPackage extends EPackage {
 	EClass getExpression();
 
 	/**
-	 * Returns the meta object for the container reference '{@link compilator.domain.expression.Expression#getTheDomainContainer <em>The Domain Container</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>The Domain Container</em>'.
-	 * @see compilator.domain.expression.Expression#getTheDomainContainer()
-	 * @see #getExpression()
-	 * @generated
-	 */
-	EReference getExpression_TheDomainContainer();
-
-	/**
 	 * Returns the meta object for the container reference '{@link compilator.domain.expression.Expression#getTheDomain <em>The Domain</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -161,6 +150,17 @@ public interface ExpressionPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getExpression_TheDomain();
+
+	/**
+	 * Returns the meta object for the container reference '{@link compilator.domain.expression.Expression#getLog <em>Log</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Log</em>'.
+	 * @see compilator.domain.expression.Expression#getLog()
+	 * @see #getExpression()
+	 * @generated
+	 */
+	EReference getExpression_Log();
 
 	/**
 	 * Returns the meta object for the attribute '{@link compilator.domain.expression.Expression#getName <em>Name</em>}'.
@@ -229,20 +229,20 @@ public interface ExpressionPackage extends EPackage {
 		EClass EXPRESSION = eINSTANCE.getExpression();
 
 		/**
-		 * The meta object literal for the '<em><b>The Domain Container</b></em>' container reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference EXPRESSION__THE_DOMAIN_CONTAINER = eINSTANCE.getExpression_TheDomainContainer();
-
-		/**
 		 * The meta object literal for the '<em><b>The Domain</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference EXPRESSION__THE_DOMAIN = eINSTANCE.getExpression_TheDomain();
+
+		/**
+		 * The meta object literal for the '<em><b>Log</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EXPRESSION__LOG = eINSTANCE.getExpression_Log();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.

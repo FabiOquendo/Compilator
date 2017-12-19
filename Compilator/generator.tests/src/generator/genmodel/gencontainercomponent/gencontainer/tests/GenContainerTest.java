@@ -20,7 +20,7 @@ import junit.textui.TestRunner;
  *   <li>{@link generator.genmodel.gencontainercomponent.gencontainer.GenContainer#createBackground() <em>Create Background</em>}</li>
  *   <li>{@link generator.genmodel.gencontainercomponent.gencontainer.GenContainer#createOrientation() <em>Create Orientation</em>}</li>
  *   <li>{@link generator.genmodel.gencontainercomponent.gencontainer.GenContainer#createTitleHeight() <em>Create Title Height</em>}</li>
- *   <li>{@link generator.genmodel.gencontainercomponent.gencontainer.GenContainer#setDefaultContainer(styles.domain.Propertie) <em>Set Default Container</em>}</li>
+ *   <li>{@link generator.genmodel.gencontainercomponent.gencontainer.GenContainer#setDefaultContainer(java.lang.String, styles.domain.Propertie) <em>Set Default Container</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -132,13 +132,13 @@ public class GenContainerTest extends GenContainerElementTest {
 	}
 
 	/**
-	 * Tests the '{@link generator.genmodel.gencontainercomponent.gencontainer.GenContainer#setDefaultContainer(styles.domain.Propertie) <em>Set Default Container</em>}' operation.
+	 * Tests the '{@link generator.genmodel.gencontainercomponent.gencontainer.GenContainer#setDefaultContainer(java.lang.String, styles.domain.Propertie) <em>Set Default Container</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see generator.genmodel.gencontainercomponent.gencontainer.GenContainer#setDefaultContainer(styles.domain.Propertie)
+	 * @see generator.genmodel.gencontainercomponent.gencontainer.GenContainer#setDefaultContainer(java.lang.String, styles.domain.Propertie)
 	 * @generated
 	 */
-	public void testSetDefaultContainer__Propertie() {
+	public void testSetDefaultContainer__String_Propertie() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

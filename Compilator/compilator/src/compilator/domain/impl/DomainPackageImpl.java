@@ -7,6 +7,7 @@ import compilator.CompilatorPackage;
 import compilator.domain.Domain;
 import compilator.domain.DomainFactory;
 import compilator.domain.DomainPackage;
+import compilator.domain.Log;
 
 import compilator.domain.datatypes.util.UtilPackage;
 
@@ -68,6 +69,13 @@ public class DomainPackageImpl extends EPackageImpl implements DomainPackage {
 	 * @generated
 	 */
 	private EClass domainEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass logEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -197,7 +205,7 @@ public class DomainPackageImpl extends EPackageImpl implements DomainPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDomain_ListExpression() {
+	public EReference getDomain_TheExpression() {
 		return (EReference)domainEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -206,7 +214,7 @@ public class DomainPackageImpl extends EPackageImpl implements DomainPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDomain_TheExpression() {
+	public EReference getDomain_TheLog() {
 		return (EReference)domainEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -260,6 +268,33 @@ public class DomainPackageImpl extends EPackageImpl implements DomainPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getLog() {
+		return logEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getLog_TheDomain() {
+		return (EReference)logEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getLog_ListExpressions() {
+		return (EReference)logEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public DomainFactory getDomainFactory() {
 		return (DomainFactory)getEFactoryInstance();
 	}
@@ -286,13 +321,17 @@ public class DomainPackageImpl extends EPackageImpl implements DomainPackage {
 		domainEClass = createEClass(DOMAIN);
 		createEReference(domainEClass, DOMAIN__THE_MODEL_FACTORY);
 		createEReference(domainEClass, DOMAIN__THE_UI);
-		createEReference(domainEClass, DOMAIN__LIST_EXPRESSION);
 		createEReference(domainEClass, DOMAIN__THE_EXPRESSION);
+		createEReference(domainEClass, DOMAIN__THE_LOG);
 		createEReference(domainEClass, DOMAIN__SHAPES);
 		createEOperation(domainEClass, DOMAIN___CREATE_COMPONENT__STRING_STRING_TREEMAP_TREEMAP);
 		createEOperation(domainEClass, DOMAIN___CREATE_EXPRESSION_MODEL__STRING_TREEMAP_TREEMAP_TREEMAP);
 		createEOperation(domainEClass, DOMAIN___UN_PACK_STYLES);
 		createEOperation(domainEClass, DOMAIN___CREATE_EMODEL_FROM_UNPACKED_EXPRESSION__STRING_TREEMAP_TREEMAP_TREEMAP);
+
+		logEClass = createEClass(LOG);
+		createEReference(logEClass, LOG__THE_DOMAIN);
+		createEReference(logEClass, LOG__LIST_EXPRESSIONS);
 	}
 
 	/**
@@ -342,8 +381,8 @@ public class DomainPackageImpl extends EPackageImpl implements DomainPackage {
 		initEClass(domainEClass, Domain.class, "Domain", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDomain_TheModelFactory(), theCompilatorPackage.getModelFactory(), theCompilatorPackage.getModelFactory_TheDomainCompilator(), "theModelFactory", null, 0, 1, Domain.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDomain_TheUI(), theUiPackage.getUI(), theUiPackage.getUI_TheDomain(), "theUI", null, 1, 1, Domain.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDomain_ListExpression(), theExpressionPackage.getExpression(), theExpressionPackage.getExpression_TheDomainContainer(), "listExpression", null, 0, -1, Domain.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDomain_TheExpression(), theExpressionPackage.getExpression(), theExpressionPackage.getExpression_TheDomain(), "theExpression", null, 1, 1, Domain.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDomain_TheLog(), this.getLog(), this.getLog_TheDomain(), "theLog", null, 1, 1, Domain.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDomain_Shapes(), theShapesPackage.getShapes(), theShapesPackage.getShapes_Domain(), "Shapes", null, 1, 1, Domain.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		EOperation op = initEOperation(getDomain__CreateComponent__String_String_TreeMap_TreeMap(), null, "createComponent", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -365,6 +404,10 @@ public class DomainPackageImpl extends EPackageImpl implements DomainPackage {
 		addEParameter(op, theUtilPackage.getTreeMap(), "tokens", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theUtilPackage.getTreeMap(), "components", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theUtilPackage.getTreeMap(), "elementStyles", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(logEClass, Log.class, "Log", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getLog_TheDomain(), this.getDomain(), this.getDomain_TheLog(), "theDomain", null, 0, 1, Log.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLog_ListExpressions(), theExpressionPackage.getExpression(), theExpressionPackage.getExpression_Log(), "listExpressions", null, 0, -1, Log.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 	}
 
 } //DomainPackageImpl

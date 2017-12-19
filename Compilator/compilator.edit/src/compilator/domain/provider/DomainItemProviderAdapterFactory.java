@@ -95,6 +95,29 @@ public class DomainItemProviderAdapterFactory extends DomainAdapterFactory imple
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link compilator.domain.Log} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected LogItemProvider logItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link compilator.domain.Log}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createLogAdapter() {
+		if (logItemProvider == null) {
+			logItemProvider = new LogItemProvider(this);
+		}
+
+		return logItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -194,6 +217,7 @@ public class DomainItemProviderAdapterFactory extends DomainAdapterFactory imple
 	 */
 	public void dispose() {
 		if (domainItemProvider != null) domainItemProvider.dispose();
+		if (logItemProvider != null) logItemProvider.dispose();
 	}
 
 }

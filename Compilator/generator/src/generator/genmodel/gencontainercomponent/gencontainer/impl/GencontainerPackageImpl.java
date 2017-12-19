@@ -350,7 +350,7 @@ public class GencontainerPackageImpl extends EPackageImpl implements Gencontaine
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getGenContainer__SetDefaultContainer__Propertie() {
+	public EOperation getGenContainer__SetDefaultContainer__String_Propertie() {
 		return genContainerEClass.getEOperations().get(4);
 	}
 
@@ -391,7 +391,7 @@ public class GencontainerPackageImpl extends EPackageImpl implements Gencontaine
 		createEOperation(genContainerEClass, GEN_CONTAINER___CREATE_BACKGROUND);
 		createEOperation(genContainerEClass, GEN_CONTAINER___CREATE_ORIENTATION);
 		createEOperation(genContainerEClass, GEN_CONTAINER___CREATE_TITLE_HEIGHT);
-		createEOperation(genContainerEClass, GEN_CONTAINER___SET_DEFAULT_CONTAINER__PROPERTIE);
+		createEOperation(genContainerEClass, GEN_CONTAINER___SET_DEFAULT_CONTAINER__STRING_PROPERTIE);
 	}
 
 	/**
@@ -449,7 +449,8 @@ public class GencontainerPackageImpl extends EPackageImpl implements Gencontaine
 
 		initEOperation(getGenContainer__CreateTitleHeight(), null, "createTitleHeight", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getGenContainer__SetDefaultContainer__Propertie(), null, "setDefaultContainer", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getGenContainer__SetDefaultContainer__String_Propertie(), null, "setDefaultContainer", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "orientation", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theDatatypesPackage.getPropertie(), "fontSize", 0, 1, IS_UNIQUE, IS_ORDERED);
 	}
 

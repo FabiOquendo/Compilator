@@ -65,20 +65,26 @@
           transient="true" eOpposite="#//ModelFactory/theDomainCompilator"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="theUI" lowerBound="1"
           eType="#//ui/UI" eOpposite="#//ui/UI/theDomain"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="listExpression" upperBound="-1"
-          eType="#//domain/expression/Expression" containment="true" eOpposite="#//domain/expression/Expression/theDomainContainer"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="theExpression" lowerBound="1"
           eType="#//domain/expression/Expression" containment="true" eOpposite="#//domain/expression/Expression/theDomain"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="theLog" lowerBound="1"
+          eType="#//domain/Log" containment="true" eOpposite="#//domain/Log/theDomain"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="Shapes" lowerBound="1"
           eType="#//domain/shapes/Shapes" containment="true" eOpposite="#//domain/shapes/Shapes/Domain"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Log">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="theDomain" eType="#//domain/Domain"
+          transient="true" eOpposite="#//domain/Domain/theLog"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="listExpressions" upperBound="-1"
+          eType="#//domain/expression/Expression" containment="true" eOpposite="#//domain/expression/Expression/Log"/>
     </eClassifiers>
     <eSubpackages name="expression" nsURI="http:///compilator/domain/expression.ecore"
         nsPrefix="compilator.domain.expression">
       <eClassifiers xsi:type="ecore:EClass" name="Expression">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="theDomainContainer"
-            eType="#//domain/Domain" transient="true" eOpposite="#//domain/Domain/listExpression"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="theDomain" eType="#//domain/Domain"
             transient="true" eOpposite="#//domain/Domain/theExpression"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="Log" eType="#//domain/Log"
+            transient="true" eOpposite="#//domain/Log/listExpressions"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         <eStructuralFeatures xsi:type="ecore:EReference" name="theSentence" lowerBound="1"
             eType="#//domain/expression/sentence/Sentence" containment="true" eOpposite="#//domain/expression/sentence/Sentence/Expression"/>

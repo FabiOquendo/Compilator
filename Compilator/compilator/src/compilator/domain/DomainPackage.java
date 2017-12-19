@@ -85,22 +85,22 @@ public interface DomainPackage extends EPackage {
 	int DOMAIN__THE_UI = 1;
 
 	/**
-	 * The feature id for the '<em><b>List Expression</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DOMAIN__LIST_EXPRESSION = 2;
-
-	/**
 	 * The feature id for the '<em><b>The Expression</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN__THE_EXPRESSION = 3;
+	int DOMAIN__THE_EXPRESSION = 2;
+
+	/**
+	 * The feature id for the '<em><b>The Log</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOMAIN__THE_LOG = 3;
 
 	/**
 	 * The feature id for the '<em><b>Shapes</b></em>' containment reference.
@@ -165,6 +165,52 @@ public interface DomainPackage extends EPackage {
 	 */
 	int DOMAIN_OPERATION_COUNT = 4;
 
+	/**
+	 * The meta object id for the '{@link compilator.domain.impl.LogImpl <em>Log</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see compilator.domain.impl.LogImpl
+	 * @see compilator.domain.impl.DomainPackageImpl#getLog()
+	 * @generated
+	 */
+	int LOG = 1;
+
+	/**
+	 * The feature id for the '<em><b>The Domain</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOG__THE_DOMAIN = 0;
+
+	/**
+	 * The feature id for the '<em><b>List Expressions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOG__LIST_EXPRESSIONS = 1;
+
+	/**
+	 * The number of structural features of the '<em>Log</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOG_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Log</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOG_OPERATION_COUNT = 0;
+
 
 	/**
 	 * Returns the meta object for class '{@link compilator.domain.Domain <em>Domain</em>}'.
@@ -199,17 +245,6 @@ public interface DomainPackage extends EPackage {
 	EReference getDomain_TheUI();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link compilator.domain.Domain#getListExpression <em>List Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>List Expression</em>'.
-	 * @see compilator.domain.Domain#getListExpression()
-	 * @see #getDomain()
-	 * @generated
-	 */
-	EReference getDomain_ListExpression();
-
-	/**
 	 * Returns the meta object for the containment reference '{@link compilator.domain.Domain#getTheExpression <em>The Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -219,6 +254,17 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getDomain_TheExpression();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link compilator.domain.Domain#getTheLog <em>The Log</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>The Log</em>'.
+	 * @see compilator.domain.Domain#getTheLog()
+	 * @see #getDomain()
+	 * @generated
+	 */
+	EReference getDomain_TheLog();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link compilator.domain.Domain#getShapes <em>Shapes</em>}'.
@@ -272,6 +318,38 @@ public interface DomainPackage extends EPackage {
 	EOperation getDomain__CreateEModelFromUnpackedExpression__String_TreeMap_TreeMap_TreeMap();
 
 	/**
+	 * Returns the meta object for class '{@link compilator.domain.Log <em>Log</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Log</em>'.
+	 * @see compilator.domain.Log
+	 * @generated
+	 */
+	EClass getLog();
+
+	/**
+	 * Returns the meta object for the container reference '{@link compilator.domain.Log#getTheDomain <em>The Domain</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>The Domain</em>'.
+	 * @see compilator.domain.Log#getTheDomain()
+	 * @see #getLog()
+	 * @generated
+	 */
+	EReference getLog_TheDomain();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link compilator.domain.Log#getListExpressions <em>List Expressions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>List Expressions</em>'.
+	 * @see compilator.domain.Log#getListExpressions()
+	 * @see #getLog()
+	 * @generated
+	 */
+	EReference getLog_ListExpressions();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -321,20 +399,20 @@ public interface DomainPackage extends EPackage {
 		EReference DOMAIN__THE_UI = eINSTANCE.getDomain_TheUI();
 
 		/**
-		 * The meta object literal for the '<em><b>List Expression</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DOMAIN__LIST_EXPRESSION = eINSTANCE.getDomain_ListExpression();
-
-		/**
 		 * The meta object literal for the '<em><b>The Expression</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference DOMAIN__THE_EXPRESSION = eINSTANCE.getDomain_TheExpression();
+
+		/**
+		 * The meta object literal for the '<em><b>The Log</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DOMAIN__THE_LOG = eINSTANCE.getDomain_TheLog();
 
 		/**
 		 * The meta object literal for the '<em><b>Shapes</b></em>' containment reference feature.
@@ -375,6 +453,32 @@ public interface DomainPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation DOMAIN___CREATE_EMODEL_FROM_UNPACKED_EXPRESSION__STRING_TREEMAP_TREEMAP_TREEMAP = eINSTANCE.getDomain__CreateEModelFromUnpackedExpression__String_TreeMap_TreeMap_TreeMap();
+
+		/**
+		 * The meta object literal for the '{@link compilator.domain.impl.LogImpl <em>Log</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see compilator.domain.impl.LogImpl
+		 * @see compilator.domain.impl.DomainPackageImpl#getLog()
+		 * @generated
+		 */
+		EClass LOG = eINSTANCE.getLog();
+
+		/**
+		 * The meta object literal for the '<em><b>The Domain</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LOG__THE_DOMAIN = eINSTANCE.getLog_TheDomain();
+
+		/**
+		 * The meta object literal for the '<em><b>List Expressions</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LOG__LIST_EXPRESSIONS = eINSTANCE.getLog_ListExpressions();
 
 	}
 

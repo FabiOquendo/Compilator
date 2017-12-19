@@ -12,8 +12,6 @@ import compilator.ui.UI;
 
 import java.util.TreeMap;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -27,8 +25,8 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link compilator.domain.Domain#getTheModelFactory <em>The Model Factory</em>}</li>
  *   <li>{@link compilator.domain.Domain#getTheUI <em>The UI</em>}</li>
- *   <li>{@link compilator.domain.Domain#getListExpression <em>List Expression</em>}</li>
  *   <li>{@link compilator.domain.Domain#getTheExpression <em>The Expression</em>}</li>
+ *   <li>{@link compilator.domain.Domain#getTheLog <em>The Log</em>}</li>
  *   <li>{@link compilator.domain.Domain#getShapes <em>Shapes</em>}</li>
  * </ul>
  *
@@ -94,24 +92,6 @@ public interface Domain extends EObject {
 	void setTheUI(UI value);
 
 	/**
-	 * Returns the value of the '<em><b>List Expression</b></em>' containment reference list.
-	 * The list contents are of type {@link compilator.domain.expression.Expression}.
-	 * It is bidirectional and its opposite is '{@link compilator.domain.expression.Expression#getTheDomainContainer <em>The Domain Container</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>List Expression</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>List Expression</em>' containment reference list.
-	 * @see compilator.domain.DomainPackage#getDomain_ListExpression()
-	 * @see compilator.domain.expression.Expression#getTheDomainContainer
-	 * @model opposite="theDomainContainer" containment="true"
-	 * @generated
-	 */
-	EList<Expression> getListExpression();
-
-	/**
 	 * Returns the value of the '<em><b>The Expression</b></em>' containment reference.
 	 * It is bidirectional and its opposite is '{@link compilator.domain.expression.Expression#getTheDomain <em>The Domain</em>}'.
 	 * <!-- begin-user-doc -->
@@ -138,6 +118,34 @@ public interface Domain extends EObject {
 	 * @generated
 	 */
 	void setTheExpression(Expression value);
+
+	/**
+	 * Returns the value of the '<em><b>The Log</b></em>' containment reference.
+	 * It is bidirectional and its opposite is '{@link compilator.domain.Log#getTheDomain <em>The Domain</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>The Log</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>The Log</em>' containment reference.
+	 * @see #setTheLog(Log)
+	 * @see compilator.domain.DomainPackage#getDomain_TheLog()
+	 * @see compilator.domain.Log#getTheDomain
+	 * @model opposite="theDomain" containment="true" required="true"
+	 * @generated
+	 */
+	Log getTheLog();
+
+	/**
+	 * Sets the value of the '{@link compilator.domain.Domain#getTheLog <em>The Log</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>The Log</em>' containment reference.
+	 * @see #getTheLog()
+	 * @generated
+	 */
+	void setTheLog(Log value);
 
 	/**
 	 * Returns the value of the '<em><b>Shapes</b></em>' containment reference.

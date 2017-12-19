@@ -6,7 +6,7 @@ import compilator.domain.expression.Expression;
 
 import compilator.domain.expression.expressionmodel.Element;
 import compilator.domain.expression.expressionmodel.ExpressionModel;
-
+import compilator.domain.expression.expressionmodel.individualcomponent.Attribute;
 import compilator.domain.expression.expressionmodel.individualcomponent.Button;
 import compilator.domain.expression.expressionmodel.individualcomponent.Column;
 import compilator.domain.expression.expressionmodel.individualcomponent.ComboBox;
@@ -213,7 +213,7 @@ public class GeneratorImpl extends MinimalEObjectImpl.Container implements Gener
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
-	 */
+	 *///TODO
 	public GenContainer createGenContainer(final compilator.domain.expression.expressionmodel.containercomponent.Container container) {
 		GenContainer genContainer = generator.genmodel.gencontainercomponent.gencontainer.
 				GencontainerFactory.eINSTANCE.createGenContainer();
@@ -262,7 +262,44 @@ public class GeneratorImpl extends MinimalEObjectImpl.Container implements Gener
 				genContainer.getListGenElements().add(c);
 				
 				xa = c.getTheWidth().getValue().intValue(); ya = c.getTheHeight().getValue().intValue(); 
+				if(container.getOrientation().charAt(0) == '-'){ 
+					y = y + ya;
+					maxiy=y;//TODO
+				}
+			}else if(element instanceof compilator.domain.expression.expressionmodel.individualcomponent.Attribute){//TODO
+				Attribute attribute = (Attribute) element;
+				attribute.getTheLabel().setTheStyle(attribute.getTheStyle());
+				attribute.getTheTextField().setTheStyle(attribute.getTheStyle());
+				GenLabel label = (GenLabel) createGenIndividualElement(attribute.getTheLabel());
+				label.getTheX().setValue(new Integer(x)); label.getTheY().setValue(new Integer(y));
+				genContainer.getListGenElements().add(label);
+				xa = label.getTheWidth().getValue().intValue(); ya = label.getTheHeight().getValue().intValue();
+				
+				if(container.getOrientation().charAt(1) == '|'){ 
+					xa += 5;
+					x += xa;
+				}
+				else {
+					ya += 5;
+					y += ya;
+				}
+				
+				GenTextField text = (GenTextField) createGenIndividualElement(attribute.getTheTextField());
+				text.getTheX().setValue(new Integer(x)); text.getTheY().setValue(new Integer(y));
+				genContainer.getListGenElements().add(text);
+				if(container.getOrientation().charAt(1) == '|'){ 
+					x -= xa;
+					xa += text.getTheWidth().getValue().intValue();
+					ya = text.getTheHeight().getValue().intValue();
+				}
+				else {
+					y -= ya;
+					ya += text.getTheHeight().getValue().intValue();
+					xa = text.getTheWidth().getValue().intValue();
+				}
+				
 			}else{
+			
 				GenIndividualElement ind = createGenIndividualElement(element);
 				ind.getTheX().setValue(new Integer(x)); ind.getTheY().setValue(new Integer(y));
 				
@@ -271,20 +308,20 @@ public class GeneratorImpl extends MinimalEObjectImpl.Container implements Gener
 				xa = ind.getTheWidth().getValue().intValue(); ya = ind.getTheHeight().getValue().intValue();
 			}
 			
-			if(container.getOrientation().equals("|")){ 
+			if(container.getOrientation().charAt(0) == '|'){ 
 				x = x + xa + 10;
 				maxix = x;
 				maxiy = java.lang.Math.max(maxiy, ya+20) ;
 			}
 			else {
-				y = y + ya +10;
+				y = y + ya + 10;
 				maxiy=y;
 				maxix = java.lang.Math.max(maxix,xa+20);
 			}
 		}
 		
 		if(!container.getIsVisible()){
-			if(container.getOrientation().equals("|")) {
+			if(container.getOrientation().charAt(0) == '|') {
 				maxix -= 10; maxiy -= 20;
 			} else {
 				maxix -= 20; maxiy -= 10;
@@ -300,7 +337,7 @@ public class GeneratorImpl extends MinimalEObjectImpl.Container implements Gener
 		generator.apperance.position.Y yy = generator.apperance.position.PositionFactory.eINSTANCE.createY();
 		yy.setValue(0);
 		genContainer.setTheHeight(h); genContainer.setTheWidth(w);
-		genContainer.setTheX(xx); genContainer.setTheY(yy); 
+		genContainer.setTheX(xx); genContainer.setTheY(yy);
 		return genContainer;
 	}
 

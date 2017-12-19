@@ -269,6 +269,7 @@
             <genOperations ecoreOperation="generator.ecore#//genmodel/gencontainercomponent/gencontainer/GenContainer/createOrientation"/>
             <genOperations ecoreOperation="generator.ecore#//genmodel/gencontainercomponent/gencontainer/GenContainer/createTitleHeight"/>
             <genOperations ecoreOperation="generator.ecore#//genmodel/gencontainercomponent/gencontainer/GenContainer/setDefaultContainer">
+              <genParameters ecoreParameter="generator.ecore#//genmodel/gencontainercomponent/gencontainer/GenContainer/setDefaultContainer/orientation"/>
               <genParameters ecoreParameter="generator.ecore#//genmodel/gencontainercomponent/gencontainer/GenContainer/setDefaultContainer/fontSize"/>
             </genOperations>
           </genClasses>

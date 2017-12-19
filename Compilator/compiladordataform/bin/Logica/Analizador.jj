@@ -18,7 +18,6 @@ public class AnalizadorLexico
    private static void grabarLexema (int n, String token,  String lexema, int nL, int nC) {
       System.out.printf("%-35s%-20s%-10s%-10s\n",n + "- Lexema:" + lexema, "	Token: "+  token , "	Linea: "+ nL , "	Columna: " + nC);
    }  
-
 	
    private static void grabarDatosPieza(int n, String token, Token pieza) {
       grabarLexema(n, token, pieza.image, pieza.beginLine, pieza.beginColumn );      
@@ -149,7 +148,7 @@ SKIP :
 
 TOKEN : /* CONCATENACION */
 {
- < ORIENTACION : "|"|"-" >
+ < ORIENTACION : "|" | "-" | "||" | "--" | "|-" | "-|" >
 | < BOLD : "bold" >
 | < ITALIC : "italic" >
 | < ARIAL : "arial" >
@@ -248,7 +247,7 @@ String Componente(): {
 }
 {
   LOOKAHEAD(2)
-  aux=Contenedor() {return aux; }|tkn=< CAMPOTEXTO > {ST.put(tkn.image,new SymbolTable("Campo de Texto",tkn.image)); return tkn.image;}|LOOKAHEAD(2) aux=Tabla() { return aux;}|tkn=< COMBOBOX > {ST.put(tkn.image,new SymbolTable("ComboBox",tkn.image)); return tkn.image; }
+  aux=Contenedor() {return aux; }|tkn=< CAMPOTEXTO > {ST.put(tkn.image,new SymbolTable("Campo de Texto",tkn.image)); return tkn.image;}|LOOKAHEAD(2) aux=Tabla() { return aux;}|LOOKAHEAD(2) aux=Atributo() { return aux;}|tkn=< COMBOBOX > {ST.put(tkn.image,new SymbolTable("ComboBox",tkn.image)); return tkn.image; }
   |tkn=< BOTON > {ST.put(tkn.image,new SymbolTable("Boton",tkn.image));return tkn.image; }|tkn=< LABEL >{ST.put(tkn.image,new SymbolTable("Label",tkn.image));return tkn.image; }
   |tkn=< PATRON > {ST.put(tkn.image,new SymbolTable("Patron",tkn.image));return tkn.image; }|tkn=<IDENTIFICADOR >{if(ST.get(tkn.image)==null) reportarError("la Variabe: "+tkn.image+" No esta declarada previamente");return tkn.image;}
 }
@@ -259,6 +258,10 @@ String Contenedor(): {Token tkn;}
 String Tabla(): {Token tkn; }
 {
  tkn= < IDENTIFICADOR >{ST.put(tkn.image,new SymbolTable("Tabla",tkn.image));}< SIMBOLOMENOR > Columnas() <  SIMBOLOMAYOR > {  return tkn.image; }
+}
+String Atributo(): {Token tkn; }
+{
+ tkn= < IDENTIFICADOR >{ST.put(tkn.image,new SymbolTable("Atributo",tkn.image));}{  return tkn.image; }
 }
 void Columnas(): {Token tkn; }
 {

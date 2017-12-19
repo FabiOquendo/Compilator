@@ -7,6 +7,9 @@ import org.eclipse.emf.edit.ui.provider.ExtendedImageRegistry;
 import org.eclipse.jface.viewers.ColumnLabelProvider;
 import org.eclipse.swt.graphics.Image;
 
+import compilator.domain.Log;
+import compilator.domain.expression.Expression;
+import compilator.domain.expression.expressionmodel.ExpressionModel;
 import compilator.domain.expression.expressionmodel.containercomponent.Container;
 import compilator.domain.expression.expressionmodel.individualcomponent.Button;
 import compilator.domain.expression.expressionmodel.individualcomponent.Column;
@@ -21,6 +24,7 @@ import styles.domain.Characteristic;
 import styles.domain.CharacteristicFactory;
 import styles.domain.Propertie;
 import styles.domain.StyleFactory;
+import tooldataform.pmoo.Atributo;
 import styles.domain.Style;
 
 public class TreeLabelProviderBrowser extends ColumnLabelProvider
@@ -89,6 +93,22 @@ public class TreeLabelProviderBrowser extends ColumnLabelProvider
 		if(obj instanceof Sentence){
 			Sentence modelElement = (Sentence) obj;
 			return modelElement.getFullSentence();
+		}
+		
+		
+		if(obj instanceof Atributo){
+			Atributo modelElement = (Atributo) obj;
+			return modelElement.getName();
+		}
+		if(obj instanceof Log){
+			return "Log";
+		}
+		if(obj instanceof Expression){
+			Expression modelElement = (Expression) obj;
+			return modelElement.getName() + " : " + modelElement.getTheSentence().getFullSentence();
+		}
+		if(obj instanceof ExpressionModel){
+			return "Model";
 		}
 		return "";
 	}

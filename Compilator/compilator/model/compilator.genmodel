@@ -19,8 +19,8 @@
         <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference compilator.ecore#//domain/Domain/theModelFactory"/>
         <genFeatures notify="false" createChild="false" propertySortChoices="true"
             ecoreFeature="ecore:EReference compilator.ecore#//domain/Domain/theUI"/>
-        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference compilator.ecore#//domain/Domain/listExpression"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference compilator.ecore#//domain/Domain/theExpression"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference compilator.ecore#//domain/Domain/theLog"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference compilator.ecore#//domain/Domain/Shapes"/>
         <genOperations ecoreOperation="compilator.ecore#//domain/Domain/createComponent">
           <genParameters ecoreParameter="compilator.ecore#//domain/Domain/createComponent/nameComponent"/>
@@ -42,10 +42,14 @@
           <genParameters ecoreParameter="compilator.ecore#//domain/Domain/createEModelFromUnpackedExpression/elementStyles"/>
         </genOperations>
       </genClasses>
+      <genClasses ecoreClass="compilator.ecore#//domain/Log">
+        <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference compilator.ecore#//domain/Log/theDomain"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference compilator.ecore#//domain/Log/listExpressions"/>
+      </genClasses>
       <nestedGenPackages prefix="Expression" disposableProviderFactory="true" ecorePackage="compilator.ecore#//domain/expression">
         <genClasses ecoreClass="compilator.ecore#//domain/expression/Expression">
-          <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference compilator.ecore#//domain/expression/Expression/theDomainContainer"/>
           <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference compilator.ecore#//domain/expression/Expression/theDomain"/>
+          <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference compilator.ecore#//domain/expression/Expression/Log"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute compilator.ecore#//domain/expression/Expression/name"/>
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference compilator.ecore#//domain/expression/Expression/theSentence"/>
           <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference compilator.ecore#//domain/expression/Expression/theExpressionModel"/>

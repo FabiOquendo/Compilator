@@ -4,6 +4,7 @@ package compilator.domain.provider;
 
 
 import compilator.domain.Domain;
+import compilator.domain.DomainFactory;
 import compilator.domain.DomainPackage;
 
 import compilator.domain.expression.ExpressionFactory;
@@ -106,8 +107,8 @@ public class DomainItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(DomainPackage.Literals.DOMAIN__LIST_EXPRESSION);
 			childrenFeatures.add(DomainPackage.Literals.DOMAIN__THE_EXPRESSION);
+			childrenFeatures.add(DomainPackage.Literals.DOMAIN__THE_LOG);
 			childrenFeatures.add(DomainPackage.Literals.DOMAIN__SHAPES);
 		}
 		return childrenFeatures;
@@ -161,8 +162,8 @@ public class DomainItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Domain.class)) {
-			case DomainPackage.DOMAIN__LIST_EXPRESSION:
 			case DomainPackage.DOMAIN__THE_EXPRESSION:
+			case DomainPackage.DOMAIN__THE_LOG:
 			case DomainPackage.DOMAIN__SHAPES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -183,41 +184,18 @@ public class DomainItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(DomainPackage.Literals.DOMAIN__LIST_EXPRESSION,
-				 ExpressionFactory.eINSTANCE.createExpression()));
-
-		newChildDescriptors.add
-			(createChildParameter
 				(DomainPackage.Literals.DOMAIN__THE_EXPRESSION,
 				 ExpressionFactory.eINSTANCE.createExpression()));
 
 		newChildDescriptors.add
 			(createChildParameter
+				(DomainPackage.Literals.DOMAIN__THE_LOG,
+				 DomainFactory.eINSTANCE.createLog()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(DomainPackage.Literals.DOMAIN__SHAPES,
 				 ShapesFactory.eINSTANCE.createShapes()));
-	}
-
-	/**
-	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
-		Object childFeature = feature;
-		Object childObject = child;
-
-		boolean qualify =
-			childFeature == DomainPackage.Literals.DOMAIN__LIST_EXPRESSION ||
-			childFeature == DomainPackage.Literals.DOMAIN__THE_EXPRESSION;
-
-		if (qualify) {
-			return getString
-				("_UI_CreateChild_text2",
-				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
-		}
-		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 	/**

@@ -31,6 +31,15 @@ public interface DomainFactory extends EFactory {
 	Domain createDomain();
 
 	/**
+	 * Returns a new object of class '<em>Log</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Log</em>'.
+	 * @generated
+	 */
+	Log createLog();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

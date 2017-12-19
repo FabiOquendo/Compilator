@@ -746,10 +746,10 @@ public class GendataformPackageImpl extends EPackageImpl implements GendataformP
 		addEParameter(op, ecorePackage.getEString(), "orientation", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theDatatypesdataformPackage.getGraphicalContainer(), "container", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getDataFormModelGenerator__GetOrientation__Style(), null, "getOrientation", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getDataFormModelGenerator__GetOrientation__Style(), ecorePackage.getEString(), "getOrientation", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theDatatypesdataformPackage.getStyle(), "style", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = initEOperation(getDataFormModelGenerator__SearchStyle__Domain_String(), null, "searchStyle", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getDataFormModelGenerator__SearchStyle__Domain_String(), theDatatypesdataformPackage.getStyle(), "searchStyle", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theDatatypesdataformPackage.getDomanStyle(), "domain", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "styleName", 0, 1, IS_UNIQUE, IS_ORDERED);
 	}

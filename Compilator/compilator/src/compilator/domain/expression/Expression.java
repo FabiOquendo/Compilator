@@ -3,6 +3,7 @@
 package compilator.domain.expression;
 
 import compilator.domain.Domain;
+import compilator.domain.Log;
 
 import compilator.domain.expression.expressionmodel.ExpressionModel;
 
@@ -19,8 +20,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link compilator.domain.expression.Expression#getTheDomainContainer <em>The Domain Container</em>}</li>
  *   <li>{@link compilator.domain.expression.Expression#getTheDomain <em>The Domain</em>}</li>
+ *   <li>{@link compilator.domain.expression.Expression#getLog <em>Log</em>}</li>
  *   <li>{@link compilator.domain.expression.Expression#getName <em>Name</em>}</li>
  *   <li>{@link compilator.domain.expression.Expression#getTheSentence <em>The Sentence</em>}</li>
  *   <li>{@link compilator.domain.expression.Expression#getTheExpressionModel <em>The Expression Model</em>}</li>
@@ -31,34 +32,6 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface Expression extends EObject {
-	/**
-	 * Returns the value of the '<em><b>The Domain Container</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link compilator.domain.Domain#getListExpression <em>List Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>The Domain Container</em>' container reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>The Domain Container</em>' container reference.
-	 * @see #setTheDomainContainer(Domain)
-	 * @see compilator.domain.expression.ExpressionPackage#getExpression_TheDomainContainer()
-	 * @see compilator.domain.Domain#getListExpression
-	 * @model opposite="listExpression"
-	 * @generated
-	 */
-	Domain getTheDomainContainer();
-
-	/**
-	 * Sets the value of the '{@link compilator.domain.expression.Expression#getTheDomainContainer <em>The Domain Container</em>}' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>The Domain Container</em>' container reference.
-	 * @see #getTheDomainContainer()
-	 * @generated
-	 */
-	void setTheDomainContainer(Domain value);
-
 	/**
 	 * Returns the value of the '<em><b>The Domain</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link compilator.domain.Domain#getTheExpression <em>The Expression</em>}'.
@@ -86,6 +59,34 @@ public interface Expression extends EObject {
 	 * @generated
 	 */
 	void setTheDomain(Domain value);
+
+	/**
+	 * Returns the value of the '<em><b>Log</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link compilator.domain.Log#getListExpressions <em>List Expressions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Log</em>' container reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Log</em>' container reference.
+	 * @see #setLog(Log)
+	 * @see compilator.domain.expression.ExpressionPackage#getExpression_Log()
+	 * @see compilator.domain.Log#getListExpressions
+	 * @model opposite="listExpressions"
+	 * @generated
+	 */
+	Log getLog();
+
+	/**
+	 * Sets the value of the '{@link compilator.domain.expression.Expression#getLog <em>Log</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Log</em>' container reference.
+	 * @see #getLog()
+	 * @generated
+	 */
+	void setLog(Log value);
 
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.

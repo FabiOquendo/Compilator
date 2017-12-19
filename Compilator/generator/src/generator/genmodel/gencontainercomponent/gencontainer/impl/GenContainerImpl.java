@@ -321,7 +321,7 @@ public class GenContainerImpl extends GenContainerElementImpl implements GenCont
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setDefaultContainer(String orientation, final Propertie fontSize) {
+	public void setDefaultContainer(final String orientation, final Propertie fontSize) {
 		if(this.getTheWidth() == null || this.getTheWidth().getValue() == null) {
 			generator.apperance.size.Width w = generator.apperance.size.SizeFactory.eINSTANCE.createWidth();
 			w.setValue(100);
@@ -505,7 +505,7 @@ public class GenContainerImpl extends GenContainerElementImpl implements GenCont
 			case GencontainerPackage.GEN_CONTAINER___CREATE_TITLE_HEIGHT:
 				createTitleHeight();
 				return null;
-			case GencontainerPackage.GEN_CONTAINER___SET_DEFAULT_CONTAINER__PROPERTIE:
+			case GencontainerPackage.GEN_CONTAINER___SET_DEFAULT_CONTAINER__STRING_PROPERTIE:
 				setDefaultContainer((String)arguments.get(0), (Propertie)arguments.get(1));
 				return null;
 		}

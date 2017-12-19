@@ -327,7 +327,7 @@ public interface GencontainerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GEN_CONTAINER___SET_DEFAULT_CONTAINER__PROPERTIE = GencontainercomponentPackage.GEN_CONTAINER_ELEMENT_OPERATION_COUNT + 4;
+	int GEN_CONTAINER___SET_DEFAULT_CONTAINER__STRING_PROPERTIE = GencontainercomponentPackage.GEN_CONTAINER_ELEMENT_OPERATION_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Gen Container</em>' class.
@@ -434,14 +434,14 @@ public interface GencontainerPackage extends EPackage {
 	EOperation getGenContainer__CreateTitleHeight();
 
 	/**
-	 * Returns the meta object for the '{@link generator.genmodel.gencontainercomponent.gencontainer.GenContainer#setDefaultContainer(styles.domain.Propertie) <em>Set Default Container</em>}' operation.
+	 * Returns the meta object for the '{@link generator.genmodel.gencontainercomponent.gencontainer.GenContainer#setDefaultContainer(java.lang.String, styles.domain.Propertie) <em>Set Default Container</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Set Default Container</em>' operation.
-	 * @see generator.genmodel.gencontainercomponent.gencontainer.GenContainer#setDefaultContainer(styles.domain.Propertie)
+	 * @see generator.genmodel.gencontainercomponent.gencontainer.GenContainer#setDefaultContainer(java.lang.String, styles.domain.Propertie)
 	 * @generated
 	 */
-	EOperation getGenContainer__SetDefaultContainer__Propertie();
+	EOperation getGenContainer__SetDefaultContainer__String_Propertie();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -546,7 +546,7 @@ public interface GencontainerPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation GEN_CONTAINER___SET_DEFAULT_CONTAINER__PROPERTIE = eINSTANCE.getGenContainer__SetDefaultContainer__Propertie();
+		EOperation GEN_CONTAINER___SET_DEFAULT_CONTAINER__STRING_PROPERTIE = eINSTANCE.getGenContainer__SetDefaultContainer__String_Propertie();
 
 	}
 

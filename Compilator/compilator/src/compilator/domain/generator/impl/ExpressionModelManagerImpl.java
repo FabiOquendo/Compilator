@@ -414,6 +414,20 @@ public class ExpressionModelManagerImpl extends MinimalEObjectImpl.Container imp
 			style = findStyleElement(s);
 			if(style!=null) l.setTheStyle(style);
 			e=l;
+		}else if(tokens.get(s)!=null && tokens.get(s).equals("Atributo")){//TODO
+			compilator.domain.expression.expressionmodel.individualcomponent.Attribute a = compilator.domain.expression.expressionmodel.individualcomponent.IndividualcomponentFactory.eINSTANCE.createAttribute();
+			a.setName(s);
+			compilator.domain.expression.expressionmodel.individualcomponent.Label l = compilator.domain.expression.expressionmodel.individualcomponent.IndividualcomponentFactory.eINSTANCE.createLabel();
+			l.setName(s);
+			style = findStyleElement(s);
+			if(style!=null) l.setTheStyle(style);
+			a.setTheLabel(l);
+			compilator.domain.expression.expressionmodel.individualcomponent.TextField txt = compilator.domain.expression.expressionmodel.individualcomponent.IndividualcomponentFactory.eINSTANCE.createTextField();
+			txt.setName(s);
+			style = findStyleElement(s);
+			if(style!=null) txt.setTheStyle(style);
+			a.setTheTextField(txt);
+			e=a;
 		}else if(s.contains("<")){
 			Table  t = createTable(s);
 			e = t;
@@ -460,12 +474,12 @@ public class ExpressionModelManagerImpl extends MinimalEObjectImpl.Container imp
 		}
 		j++;
 				
-		String orientation ="|";
+		String orientation ="-|";
 		int lenghtName = nameContainer.length()-1;
 		
 		if(nameContainer.charAt( lenghtName)=='|' || nameContainer.charAt(lenghtName)=='-'){
-			orientation = nameContainer.charAt(lenghtName)+"";
-			nameContainer = nameContainer.substring(0, lenghtName);
+			orientation = nameContainer.substring(nameContainer.length()-2, nameContainer.length());
+			nameContainer = nameContainer.substring(0, lenghtName-1);
 		}
 		
 		styles.domain.Style style = findStyleElement(nameContainer);

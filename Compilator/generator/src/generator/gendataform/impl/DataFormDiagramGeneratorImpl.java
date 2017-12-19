@@ -23,12 +23,10 @@ import org.eclipse.gmf.runtime.notation.Node;
 import tooldataform.ModelFactory;
 
 import tooldataform.formmodel.concreta.DataForm_Diagram;
-
 import tooldataform.formmodel.concreta.Interface;
 import tooldataform.formmodel.concreta.ModelElementDataForm;
 
 import tooldataform.formmodel.containers.GraphicalContainer;
-
 
 /**
  * <!-- begin-user-doc -->
@@ -458,26 +456,26 @@ public class DataFormDiagramGeneratorImpl extends MinimalEObjectImpl.Container i
 	 * @generated
 	 */
 	public String getFontDataformElement(final ModelElementDataForm element) {
-String font = "Calibri"; // Por defecto
-if (element instanceof GraphicalContainer) {
-	GraphicalContainer graphicalContainer = (GraphicalContainer) element;
-	EList<tooldataform.styles.domain.Propertie> listProperties = graphicalContainer.getTheStyle().getTheCharacteristic()
-			.getListProperties();
-	for (int i = 0; i < listProperties.size(); i++) {
-		if (listProperties.get(i).getName().equals("Font Type"))
-			font = listProperties.get(i).getValue();
-	}
-} else if (element instanceof tooldataform.formmodel.concreta.GraphicalIndividualEement) {
-	tooldataform.formmodel.concreta.GraphicalIndividualEement individualElement = 
-			(tooldataform.formmodel.concreta.GraphicalIndividualEement) element;
-	EList<tooldataform.styles.domain.Propertie> listProperties = individualElement.getTheStyle().getTheCharacteristic()
-			.getListProperties();
-	for (int i = 0; i < listProperties.size(); i++) {
-		if (listProperties.get(i).getName().equals("Font Type"))
-			font = listProperties.get(i).getValue();
-	}
-}
-return font;
+		String font = "Calibri"; // Por defecto
+		if (element instanceof GraphicalContainer) {
+			GraphicalContainer graphicalContainer = (GraphicalContainer) element;
+			EList<tooldataform.styles.domain.Propertie> listProperties = graphicalContainer.getTheStyle().getTheCharacteristic()
+					.getListProperties();
+			for (int i = 0; i < listProperties.size(); i++) {
+				if (listProperties.get(i).getName().equals("Font Type"))
+					font = listProperties.get(i).getValue();
+			}
+		} else if (element instanceof tooldataform.formmodel.concreta.GraphicalIndividualEement) {
+			tooldataform.formmodel.concreta.GraphicalIndividualEement individualElement = 
+					(tooldataform.formmodel.concreta.GraphicalIndividualEement) element;
+			EList<tooldataform.styles.domain.Propertie> listProperties = individualElement.getTheStyle().getTheCharacteristic()
+					.getListProperties();
+			for (int i = 0; i < listProperties.size(); i++) {
+				if (listProperties.get(i).getName().equals("Font Type"))
+					font = listProperties.get(i).getValue();
+			}
+		}
+		return font;
 	}
 
 	/**
@@ -486,26 +484,26 @@ return font;
 	 * @generated
 	 */
 	public Integer getFontSizeDataformElement(final ModelElementDataForm element) {
-int fontSize = 12; // Por defecto
-if (element instanceof GraphicalContainer) {
-	GraphicalContainer graphicalContainer = (GraphicalContainer) element;
-	EList<tooldataform.styles.domain.Propertie> listProperties = graphicalContainer.getTheStyle().getTheCharacteristic()
-			.getListProperties();
-	for (int i = 0; i < listProperties.size(); i++) {
-		if (listProperties.get(i).getName().equals("Font Size"))
-			fontSize = Integer.parseInt(listProperties.get(i).getValue());
-	}
-} else if (element instanceof tooldataform.formmodel.concreta.GraphicalIndividualEement) {
-	tooldataform.formmodel.concreta.GraphicalIndividualEement individualElement = 
-			(tooldataform.formmodel.concreta.GraphicalIndividualEement) element;
-	EList<tooldataform.styles.domain.Propertie> listProperties = individualElement.getTheStyle().getTheCharacteristic()
-			.getListProperties();
-	for (int i = 0; i < listProperties.size(); i++) {
-		if (listProperties.get(i).getName().equals("Font Size"))
-			fontSize = Integer.parseInt(listProperties.get(i).getValue());
-	}
-}
-return fontSize;
+		int fontSize = 12; // Por defecto
+		if (element instanceof GraphicalContainer) {
+			GraphicalContainer graphicalContainer = (GraphicalContainer) element;
+			EList<tooldataform.styles.domain.Propertie> listProperties = graphicalContainer.getTheStyle().getTheCharacteristic()
+					.getListProperties();
+			for (int i = 0; i < listProperties.size(); i++) {
+				if (listProperties.get(i).getName().equals("Font Size"))
+					fontSize = Integer.parseInt(listProperties.get(i).getValue());
+			}
+		} else if (element instanceof tooldataform.formmodel.concreta.GraphicalIndividualEement) {
+			tooldataform.formmodel.concreta.GraphicalIndividualEement individualElement = 
+					(tooldataform.formmodel.concreta.GraphicalIndividualEement) element;
+			EList<tooldataform.styles.domain.Propertie> listProperties = individualElement.getTheStyle().getTheCharacteristic()
+					.getListProperties();
+			for (int i = 0; i < listProperties.size(); i++) {
+				if (listProperties.get(i).getName().equals("Font Size"))
+					fontSize = Integer.parseInt(listProperties.get(i).getValue());
+			}
+		}
+		return fontSize;
 	}
 
 	/**

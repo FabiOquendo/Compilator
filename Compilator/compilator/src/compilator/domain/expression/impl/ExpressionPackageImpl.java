@@ -179,7 +179,7 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getExpression_TheDomainContainer() {
+	public EReference getExpression_TheDomain() {
 		return (EReference)expressionEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -188,7 +188,7 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getExpression_TheDomain() {
+	public EReference getExpression_Log() {
 		return (EReference)expressionEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -248,8 +248,8 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 
 		// Create classes and their features
 		expressionEClass = createEClass(EXPRESSION);
-		createEReference(expressionEClass, EXPRESSION__THE_DOMAIN_CONTAINER);
 		createEReference(expressionEClass, EXPRESSION__THE_DOMAIN);
+		createEReference(expressionEClass, EXPRESSION__LOG);
 		createEAttribute(expressionEClass, EXPRESSION__NAME);
 		createEReference(expressionEClass, EXPRESSION__THE_SENTENCE);
 		createEReference(expressionEClass, EXPRESSION__THE_EXPRESSION_MODEL);
@@ -295,8 +295,8 @@ public class ExpressionPackageImpl extends EPackageImpl implements ExpressionPac
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(expressionEClass, Expression.class, "Expression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getExpression_TheDomainContainer(), theDomainPackage.getDomain(), theDomainPackage.getDomain_ListExpression(), "theDomainContainer", null, 0, 1, Expression.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getExpression_TheDomain(), theDomainPackage.getDomain(), theDomainPackage.getDomain_TheExpression(), "theDomain", null, 0, 1, Expression.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getExpression_Log(), theDomainPackage.getLog(), theDomainPackage.getLog_ListExpressions(), "Log", null, 0, 1, Expression.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getExpression_Name(), ecorePackage.getEString(), "name", null, 0, 1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getExpression_TheSentence(), theSentencePackage.getSentence(), theSentencePackage.getSentence_Expression(), "theSentence", null, 1, 1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getExpression_TheExpressionModel(), theExpressionmodelPackage.getExpressionModel(), theExpressionmodelPackage.getExpressionModel_Expression(), "theExpressionModel", null, 1, 1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

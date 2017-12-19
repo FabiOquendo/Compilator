@@ -57,6 +57,7 @@ public class DomainFactoryImpl extends EFactoryImpl implements DomainFactory {
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case DomainPackage.DOMAIN: return createDomain();
+			case DomainPackage.LOG: return createLog();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -70,6 +71,16 @@ public class DomainFactoryImpl extends EFactoryImpl implements DomainFactory {
 	public Domain createDomain() {
 		DomainImpl domain = new DomainImpl();
 		return domain;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Log createLog() {
+		LogImpl log = new LogImpl();
+		return log;
 	}
 
 	/**
