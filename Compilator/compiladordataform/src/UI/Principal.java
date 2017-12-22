@@ -1,6 +1,7 @@
 package UI;
 
 import java.io.ByteArrayInputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.Enumeration;
@@ -26,6 +27,7 @@ import org.eclipse.wb.swt.ResourceManager;
 import org.eclipse.wb.swt.SWTResourceManager;
 
 import Logica.AnalizadorLexico;
+import Logica.ExcelGenerator;
 import Logica.ParseException;
 import Logica.StringTools;
 import Logica.SymbolTable;
@@ -56,8 +58,6 @@ import styles.domain.DomainFactory;
 import styles.domain.Propertie;
 import styles.domain.StyleFactory;
 import styles.domain.Style;
-import tooldataform.TooldataformFactory;
-import tooldataform.core.CoreFactory;
 import tooldataform.formmodel.concreta.DataForm_Diagram;
 import tooldataform.formmodel.containers.GraphicalContainer;
 
@@ -113,14 +113,14 @@ public class Principal extends ViewPart {
 
 	private IStructuredSelection selection;
 
-	private StringTools stringTool;
-
 	private int cont;
 	private int fontSize;
 	private int intervalFontSize;
 	private int maxLevel;
 
 	private boolean increasing;
+	
+	private StringTools stringTool;
 
 	// TODO
 	ModelFactoryModel modelFactoryModel = ModelFactoryModel.getInstance();
@@ -154,8 +154,9 @@ public class Principal extends ViewPart {
 	private TreeViewer treeViewerLog;
 
 	public Principal() {
-
+		
 		stringTool = new StringTools();
+		
 		tokens = new TreeMap<String, String>();
 		components = new TreeMap<String, Component>();
 		elementStyles = new TreeMap<String, styles.domain.Style>();
@@ -495,15 +496,23 @@ public class Principal extends ViewPart {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				// TODO
-				String id = JOptionPane.showInputDialog("Ingrese el identificador de la expresion");
-				Expression ex = compilator.domain.expression.ExpressionFactory.eINSTANCE.createExpression();
-				ex.setName(id);
-				Sentence se = compilator.domain.expression.sentence.SentenceFactory.eINSTANCE.createSentence();
-				se.setFullSentence(txtNormalExpression.getText());
-				ex.setTheSentence(se);
-				mfExpressions.getTheDomainCompilator().getTheLog().getListExpressions().add(ex);
-				modelFactoryModel.saveExpressionsModel();
-				initLog();
+				try {
+					compile();
+
+					String id = JOptionPane.showInputDialog("Ingrese el identificador de la expresion");
+					Expression ex = compilator.domain.expression.ExpressionFactory.eINSTANCE.createExpression();
+					ex.setName(id + " : " + txtNormalExpression.getText());
+					mfExpressions.getTheDomainCompilator().getTheLog().getListExpressions().add(ex);
+					modelFactoryModel.saveExpressionsModel();
+					initLog();
+
+				} catch (TokenMgrError te) {
+					String error = "Error\n" + te.getMessage();
+					txtConsole.setText(error);
+				} catch (ParseException ex) {
+					txtConsole.setText(analizadorLexico.getResultado());
+				}
+
 			}
 		});
 		btnRight.setBounds(810, 500, 40, 60);
@@ -511,12 +520,13 @@ public class Principal extends ViewPart {
 		Button btnGenerateModel = new Button(container, SWT.NONE);
 		btnGenerateModel.setFont(SWTResourceManager.getFont("Yu Gothic UI Light", 12, SWT.NORMAL));
 		btnGenerateModel.addSelectionListener(new SelectionAdapter() {
+
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				// TODO SE AGREGAN LOS LABELS
 				txtNormalExpression.setText(stringTool.addLabelsToTexts(txtNormalExpression.getText()));
 				txtNormalExpression.setText(stringTool.addLabelsToCombos(txtNormalExpression.getText()));
 				unPackExpression();
+				initLog();
 			}
 		});
 		btnGenerateModel.setBounds(10, 758, 200, 30);
@@ -991,6 +1001,14 @@ public class Principal extends ViewPart {
 			dataFormDiagramGenerator.DataformDiagramGenerator(mfToolDataform);
 
 			dataFormDiagramGenerator.generateDiagram();
+			
+			ExcelGenerator excelGenerator = new ExcelGenerator(generatorGenModel.getTheGenModel());
+			try {
+				excelGenerator.createExcel();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 
 		} catch (TokenMgrError te) {
 			String error = "Error\n" + te.getMessage();

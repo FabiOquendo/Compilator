@@ -11,6 +11,7 @@ import compilator.domain.Log;
 import compilator.domain.expression.Expression;
 import compilator.domain.expression.expressionmodel.ExpressionModel;
 import compilator.domain.expression.expressionmodel.containercomponent.Container;
+import compilator.domain.expression.expressionmodel.individualcomponent.Attribute;
 import compilator.domain.expression.expressionmodel.individualcomponent.Button;
 import compilator.domain.expression.expressionmodel.individualcomponent.Column;
 import compilator.domain.expression.expressionmodel.individualcomponent.ComboBox;
@@ -90,9 +91,13 @@ public class TreeLabelProviderBrowser extends ColumnLabelProvider
 			TextField modelElement = (TextField) obj;
 			return "TextField : " + modelElement.getName();
 		}
+		if(obj instanceof Attribute){
+			Attribute modelElement = (Attribute) obj;
+			return "Attribute : " + modelElement.getName();// + " : " + modelElement.getTheStyle().getName();
+		}
 		if(obj instanceof Sentence){
 			Sentence modelElement = (Sentence) obj;
-			return modelElement.getFullSentence();
+			return "Sentence : " + modelElement.getFullSentence();
 		}
 		
 		

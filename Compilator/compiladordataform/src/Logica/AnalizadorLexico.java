@@ -141,7 +141,7 @@ public class AnalizadorLexico implements AnalizadorLexicoConstants {
     case LABEL:
     case BOTON:
     case PATRON:
-    case 42:
+    case 43:
       sentencias();
       break;
     default:
@@ -162,7 +162,7 @@ public class AnalizadorLexico implements AnalizadorLexicoConstants {
     case LABEL:
     case BOTON:
     case PATRON:
-    case 42:
+    case 43:
       sentencias();
       break;
     default:
@@ -189,7 +189,7 @@ public class AnalizadorLexico implements AnalizadorLexicoConstants {
     case LABEL:
     case BOTON:
     case PATRON:
-    case 42:
+    case 43:
       sentencias();
       break;
     default:
@@ -215,7 +215,7 @@ public class AnalizadorLexico implements AnalizadorLexicoConstants {
         case LABEL:
         case BOTON:
         case PATRON:
-        case 42:
+        case 43:
           asignacion();
           jj_consume_token(PUNTOYCOMA);
           break;
@@ -262,7 +262,7 @@ public class AnalizadorLexico implements AnalizadorLexicoConstants {
     case LABEL:
     case BOTON:
     case PATRON:
-    case 42:
+    case 43:
       ListaComponentes();
       break;
     default:
@@ -357,7 +357,7 @@ public class AnalizadorLexico implements AnalizadorLexicoConstants {
       jj_la1[11] = jj_gen;
       ;
     }
-    jj_consume_token(42);
+    jj_consume_token(43);
     switch ((jj_ntk==-1)?jj_ntk():jj_ntk) {
     case ORIENTACION:
     case IDENTIFICADOR:
@@ -366,14 +366,14 @@ public class AnalizadorLexico implements AnalizadorLexicoConstants {
     case LABEL:
     case BOTON:
     case PATRON:
-    case 42:
+    case 43:
       ListaComponentes();
       break;
     default:
       jj_la1[12] = jj_gen;
       ;
     }
-    jj_consume_token(43);
+    jj_consume_token(44);
     switch ((jj_ntk==-1)?jj_ntk():jj_ntk) {
     case HIDEBORDER:
       jj_consume_token(HIDEBORDER);
@@ -583,10 +583,10 @@ public class AnalizadorLexico implements AnalizadorLexicoConstants {
     if (jj_3R_8()) jj_scanpos = xsp;
     xsp = jj_scanpos;
     if (jj_scan_token(6)) jj_scanpos = xsp;
-    if (jj_scan_token(42)) return true;
+    if (jj_scan_token(43)) return true;
     xsp = jj_scanpos;
     if (jj_3R_9()) jj_scanpos = xsp;
-    if (jj_scan_token(43)) return true;
+    if (jj_scan_token(44)) return true;
     return false;
   }
 
@@ -704,10 +704,10 @@ public class AnalizadorLexico implements AnalizadorLexicoConstants {
       jj_la1_init_1();
    }
    private static void jj_la1_init_0() {
-      jj_la1_0 = new int[] {0x3f040,0x3f040,0x3f040,0x3f040,0x1000,0x40,0x3f040,0x80000,0x4000,0x3b000,0x1000,0x40,0x3f040,0x0,0x80000,0xf8000000,0x4000780,};
+      jj_la1_0 = new int[] {0x7e040,0x7e040,0x7e040,0x7e040,0x2000,0x40,0x7e040,0x100000,0x8000,0x76000,0x2000,0x40,0x7e040,0x0,0x100000,0xf0000000,0x8000780,};
    }
    private static void jj_la1_init_1() {
-      jj_la1_1 = new int[] {0x400,0x400,0x400,0x400,0x0,0x0,0x400,0x0,0x0,0x0,0x0,0x0,0x400,0x8,0x0,0x1,0x4,};
+      jj_la1_1 = new int[] {0x800,0x800,0x800,0x800,0x0,0x0,0x800,0x0,0x0,0x0,0x0,0x0,0x800,0x10,0x0,0x3,0x8,};
    }
   static final private JJCalls[] jj_2_rtns = new JJCalls[5];
   static private boolean jj_rescan = false;
@@ -914,7 +914,7 @@ public class AnalizadorLexico implements AnalizadorLexicoConstants {
   /** Generate ParseException. */
   static public ParseException generateParseException() {
     jj_expentries.clear();
-    boolean[] la1tokens = new boolean[44];
+    boolean[] la1tokens = new boolean[45];
     if (jj_kind >= 0) {
       la1tokens[jj_kind] = true;
       jj_kind = -1;
@@ -931,7 +931,7 @@ public class AnalizadorLexico implements AnalizadorLexicoConstants {
         }
       }
     }
-    for (int i = 0; i < 44; i++) {
+    for (int i = 0; i < 45; i++) {
       if (la1tokens[i]) {
         jj_expentry = new int[1];
         jj_expentry[0] = i;

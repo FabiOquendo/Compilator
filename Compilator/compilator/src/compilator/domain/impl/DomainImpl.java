@@ -378,7 +378,6 @@ public class DomainImpl extends MinimalEObjectImpl.Container implements Domain {
 		
 		compilator.domain.expression.Expression  ex = generator.createExpressionModel(expressionString, expressionString);
 		
-		
 		String unpackedString = generator.unpackStringExpression(ex.getTheExpressionModel());
 		String textStyles = generator.getTextComponentsStyles(elementStyles);
 		

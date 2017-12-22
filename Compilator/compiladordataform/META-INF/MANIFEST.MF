@@ -16,4 +16,18 @@ Require-Bundle: org.eclipse.ui;bundle-version="3.108.0",
  org.eclipse.ui.workbench,
  compilator;bundle-version="1.0.0",
  generator;bundle-version="1.0.0"
+Bundle-ClassPath: poi/lib/commons-codec-1.10.jar,
+ poi/lib/commons-collections4-4.1.jar,
+ poi/lib/commons-logging-1.2.jar,
+ poi/lib/junit-4.12.jar,
+ poi/lib/log4j-1.2.17.jar,
+ poi/ooxml-lib/curvesapi-1.04.jar,
+ poi/ooxml-lib/xmlbeans-2.6.0.jar,
+ poi/poi-3.17.jar,
+ poi/poi-examples-3.17.jar,
+ poi/poi-excelant-3.17.jar,
+ poi/poi-ooxml-3.17.jar,
+ poi/poi-ooxml-schemas-3.17.jar,
+ poi/poi-scratchpad-3.17.jar,
+ .
 

@@ -23,65 +23,67 @@ public interface AnalizadorLexicoConstants {
   /** RegularExpression Id. */
   int PX = 11;
   /** RegularExpression Id. */
-  int IDENTIFICADOR = 12;
+  int IS = 12;
   /** RegularExpression Id. */
-  int COMBOBOX = 13;
+  int IDENTIFICADOR = 13;
   /** RegularExpression Id. */
-  int CAMPOTEXTO = 14;
+  int COMBOBOX = 14;
   /** RegularExpression Id. */
-  int LABEL = 15;
+  int CAMPOTEXTO = 15;
   /** RegularExpression Id. */
-  int BOTON = 16;
+  int LABEL = 16;
   /** RegularExpression Id. */
-  int PATRON = 17;
+  int BOTON = 17;
   /** RegularExpression Id. */
-  int SIMBOLOASIGNACION = 18;
+  int PATRON = 18;
   /** RegularExpression Id. */
-  int SEPARADOR = 19;
+  int SIMBOLOASIGNACION = 19;
   /** RegularExpression Id. */
-  int ABRIRLLAVE = 20;
+  int SEPARADOR = 20;
   /** RegularExpression Id. */
-  int CERRARLLAVE = 21;
+  int ABRIRLLAVE = 21;
   /** RegularExpression Id. */
-  int PUNTOYCOMA = 22;
+  int CERRARLLAVE = 22;
   /** RegularExpression Id. */
-  int SIMBOLOMENOR = 23;
+  int PUNTOYCOMA = 23;
   /** RegularExpression Id. */
-  int SIMBOLOMAYOR = 24;
+  int SIMBOLOMENOR = 24;
   /** RegularExpression Id. */
-  int COLOR = 25;
+  int SIMBOLOMAYOR = 25;
   /** RegularExpression Id. */
-  int COLORHEXADECIMAL = 26;
+  int COLOR = 26;
   /** RegularExpression Id. */
-  int ESTILOCOLOR = 27;
+  int COLORHEXADECIMAL = 27;
   /** RegularExpression Id. */
-  int ESTILOWIDTH = 28;
+  int ESTILOCOLOR = 28;
   /** RegularExpression Id. */
-  int ESTILOHEIGHT = 29;
+  int ESTILOWIDTH = 29;
   /** RegularExpression Id. */
-  int ESTILOTIPOFUENTE = 30;
+  int ESTILOHEIGHT = 30;
   /** RegularExpression Id. */
-  int ESTILOTAMFUENTE = 31;
+  int ESTILOTIPOFUENTE = 31;
   /** RegularExpression Id. */
-  int ESTILOFUENTE = 32;
+  int ESTILOTAMFUENTE = 32;
   /** RegularExpression Id. */
-  int DIGIT = 33;
+  int ESTILOFUENTE = 33;
   /** RegularExpression Id. */
-  int NUMERO = 34;
+  int DIGIT = 34;
   /** RegularExpression Id. */
-  int HIDEBORDER = 35;
+  int NUMERO = 35;
   /** RegularExpression Id. */
-  int INICIOWIDGET = 36;
+  int HIDEBORDER = 36;
   /** RegularExpression Id. */
-  int FINWIDGET = 37;
+  int INICIOWIDGET = 37;
   /** RegularExpression Id. */
-  int INICIODECLARACION = 38;
+  int FINWIDGET = 38;
   /** RegularExpression Id. */
-  int FINDECLARACION = 39;
+  int INICIODECLARACION = 39;
   /** RegularExpression Id. */
-  int INICIOEXPRESION = 40;
+  int FINDECLARACION = 40;
   /** RegularExpression Id. */
-  int FINEXPRESION = 41;
+  int INICIOEXPRESION = 41;
+  /** RegularExpression Id. */
+  int FINEXPRESION = 42;
 
   /** Lexical state. */
   int DEFAULT = 0;
@@ -100,6 +102,7 @@ public interface AnalizadorLexicoConstants {
     "\"arial\"",
     "\"tahoma\"",
     "\"px\"",
+    "<IS>",
     "<IDENTIFICADOR>",
     "<COMBOBOX>",
     "<CAMPOTEXTO>",

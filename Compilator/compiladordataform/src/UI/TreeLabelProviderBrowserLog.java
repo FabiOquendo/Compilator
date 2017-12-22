@@ -23,7 +23,7 @@ public class TreeLabelProviderBrowserLog extends ColumnLabelProvider
 		}
 		if(obj instanceof Expression){
 			Expression modelElement = (Expression) obj;
-			return modelElement.getName() + " : " + modelElement.getTheSentence().getFullSentence();
+			return modelElement.getName();
 		}
 
 		return "";

@@ -148,12 +148,13 @@ SKIP :
 
 TOKEN : /* CONCATENACION */
 {
- < ORIENTACION : "|" | "-" | "||" | "--" | "|-" | "-|" >
+ < ORIENTACION : "||" | "--" | "|-" | "-|" >
 | < BOLD : "bold" >
 | < ITALIC : "italic" >
 | < ARIAL : "arial" >
 | < TAHOMA : "tahoma" >
 | < PX: "px">
+| < IS: "is" | "IS">
 | < IDENTIFICADOR : ["a"-"z","A"-"Z"] ( ["a"-"z","A"-"Z","0"-"9"] )* >
 | < COMBOBOX: "*"(< IDENTIFICADOR >)>
 | < CAMPOTEXTO:"txt_"(< IDENTIFICADOR >)>
