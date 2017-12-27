@@ -1,6 +1,5 @@
 package Logica;
 
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
@@ -18,6 +17,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import generator.genmodel.GenElement;
 import generator.genmodel.GenModel;
 import generator.genmodel.gencontainercomponent.gencontainer.GenContainer;
+import generator.genmodel.genindividualcomponent.genbutton.GenButton;
 import generator.genmodel.genindividualcomponent.gencolunm.GenColumn;
 import generator.genmodel.genindividualcomponent.gencombobox.GenComboBox;
 import generator.genmodel.genindividualcomponent.genlabel.GenLabel;
@@ -53,19 +53,8 @@ public class ExcelGenerator {
 	    	if(genElement instanceof GenContainer) {
 	    		GenContainer genContainer = (GenContainer) genElement;
 	    		createContainerExcel(wb, sheet, genContainer, 5, 5);
-	    	} else {
-	    		
 	    	}
 	    }
-	    
-	    //Test merged region
-//	    Row row = sheet.getRow(6);
-//	    Cell cell = row.createCell(6);
-//	    cell.setCellValue( "Contenedor" );
-//	    addBorderToMergedRegion(wb, sheet, 6, 16, 6, 206);
-//	    addBorderToContainer(wb, sheet, 6, 206, 6, 206);
-//	    CellRangeAddress region = CellRangeAddress.valueOf(getColumnLetters(6)+"7:"+getColumnLetters(206)+"17");
-//	    sheet.addMergedRegion( region );
 	    
 	    System.out.println("Celdas creadas!");
 	    FileOutputStream fileOut = new FileOutputStream("C:/Users/admin/Desktop/Formulario.xlsx");
@@ -120,6 +109,11 @@ public class ExcelGenerator {
 	    		createComboExcel(wb, sheet, genComboBox,
 	    				calculateR2(genContainer.getTheY().getValue(),genContainer.getTheTitleHeight().getValue())+r+1,
 	    				calculateR1(genContainer.getTheX().getValue())+c);
+	    	}   else if(genElement instanceof GenButton) {
+	    		GenButton genButton = (GenButton) genElement;
+	    		createButtonExcel(wb, sheet, genButton,
+	    				calculateR2(genContainer.getTheY().getValue(),genContainer.getTheTitleHeight().getValue())+r+1,
+	    				calculateR1(genContainer.getTheX().getValue())+c);
 	    	}
 		}
 	}
@@ -128,10 +122,6 @@ public class ExcelGenerator {
 		Row row = sheet.getRow(calculateR1(genLabel.getTheY().getValue())+r);
 	    Cell cell = row.createCell(calculateR1(genLabel.getTheX().getValue())+c);
 	    cell.setCellValue(genLabel.getTheLabel().getName());
-//	    addBorderToMergedRegion(wb, sheet, calculateR1(genLabel.getTheY().getValue())+r, 
-//	    		calculateR2(genLabel.getTheY().getValue(),genLabel.getTheHeight().getValue())+r,
-//	    		calculateR1(genLabel.getTheX().getValue())+c,
-//	    		calculateR2(genLabel.getTheX().getValue(),genLabel.getTheWidth().getValue())+c);
 	    CellRangeAddress region = CellRangeAddress.valueOf(getColumnLetters(calculateR1(genLabel.getTheX().getValue())+c)+
 	    		(calculateR1(genLabel.getTheY().getValue())+1+r)+":"+
 	    		getColumnLetters(calculateR2(genLabel.getTheX().getValue(),genLabel.getTheWidth().getValue())+c)+
@@ -250,6 +240,22 @@ public class ExcelGenerator {
 		cell.setCellStyle(cellStyle);
 	}
 	
+	public void createButtonExcel(Workbook wb, Sheet sheet, GenButton genButton, int r, int c) {
+		Row row = sheet.getRow(calculateR1(genButton.getTheY().getValue())+r);
+	    Cell cell = row.createCell(calculateR1(genButton.getTheX().getValue())+c);
+	    cell.setCellValue(genButton.getTheButton().getName());
+		addBorderToButton(wb, sheet, calculateR1(genButton.getTheY().getValue())+r, 
+	    		calculateR2(genButton.getTheY().getValue(),genButton.getTheHeight().getValue())+r,
+	    		calculateR1(genButton.getTheX().getValue())+c,
+	    		calculateR2(genButton.getTheX().getValue(),genButton.getTheWidth().getValue())+c);
+	    CellRangeAddress region = CellRangeAddress.valueOf(getColumnLetters(calculateR1(genButton.getTheX().getValue())+c)+
+	    		(calculateR1(genButton.getTheY().getValue())+1+r)+":"+
+	    		getColumnLetters(calculateR2(genButton.getTheX().getValue(),genButton.getTheWidth().getValue())+c)+
+	    		(calculateR2(genButton.getTheY().getValue(),genButton.getTheHeight().getValue())+1+r));
+	    sheet.addMergedRegion( region );
+	    changeFont(wb, cell, genButton.getTheSize().getValue(), genButton.getTheType().getValue());
+	}
+	
 	public int calculateR1(int y) {
 		return (y/2);
 	}
@@ -286,10 +292,10 @@ public class ExcelGenerator {
 			cellStyle = wb.createCellStyle();
 		if(alignment.equals("CENTER")) 
 			cellStyle.setAlignment(HorizontalAlignment.CENTER);
-		else if(alignment.equals("LEFT")) 
-			cellStyle.setAlignment(HorizontalAlignment.LEFT);
-		else
+		else if(alignment.equals("RIGHT"))
 			cellStyle.setAlignment(HorizontalAlignment.RIGHT);
+		else
+			cellStyle.setAlignment(HorizontalAlignment.LEFT);
 		cell.setCellStyle(cellStyle);
 	}
 
@@ -298,6 +304,31 @@ public class ExcelGenerator {
 	    borderStyle.setBorderBottom(BorderStyle.THIN);
 	    borderStyle.setBorderTop(BorderStyle.THIN);
 	    borderStyle.setBorderRight(BorderStyle.THIN);
+	    borderStyle.setBorderLeft(BorderStyle.THIN);
+	    Row row = sheet.getRow(r1);
+	    for (int i = c1; i <= c2; i++) {
+	        Cell cell = row.getCell(i);
+	        cell.setCellStyle(borderStyle);
+	    }
+	    row = sheet.getRow(r2);
+	    for (int i = c1; i <= c2; i++) {
+	        Cell cell = row.getCell(i);
+	        cell.setCellStyle(borderStyle);
+	    }
+	    for (int i = r1; i <= r2; i++) {
+	    	row = sheet.getRow(i);
+	    	Cell cell = row.getCell(c1);
+	        cell.setCellStyle(borderStyle);
+	        cell = row.getCell(c2);
+	        cell.setCellStyle(borderStyle);
+		}
+	}
+	
+	public void addBorderToButton(Workbook wb, Sheet sheet, int r1, int r2, int c1, int c2) {
+		CellStyle borderStyle = wb.createCellStyle();
+	    borderStyle.setBorderBottom(BorderStyle.MEDIUM);
+	    borderStyle.setBorderTop(BorderStyle.THIN);
+	    borderStyle.setBorderRight(BorderStyle.MEDIUM);
 	    borderStyle.setBorderLeft(BorderStyle.THIN);
 	    Row row = sheet.getRow(r1);
 	    for (int i = c1; i <= c2; i++) {

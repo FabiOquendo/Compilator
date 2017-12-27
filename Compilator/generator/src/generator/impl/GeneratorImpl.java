@@ -215,130 +215,130 @@ public class GeneratorImpl extends MinimalEObjectImpl.Container implements Gener
 	 * @generated
 	 */
 	public GenContainer createGenContainer(final compilator.domain.expression.expressionmodel.containercomponent.Container container) {
-GenContainer genContainer = generator.genmodel.gencontainercomponent.gencontainer.
-		GencontainerFactory.eINSTANCE.createGenContainer();
-genContainer.setTheContainer(container);
-styles.domain.Propertie fontSize = null;
-EList<styles.domain.Propertie> listProperties = container.getTheStyle().
-		getTheCharacteristic().getListProperties();
-for (int i = 0; i < listProperties.size(); i++) {
-	if(listProperties.get(i).getName().equals("Font Size")) {
-		fontSize = listProperties.get(i);
-		break;
-	}
-}
-String orientation = container.getOrientation();
-genContainer.createPropertiesContainer(orientation, fontSize);
-if(container.getTheStyle() != null) {
-	genContainer = (GenContainer) setApperances(container, genContainer);
-	for (int i = 0; i < listProperties.size(); i++) {
-		styles.domain.Propertie propertie = listProperties.get(i);
-		
-		if(propertie.getName().equals("Background")) {
-			generator.apperance.background.Background b = generator.apperance.background.
-					BackgroundFactory.eINSTANCE.createBackground();
-			b.setValue(propertie.getValue());
-			genContainer.setTheBackground(b);
+		GenContainer genContainer = generator.genmodel.gencontainercomponent.gencontainer.
+				GencontainerFactory.eINSTANCE.createGenContainer();
+		genContainer.setTheContainer(container);
+		styles.domain.Propertie fontSize = null;
+		EList<styles.domain.Propertie> listProperties = container.getTheStyle().
+				getTheCharacteristic().getListProperties();
+		for (int i = 0; i < listProperties.size(); i++) {
+			if(listProperties.get(i).getName().equals("Font Size")) {
+				fontSize = listProperties.get(i);
+				break;
+			}
 		}
-	}
-}
-
-int x, y;
-if(container.getIsVisible()){
-	x = 10; y = 10;
-} else {
-	x = 0; y = 0;
-}
-int xa=0,ya=0;
-int maxix=10,maxiy=10;
-
-for(int i =0 ;i< container.getListElements().size();i++){
-	compilator.domain.expression.expressionmodel.Element element = container.getListElements().get(i);
-	if(element instanceof compilator.domain.expression.expressionmodel.containercomponent.Container){
-		GenContainer c = createGenContainer((compilator.domain.expression.expressionmodel.
-				containercomponent.Container) element);
-		c.getTheX().setValue(new Integer(x)); c.getTheY().setValue(new Integer(y));
-		
-		genContainer.getListGenElements().add(c);
-		
-		xa = c.getTheWidth().getValue().intValue(); ya = c.getTheHeight().getValue().intValue()+c.getTheTitleHeight().getValue().intValue(); 
-		if(container.getOrientation().charAt(0) == '-'){ 
-			y = y + ya;
-			maxiy=y;
-		}
-	}else if(element instanceof compilator.domain.expression.expressionmodel.individualcomponent.Attribute){
-		Attribute attribute = (Attribute) element;
-		attribute.getTheLabel().setTheStyle(attribute.getTheStyle());
-		attribute.getTheTextField().setTheStyle(attribute.getTheStyle());
-		GenLabel label = (GenLabel) createGenIndividualElement(attribute.getTheLabel());
-		label.getTheX().setValue(new Integer(x)); label.getTheY().setValue(new Integer(y));
-		genContainer.getListGenElements().add(label);
-		xa = label.getTheWidth().getValue().intValue(); ya = label.getTheHeight().getValue().intValue();
-		
-		if(container.getOrientation().charAt(1) == '|'){ 
-			xa += 5;
-			x += xa;
-		}
-		else {
-			ya += 5;
-			y += ya;
+		String orientation = container.getOrientation();
+		genContainer.createPropertiesContainer(orientation, fontSize);
+		if(container.getTheStyle() != null) {
+			genContainer = (GenContainer) setApperances(container, genContainer);
+			for (int i = 0; i < listProperties.size(); i++) {
+				styles.domain.Propertie propertie = listProperties.get(i);
+				
+				if(propertie.getName().equals("Background")) {
+					generator.apperance.background.Background b = generator.apperance.background.
+							BackgroundFactory.eINSTANCE.createBackground();
+					b.setValue(propertie.getValue());
+					genContainer.setTheBackground(b);
+				}
+			}
 		}
 		
-		GenTextField text = (GenTextField) createGenIndividualElement(attribute.getTheTextField());
-		text.getTheX().setValue(new Integer(x)); text.getTheY().setValue(new Integer(y));
-		genContainer.getListGenElements().add(text);
-		if(container.getOrientation().charAt(1) == '|'){ 
-			x -= xa;
-			xa += text.getTheWidth().getValue().intValue();
-			ya = text.getTheHeight().getValue().intValue();
+		int x, y;
+		if(container.getIsVisible()){
+			x = 10; y = 10;
+		} else {
+			x = 0; y = 0;
 		}
-		else {
-			y -= ya;
-			ya += text.getTheHeight().getValue().intValue();
-			xa = text.getTheWidth().getValue().intValue();
+		int xa=0,ya=0;
+		int maxix=10,maxiy=10;
+		
+		for(int i =0 ;i< container.getListElements().size();i++){
+			compilator.domain.expression.expressionmodel.Element element = container.getListElements().get(i);
+			if(element instanceof compilator.domain.expression.expressionmodel.containercomponent.Container){
+				GenContainer c = createGenContainer((compilator.domain.expression.expressionmodel.
+						containercomponent.Container) element);
+				c.getTheX().setValue(new Integer(x)); c.getTheY().setValue(new Integer(y));
+				genContainer.getListGenElements().add(c);
+				xa = c.getTheWidth().getValue().intValue(); ya = c.getTheHeight().getValue().intValue()+c.getTheTitleHeight().getValue().intValue(); 
+			}else if(element instanceof compilator.domain.expression.expressionmodel.individualcomponent.Attribute){
+				Attribute attribute = (Attribute) element;
+				attribute.getTheLabel().setTheStyle(attribute.getTheStyle());
+				attribute.getTheTextField().setTheStyle(attribute.getTheStyle());
+				GenLabel label = (GenLabel) createGenIndividualElement(attribute.getTheLabel());
+				label.getTheX().setValue(new Integer(x)); label.getTheY().setValue(new Integer(y));
+				genContainer.getListGenElements().add(label);
+				xa = label.getTheWidth().getValue().intValue(); ya = label.getTheHeight().getValue().intValue();
+				
+				if(container.getOrientation().charAt(1) == '|'){ 
+					xa += 5;
+					x += xa;
+				}
+				else {
+					ya += 5;
+					y += ya;
+				}
+				
+				GenTextField text = (GenTextField) createGenIndividualElement(attribute.getTheTextField());
+				text.getTheX().setValue(new Integer(x)); text.getTheY().setValue(new Integer(y));
+				genContainer.getListGenElements().add(text);
+				if(container.getOrientation().charAt(1) == '|'){ 
+					x -= xa;
+					xa += text.getTheWidth().getValue().intValue();
+					ya = text.getTheHeight().getValue().intValue();
+				}
+				else {
+					y -= ya;
+					ya += text.getTheHeight().getValue().intValue();
+					xa = text.getTheWidth().getValue().intValue();
+				}
+				
+			} else  if(element instanceof compilator.domain.expression.expressionmodel.individualcomponent.Table){
+				GenTable genTable = createGenTable((Table) element);
+				genTable.getTheX().setValue(new Integer(x)); genTable.getTheY().setValue(new Integer(y));
+				genContainer.getListGenElements().add(genTable);
+				xa = genTable.getTheWidth().getValue().intValue(); 
+				ya = genTable.getTheHeight().getValue().intValue()+genTable.getTheTitleHeight().getValue().intValue(); 
+			} else {
+			
+				GenIndividualElement ind = createGenIndividualElement(element);
+				ind.getTheX().setValue(new Integer(x)); ind.getTheY().setValue(new Integer(y));
+				
+				genContainer.getListGenElements().add(ind);
+				
+				xa = ind.getTheWidth().getValue().intValue(); ya = ind.getTheHeight().getValue().intValue();
+			}
+			
+			if(container.getOrientation().charAt(0) == '|'){ 
+				x = x + xa + 10;
+				maxix = x;
+				maxiy = java.lang.Math.max(maxiy, ya+20) ;
+			}
+			else {
+				y = y + ya + 10;
+				maxiy=y;
+				maxix = java.lang.Math.max(maxix,xa+20);
+			}
 		}
 		
-	}else{
-	
-		GenIndividualElement ind = createGenIndividualElement(element);
-		ind.getTheX().setValue(new Integer(x)); ind.getTheY().setValue(new Integer(y));
+		if(!container.getIsVisible()){
+			if(container.getOrientation().charAt(0) == '|') {
+				maxix -= 10; maxiy -= 20;
+			} else {
+				maxix -= 20; maxiy -= 10;
+			}
+		}
 		
-		genContainer.getListGenElements().add(ind);
-		
-		xa = ind.getTheWidth().getValue().intValue(); ya = ind.getTheHeight().getValue().intValue();
-	}
-	
-	if(container.getOrientation().charAt(0) == '|'){ 
-		x = x + xa + 10;
-		maxix = x;
-		maxiy = java.lang.Math.max(maxiy, ya+20) ;
-	}
-	else {
-		y = y + ya + 10;
-		maxiy=y;
-		maxix = java.lang.Math.max(maxix,xa+20);
-	}
-}
-
-if(!container.getIsVisible()){
-	if(container.getOrientation().charAt(0) == '|') {
-		maxix -= 10; maxiy -= 20;
-	} else {
-		maxix -= 20; maxiy -= 10;
-	}
-}
-
-generator.apperance.size.Height h = generator.apperance.size.SizeFactory.eINSTANCE.createHeight();
-h.setValue(new Integer(maxiy));
-generator.apperance.size.Width w = generator.apperance.size.SizeFactory.eINSTANCE.createWidth();
-w.setValue(new Integer(maxix));
-generator.apperance.position.X xx = generator.apperance.position.PositionFactory.eINSTANCE.createX();
-xx.setValue(0);
-generator.apperance.position.Y yy = generator.apperance.position.PositionFactory.eINSTANCE.createY();
-yy.setValue(0);
-genContainer.setTheHeight(h); genContainer.setTheWidth(w);
-genContainer.setTheX(xx); genContainer.setTheY(yy);
-return genContainer;
+		generator.apperance.size.Height h = generator.apperance.size.SizeFactory.eINSTANCE.createHeight();
+		h.setValue(new Integer(maxiy));
+		generator.apperance.size.Width w = generator.apperance.size.SizeFactory.eINSTANCE.createWidth();
+		w.setValue(new Integer(maxix));
+		generator.apperance.position.X xx = generator.apperance.position.PositionFactory.eINSTANCE.createX();
+		xx.setValue(0);
+		generator.apperance.position.Y yy = generator.apperance.position.PositionFactory.eINSTANCE.createY();
+		yy.setValue(0);
+		genContainer.setTheHeight(h); genContainer.setTheWidth(w);
+		genContainer.setTheX(xx); genContainer.setTheY(yy);
+		return genContainer;
 	}
 
 	/**
@@ -358,12 +358,7 @@ return genContainer;
 		else if(element instanceof compilator.domain.expression.expressionmodel.individualcomponent.Label){
 			GenLabel genLabel = createGenLabel((Label) element);
 			return genLabel;
-		}
-		else  if(element instanceof compilator.domain.expression.expressionmodel.individualcomponent.Table){
-			GenTable genTable = createGenTable((Table) element);
-			return genTable;
-		}
-		else if(element instanceof compilator.domain.expression.expressionmodel.individualcomponent.TextField){
+		} else if(element instanceof compilator.domain.expression.expressionmodel.individualcomponent.TextField){
 			GenTextField genTextField = createGenTextField((TextField) element);
 			return genTextField;
 		}
