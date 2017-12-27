@@ -6,7 +6,6 @@ import compilator.domain.expression.Expression;
 
 import compilator.domain.expression.expressionmodel.Element;
 import compilator.domain.expression.expressionmodel.ExpressionModel;
-import compilator.domain.expression.expressionmodel.individualcomponent.Attribute;
 import compilator.domain.expression.expressionmodel.individualcomponent.Button;
 import compilator.domain.expression.expressionmodel.individualcomponent.Column;
 import compilator.domain.expression.expressionmodel.individualcomponent.ComboBox;
@@ -261,7 +260,8 @@ public class GeneratorImpl extends MinimalEObjectImpl.Container implements Gener
 				genContainer.getListGenElements().add(c);
 				xa = c.getTheWidth().getValue().intValue(); ya = c.getTheHeight().getValue().intValue()+c.getTheTitleHeight().getValue().intValue(); 
 			}else if(element instanceof compilator.domain.expression.expressionmodel.individualcomponent.Attribute){
-				Attribute attribute = (Attribute) element;
+		compilator.domain.expression.expressionmodel.individualcomponent.Attribute attribute = 
+				(compilator.domain.expression.expressionmodel.individualcomponent.Attribute) element;
 				attribute.getTheLabel().setTheStyle(attribute.getTheStyle());
 				attribute.getTheTextField().setTheStyle(attribute.getTheStyle());
 				GenLabel label = (GenLabel) createGenIndividualElement(attribute.getTheLabel());
@@ -358,7 +358,12 @@ public class GeneratorImpl extends MinimalEObjectImpl.Container implements Gener
 		else if(element instanceof compilator.domain.expression.expressionmodel.individualcomponent.Label){
 			GenLabel genLabel = createGenLabel((Label) element);
 			return genLabel;
-		} else if(element instanceof compilator.domain.expression.expressionmodel.individualcomponent.TextField){
+		}
+		else  if(element instanceof compilator.domain.expression.expressionmodel.individualcomponent.Table){
+			GenTable genTable = createGenTable((Table) element);
+			return genTable;
+		}
+		else if(element instanceof compilator.domain.expression.expressionmodel.individualcomponent.TextField){
 			GenTextField genTextField = createGenTextField((TextField) element);
 			return genTextField;
 		}

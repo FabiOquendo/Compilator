@@ -5236,14 +5236,8 @@
 |		GenContainer c = createGenContainer((compilator.domain.expression.expressionmodel.
 |				containercomponent.Container) element);
 |		c.getTheX().setValue(new Integer(x)); c.getTheY().setValue(new Integer(y));
-|		
 |		genContainer.getListGenElements().add(c);
-|		
-|		xa = c.getTheWidth().getValue().intValue(); ya = c.getTheHeight().getValue().intValue(); 
-|		if(container.getOrientation().charAt(0) == '-'){ 
-|			y = y + ya;
-|			maxiy=y;
-|		}
+|		xa = c.getTheWidth().getValue().intValue(); ya = c.getTheHeight().getValue().intValue()+c.getTheTitleHeight().getValue().intValue(); 
 |	}else if(element instanceof compilator.domain.expression.expressionmodel.individualcomponent.Attribute){
 |		Attribute attribute = (Attribute) element;
 |		attribute.getTheLabel().setTheStyle(attribute.getTheStyle());
@@ -5276,7 +5270,13 @@
 |			xa = text.getTheWidth().getValue().intValue();
 |		}
 |		
-|	}else{
+|	} else  if(element instanceof compilator.domain.expression.expressionmodel.individualcomponent.Table){
+|		GenTable genTable = createGenTable((Table) element);
+|		genTable.getTheX().setValue(new Integer(x)); genTable.getTheY().setValue(new Integer(y));
+|		genContainer.getListGenElements().add(genTable);
+|		xa = genTable.getTheWidth().getValue().intValue(); 
+|		ya = genTable.getTheHeight().getValue().intValue()+genTable.getTheTitleHeight().getValue().intValue(); 
+|	} else {
 |	
 |		GenIndividualElement ind = createGenIndividualElement(element);
 |		ind.getTheX().setValue(new Integer(x)); ind.getTheY().setValue(new Integer(y));
@@ -11973,6 +11973,24 @@
 					line_color 	3342489
 					fill_color 	13434879
 					quidu      	"59C175E402CD"
+					compartment 	(object Compartment
+					    Parent_View 	@388
+					    location   	(912, 852)
+					    font       	(object Font
+						size       	10
+						face       	"Arial"
+						bold       	FALSE
+						italics    	TRUE
+						underline  	FALSE
+						strike     	FALSE
+						color      	0
+						default_color 	TRUE)
+					    icon_style 	"Icon"
+					    fill_color 	16777215
+					    anchor     	2
+					    nlines     	10
+					    max_width  	369
+					    justify    	1)
 					width      	390
 					height     	586
 					annotation 	8

@@ -384,55 +384,55 @@ public class ExpressionModelManagerImpl extends MinimalEObjectImpl.Container imp
 	 * @generated
 	 */
 	public Element createIndividualElement(final String s) {
-Element e=null;
-styles.domain.Style style;
-
-if(tokens.get(s)!=null && tokens.get(s).equals("Boton")){
-	compilator.domain.expression.expressionmodel.individualcomponent.Button b = compilator.domain.expression.expressionmodel.individualcomponent.IndividualcomponentFactory.eINSTANCE.createButton();
-	b.setName(getName(s));
-	style = findStyleElement(s);
-	if(style!=null) b.setTheStyle(style);
-	e=b;
-}
-else if(tokens.get(s)!=null && tokens.get(s).equals("ComboBox")){
-	compilator.domain.expression.expressionmodel.individualcomponent.ComboBox cb = compilator.domain.expression.expressionmodel.individualcomponent.IndividualcomponentFactory.eINSTANCE.createComboBox();
-	cb.setName(s.substring(1));
-	style = findStyleElement(cb.getName());
-	if(style!=null) cb.setTheStyle(style);
-	e=cb;
-}
-else if(tokens.get(s)!=null && tokens.get(s).equals("Campo de Texto")){
-	compilator.domain.expression.expressionmodel.individualcomponent.TextField txt = compilator.domain.expression.expressionmodel.individualcomponent.IndividualcomponentFactory.eINSTANCE.createTextField();
-	txt.setName(getName(s));
-	style = findStyleElement(s);
-	if(style!=null) txt.setTheStyle(style);
-	e = txt;
-}
-else if(tokens.get(s)!=null && tokens.get(s).equals("Label")){
-	compilator.domain.expression.expressionmodel.individualcomponent.Label l = compilator.domain.expression.expressionmodel.individualcomponent.IndividualcomponentFactory.eINSTANCE.createLabel();
-	l.setName(getName(s));
-	style = findStyleElement(s);
-	if(style!=null) l.setTheStyle(style);
-	e=l;
-}else if(tokens.get(s)!=null && tokens.get(s).equals("Atributo")){
-	compilator.domain.expression.expressionmodel.individualcomponent.Attribute a = compilator.domain.expression.expressionmodel.individualcomponent.IndividualcomponentFactory.eINSTANCE.createAttribute();
-	a.setName(s);
-	compilator.domain.expression.expressionmodel.individualcomponent.Label l = compilator.domain.expression.expressionmodel.individualcomponent.IndividualcomponentFactory.eINSTANCE.createLabel();
-	l.setName(s);
-	style = findStyleElement(s);
-	if(style!=null) l.setTheStyle(style);
-	a.setTheLabel(l);
-	compilator.domain.expression.expressionmodel.individualcomponent.TextField txt = compilator.domain.expression.expressionmodel.individualcomponent.IndividualcomponentFactory.eINSTANCE.createTextField();
-	txt.setName(s);
-	style = findStyleElement(s);
-	if(style!=null) txt.setTheStyle(style);
-	a.setTheTextField(txt);
-	e=a;
-}else if(s.contains("<")){
-	Table  t = createTable(s);
-	e = t;
-}
-return e;
+		Element e=null;
+		styles.domain.Style style;
+		
+		if(tokens.get(s)!=null && tokens.get(s).equals("Boton")){
+			compilator.domain.expression.expressionmodel.individualcomponent.Button b = compilator.domain.expression.expressionmodel.individualcomponent.IndividualcomponentFactory.eINSTANCE.createButton();
+			b.setName(getName(s));
+			style = findStyleElement(s);
+			if(style!=null) b.setTheStyle(style);
+			e=b;
+		}
+		else if(tokens.get(s)!=null && tokens.get(s).equals("ComboBox")){
+			compilator.domain.expression.expressionmodel.individualcomponent.ComboBox cb = compilator.domain.expression.expressionmodel.individualcomponent.IndividualcomponentFactory.eINSTANCE.createComboBox();
+			cb.setName(s.substring(1));
+			style = findStyleElement(cb.getName());
+			if(style!=null) cb.setTheStyle(style);
+			e=cb;
+		}
+		else if(tokens.get(s)!=null && tokens.get(s).equals("Campo de Texto")){
+			compilator.domain.expression.expressionmodel.individualcomponent.TextField txt = compilator.domain.expression.expressionmodel.individualcomponent.IndividualcomponentFactory.eINSTANCE.createTextField();
+			txt.setName(getName(s));
+			style = findStyleElement(s);
+			if(style!=null) txt.setTheStyle(style);
+			e = txt;
+		}
+		else if(tokens.get(s)!=null && tokens.get(s).equals("Label")){
+			compilator.domain.expression.expressionmodel.individualcomponent.Label l = compilator.domain.expression.expressionmodel.individualcomponent.IndividualcomponentFactory.eINSTANCE.createLabel();
+			l.setName(getName(s));
+			style = findStyleElement(s);
+			if(style!=null) l.setTheStyle(style);
+			e=l;
+		}else if(tokens.get(s)!=null && tokens.get(s).equals("Atributo")){
+			compilator.domain.expression.expressionmodel.individualcomponent.Attribute a = compilator.domain.expression.expressionmodel.individualcomponent.IndividualcomponentFactory.eINSTANCE.createAttribute();
+			a.setName(s);
+			compilator.domain.expression.expressionmodel.individualcomponent.Label l = compilator.domain.expression.expressionmodel.individualcomponent.IndividualcomponentFactory.eINSTANCE.createLabel();
+			l.setName(s);
+			style = findStyleElement(s);
+			if(style!=null) l.setTheStyle(style);
+			a.setTheLabel(l);
+			compilator.domain.expression.expressionmodel.individualcomponent.TextField txt = compilator.domain.expression.expressionmodel.individualcomponent.IndividualcomponentFactory.eINSTANCE.createTextField();
+			txt.setName(s);
+			style = findStyleElement(s);
+			if(style!=null) txt.setTheStyle(style);
+			a.setTheTextField(txt);
+			e=a;
+		}else if(s.contains("<")){
+			Table  t = createTable(s);
+			e = t;
+		}
+		return e;
 	}
 
 	/**
@@ -586,7 +586,7 @@ return e;
 				return;
 			case GeneratorPackage.EXPRESSION_MODEL_MANAGER__EXPRESSION_GENERATOR:
 				setExpressionGenerator((ExpressionModelGenerator)newValue);
-  				return;
+				return;
 			case GeneratorPackage.EXPRESSION_MODEL_MANAGER__COMPONENT_GENERATOR:
 				setComponentGenerator((ComponentModelGenerator)newValue);
 				return;
