@@ -262,32 +262,40 @@ public class ExpressionModelGeneratorImpl extends MinimalEObjectImpl.Container i
 	 * @generated
 	 */
 	public void exploreSentence(final String s, final compilator.domain.expression.expressionmodel.containercomponent.Container parent) {
-			java.lang.Object [] elements = expressionManager.split(s).toArray();
-			
-			for(int i=0;i<elements.length;i++){
-				
-				String textElement =  (String)elements[i];
-				
-				if(components.containsKey(textElement)){
-					
-					compilator.domain.shapes.Component component  = (compilator.domain.shapes.Component)components.get(textElement); 
-					compilator.domain.expression.expressionmodel.Element e = org.eclipse.emf.ecore.util.EcoreUtil.copy(component.getTheElement());
-					//TODO
+		java.lang.Object [] elements = expressionManager.split(s).toArray();
+		for(int i=0;i<elements.length;i++){	
+			String textElement =  (String)elements[i];
+			String [] rename = textElement.split("is");
+			if(rename.length == 2) {
+				if(components.containsKey(rename[1])){
+					compilator.domain.shapes.Component component  = (compilator.domain.shapes.Component)
+							components.get(rename[1]); 
+					compilator.domain.expression.expressionmodel.Element e = org.eclipse.emf.ecore.util.
+							EcoreUtil.copy(component.getTheElement());
 					getComponentStyles(e);
-					textComponents.add(textElement);
+					textComponents.add(rename[1]);
+					e.setName(rename[0]);
 					parent.getListElements().add(e);
 				}
-				else if(expressionManager.isContainer(textElement)){
-					
-					compilator.domain.expression.expressionmodel.containercomponent.Container container = compilator.domain.expression.expressionmodel.containercomponent.ContainercomponentFactory.eINSTANCE.createContainer();
-					String body = expressionManager.createContainer(textElement,container);
-					exploreSentence(body,container);
-					parent.getListElements().add(container);
-				
-				}else{
-					parent.getListElements().add(expressionManager.createIndividualElement(textElement));
-				}
+			} else if(components.containsKey(textElement)){
+				compilator.domain.shapes.Component component  = (compilator.domain.shapes.Component)
+						components.get(textElement); 
+				compilator.domain.expression.expressionmodel.Element e = org.eclipse.emf.ecore.util.
+						EcoreUtil.copy(component.getTheElement());
+				getComponentStyles(e);
+				textComponents.add(textElement);
+				parent.getListElements().add(e);
+			} else if(expressionManager.isContainer(textElement)){
+				compilator.domain.expression.expressionmodel.containercomponent.Container container = 
+						compilator.domain.expression.expressionmodel.containercomponent.
+						ContainercomponentFactory.eINSTANCE.createContainer();
+				String body = expressionManager.createContainer(textElement,container);
+				exploreSentence(body,container);
+				parent.getListElements().add(container);
+			}else{
+				parent.getListElements().add(expressionManager.createIndividualElement(textElement));
 			}
+		}
 	}
 
 	/**
@@ -296,54 +304,54 @@ public class ExpressionModelGeneratorImpl extends MinimalEObjectImpl.Container i
 	 * @generated
 	 */
 	public Expression createExpressionModel(final String formatedSentence, final String unformatedSentence) {
-			textComponents = new TreeSet<String>();
-			
-			componentsStyles = new TreeMap<String, TreeSet<String>>();
-			
-			compilator.domain.expression.Expression expression = compilator.domain.expression.ExpressionFactory.eINSTANCE.createExpression();
-			
-			compilator.domain.expression.sentence.Sentence sentence = compilator.domain.expression.sentence.SentenceFactory.eINSTANCE.createSentence();
-			
-			compilator.domain.expression.expressionmodel.ExpressionModel model = compilator.domain.expression.expressionmodel.ExpressionmodelFactory.eINSTANCE.createExpressionModel();
-			
-			sentence.setCompressedSentence(unformatedSentence);
-			
-			expression.setTheSentence(sentence);
-			
-			java.lang.Object [] elements = expressionManager.split(formatedSentence).toArray();
-			
-			
-			for(int i=0;i<elements.length;i++){
-				
-				String textElement = (String) elements[i];
-				
-				if(components.containsKey(textElement)){
-					
-					compilator.domain.shapes.Component component  = (compilator.domain.shapes.Component)components.get(textElement); 
-					
-					compilator.domain.expression.expressionmodel.Element e = org.eclipse.emf.ecore.util.EcoreUtil.copy(component.getTheElement());
+		textComponents = new TreeSet<String>();
+		componentsStyles = new TreeMap<String, TreeSet<String>>();
+		compilator.domain.expression.Expression expression = compilator.domain.expression.ExpressionFactory.
+				eINSTANCE.createExpression();
+		compilator.domain.expression.sentence.Sentence sentence = compilator.domain.expression.sentence.
+				SentenceFactory.eINSTANCE.createSentence();
+		compilator.domain.expression.expressionmodel.ExpressionModel model = compilator.domain.expression.
+				expressionmodel.ExpressionmodelFactory.eINSTANCE.createExpressionModel();
+		sentence.setCompressedSentence(unformatedSentence);
+		expression.setTheSentence(sentence);
+		java.lang.Object [] elements = expressionManager.split(formatedSentence).toArray();
 		
-					getComponentStyles(e);
-					
-					model.getListElements().add(e);
-					
-					textComponents.add(textElement);
-					
-				}
-				else if(expressionManager.isContainer(textElement)){
-					
-					compilator.domain.expression.expressionmodel.containercomponent.Container container = compilator.domain.expression.expressionmodel.containercomponent.ContainercomponentFactory.eINSTANCE.createContainer();
-				
-					String body = expressionManager.createContainer(textElement,container);
-					
-					exploreSentence(body,container);
-					model.getListElements().add(container);
-				}else{
-					model.getListElements().add(expressionManager.createIndividualElement(textElement));
-				}
+		for(int i=0;i<elements.length;i++){
+			String textElement = (String) elements[i];
+			String [] rename = textElement.split("is");
+			if(components.containsKey(textElement)){
+				compilator.domain.shapes.Component component  = (compilator.domain.shapes.Component)
+						components.get(textElement); 
+				compilator.domain.expression.expressionmodel.Element e = org.eclipse.emf.ecore.util.
+						EcoreUtil.copy(component.getTheElement());
+				getComponentStyles(e);
+				model.getListElements().add(e);
+				textComponents.add(textElement);
 			}
-			expression.setTheExpressionModel(model);
-			return expression;
+			else if(expressionManager.isContainer(textElement)){
+				compilator.domain.expression.expressionmodel.containercomponent.Container container = 
+						compilator.domain.expression.expressionmodel.containercomponent.
+						ContainercomponentFactory.eINSTANCE.createContainer();
+				String body = expressionManager.createContainer(textElement,container);
+				exploreSentence(body,container);
+				model.getListElements().add(container);
+			}else if(rename.length == 2) {
+				if(components.containsKey(rename[1])){
+					compilator.domain.shapes.Component component  = (compilator.domain.shapes.Component)
+							components.get(rename[1]); 
+					compilator.domain.expression.expressionmodel.Element e = org.eclipse.emf.ecore.util.
+							EcoreUtil.copy(component.getTheElement());
+					getComponentStyles(e);
+					textComponents.add(rename[1]);
+					e.setName(rename[0]);
+					model.getListElements().add(e);
+				}
+			} else {
+				model.getListElements().add(expressionManager.createIndividualElement(textElement));
+			}
+		}
+		expression.setTheExpressionModel(model);
+		return expression;
 	}
 
 	/**

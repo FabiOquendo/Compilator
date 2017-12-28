@@ -45,7 +45,7 @@ import tooldataform.formmodel.concreta.TableView;
 import tooldataform.formmodel.concreta.TextView;
 
 import tooldataform.formmodel.containers.GraphicalContainer;
-
+import tooldataform.styles.domain.Characteristic;
 import tooldataform.styles.domain.Domain;
 import tooldataform.styles.domain.Style;
 
@@ -187,10 +187,11 @@ public class DataFormModelGeneratorImpl extends MinimalEObjectImpl.Container imp
 		
 		tooldataform.styles.domain.Style styleDF = searchStyle(domainStyle, style.getName());
 		domainStyle.getTheStyleFactory().getListStyle().remove(styleDF);
-		
 		styleDF = tooldataform.styles.domain.DomainFactory.eINSTANCE.createStyle();
-		tooldataform.styles.domain.Characteristic characteristicDF = tooldataform.styles.domain.DomainFactory.eINSTANCE.createCharacteristic();
 		styleDF.setName(style.getName());
+		tooldataform.styles.domain.Characteristic characteristicDF = searchCharacteristic(domainStyle, characteristic.getName());
+		domainStyle.getTheCharacteristicFactory().getListCharacteristic().remove(characteristicDF);		
+		characteristicDF = tooldataform.styles.domain.DomainFactory.eINSTANCE.createCharacteristic();
 		characteristicDF.setName(characteristic.getName());
 		EList<styles.domain.Propertie> lisProperties = characteristic.getListProperties();
 		for (int i = 0; i < lisProperties.size(); i++) {
@@ -288,10 +289,11 @@ public class DataFormModelGeneratorImpl extends MinimalEObjectImpl.Container imp
 		
 		tooldataform.styles.domain.Style styleDF = searchStyle(domainStyle, style.getName());
 		domainStyle.getTheStyleFactory().getListStyle().remove(styleDF);
-		
 		styleDF = tooldataform.styles.domain.DomainFactory.eINSTANCE.createStyle();
-		tooldataform.styles.domain.Characteristic characteristicDF = tooldataform.styles.domain.DomainFactory.eINSTANCE.createCharacteristic();
 		styleDF.setName(style.getName());
+		tooldataform.styles.domain.Characteristic characteristicDF = searchCharacteristic(domainStyle, characteristic.getName());
+		domainStyle.getTheCharacteristicFactory().getListCharacteristic().remove(characteristicDF);		
+		characteristicDF = tooldataform.styles.domain.DomainFactory.eINSTANCE.createCharacteristic();
 		characteristicDF.setName(characteristic.getName());
 		EList<styles.domain.Propertie> lisProperties = characteristic.getListProperties();
 		for (int i = 0; i < lisProperties.size(); i++) {
@@ -322,10 +324,11 @@ public class DataFormModelGeneratorImpl extends MinimalEObjectImpl.Container imp
 		
 		tooldataform.styles.domain.Style styleDF = searchStyle(domainStyle, style.getName());
 		domainStyle.getTheStyleFactory().getListStyle().remove(styleDF);
-		
 		styleDF = tooldataform.styles.domain.DomainFactory.eINSTANCE.createStyle();
-		tooldataform.styles.domain.Characteristic characteristicDF = tooldataform.styles.domain.DomainFactory.eINSTANCE.createCharacteristic();
 		styleDF.setName(style.getName());
+		tooldataform.styles.domain.Characteristic characteristicDF = searchCharacteristic(domainStyle, characteristic.getName());
+		domainStyle.getTheCharacteristicFactory().getListCharacteristic().remove(characteristicDF);		
+		characteristicDF = tooldataform.styles.domain.DomainFactory.eINSTANCE.createCharacteristic();
 		characteristicDF.setName(characteristic.getName());
 		EList<styles.domain.Propertie> lisProperties = characteristic.getListProperties();
 		for (int i = 0; i < lisProperties.size(); i++) {
@@ -356,10 +359,11 @@ public class DataFormModelGeneratorImpl extends MinimalEObjectImpl.Container imp
 		
 		tooldataform.styles.domain.Style styleDF = searchStyle(domainStyle, style.getName());
 		domainStyle.getTheStyleFactory().getListStyle().remove(styleDF);
-		
 		styleDF = tooldataform.styles.domain.DomainFactory.eINSTANCE.createStyle();
-		tooldataform.styles.domain.Characteristic characteristicDF = tooldataform.styles.domain.DomainFactory.eINSTANCE.createCharacteristic();
 		styleDF.setName(style.getName());
+		tooldataform.styles.domain.Characteristic characteristicDF = searchCharacteristic(domainStyle, characteristic.getName());
+		domainStyle.getTheCharacteristicFactory().getListCharacteristic().remove(characteristicDF);		
+		characteristicDF = tooldataform.styles.domain.DomainFactory.eINSTANCE.createCharacteristic();
 		characteristicDF.setName(characteristic.getName());
 		EList<styles.domain.Propertie> lisProperties = characteristic.getListProperties();
 		for (int i = 0; i < lisProperties.size(); i++) {
@@ -390,10 +394,11 @@ public class DataFormModelGeneratorImpl extends MinimalEObjectImpl.Container imp
 		
 		tooldataform.styles.domain.Style styleDF = searchStyle(domainStyle, style.getName());
 		domainStyle.getTheStyleFactory().getListStyle().remove(styleDF);
-		
 		styleDF = tooldataform.styles.domain.DomainFactory.eINSTANCE.createStyle();
-		tooldataform.styles.domain.Characteristic characteristicDF = tooldataform.styles.domain.DomainFactory.eINSTANCE.createCharacteristic();
 		styleDF.setName(style.getName());
+		tooldataform.styles.domain.Characteristic characteristicDF = searchCharacteristic(domainStyle, characteristic.getName());
+		domainStyle.getTheCharacteristicFactory().getListCharacteristic().remove(characteristicDF);		
+		characteristicDF = tooldataform.styles.domain.DomainFactory.eINSTANCE.createCharacteristic();
 		characteristicDF.setName(characteristic.getName());
 		EList<styles.domain.Propertie> lisProperties = characteristic.getListProperties();
 		for (int i = 0; i < lisProperties.size(); i++) {
@@ -424,10 +429,11 @@ public class DataFormModelGeneratorImpl extends MinimalEObjectImpl.Container imp
 		
 		tooldataform.styles.domain.Style styleDF = searchStyle(domainStyle, style.getName());
 		domainStyle.getTheStyleFactory().getListStyle().remove(styleDF);
-		
 		styleDF = tooldataform.styles.domain.DomainFactory.eINSTANCE.createStyle();
-		tooldataform.styles.domain.Characteristic characteristicDF = tooldataform.styles.domain.DomainFactory.eINSTANCE.createCharacteristic();
 		styleDF.setName(style.getName());
+		tooldataform.styles.domain.Characteristic characteristicDF = searchCharacteristic(domainStyle, characteristic.getName());
+		domainStyle.getTheCharacteristicFactory().getListCharacteristic().remove(characteristicDF);		
+		characteristicDF = tooldataform.styles.domain.DomainFactory.eINSTANCE.createCharacteristic();
 		characteristicDF.setName(characteristic.getName());
 		EList<styles.domain.Propertie> lisProperties = characteristic.getListProperties();
 		for (int i = 0; i < lisProperties.size(); i++) {
@@ -461,10 +467,11 @@ public class DataFormModelGeneratorImpl extends MinimalEObjectImpl.Container imp
 		
 		tooldataform.styles.domain.Style styleDF = searchStyle(domainStyle, style.getName());
 		domainStyle.getTheStyleFactory().getListStyle().remove(styleDF);
-		
 		styleDF = tooldataform.styles.domain.DomainFactory.eINSTANCE.createStyle();
-		tooldataform.styles.domain.Characteristic characteristicDF = tooldataform.styles.domain.DomainFactory.eINSTANCE.createCharacteristic();
 		styleDF.setName(style.getName());
+		tooldataform.styles.domain.Characteristic characteristicDF = searchCharacteristic(domainStyle, characteristic.getName());
+		domainStyle.getTheCharacteristicFactory().getListCharacteristic().remove(characteristicDF);		
+		characteristicDF = tooldataform.styles.domain.DomainFactory.eINSTANCE.createCharacteristic();
 		characteristicDF.setName(characteristic.getName());
 		EList<styles.domain.Propertie> lisProperties = characteristic.getListProperties();
 		for (int i = 0; i < lisProperties.size(); i++) {
@@ -544,12 +551,21 @@ public class DataFormModelGeneratorImpl extends MinimalEObjectImpl.Container imp
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
-	 */
+	 *///TODO Este y todos los metodos que lo llaman
 	public Style searchStyle(final Domain domain, final String styleName) {
 		EList<tooldataform.styles.domain.Style> lisStyles = domain.getTheStyleFactory().getListStyle();
 		for (int i = 0; i < lisStyles.size(); i++) {
 			if(lisStyles.get(i).getName().equals(styleName))
 				return lisStyles.get(i);
+		}
+		return null;
+	}
+	
+	public Characteristic searchCharacteristic(final Domain domain, final String characteristicName) {
+		EList<tooldataform.styles.domain.Characteristic> listCharacteristics = domain.getTheCharacteristicFactory().getListCharacteristic();
+		for (int i = 0; i < listCharacteristics.size(); i++) {
+			if(listCharacteristics.get(i).getName().equals(characteristicName))
+				return listCharacteristics.get(i);
 		}
 		return null;
 	}

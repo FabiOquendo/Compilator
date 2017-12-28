@@ -248,13 +248,17 @@ String Componente(): {
 }
 {
   LOOKAHEAD(2)
-  aux=Contenedor() {return aux; }|tkn=< CAMPOTEXTO > {ST.put(tkn.image,new SymbolTable("Campo de Texto",tkn.image)); return tkn.image;}|LOOKAHEAD(2) aux=Tabla() { return aux;}|LOOKAHEAD(2) aux=Atributo() { return aux;}|tkn=< COMBOBOX > {ST.put(tkn.image,new SymbolTable("ComboBox",tkn.image)); return tkn.image; }
+  aux=Contenedor() {return aux; }|tkn=< CAMPOTEXTO > {ST.put(tkn.image,new SymbolTable("Campo de Texto",tkn.image)); return tkn.image;}|LOOKAHEAD(2) aux=Tabla() { return aux;}|LOOKAHEAD(2) aux=Renombrar() { return aux;}|LOOKAHEAD(2) aux=Atributo() { return aux;}|tkn=< COMBOBOX > {ST.put(tkn.image,new SymbolTable("ComboBox",tkn.image)); return tkn.image; }
   |tkn=< BOTON > {ST.put(tkn.image,new SymbolTable("Boton",tkn.image));return tkn.image; }|tkn=< LABEL >{ST.put(tkn.image,new SymbolTable("Label",tkn.image));return tkn.image; }
   |tkn=< PATRON > {ST.put(tkn.image,new SymbolTable("Patron",tkn.image));return tkn.image; }|tkn=<IDENTIFICADOR >{if(ST.get(tkn.image)==null) reportarError("la Variabe: "+tkn.image+" No esta declarada previamente");return tkn.image;}
 }
 String Contenedor(): {Token tkn;}
 {
   [tkn=<IDENTIFICADOR >{ST.put(tkn.image,new SymbolTable("Contenedor",tkn.image));}][<ORIENTACION >]"["[ListaComponentes()]"]"[< HIDEBORDER >] { return "contendor";}
+}
+String Renombrar(): { Token tkn; }
+{
+	tkn=<IDENTIFICADOR > {ST.put(tkn.image,new SymbolTable("Renombrar",tkn.image));} < IS > <IDENTIFICADOR > { return "renombrar";}
 }
 String Tabla(): {Token tkn; }
 {

@@ -303,13 +303,16 @@ public class AnalizadorLexico implements AnalizadorLexicoConstants {
           aux = Tabla();
                                                                                                                                                                    {if (true) return aux;}
         } else if (jj_2_5(2)) {
+          aux = Renombrar();
+                                                                                                                                                                                                               {if (true) return aux;}
+        } else if (jj_2_6(2)) {
           aux = Atributo();
-                                                                                                                                                                                                              {if (true) return aux;}
+                                                                                                                                                                                                                                                          {if (true) return aux;}
         } else {
           switch ((jj_ntk==-1)?jj_ntk():jj_ntk) {
           case COMBOBOX:
             tkn = jj_consume_token(COMBOBOX);
-                                                                                                                                                                                                                                             ST.put(tkn.image,new SymbolTable("ComboBox",tkn.image)); {if (true) return tkn.image;}
+                                                                                                                                                                                                                                                                                         ST.put(tkn.image,new SymbolTable("ComboBox",tkn.image)); {if (true) return tkn.image;}
             break;
           case BOTON:
             tkn = jj_consume_token(BOTON);
@@ -383,6 +386,16 @@ public class AnalizadorLexico implements AnalizadorLexicoConstants {
       ;
     }
                                                                                                                                                  {if (true) return "contendor";}
+    throw new Error("Missing return statement in function");
+  }
+
+  static final public String Renombrar() throws ParseException {
+                      Token tkn;
+    tkn = jj_consume_token(IDENTIFICADOR);
+                              ST.put(tkn.image,new SymbolTable("Renombrar",tkn.image));
+    jj_consume_token(IS);
+    jj_consume_token(IDENTIFICADOR);
+                                                                                                                   {if (true) return "renombrar";}
     throw new Error("Missing return statement in function");
   }
 
@@ -544,6 +557,18 @@ public class AnalizadorLexico implements AnalizadorLexicoConstants {
     finally { jj_save(4, xla); }
   }
 
+  static private boolean jj_2_6(int xla) {
+    jj_la = xla; jj_lastpos = jj_scanpos = token;
+    try { return !jj_3_6(); }
+    catch(LookaheadSuccess ls) { return true; }
+    finally { jj_save(5, xla); }
+  }
+
+  static private boolean jj_3R_12() {
+    if (jj_scan_token(COMBOBOX)) return true;
+    return false;
+  }
+
   static private boolean jj_3R_2() {
     if (jj_scan_token(IDENTIFICADOR)) return true;
     if (jj_scan_token(SIMBOLOASIGNACION)) return true;
@@ -556,13 +581,19 @@ public class AnalizadorLexico implements AnalizadorLexicoConstants {
     return false;
   }
 
-  static private boolean jj_3R_9() {
-    if (jj_3R_1()) return true;
+  static private boolean jj_3R_6() {
+    if (jj_scan_token(IDENTIFICADOR)) return true;
     return false;
   }
 
   static private boolean jj_3R_5() {
     if (jj_scan_token(IDENTIFICADOR)) return true;
+    if (jj_scan_token(IS)) return true;
+    return false;
+  }
+
+  static private boolean jj_3R_10() {
+    if (jj_3R_1()) return true;
     return false;
   }
 
@@ -572,7 +603,7 @@ public class AnalizadorLexico implements AnalizadorLexicoConstants {
     return false;
   }
 
-  static private boolean jj_3R_8() {
+  static private boolean jj_3R_9() {
     if (jj_scan_token(IDENTIFICADOR)) return true;
     return false;
   }
@@ -580,12 +611,12 @@ public class AnalizadorLexico implements AnalizadorLexicoConstants {
   static private boolean jj_3R_3() {
     Token xsp;
     xsp = jj_scanpos;
-    if (jj_3R_8()) jj_scanpos = xsp;
+    if (jj_3R_9()) jj_scanpos = xsp;
     xsp = jj_scanpos;
     if (jj_scan_token(6)) jj_scanpos = xsp;
     if (jj_scan_token(43)) return true;
     xsp = jj_scanpos;
-    if (jj_3R_9()) jj_scanpos = xsp;
+    if (jj_3R_10()) jj_scanpos = xsp;
     if (jj_scan_token(44)) return true;
     return false;
   }
@@ -595,22 +626,22 @@ public class AnalizadorLexico implements AnalizadorLexicoConstants {
     return false;
   }
 
-  static private boolean jj_3R_7() {
+  static private boolean jj_3R_8() {
     if (jj_scan_token(SEPARADOR)) return true;
     return false;
   }
 
-  static private boolean jj_3R_14() {
+  static private boolean jj_3R_15() {
     if (jj_scan_token(PATRON)) return true;
     return false;
   }
 
-  static private boolean jj_3R_12() {
+  static private boolean jj_3R_13() {
     if (jj_scan_token(BOTON)) return true;
     return false;
   }
 
-  static private boolean jj_3R_15() {
+  static private boolean jj_3R_16() {
     if (jj_scan_token(IDENTIFICADOR)) return true;
     return false;
   }
@@ -620,18 +651,18 @@ public class AnalizadorLexico implements AnalizadorLexicoConstants {
     return false;
   }
 
-  static private boolean jj_3R_6() {
+  static private boolean jj_3R_7() {
     Token xsp;
     xsp = jj_scanpos;
     if (jj_3_3()) {
     jj_scanpos = xsp;
-    if (jj_3R_10()) {
+    if (jj_3R_11()) {
     jj_scanpos = xsp;
     if (jj_3_4()) {
     jj_scanpos = xsp;
     if (jj_3_5()) {
     jj_scanpos = xsp;
-    if (jj_3R_11()) {
+    if (jj_3_6()) {
     jj_scanpos = xsp;
     if (jj_3R_12()) {
     jj_scanpos = xsp;
@@ -639,7 +670,10 @@ public class AnalizadorLexico implements AnalizadorLexicoConstants {
     jj_scanpos = xsp;
     if (jj_3R_14()) {
     jj_scanpos = xsp;
-    if (jj_3R_15()) return true;
+    if (jj_3R_15()) {
+    jj_scanpos = xsp;
+    if (jj_3R_16()) return true;
+    }
     }
     }
     }
@@ -651,7 +685,7 @@ public class AnalizadorLexico implements AnalizadorLexicoConstants {
     return false;
   }
 
-  static private boolean jj_3R_13() {
+  static private boolean jj_3R_14() {
     if (jj_scan_token(LABEL)) return true;
     return false;
   }
@@ -662,10 +696,10 @@ public class AnalizadorLexico implements AnalizadorLexicoConstants {
   }
 
   static private boolean jj_3R_1() {
-    if (jj_3R_6()) return true;
+    if (jj_3R_7()) return true;
     Token xsp;
     xsp = jj_scanpos;
-    if (jj_3R_7()) jj_scanpos = xsp;
+    if (jj_3R_8()) jj_scanpos = xsp;
     return false;
   }
 
@@ -674,13 +708,13 @@ public class AnalizadorLexico implements AnalizadorLexicoConstants {
     return false;
   }
 
-  static private boolean jj_3R_10() {
+  static private boolean jj_3R_11() {
     if (jj_scan_token(CAMPOTEXTO)) return true;
     return false;
   }
 
-  static private boolean jj_3R_11() {
-    if (jj_scan_token(COMBOBOX)) return true;
+  static private boolean jj_3_6() {
+    if (jj_3R_6()) return true;
     return false;
   }
 
@@ -709,7 +743,7 @@ public class AnalizadorLexico implements AnalizadorLexicoConstants {
    private static void jj_la1_init_1() {
       jj_la1_1 = new int[] {0x800,0x800,0x800,0x800,0x0,0x0,0x800,0x0,0x0,0x0,0x0,0x0,0x800,0x10,0x0,0x3,0x8,};
    }
-  static final private JJCalls[] jj_2_rtns = new JJCalls[5];
+  static final private JJCalls[] jj_2_rtns = new JJCalls[6];
   static private boolean jj_rescan = false;
   static private int jj_gc = 0;
 
@@ -958,7 +992,7 @@ public class AnalizadorLexico implements AnalizadorLexicoConstants {
 
   static private void jj_rescan_token() {
     jj_rescan = true;
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < 6; i++) {
     try {
       JJCalls p = jj_2_rtns[i];
       do {
@@ -970,6 +1004,7 @@ public class AnalizadorLexico implements AnalizadorLexicoConstants {
             case 2: jj_3_3(); break;
             case 3: jj_3_4(); break;
             case 4: jj_3_5(); break;
+            case 5: jj_3_6(); break;
           }
         }
         p = p.next;

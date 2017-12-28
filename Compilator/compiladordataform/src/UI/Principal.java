@@ -38,7 +38,6 @@ import compilator.domain.expression.Expression;
 import compilator.domain.expression.expressionmodel.Element;
 import compilator.domain.expression.expressionmodel.ExpressionModel;
 import compilator.domain.expression.expressionmodel.containercomponent.Container;
-import compilator.domain.expression.sentence.Sentence;
 import compilator.domain.shapes.Component;
 import compilator.domain.shapes.Shapes;
 import compilator.ui.ComponentsContainer;
@@ -1030,6 +1029,11 @@ public class Principal extends ViewPart {
 			for (int i = 0; i < t.getListColumn().size(); i++) {
 				setMinStyle(style, t.getListColumn().get(i));
 			}
+		} else if (element instanceof compilator.domain.expression.expressionmodel.individualcomponent.Attribute) {
+			compilator.domain.expression.expressionmodel.individualcomponent.Attribute a = (compilator.domain.expression.expressionmodel.individualcomponent.Attribute) element;
+			setMinStyle(style, a.getTheLabel());
+			setMinStyle(style, a.getTheTextField());
+			
 		} else if (element instanceof compilator.domain.expression.expressionmodel.individualcomponent.Button) {
 			element.setTheStyle(style);
 		} else if (element instanceof compilator.domain.expression.expressionmodel.individualcomponent.Column) {

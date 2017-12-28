@@ -2265,24 +2265,6 @@
 						line_color 	3342489
 						fill_color 	13434879
 						quidu      	"5995F40A0149"
-						compartment 	(object Compartment
-						    Parent_View 	@68
-						    location   	(1245, 791)
-						    font       	(object Font
-							size       	10
-							face       	"Arial"
-							bold       	FALSE
-							italics    	FALSE
-							underline  	FALSE
-							strike     	FALSE
-							color      	0
-							default_color 	TRUE)
-						    icon_style 	"Icon"
-						    fill_color 	16777215
-						    anchor     	2
-						    nlines     	2
-						    max_width  	291
-						    justify    	1)
 						width      	312
 						height     	186
 						annotation 	8
@@ -2313,24 +2295,6 @@
 						line_color 	3342489
 						fill_color 	13434879
 						quidu      	"59A0A13703AC"
-						compartment 	(object Compartment
-						    Parent_View 	@69
-						    location   	(1751, 1173)
-						    font       	(object Font
-							size       	10
-							face       	"Arial"
-							bold       	FALSE
-							italics    	FALSE
-							underline  	FALSE
-							strike     	FALSE
-							color      	0
-							default_color 	TRUE)
-						    icon_style 	"Icon"
-						    fill_color 	16777215
-						    anchor     	2
-						    nlines     	4
-						    max_width  	584
-						    justify    	1)
 						width      	606
 						height     	332
 						annotation 	8
@@ -3896,32 +3860,40 @@
 						concurrency 	"Sequential"
 						semantics  	(object Semantic_Info
 						    PDL        	
-|	java.lang.Object [] elements = expressionManager.split(s).toArray();
-|	
-|	for(int i=0;i<elements.length;i++){
-|		
-|		String textElement =  (String)elements[i];
-|		
-|		if(components.containsKey(textElement)){
-|			
-|			compilator.domain.shapes.Component component  = (compilator.domain.shapes.Component)components.get(textElement); 
-|			compilator.domain.expression.expressionmodel.Element e = org.eclipse.emf.ecore.util.EcoreUtil.copy(component.getTheElement());
-|			//TODO
+|java.lang.Object [] elements = expressionManager.split(s).toArray();
+|for(int i=0;i<elements.length;i++){	
+|	String textElement =  (String)elements[i];
+|	String [] rename = textElement.split("is");
+|	if(rename.length == 2) {
+|		if(components.containsKey(rename[1])){
+|			compilator.domain.shapes.Component component  = (compilator.domain.shapes.Component)
+|					components.get(rename[1]); 
+|			compilator.domain.expression.expressionmodel.Element e = org.eclipse.emf.ecore.util.
+|					EcoreUtil.copy(component.getTheElement());
 |			getComponentStyles(e);
-|			textComponents.add(textElement);
+|			textComponents.add(rename[1]);
+|			e.setName(rename[0]);
 |			parent.getListElements().add(e);
 |		}
-|		else if(expressionManager.isContainer(textElement)){
-|			
-|			compilator.domain.expression.expressionmodel.containercomponent.Container container = compilator.domain.expression.expressionmodel.containercomponent.ContainercomponentFactory.eINSTANCE.createContainer();
-|			String body = expressionManager.createContainer(textElement,container);
-|			exploreSentence(body,container);
-|			parent.getListElements().add(container);
-|		
-|		}else{
-|			parent.getListElements().add(expressionManager.createIndividualElement(textElement));
-|		}
+|	} else if(components.containsKey(textElement)){
+|		compilator.domain.shapes.Component component  = (compilator.domain.shapes.Component)
+|				components.get(textElement); 
+|		compilator.domain.expression.expressionmodel.Element e = org.eclipse.emf.ecore.util.
+|				EcoreUtil.copy(component.getTheElement());
+|		getComponentStyles(e);
+|		textComponents.add(textElement);
+|		parent.getListElements().add(e);
+|	} else if(expressionManager.isContainer(textElement)){
+|		compilator.domain.expression.expressionmodel.containercomponent.Container container = 
+|				compilator.domain.expression.expressionmodel.containercomponent.
+|				ContainercomponentFactory.eINSTANCE.createContainer();
+|		String body = expressionManager.createContainer(textElement,container);
+|		exploreSentence(body,container);
+|		parent.getListElements().add(container);
+|	}else{
+|		parent.getListElements().add(expressionManager.createIndividualElement(textElement));
 |	}
+|}
 						    )
 						opExportControl 	"Public"
 						uid        	0)
@@ -3938,54 +3910,54 @@
 						concurrency 	"Sequential"
 						semantics  	(object Semantic_Info
 						    PDL        	
-|	textComponents = new TreeSet<String>();
-|	
-|	componentsStyles = new TreeMap<String, TreeSet<String>>();
-|	
-|	compilator.domain.expression.Expression expression = compilator.domain.expression.ExpressionFactory.eINSTANCE.createExpression();
-|	
-|	compilator.domain.expression.sentence.Sentence sentence = compilator.domain.expression.sentence.SentenceFactory.eINSTANCE.createSentence();
-|	
-|	compilator.domain.expression.expressionmodel.ExpressionModel model = compilator.domain.expression.expressionmodel.ExpressionmodelFactory.eINSTANCE.createExpressionModel();
-|	
-|	sentence.setCompressedSentence(unformatedSentence);
-|	
-|	expression.setTheSentence(sentence);
-|	
-|	java.lang.Object [] elements = expressionManager.split(formatedSentence).toArray();
-|	
-|	
-|	for(int i=0;i<elements.length;i++){
-|		
-|		String textElement = (String) elements[i];
-|		
-|		if(components.containsKey(textElement)){
-|			
-|			compilator.domain.shapes.Component component  = (compilator.domain.shapes.Component)components.get(textElement); 
-|			
-|			compilator.domain.expression.expressionmodel.Element e = org.eclipse.emf.ecore.util.EcoreUtil.copy(component.getTheElement());
+|textComponents = new TreeSet<String>();
+|componentsStyles = new TreeMap<String, TreeSet<String>>();
+|compilator.domain.expression.Expression expression = compilator.domain.expression.ExpressionFactory.
+|		eINSTANCE.createExpression();
+|compilator.domain.expression.sentence.Sentence sentence = compilator.domain.expression.sentence.
+|		SentenceFactory.eINSTANCE.createSentence();
+|compilator.domain.expression.expressionmodel.ExpressionModel model = compilator.domain.expression.
+|		expressionmodel.ExpressionmodelFactory.eINSTANCE.createExpressionModel();
+|sentence.setCompressedSentence(unformatedSentence);
+|expression.setTheSentence(sentence);
+|java.lang.Object [] elements = expressionManager.split(formatedSentence).toArray();
 |
-|			getComponentStyles(e);
-|			
-|			model.getListElements().add(e);
-|			
-|			textComponents.add(textElement);
-|			
-|		}
-|		else if(expressionManager.isContainer(textElement)){
-|			
-|			compilator.domain.expression.expressionmodel.containercomponent.Container container = compilator.domain.expression.expressionmodel.containercomponent.ContainercomponentFactory.eINSTANCE.createContainer();
-|		
-|			String body = expressionManager.createContainer(textElement,container);
-|			
-|			exploreSentence(body,container);
-|			model.getListElements().add(container);
-|		}else{
-|			model.getListElements().add(expressionManager.createIndividualElement(textElement));
-|		}
+|for(int i=0;i<elements.length;i++){
+|	String textElement = (String) elements[i];
+|	String [] rename = textElement.split("is");
+|	if(components.containsKey(textElement)){
+|		compilator.domain.shapes.Component component  = (compilator.domain.shapes.Component)
+|				components.get(textElement); 
+|		compilator.domain.expression.expressionmodel.Element e = org.eclipse.emf.ecore.util.
+|				EcoreUtil.copy(component.getTheElement());
+|		getComponentStyles(e);
+|		model.getListElements().add(e);
+|		textComponents.add(textElement);
 |	}
-|	expression.setTheExpressionModel(model);
-|	return expression;
+|	else if(expressionManager.isContainer(textElement)){
+|		compilator.domain.expression.expressionmodel.containercomponent.Container container = 
+|				compilator.domain.expression.expressionmodel.containercomponent.
+|				ContainercomponentFactory.eINSTANCE.createContainer();
+|		String body = expressionManager.createContainer(textElement,container);
+|		exploreSentence(body,container);
+|		model.getListElements().add(container);
+|	}else if(rename.length == 2) {
+|		if(components.containsKey(rename[1])){
+|			compilator.domain.shapes.Component component  = (compilator.domain.shapes.Component)
+|					components.get(rename[1]); 
+|			compilator.domain.expression.expressionmodel.Element e = org.eclipse.emf.ecore.util.
+|					EcoreUtil.copy(component.getTheElement());
+|			getComponentStyles(e);
+|			textComponents.add(rename[1]);
+|			e.setName(rename[0]);
+|			model.getListElements().add(e);
+|		}
+|	} else {
+|		model.getListElements().add(expressionManager.createIndividualElement(textElement));
+|	}
+|}
+|expression.setTheExpressionModel(model);
+|return expression;
 						    )
 						opExportControl 	"Public"
 						uid        	0
@@ -4470,7 +4442,7 @@
 						    fill_color 	16777215
 						    anchor     	2
 						    nlines     	18
-						    max_width  	812
+						    max_width  	806
 						    justify    	1)
 						width      	828
 						height     	986
@@ -4566,21 +4538,21 @@
 						    fill_color 	16777215
 						    anchor     	2
 						    nlines     	11
-						    max_width  	503
+						    max_width  	509
 						    justify    	1)
 						width      	524
 						height     	636
 						annotation 	8
 						autoResize 	TRUE)
 					    (object AssociationViewNew "$UNNAMED$34" @122
-						location   	(2043, 813)
+						location   	(2042, 813)
 						stereotype 	TRUE
 						line_color 	3342489
 						quidu      	"59BA9E0B038D"
 						roleview_list 	(list RoleViews
 						    (object RoleView "expressionGenerator" @123
 							Parent_View 	@122
-							location   	(831, 355)
+							location   	(830, 355)
 							font       	(object Font
 							    size       	10
 							    face       	"Arial"
@@ -4617,11 +4589,11 @@
 							client     	@122
 							supplier   	@119
 							vertices   	(list Points
-							    (2043, 813)
+							    (2042, 813)
 							    (2219, 813)
 							    (2219, 995))
 							line_style 	3
-							origin_attachment 	(2043, 813)
+							origin_attachment 	(2042, 813)
 							terminal_attachment 	(2219, 995)
 							label      	(object SegLabel @125
 							    Parent_View 	@123
@@ -4646,7 +4618,7 @@
 							    orientation 	1))
 						    (object RoleView "expressionManager" @126
 							Parent_View 	@122
-							location   	(831, 355)
+							location   	(830, 355)
 							font       	(object Font
 							    size       	10
 							    face       	"Arial"
@@ -4658,7 +4630,7 @@
 							    default_color 	TRUE)
 							label      	(object SegLabel @127
 							    Parent_View 	@126
-							    location   	(2019, 765)
+							    location   	(2018, 765)
 							    font       	(object Font
 								size       	10
 								face       	"Arial"
@@ -4683,14 +4655,14 @@
 							client     	@122
 							supplier   	@121
 							vertices   	(list Points
-							    (2043, 813)
+							    (2042, 813)
 							    (1684, 813))
 							line_style 	3
-							origin_attachment 	(2043, 813)
+							origin_attachment 	(2042, 813)
 							terminal_attachment 	(1684, 813)
 							label      	(object SegLabel @128
 							    Parent_View 	@126
-							    location   	(1721, 867)
+							    location   	(1720, 867)
 							    font       	(object Font
 								size       	10
 								face       	"Arial"
@@ -5173,11 +5145,11 @@
 						supplier   	@140
 						vertices   	(list Points
 						    (2339, 1466)
-						    (2339, 981)
-						    (1910, 981))
+						    (2339, 980)
+						    (1910, 980))
 						line_style 	3
 						origin_attachment 	(2339, 1466)
-						terminal_attachment 	(1910, 981))))
+						terminal_attachment 	(1910, 980))))
 				    (object ClassView "Class" "Logical View::Compilator::domain::Log" @148
 					ShowCompartmentStereotypes 	TRUE
 					IncludeAttribute 	TRUE

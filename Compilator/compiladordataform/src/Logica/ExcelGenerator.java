@@ -122,6 +122,10 @@ public class ExcelGenerator {
 		Row row = sheet.getRow(calculateR1(genLabel.getTheY().getValue())+r);
 	    Cell cell = row.createCell(calculateR1(genLabel.getTheX().getValue())+c);
 	    cell.setCellValue(genLabel.getTheLabel().getName());
+	    
+	    CellStyle borderStyle = wb.createCellStyle();
+	    cell.setCellStyle(borderStyle);
+	    
 	    CellRangeAddress region = CellRangeAddress.valueOf(getColumnLetters(calculateR1(genLabel.getTheX().getValue())+c)+
 	    		(calculateR1(genLabel.getTheY().getValue())+1+r)+":"+
 	    		getColumnLetters(calculateR2(genLabel.getTheX().getValue(),genLabel.getTheWidth().getValue())+c)+
@@ -285,7 +289,7 @@ public class ExcelGenerator {
 		cell.setCellStyle(cellStyle);
 	}
 	
-	//TODO No funciona
+
 	public void changeAlignment(Workbook wb, Cell cell, String alignment) {
 		CellStyle cellStyle = cell.getCellStyle();
 		if(cellStyle == null) 
