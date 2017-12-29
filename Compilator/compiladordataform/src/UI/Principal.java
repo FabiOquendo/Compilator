@@ -21,6 +21,9 @@ import org.eclipse.jface.action.Separator;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
+import org.eclipse.ui.IWorkbenchPage;
+import org.eclipse.ui.IWorkbenchWindow;
+import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.part.ViewPart;
 import org.eclipse.wb.swt.ResourceManager;
@@ -178,14 +181,10 @@ public class Principal extends ViewPart {
 		project = mfToolDataform.getListProyecto().get(0);
 		
 		mfExpressions.getTheDomainCompilator().getTheLog().getListExpressions().clear();
-		mfExpressions.getTheDomainCompilator().getTheExpression().getTheSentence().setCompressedSentence("");
-		mfExpressions.getTheDomainCompilator().getTheExpression().getTheSentence().setFullSentence("");
-		mfExpressions.getTheDomainCompilator().getTheExpression().getTheExpressionModel().getListElements().clear();
 		mfExpressions.saveExpression();
 
 		loadExpressionContainer();
 		loadComponentsContainer();
-
 	}
 
 	public void loadComponentsContainer() {
@@ -537,6 +536,8 @@ public class Principal extends ViewPart {
 		btnGenerateGenModel.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
+				//Cerrar otros editores
+				closeEditors();
 				// TODO Ajuste de tamaño de fuente de las propiedades automatico
 				Shell shell = new Shell();
 				SetFontDialog dialog = new SetFontDialog(shell, true, 12, 1, false);
@@ -1065,6 +1066,8 @@ public class Principal extends ViewPart {
 				.createDataFormModelGenerator();
 		tooldataform.styles.domain.Domain domainStyle = project.getTheDomainStyles();
 		mfToolDataform.getListProyecto().get(0).getListDiagram().clear();
+		domainStyle.getTheStyleFactory().getListStyle().clear();
+		domainStyle.getTheCharacteristicFactory().getListCharacteristic().clear();
 		DataForm_Diagram dataformDiagram = dataFormModelGenerator.createDataFormModel(domainStyle, genModel);
 
 		setBoundsGraphicalContainer(dataformDiagram.getTheInterface(), 10, 10,
@@ -1311,5 +1314,11 @@ public class Principal extends ViewPart {
 		} catch (java.io.IOException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public void closeEditors() {
+		IWorkbenchWindow workbenchWindow = PlatformUI.getWorkbench().getActiveWorkbenchWindow();
+		IWorkbenchPage page = workbenchWindow.getActivePage();
+		page.closeAllEditors(true);
 	}
 }
