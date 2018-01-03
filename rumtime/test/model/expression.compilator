@@ -2,27 +2,18 @@
 <compilator:ModelFactory xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:compilator="http:///compilator.ecore" xmlns:compilator.domain.expression.expressionmodel.containercomponent="http:///compilator/domain/expression/expressionmodel/containercomponent.ecore" xmlns:compilator.domain.expression.expressionmodel.individualcomponent="http:///compilator/domain/expression/expressionmodel/individualcomponent.ecore">
   <theDomainCompilator theUI="//@theUI">
     <theExpression>
-      <theSentence compressedSentence="Fabio-|[Origen,Destino]" fullSentence="Fabio-|[Origen,Destino]"/>
+      <theSentence compressedSentence="Viaje-|[Vuelo-|[Origen,Destino]]" fullSentence="Viaje-|[Vuelo-|[Origen,Destino]];" textStyles=""/>
       <theExpressionModel>
-        <listElements xsi:type="compilator.domain.expression.expressionmodel.containercomponent:Container" name="Fabio" orientation="-|" isVisible="true">
-          <theStyle href="styles.styles#//@theDomainStyles/@theStyleFactory/@listStyle.1"/>
-          <listElements xsi:type="compilator.domain.expression.expressionmodel.individualcomponent:Attribute" name="Origen">
-            <theStyle href="styles.styles#//@theDomainStyles/@theStyleFactory/@listStyle.0"/>
-            <theTextField name="Origen">
-              <theStyle href="styles.styles#//@theDomainStyles/@theStyleFactory/@listStyle.0"/>
-            </theTextField>
-            <theLabel name="Origen">
-              <theStyle href="styles.styles#//@theDomainStyles/@theStyleFactory/@listStyle.0"/>
-            </theLabel>
-          </listElements>
-          <listElements xsi:type="compilator.domain.expression.expressionmodel.individualcomponent:Attribute" name="Destino">
-            <theStyle href="styles.styles#//@theDomainStyles/@theStyleFactory/@listStyle.0"/>
-            <theTextField name="Destino">
-              <theStyle href="styles.styles#//@theDomainStyles/@theStyleFactory/@listStyle.0"/>
-            </theTextField>
-            <theLabel name="Destino">
-              <theStyle href="styles.styles#//@theDomainStyles/@theStyleFactory/@listStyle.0"/>
-            </theLabel>
+        <listElements xsi:type="compilator.domain.expression.expressionmodel.containercomponent:Container" name="Viaje" orientation="-|" isVisible="true">
+          <listElements xsi:type="compilator.domain.expression.expressionmodel.containercomponent:Container" name="Vuelo" orientation="-|" isVisible="true">
+            <listElements xsi:type="compilator.domain.expression.expressionmodel.individualcomponent:Attribute" name="Origen">
+              <theTextField name="Origen"/>
+              <theLabel name="Origen"/>
+            </listElements>
+            <listElements xsi:type="compilator.domain.expression.expressionmodel.individualcomponent:Attribute" name="Destino">
+              <theTextField name="Destino"/>
+              <theLabel name="Destino"/>
+            </listElements>
           </listElements>
         </listElements>
       </theExpressionModel>

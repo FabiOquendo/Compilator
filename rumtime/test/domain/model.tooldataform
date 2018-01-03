@@ -2,12 +2,14 @@
 <tooldataform:ModelFactory xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tooldataform="http:///tooldataform.ecore" xmlns:tooldataform.formmodel.concreta="http:///tooldataform/formmodel/concreta.ecore">
   <listProyecto>
     <listDiagram xsi:type="tooldataform.formmodel.concreta:DataForm_Diagram" name="model.tooldataform_diagram">
-      <theInterface name="Dataform Diagram" positionX="10" positionY="10" width="245" height="235">
-        <listGraphicalContainer xsi:type="tooldataform.formmodel.concreta:Container" name="Fabio" theStyle="//@listProyecto.0/@theDomainStyles/@theStyleFactory/@listStyle.0" positionX="0" positionY="0" width="225" height="135">
-          <listIndividualElementDataForm xsi:type="tooldataform.formmodel.concreta:LabelView" name="Origen" positionX="10" positionY="10" width="80" height="20" theStyle="//@listProyecto.0/@theDomainStyles/@theStyleFactory/@listStyle.1"/>
-          <listIndividualElementDataForm xsi:type="tooldataform.formmodel.concreta:TextView" name="Origen" positionX="95" positionY="10" width="120" height="20" theStyle="//@listProyecto.0/@theDomainStyles/@theStyleFactory/@listStyle.1"/>
-          <listIndividualElementDataForm xsi:type="tooldataform.formmodel.concreta:LabelView" name="Destino" positionX="10" positionY="40" width="80" height="20" theStyle="//@listProyecto.0/@theDomainStyles/@theStyleFactory/@listStyle.1"/>
-          <listIndividualElementDataForm xsi:type="tooldataform.formmodel.concreta:TextView" name="Destino" positionX="95" positionY="40" width="120" height="20" theStyle="//@listProyecto.0/@theDomainStyles/@theStyleFactory/@listStyle.1"/>
+      <theInterface name="Dataform Diagram" positionX="10" positionY="10" width="265" height="342">
+        <listGraphicalContainer xsi:type="tooldataform.formmodel.concreta:Container" name="Viaje" theStyle="//@listProyecto.0/@theDomainStyles/@theStyleFactory/@listStyle.0" positionX="0" positionY="0" width="245" height="242">
+          <listGraphicalContainer xsi:type="tooldataform.formmodel.concreta:Container" name="Vuelo" theStyle="//@listProyecto.0/@theDomainStyles/@theStyleFactory/@listStyle.1" positionX="10" positionY="10" width="225" height="135">
+            <listIndividualElementDataForm xsi:type="tooldataform.formmodel.concreta:LabelView" name="Origen" positionX="10" positionY="10" width="80" height="20" theStyle="//@listProyecto.0/@theDomainStyles/@theStyleFactory/@listStyle.2"/>
+            <listIndividualElementDataForm xsi:type="tooldataform.formmodel.concreta:TextView" name="Origen" positionX="95" positionY="10" width="120" height="20" theStyle="//@listProyecto.0/@theDomainStyles/@theStyleFactory/@listStyle.2"/>
+            <listIndividualElementDataForm xsi:type="tooldataform.formmodel.concreta:LabelView" name="Destino" positionX="10" positionY="40" width="80" height="20" theStyle="//@listProyecto.0/@theDomainStyles/@theStyleFactory/@listStyle.2"/>
+            <listIndividualElementDataForm xsi:type="tooldataform.formmodel.concreta:TextView" name="Destino" positionX="95" positionY="40" width="120" height="20" theStyle="//@listProyecto.0/@theDomainStyles/@theStyleFactory/@listStyle.2"/>
+          </listGraphicalContainer>
         </listGraphicalContainer>
       </theInterface>
     </listDiagram>
@@ -15,13 +17,18 @@
       <theStyleFactory>
         <listStyle name="Titulo 1" theCharacteristic="//@listProyecto.0/@theDomainStyles/@theCharacteristicFactory/@listCharacteristic.0"/>
         <listStyle name="Titulo 2" theCharacteristic="//@listProyecto.0/@theDomainStyles/@theCharacteristicFactory/@listCharacteristic.1"/>
+        <listStyle name="Titulo 3" theCharacteristic="//@listProyecto.0/@theDomainStyles/@theCharacteristicFactory/@listCharacteristic.2"/>
       </theStyleFactory>
       <theCharacteristicFactory>
         <listCharacteristic name="C1" theSytle="//@listProyecto.0/@theDomainStyles/@theStyleFactory/@listStyle.0">
-          <listProperties name="Font Size" value="13"/>
+          <listProperties name="Font Size" value="14"/>
           <listProperties name="Orientation" value="-|"/>
         </listCharacteristic>
         <listCharacteristic name="C2" theSytle="//@listProyecto.0/@theDomainStyles/@theStyleFactory/@listStyle.1">
+          <listProperties name="Font Size" value="13"/>
+          <listProperties name="Orientation" value="-|"/>
+        </listCharacteristic>
+        <listCharacteristic name="C3" theSytle="//@listProyecto.0/@theDomainStyles/@theStyleFactory/@listStyle.2">
           <listProperties name="Font Size" value="12"/>
           <listProperties name="Font Size" value="12"/>
           <listProperties name="Font Size" value="12"/>

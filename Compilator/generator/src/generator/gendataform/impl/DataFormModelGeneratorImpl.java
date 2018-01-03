@@ -47,7 +47,6 @@ import tooldataform.formmodel.concreta.TextView;
 import tooldataform.formmodel.containers.GraphicalContainer;
 import tooldataform.styles.domain.Characteristic;
 import tooldataform.styles.domain.Domain;
-import tooldataform.styles.domain.Propertie;
 import tooldataform.styles.domain.Style;
 
 /**

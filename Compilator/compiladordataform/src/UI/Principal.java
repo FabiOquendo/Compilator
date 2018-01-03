@@ -31,6 +31,7 @@ import org.eclipse.wb.swt.SWTResourceManager;
 
 import Logica.AnalizadorLexico;
 import Logica.ExcelGenerator;
+import Logica.GenModelGenerator;
 import Logica.ParseException;
 import Logica.StringTools;
 import Logica.SymbolTable;
@@ -346,7 +347,9 @@ public class Principal extends ViewPart {
 		btnExpand.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				// TODO
+				txtNormalExpression.setText(stringTool.addLabelsToTexts(txtNormalExpression.getText()));
+				txtNormalExpression.setText(stringTool.addLabelsToCombos(txtNormalExpression.getText()));
+				txtExpandedExpression.setText(unPackExpression());
 			}
 		});
 		btnExpand.setBounds(90, 160, 60, 40);
@@ -565,7 +568,7 @@ public class Principal extends ViewPart {
 				}
 			}
 		});
-		btnGenerateGenModel.setBounds(299, 758, 200, 30);
+		btnGenerateGenModel.setBounds(300, 758, 200, 30);
 
 		Button btnSaveComponent = toolkit.createButton(container, "Guardar Componente", SWT.NONE);
 		btnSaveComponent.setFont(SWTResourceManager.getFont("Yu Gothic UI Light", 12, SWT.NORMAL));
@@ -576,6 +579,16 @@ public class Principal extends ViewPart {
 			}
 		});
 		btnSaveComponent.setBounds(600, 758, 200, 30);
+		
+		Button btnGenerateGenModelFromDF = toolkit.createButton(container, "GenModel from DF", SWT.NONE);
+		btnGenerateGenModelFromDF.setFont(SWTResourceManager.getFont("Yu Gothic UI Light", 12, SWT.NORMAL));
+		btnGenerateGenModelFromDF.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				GenModelGenerator generator = new GenModelGenerator();
+			}
+		});
+		btnGenerateGenModelFromDF.setBounds(900, 758, 200, 30);
 
 		scrolledComposite.setContent(container);
 		scrolledComposite.setMinSize(container.computeSize(SWT.DEFAULT, SWT.DEFAULT));
@@ -971,52 +984,7 @@ public class Principal extends ViewPart {
 		menuMgr.add(new Separator("adittions"));
 	}
 
-	public void createGenModel() {
 
-		try {
-			compile();
-
-			boolean f = expressionContainer.createEModelFromUnpackedExpression(expressionString, tokens, components,
-					elementStyles);
-			if (!f) {
-				JOptionPane.showMessageDialog(null, "No se puedo generar el modelo");
-			}
-
-			generatorGenModel = generatorGenModel.loadGenModel();
-			ExpressionModel expressionModel = modelFactoryModel.getMfExpressions().getTheDomainCompilator()
-					.getTheExpression().getTheExpressionModel();
-			Container container = (Container) expressionModel.getListElements().get(0);
-			addStyleElement(1, container);
-			createCharacteristic();
-			Style style = searchMinStyle();
-			setMinStyle(style, container);
-			modelFactoryModel.saveExpressionsModel();
-			generatorGenModel.createGenModel(expressionModel);
-			generatorGenModel.saveGenModel();
-
-			createDataformDiagram(generatorGenModel.getTheGenModel());
-
-			DataFormDiagramGenerator dataFormDiagramGenerator = generator.gendataform.GendataformFactory.eINSTANCE
-					.createDataFormDiagramGenerator();
-			dataFormDiagramGenerator.DataformDiagramGenerator(mfToolDataform);
-
-			dataFormDiagramGenerator.generateDiagram();
-			
-			ExcelGenerator excelGenerator = new ExcelGenerator(generatorGenModel.getTheGenModel());
-			try {
-				excelGenerator.createExcel();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-
-		} catch (TokenMgrError te) {
-			String error = "Error\n" + te.getMessage();
-			txtConsole.setText(error);
-		} catch (ParseException ex) {
-			txtConsole.setText(analizadorLexico.getResultado());
-		}
-	}
 
 	private void setMinStyle(Style style, Element element) {
 		// TODO Auto-generated method stub
@@ -1169,15 +1137,60 @@ public class Principal extends ViewPart {
 		initLithographicStyle();
 	}
 
-	public void unPackExpression() {
+	public String unPackExpression() {
+		try {
+			if(compile())
+				return expressionContainer.createExpressionModel(expressionString,
+						tokens, components, elementStyles);
+		} catch (TokenMgrError te) {
+			String error = "Error\n" + te.getMessage();
+			txtConsole.setText(error);
+		} catch (ParseException ex) {
+			txtConsole.setText(analizadorLexico.getResultado());
+		}
+		return null;
+	}
+	
+	public void createGenModel() {
 
 		try {
-			compile();
+			if(!compile())
+				return;
+			else
+				if(!expressionContainer.createEModelFromUnpackedExpression(expressionString, 
+						tokens, components, elementStyles)){
+					JOptionPane.showMessageDialog(null, "No se puedo generar el modelo porque la expresion esta mal formada",
+						null, JOptionPane.ERROR_MESSAGE);
+					return;
+				}
 
-			String fullExpression = expressionContainer.createExpressionModel(expressionString, tokens, components,
-					elementStyles);
-			txtNormalExpression.setText(fullExpression);
-			// txtEstilosComp.setText(styles);
+			generatorGenModel = generatorGenModel.loadGenModel();
+			ExpressionModel expressionModel = modelFactoryModel.getMfExpressions().getTheDomainCompilator()
+					.getTheExpression().getTheExpressionModel();
+			Container container = (Container) expressionModel.getListElements().get(0);
+			addStyleElement(1, container);
+			createCharacteristic();
+			Style style = searchMinStyle();
+			setMinStyle(style, container);
+			modelFactoryModel.saveExpressionsModel();
+			generatorGenModel.createGenModel(expressionModel);
+			generatorGenModel.saveGenModel();
+
+			createDataformDiagram(generatorGenModel.getTheGenModel());
+
+			DataFormDiagramGenerator dataFormDiagramGenerator = generator.gendataform.GendataformFactory.eINSTANCE
+					.createDataFormDiagramGenerator();
+			dataFormDiagramGenerator.DataformDiagramGenerator(mfToolDataform);
+
+			dataFormDiagramGenerator.generateDiagram();
+			
+			ExcelGenerator excelGenerator = new ExcelGenerator(generatorGenModel.getTheGenModel());
+			try {
+				excelGenerator.createExcel();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+
 		} catch (TokenMgrError te) {
 			String error = "Error\n" + te.getMessage();
 			txtConsole.setText(error);
@@ -1199,12 +1212,19 @@ public class Principal extends ViewPart {
 		}
 	}
 
-	public void compile() throws TokenMgrError, ParseException {
-
+	public boolean compile() throws TokenMgrError, ParseException {
 		EList<Component> listComponents = domainComponents.getShapes().getListComponents();
-
 		componentsString = "";
-		expressionString = txtNormalExpression.getText();
+		expressionString = txtExpandedExpression.getText();
+		if(expressionString.equals(""))
+			expressionString = txtNormalExpression.getText();
+		
+		if(expressionString.equals("")) {
+			JOptionPane.showMessageDialog(null, "Debe llenar uno de los dos campos de la expresion.",
+					null, JOptionPane.ERROR_MESSAGE);
+			return false;
+		}
+		
 		expressionString = (expressionString.charAt(expressionString.length() - 1) == ';') ? expressionString
 				: expressionString + ";";
 
@@ -1247,6 +1267,7 @@ public class Principal extends ViewPart {
 			item.setText(1, temp2.getTipo());
 			tokens.put(temp2.getValor(), temp2.getTipo());
 		}
+		return true;
 	}
 
 	private void initCharacteristics() {

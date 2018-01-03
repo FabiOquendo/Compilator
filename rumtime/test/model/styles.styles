@@ -8,10 +8,10 @@
     </theStyleFactory>
     <theCharacteristicFactory>
       <listCharacteristic name="C1" theSytle="//@theDomainStyles/@theStyleFactory/@listStyle.1">
-        <listProperties name="Font Size" value="13"/>
+        <listProperties name="Font Size" value="14"/>
       </listCharacteristic>
       <listCharacteristic name="C2" theSytle="//@theDomainStyles/@theStyleFactory/@listStyle.0">
-        <listProperties name="Font Size" value="12"/>
+        <listProperties name="Font Size" value="13"/>
       </listCharacteristic>
       <listCharacteristic name="C3" theSytle="//@theDomainStyles/@theStyleFactory/@listStyle.2">
         <listProperties name="Font Size" value="12"/>

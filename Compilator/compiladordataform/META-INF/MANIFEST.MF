@@ -15,7 +15,9 @@ Require-Bundle: org.eclipse.ui;bundle-version="3.108.0",
  org.eclipse.emf.common.ui;bundle-version="2.11.0",
  org.eclipse.ui.workbench,
  compilator;bundle-version="1.0.0",
- generator;bundle-version="1.0.0"
+ generator;bundle-version="1.0.0",
+ org.eclipse.core.filesystem;bundle-version="1.7.0",
+ org.eclipse.ui.ide;bundle-version="3.13.1"
 Bundle-ClassPath: poi/lib/commons-codec-1.10.jar,
  poi/lib/commons-collections4-4.1.jar,
  poi/lib/commons-logging-1.2.jar,
@@ -30,4 +32,5 @@ Bundle-ClassPath: poi/lib/commons-codec-1.10.jar,
  poi/poi-ooxml-schemas-3.17.jar,
  poi/poi-scratchpad-3.17.jar,
  .
+Import-Package: org.eclipse.core.resources
 

@@ -1,5 +1,6 @@
 package Logica;
 
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
@@ -13,7 +14,8 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.util.CellRangeAddress;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-
+import org.eclipse.core.resources.IWorkspace;
+import org.eclipse.core.resources.ResourcesPlugin;
 import generator.genmodel.GenElement;
 import generator.genmodel.GenModel;
 import generator.genmodel.gencontainercomponent.gencontainer.GenContainer;
@@ -57,11 +59,37 @@ public class ExcelGenerator {
 	    }
 	    
 	    System.out.println("Celdas creadas!");
-	    FileOutputStream fileOut = new FileOutputStream("C:/Users/admin/Desktop/Formulario.xlsx");
+	    IWorkspace workspace = ResourcesPlugin.getWorkspace();
+		File workspaceDirectory = workspace.getRoot().getLocation().toFile();
+		String runTimePath = workspaceDirectory.getAbsolutePath().toString();
+		runTimePath = runTimePath.replace("\\","/");
+	    String path = runTimePath+"/test/files/Formulario.xlsx";
+	    FileOutputStream fileOut = new FileOutputStream(path);
 	    wb.write(fileOut);
 	    fileOut.close();
 	    wb.close();
 	    System.out.println("Archivo guardado!");
+	    openFileIntoEditor(path);
+	}
+	
+	public void openFileIntoEditor(final String path) {
+
+		java.io.File fileToOpen = new java.io.File(path);
+
+		if (fileToOpen.exists() && fileToOpen.isFile()) {
+			org.eclipse.core.filesystem.IFileStore fileStore = org.eclipse.core.filesystem.EFS.getLocalFileSystem()
+					.getStore(fileToOpen.toURI());
+			org.eclipse.ui.IWorkbenchPage page = org.eclipse.ui.PlatformUI.getWorkbench().getActiveWorkbenchWindow()
+					.getActivePage();
+			try {
+				org.eclipse.ui.ide.IDE.openEditorOnFileStore(page, fileStore);
+			} catch (org.eclipse.ui.PartInitException e) {
+				// Put your exception handler here if you wish to
+			}
+		} else {
+			// Do something if the file does not exist
+		}
+
 	}
 	
 	public void createContainerExcel(Workbook wb, Sheet sheet, GenContainer genContainer, int r, int c) {
