@@ -31,7 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class ComboBoxImpl extends IndividualElementImpl implements ComboBox {
+public class ComboBoxImpl extends InputElementImpl implements ComboBox {
 	/**
 	 * The cached value of the '{@link #getTheItem() <em>The Item</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

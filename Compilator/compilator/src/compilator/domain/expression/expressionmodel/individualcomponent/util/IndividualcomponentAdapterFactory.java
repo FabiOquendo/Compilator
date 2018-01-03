@@ -106,6 +106,10 @@ public class IndividualcomponentAdapterFactory extends AdapterFactoryImpl {
 				return createAttributeAdapter();
 			}
 			@Override
+			public Adapter caseInputElement(InputElement object) {
+				return createInputElementAdapter();
+			}
+			@Override
 			public Adapter caseElement(Element object) {
 				return createElementAdapter();
 			}
@@ -252,6 +256,20 @@ public class IndividualcomponentAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createAttributeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link compilator.domain.expression.expressionmodel.individualcomponent.InputElement <em>Input Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see compilator.domain.expression.expressionmodel.individualcomponent.InputElement
+	 * @generated
+	 */
+	public Adapter createInputElementAdapter() {
 		return null;
 	}
 

@@ -6,6 +6,7 @@ import compilator.domain.expression.Expression;
 
 import compilator.domain.expression.expressionmodel.Element;
 import compilator.domain.expression.expressionmodel.ExpressionModel;
+
 import compilator.domain.expression.expressionmodel.individualcomponent.Button;
 import compilator.domain.expression.expressionmodel.individualcomponent.Column;
 import compilator.domain.expression.expressionmodel.individualcomponent.ComboBox;
@@ -260,10 +261,10 @@ public class GeneratorImpl extends MinimalEObjectImpl.Container implements Gener
 				genContainer.getListGenElements().add(c);
 				xa = c.getTheWidth().getValue().intValue(); ya = c.getTheHeight().getValue().intValue()+c.getTheTitleHeight().getValue().intValue(); 
 			}else if(element instanceof compilator.domain.expression.expressionmodel.individualcomponent.Attribute){
-		compilator.domain.expression.expressionmodel.individualcomponent.Attribute attribute = 
-				(compilator.domain.expression.expressionmodel.individualcomponent.Attribute) element;
+				compilator.domain.expression.expressionmodel.individualcomponent.Attribute attribute = 
+						(compilator.domain.expression.expressionmodel.individualcomponent.Attribute) element;
 				attribute.getTheLabel().setTheStyle(attribute.getTheStyle());
-				attribute.getTheTextField().setTheStyle(attribute.getTheStyle());
+				attribute.getTheInputElement().setTheStyle(attribute.getTheStyle());
 				GenLabel label = (GenLabel) createGenIndividualElement(attribute.getTheLabel());
 				label.getTheX().setValue(new Integer(x)); label.getTheY().setValue(new Integer(y));
 				genContainer.getListGenElements().add(label);
@@ -278,18 +279,18 @@ public class GeneratorImpl extends MinimalEObjectImpl.Container implements Gener
 					y += ya;
 				}
 				
-				GenTextField text = (GenTextField) createGenIndividualElement(attribute.getTheTextField());
-				text.getTheX().setValue(new Integer(x)); text.getTheY().setValue(new Integer(y));
-				genContainer.getListGenElements().add(text);
+				GenIndividualElement input =  createGenIndividualElement(attribute.getTheInputElement());
+				input.getTheX().setValue(new Integer(x)); input.getTheY().setValue(new Integer(y));
+				genContainer.getListGenElements().add(input);
 				if(container.getOrientation().charAt(1) == '|'){ 
 					x -= xa;
-					xa += text.getTheWidth().getValue().intValue();
-					ya = text.getTheHeight().getValue().intValue();
+					xa += input.getTheWidth().getValue().intValue();
+					ya = input.getTheHeight().getValue().intValue();
 				}
 				else {
 					y -= ya;
-					ya += text.getTheHeight().getValue().intValue();
-					xa = text.getTheWidth().getValue().intValue();
+					ya += input.getTheHeight().getValue().intValue();
+					xa = input.getTheWidth().getValue().intValue();
 				}
 				
 			} else  if(element instanceof compilator.domain.expression.expressionmodel.individualcomponent.Table){

@@ -286,6 +286,88 @@ public interface IndividualcomponentPackage extends EPackage {
 	int LABEL_OPERATION_COUNT = INDIVIDUAL_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link compilator.domain.expression.expressionmodel.individualcomponent.impl.InputElementImpl <em>Input Element</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see compilator.domain.expression.expressionmodel.individualcomponent.impl.InputElementImpl
+	 * @see compilator.domain.expression.expressionmodel.individualcomponent.impl.IndividualcomponentPackageImpl#getInputElement()
+	 * @generated
+	 */
+	int INPUT_ELEMENT = 9;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INPUT_ELEMENT__NAME = INDIVIDUAL_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Container Element</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INPUT_ELEMENT__CONTAINER_ELEMENT = INDIVIDUAL_ELEMENT__CONTAINER_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Expression Model</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INPUT_ELEMENT__EXPRESSION_MODEL = INDIVIDUAL_ELEMENT__EXPRESSION_MODEL;
+
+	/**
+	 * The feature id for the '<em><b>The Style</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INPUT_ELEMENT__THE_STYLE = INDIVIDUAL_ELEMENT__THE_STYLE;
+
+	/**
+	 * The feature id for the '<em><b>Component</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INPUT_ELEMENT__COMPONENT = INDIVIDUAL_ELEMENT__COMPONENT;
+
+	/**
+	 * The feature id for the '<em><b>Attribute</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INPUT_ELEMENT__ATTRIBUTE = INDIVIDUAL_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Input Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INPUT_ELEMENT_FEATURE_COUNT = INDIVIDUAL_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Input Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INPUT_ELEMENT_OPERATION_COUNT = INDIVIDUAL_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link compilator.domain.expression.expressionmodel.individualcomponent.impl.TextFieldImpl <em>Text Field</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -302,7 +384,7 @@ public interface IndividualcomponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEXT_FIELD__NAME = INDIVIDUAL_ELEMENT__NAME;
+	int TEXT_FIELD__NAME = INPUT_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Container Element</b></em>' container reference.
@@ -311,7 +393,7 @@ public interface IndividualcomponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEXT_FIELD__CONTAINER_ELEMENT = INDIVIDUAL_ELEMENT__CONTAINER_ELEMENT;
+	int TEXT_FIELD__CONTAINER_ELEMENT = INPUT_ELEMENT__CONTAINER_ELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>Expression Model</b></em>' container reference.
@@ -320,7 +402,7 @@ public interface IndividualcomponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEXT_FIELD__EXPRESSION_MODEL = INDIVIDUAL_ELEMENT__EXPRESSION_MODEL;
+	int TEXT_FIELD__EXPRESSION_MODEL = INPUT_ELEMENT__EXPRESSION_MODEL;
 
 	/**
 	 * The feature id for the '<em><b>The Style</b></em>' reference.
@@ -329,7 +411,7 @@ public interface IndividualcomponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEXT_FIELD__THE_STYLE = INDIVIDUAL_ELEMENT__THE_STYLE;
+	int TEXT_FIELD__THE_STYLE = INPUT_ELEMENT__THE_STYLE;
 
 	/**
 	 * The feature id for the '<em><b>Component</b></em>' container reference.
@@ -338,7 +420,7 @@ public interface IndividualcomponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEXT_FIELD__COMPONENT = INDIVIDUAL_ELEMENT__COMPONENT;
+	int TEXT_FIELD__COMPONENT = INPUT_ELEMENT__COMPONENT;
 
 	/**
 	 * The feature id for the '<em><b>Attribute</b></em>' container reference.
@@ -347,7 +429,7 @@ public interface IndividualcomponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEXT_FIELD__ATTRIBUTE = INDIVIDUAL_ELEMENT_FEATURE_COUNT + 0;
+	int TEXT_FIELD__ATTRIBUTE = INPUT_ELEMENT__ATTRIBUTE;
 
 	/**
 	 * The number of structural features of the '<em>Text Field</em>' class.
@@ -356,7 +438,7 @@ public interface IndividualcomponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEXT_FIELD_FEATURE_COUNT = INDIVIDUAL_ELEMENT_FEATURE_COUNT + 1;
+	int TEXT_FIELD_FEATURE_COUNT = INPUT_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Text Field</em>' class.
@@ -365,7 +447,7 @@ public interface IndividualcomponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEXT_FIELD_OPERATION_COUNT = INDIVIDUAL_ELEMENT_OPERATION_COUNT + 0;
+	int TEXT_FIELD_OPERATION_COUNT = INPUT_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link compilator.domain.expression.expressionmodel.individualcomponent.impl.ColumnImpl <em>Column</em>}' class.
@@ -466,7 +548,7 @@ public interface IndividualcomponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMBO_BOX__NAME = INDIVIDUAL_ELEMENT__NAME;
+	int COMBO_BOX__NAME = INPUT_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Container Element</b></em>' container reference.
@@ -475,7 +557,7 @@ public interface IndividualcomponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMBO_BOX__CONTAINER_ELEMENT = INDIVIDUAL_ELEMENT__CONTAINER_ELEMENT;
+	int COMBO_BOX__CONTAINER_ELEMENT = INPUT_ELEMENT__CONTAINER_ELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>Expression Model</b></em>' container reference.
@@ -484,7 +566,7 @@ public interface IndividualcomponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMBO_BOX__EXPRESSION_MODEL = INDIVIDUAL_ELEMENT__EXPRESSION_MODEL;
+	int COMBO_BOX__EXPRESSION_MODEL = INPUT_ELEMENT__EXPRESSION_MODEL;
 
 	/**
 	 * The feature id for the '<em><b>The Style</b></em>' reference.
@@ -493,7 +575,7 @@ public interface IndividualcomponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMBO_BOX__THE_STYLE = INDIVIDUAL_ELEMENT__THE_STYLE;
+	int COMBO_BOX__THE_STYLE = INPUT_ELEMENT__THE_STYLE;
 
 	/**
 	 * The feature id for the '<em><b>Component</b></em>' container reference.
@@ -502,7 +584,16 @@ public interface IndividualcomponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMBO_BOX__COMPONENT = INDIVIDUAL_ELEMENT__COMPONENT;
+	int COMBO_BOX__COMPONENT = INPUT_ELEMENT__COMPONENT;
+
+	/**
+	 * The feature id for the '<em><b>Attribute</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMBO_BOX__ATTRIBUTE = INPUT_ELEMENT__ATTRIBUTE;
 
 	/**
 	 * The feature id for the '<em><b>The Item</b></em>' containment reference list.
@@ -511,7 +602,7 @@ public interface IndividualcomponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMBO_BOX__THE_ITEM = INDIVIDUAL_ELEMENT_FEATURE_COUNT + 0;
+	int COMBO_BOX__THE_ITEM = INPUT_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Combo Box</em>' class.
@@ -520,7 +611,7 @@ public interface IndividualcomponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMBO_BOX_FEATURE_COUNT = INDIVIDUAL_ELEMENT_FEATURE_COUNT + 1;
+	int COMBO_BOX_FEATURE_COUNT = INPUT_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Combo Box</em>' class.
@@ -529,7 +620,7 @@ public interface IndividualcomponentPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMBO_BOX_OPERATION_COUNT = INDIVIDUAL_ELEMENT_OPERATION_COUNT + 0;
+	int COMBO_BOX_OPERATION_COUNT = INPUT_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link compilator.domain.expression.expressionmodel.individualcomponent.impl.TableImpl <em>Table</em>}' class.
@@ -751,22 +842,22 @@ public interface IndividualcomponentPackage extends EPackage {
 	int ATTRIBUTE__COMPONENT = INDIVIDUAL_ELEMENT__COMPONENT;
 
 	/**
-	 * The feature id for the '<em><b>The Text Field</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ATTRIBUTE__THE_TEXT_FIELD = INDIVIDUAL_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>The Label</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE__THE_LABEL = INDIVIDUAL_ELEMENT_FEATURE_COUNT + 1;
+	int ATTRIBUTE__THE_LABEL = INDIVIDUAL_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>The Input Element</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE__THE_INPUT_ELEMENT = INDIVIDUAL_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Attribute</em>' class.
@@ -837,17 +928,6 @@ public interface IndividualcomponentPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getTextField();
-
-	/**
-	 * Returns the meta object for the container reference '{@link compilator.domain.expression.expressionmodel.individualcomponent.TextField#getAttribute <em>Attribute</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Attribute</em>'.
-	 * @see compilator.domain.expression.expressionmodel.individualcomponent.TextField#getAttribute()
-	 * @see #getTextField()
-	 * @generated
-	 */
-	EReference getTextField_Attribute();
 
 	/**
 	 * Returns the meta object for class '{@link compilator.domain.expression.expressionmodel.individualcomponent.Column <em>Column</em>}'.
@@ -944,17 +1024,6 @@ public interface IndividualcomponentPackage extends EPackage {
 	EClass getAttribute();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link compilator.domain.expression.expressionmodel.individualcomponent.Attribute#getTheTextField <em>The Text Field</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>The Text Field</em>'.
-	 * @see compilator.domain.expression.expressionmodel.individualcomponent.Attribute#getTheTextField()
-	 * @see #getAttribute()
-	 * @generated
-	 */
-	EReference getAttribute_TheTextField();
-
-	/**
 	 * Returns the meta object for the containment reference '{@link compilator.domain.expression.expressionmodel.individualcomponent.Attribute#getTheLabel <em>The Label</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -964,6 +1033,38 @@ public interface IndividualcomponentPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getAttribute_TheLabel();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link compilator.domain.expression.expressionmodel.individualcomponent.Attribute#getTheInputElement <em>The Input Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>The Input Element</em>'.
+	 * @see compilator.domain.expression.expressionmodel.individualcomponent.Attribute#getTheInputElement()
+	 * @see #getAttribute()
+	 * @generated
+	 */
+	EReference getAttribute_TheInputElement();
+
+	/**
+	 * Returns the meta object for class '{@link compilator.domain.expression.expressionmodel.individualcomponent.InputElement <em>Input Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Input Element</em>'.
+	 * @see compilator.domain.expression.expressionmodel.individualcomponent.InputElement
+	 * @generated
+	 */
+	EClass getInputElement();
+
+	/**
+	 * Returns the meta object for the container reference '{@link compilator.domain.expression.expressionmodel.individualcomponent.InputElement#getAttribute <em>Attribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Attribute</em>'.
+	 * @see compilator.domain.expression.expressionmodel.individualcomponent.InputElement#getAttribute()
+	 * @see #getInputElement()
+	 * @generated
+	 */
+	EReference getInputElement_Attribute();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1035,14 +1136,6 @@ public interface IndividualcomponentPackage extends EPackage {
 		 * @generated
 		 */
 		EClass TEXT_FIELD = eINSTANCE.getTextField();
-
-		/**
-		 * The meta object literal for the '<em><b>Attribute</b></em>' container reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference TEXT_FIELD__ATTRIBUTE = eINSTANCE.getTextField_Attribute();
 
 		/**
 		 * The meta object literal for the '{@link compilator.domain.expression.expressionmodel.individualcomponent.impl.ColumnImpl <em>Column</em>}' class.
@@ -1127,20 +1220,38 @@ public interface IndividualcomponentPackage extends EPackage {
 		EClass ATTRIBUTE = eINSTANCE.getAttribute();
 
 		/**
-		 * The meta object literal for the '<em><b>The Text Field</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ATTRIBUTE__THE_TEXT_FIELD = eINSTANCE.getAttribute_TheTextField();
-
-		/**
 		 * The meta object literal for the '<em><b>The Label</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference ATTRIBUTE__THE_LABEL = eINSTANCE.getAttribute_TheLabel();
+
+		/**
+		 * The meta object literal for the '<em><b>The Input Element</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ATTRIBUTE__THE_INPUT_ELEMENT = eINSTANCE.getAttribute_TheInputElement();
+
+		/**
+		 * The meta object literal for the '{@link compilator.domain.expression.expressionmodel.individualcomponent.impl.InputElementImpl <em>Input Element</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see compilator.domain.expression.expressionmodel.individualcomponent.impl.InputElementImpl
+		 * @see compilator.domain.expression.expressionmodel.individualcomponent.impl.IndividualcomponentPackageImpl#getInputElement()
+		 * @generated
+		 */
+		EClass INPUT_ELEMENT = eINSTANCE.getInputElement();
+
+		/**
+		 * The meta object literal for the '<em><b>Attribute</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INPUT_ELEMENT__ATTRIBUTE = eINSTANCE.getInputElement_Attribute();
 
 	}
 

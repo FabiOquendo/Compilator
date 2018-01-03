@@ -201,6 +201,11 @@ public class ComponentItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ShapesPackage.Literals.COMPONENT__THE_ELEMENT,
+				 IndividualcomponentFactory.eINSTANCE.createInputElement()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ShapesPackage.Literals.COMPONENT__THE_ELEMENT,
 				 IndividualcomponentFactory.eINSTANCE.createTextField()));
 
 		newChildDescriptors.add

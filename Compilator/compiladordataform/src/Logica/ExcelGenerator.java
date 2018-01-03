@@ -254,7 +254,7 @@ public class ExcelGenerator {
 	public void createComboExcel(Workbook wb, Sheet sheet, GenComboBox genCombo, int r, int c) {
 		Row row = sheet.getRow(calculateR1(genCombo.getTheY().getValue())+r);
 	    Cell cell = row.createCell(calculateR1(genCombo.getTheX().getValue())+c);
-	    cell.setCellValue("V");
+	    cell.setCellValue("V ");
 		addBorderToMergedRegion(wb, sheet, calculateR1(genCombo.getTheY().getValue())+r, 
 	    		calculateR2(genCombo.getTheY().getValue(),genCombo.getTheHeight().getValue())+r,
 	    		calculateR1(genCombo.getTheX().getValue())+c,

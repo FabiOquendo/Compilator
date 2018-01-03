@@ -77,9 +77,7 @@
             <genClasses ecoreClass="compilator.ecore#//domain/expression/expressionmodel/individualcomponent/Label">
               <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference compilator.ecore#//domain/expression/expressionmodel/individualcomponent/Label/Attribute"/>
             </genClasses>
-            <genClasses ecoreClass="compilator.ecore#//domain/expression/expressionmodel/individualcomponent/TextField">
-              <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference compilator.ecore#//domain/expression/expressionmodel/individualcomponent/TextField/Attribute"/>
-            </genClasses>
+            <genClasses ecoreClass="compilator.ecore#//domain/expression/expressionmodel/individualcomponent/TextField"/>
             <genClasses ecoreClass="compilator.ecore#//domain/expression/expressionmodel/individualcomponent/Column">
               <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference compilator.ecore#//domain/expression/expressionmodel/individualcomponent/Column/Table"/>
             </genClasses>
@@ -93,8 +91,11 @@
               <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference compilator.ecore#//domain/expression/expressionmodel/individualcomponent/Item/ComboBox"/>
             </genClasses>
             <genClasses ecoreClass="compilator.ecore#//domain/expression/expressionmodel/individualcomponent/Attribute">
-              <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference compilator.ecore#//domain/expression/expressionmodel/individualcomponent/Attribute/theTextField"/>
               <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference compilator.ecore#//domain/expression/expressionmodel/individualcomponent/Attribute/theLabel"/>
+              <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference compilator.ecore#//domain/expression/expressionmodel/individualcomponent/Attribute/theInputElement"/>
+            </genClasses>
+            <genClasses ecoreClass="compilator.ecore#//domain/expression/expressionmodel/individualcomponent/InputElement">
+              <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference compilator.ecore#//domain/expression/expressionmodel/individualcomponent/InputElement/Attribute"/>
             </genClasses>
           </nestedGenPackages>
           <nestedGenPackages prefix="Containercomponent" disposableProviderFactory="true"

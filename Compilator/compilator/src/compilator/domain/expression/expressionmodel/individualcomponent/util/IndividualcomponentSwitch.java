@@ -94,6 +94,7 @@ public class IndividualcomponentSwitch<T> extends Switch<T> {
 			case IndividualcomponentPackage.TEXT_FIELD: {
 				TextField textField = (TextField)theEObject;
 				T result = caseTextField(textField);
+				if (result == null) result = caseInputElement(textField);
 				if (result == null) result = caseIndividualElement(textField);
 				if (result == null) result = caseElement(textField);
 				if (result == null) result = defaultCase(theEObject);
@@ -110,6 +111,7 @@ public class IndividualcomponentSwitch<T> extends Switch<T> {
 			case IndividualcomponentPackage.COMBO_BOX: {
 				ComboBox comboBox = (ComboBox)theEObject;
 				T result = caseComboBox(comboBox);
+				if (result == null) result = caseInputElement(comboBox);
 				if (result == null) result = caseIndividualElement(comboBox);
 				if (result == null) result = caseElement(comboBox);
 				if (result == null) result = defaultCase(theEObject);
@@ -136,6 +138,14 @@ public class IndividualcomponentSwitch<T> extends Switch<T> {
 				T result = caseAttribute(attribute);
 				if (result == null) result = caseIndividualElement(attribute);
 				if (result == null) result = caseElement(attribute);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case IndividualcomponentPackage.INPUT_ELEMENT: {
+				InputElement inputElement = (InputElement)theEObject;
+				T result = caseInputElement(inputElement);
+				if (result == null) result = caseIndividualElement(inputElement);
+				if (result == null) result = caseElement(inputElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -275,6 +285,21 @@ public class IndividualcomponentSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseAttribute(Attribute object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Input Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Input Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseInputElement(InputElement object) {
 		return null;
 	}
 

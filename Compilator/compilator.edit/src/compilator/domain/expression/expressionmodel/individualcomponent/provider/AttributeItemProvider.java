@@ -62,8 +62,8 @@ public class AttributeItemProvider extends IndividualElementItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(IndividualcomponentPackage.Literals.ATTRIBUTE__THE_TEXT_FIELD);
 			childrenFeatures.add(IndividualcomponentPackage.Literals.ATTRIBUTE__THE_LABEL);
+			childrenFeatures.add(IndividualcomponentPackage.Literals.ATTRIBUTE__THE_INPUT_ELEMENT);
 		}
 		return childrenFeatures;
 	}
@@ -119,8 +119,8 @@ public class AttributeItemProvider extends IndividualElementItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Attribute.class)) {
-			case IndividualcomponentPackage.ATTRIBUTE__THE_TEXT_FIELD:
 			case IndividualcomponentPackage.ATTRIBUTE__THE_LABEL:
+			case IndividualcomponentPackage.ATTRIBUTE__THE_INPUT_ELEMENT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -140,13 +140,23 @@ public class AttributeItemProvider extends IndividualElementItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(IndividualcomponentPackage.Literals.ATTRIBUTE__THE_TEXT_FIELD,
+				(IndividualcomponentPackage.Literals.ATTRIBUTE__THE_LABEL,
+				 IndividualcomponentFactory.eINSTANCE.createLabel()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(IndividualcomponentPackage.Literals.ATTRIBUTE__THE_INPUT_ELEMENT,
+				 IndividualcomponentFactory.eINSTANCE.createInputElement()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(IndividualcomponentPackage.Literals.ATTRIBUTE__THE_INPUT_ELEMENT,
 				 IndividualcomponentFactory.eINSTANCE.createTextField()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(IndividualcomponentPackage.Literals.ATTRIBUTE__THE_LABEL,
-				 IndividualcomponentFactory.eINSTANCE.createLabel()));
+				(IndividualcomponentPackage.Literals.ATTRIBUTE__THE_INPUT_ELEMENT,
+				 IndividualcomponentFactory.eINSTANCE.createComboBox()));
 	}
 
 }

@@ -64,6 +64,7 @@ public class IndividualcomponentFactoryImpl extends EFactoryImpl implements Indi
 			case IndividualcomponentPackage.TABLE: return createTable();
 			case IndividualcomponentPackage.ITEM: return createItem();
 			case IndividualcomponentPackage.ATTRIBUTE: return createAttribute();
+			case IndividualcomponentPackage.INPUT_ELEMENT: return createInputElement();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -147,6 +148,16 @@ public class IndividualcomponentFactoryImpl extends EFactoryImpl implements Indi
 	public Attribute createAttribute() {
 		AttributeImpl attribute = new AttributeImpl();
 		return attribute;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public InputElement createInputElement() {
+		InputElementImpl inputElement = new InputElementImpl();
+		return inputElement;
 	}
 
 	/**

@@ -204,6 +204,16 @@ public interface DatatypesdataformPackage extends EPackage {
 	 */
 	int MODEL_ELEMENT_DATA_FORM = 14;
 
+	/**
+	 * The meta object id for the '<em>Characteristic</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see tooldataform.styles.domain.Characteristic
+	 * @see generator.datatypes.datatypesdataform.impl.DatatypesdataformPackageImpl#getCharacteristic()
+	 * @generated
+	 */
+	int CHARACTERISTIC = 15;
+
 
 	/**
 	 * Returns the meta object for data type '{@link tooldataform.formmodel.containers.GraphicalContainer <em>Graphical Container</em>}'.
@@ -369,6 +379,17 @@ public interface DatatypesdataformPackage extends EPackage {
 	 * @generated
 	 */
 	EDataType getModelElementDataForm();
+
+	/**
+	 * Returns the meta object for data type '{@link tooldataform.styles.domain.Characteristic <em>Characteristic</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Characteristic</em>'.
+	 * @see tooldataform.styles.domain.Characteristic
+	 * @model instanceClass="tooldataform.styles.domain.Characteristic"
+	 * @generated
+	 */
+	EDataType getCharacteristic();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -542,6 +563,16 @@ public interface DatatypesdataformPackage extends EPackage {
 		 * @generated
 		 */
 		EDataType MODEL_ELEMENT_DATA_FORM = eINSTANCE.getModelElementDataForm();
+
+		/**
+		 * The meta object literal for the '<em>Characteristic</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see tooldataform.styles.domain.Characteristic
+		 * @see generator.datatypes.datatypesdataform.impl.DatatypesdataformPackageImpl#getCharacteristic()
+		 * @generated
+		 */
+		EDataType CHARACTERISTIC = eINSTANCE.getCharacteristic();
 
 	}
 

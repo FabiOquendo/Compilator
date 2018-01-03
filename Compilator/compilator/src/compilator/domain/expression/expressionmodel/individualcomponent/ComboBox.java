@@ -20,7 +20,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface ComboBox extends IndividualElement {
+public interface ComboBox extends InputElement {
 	/**
 	 * Returns the value of the '<em><b>The Item</b></em>' containment reference list.
 	 * The list contents are of type {@link compilator.domain.expression.expressionmodel.individualcomponent.Item}.

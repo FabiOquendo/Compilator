@@ -311,6 +311,7 @@
         <genDataTypes ecoreDataType="generator.ecore#//datatypes/datatypesdataform/DomanStyle"/>
         <genDataTypes ecoreDataType="generator.ecore#//datatypes/datatypesdataform/Style"/>
         <genDataTypes ecoreDataType="generator.ecore#//datatypes/datatypesdataform/ModelElementDataForm"/>
+        <genDataTypes ecoreDataType="generator.ecore#//datatypes/datatypesdataform/Characteristic"/>
       </nestedGenPackages>
       <nestedGenPackages prefix="Datatypesgmf" disposableProviderFactory="true" ecorePackage="generator.ecore#//datatypes/datatypesgmf">
         <genDataTypes ecoreDataType="generator.ecore#//datatypes/datatypesgmf/Bounds"/>
@@ -411,6 +412,10 @@
         <genOperations ecoreOperation="generator.ecore#//gendataform/DataFormModelGenerator/searchStyle">
           <genParameters ecoreParameter="generator.ecore#//gendataform/DataFormModelGenerator/searchStyle/domain"/>
           <genParameters ecoreParameter="generator.ecore#//gendataform/DataFormModelGenerator/searchStyle/styleName"/>
+        </genOperations>
+        <genOperations ecoreOperation="generator.ecore#//gendataform/DataFormModelGenerator/searchCharacteristic">
+          <genParameters ecoreParameter="generator.ecore#//gendataform/DataFormModelGenerator/searchCharacteristic/domain"/>
+          <genParameters ecoreParameter="generator.ecore#//gendataform/DataFormModelGenerator/searchCharacteristic/characteristicName"/>
         </genOperations>
       </genClasses>
     </nestedGenPackages>

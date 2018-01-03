@@ -556,6 +556,15 @@ public class GendataformPackageImpl extends EPackageImpl implements GendataformP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getDataFormModelGenerator__SearchCharacteristic__Domain_String() {
+		return dataFormModelGeneratorEClass.getEOperations().get(14);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public GendataformFactory getGendataformFactory() {
 		return (GendataformFactory)getEFactoryInstance();
 	}
@@ -611,6 +620,7 @@ public class GendataformPackageImpl extends EPackageImpl implements GendataformP
 		createEOperation(dataFormModelGeneratorEClass, DATA_FORM_MODEL_GENERATOR___SET_BOUNDS_CONTAINERS__INTEGER_STRING_GRAPHICALCONTAINER);
 		createEOperation(dataFormModelGeneratorEClass, DATA_FORM_MODEL_GENERATOR___GET_ORIENTATION__STYLE);
 		createEOperation(dataFormModelGeneratorEClass, DATA_FORM_MODEL_GENERATOR___SEARCH_STYLE__DOMAIN_STRING);
+		createEOperation(dataFormModelGeneratorEClass, DATA_FORM_MODEL_GENERATOR___SEARCH_CHARACTERISTIC__DOMAIN_STRING);
 	}
 
 	/**
@@ -752,6 +762,10 @@ public class GendataformPackageImpl extends EPackageImpl implements GendataformP
 		op = initEOperation(getDataFormModelGenerator__SearchStyle__Domain_String(), theDatatypesdataformPackage.getStyle(), "searchStyle", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, theDatatypesdataformPackage.getDomanStyle(), "domain", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "styleName", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = initEOperation(getDataFormModelGenerator__SearchCharacteristic__Domain_String(), theDatatypesdataformPackage.getCharacteristic(), "searchCharacteristic", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, theDatatypesdataformPackage.getDomanStyle(), "domain", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "characteristicName", 0, 1, IS_UNIQUE, IS_ORDERED);
 	}
 
 } //GendataformPackageImpl

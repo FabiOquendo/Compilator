@@ -45,6 +45,7 @@ import tooldataform.formmodel.concreta.TableView;
 import tooldataform.formmodel.concreta.TextView;
 
 import tooldataform.formmodel.containers.GraphicalContainer;
+
 import tooldataform.styles.domain.Characteristic;
 import tooldataform.styles.domain.Domain;
 import tooldataform.styles.domain.Style;
@@ -266,10 +267,10 @@ public class DataFormModelGeneratorImpl extends MinimalEObjectImpl.Container imp
 		
 		if (element instanceof generator.genmodel.genindividualcomponent.gentable.GenTable) {
 			GenTable genTable = (GenTable) element;
-			container = createTableView(domainStyle, genTable);
+			container = createTableView(domainStyle, (GenTable) element);
 		} else if (element instanceof generator.genmodel.genindividualcomponent.gencombobox.GenComboBox) {
 			GenComboBox genComboBox = (GenComboBox) element;
-			container = createComboView(domainStyle, genComboBox);
+			container = createComboView(domainStyle, (GenComboBox) element);
 		}
 		
 		container.setPositionX(element.getTheX().getValue());
@@ -517,7 +518,7 @@ public class DataFormModelGeneratorImpl extends MinimalEObjectImpl.Container imp
 		column.setName(genColumn.getTheColumn().getName());
 		return column;
 	}
-	
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -589,7 +590,12 @@ public class DataFormModelGeneratorImpl extends MinimalEObjectImpl.Container imp
 		}
 		return null;
 	}
-	
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Characteristic searchCharacteristic(final Domain domain, final String characteristicName) {
 		EList<tooldataform.styles.domain.Characteristic> listCharacteristics = domain.getTheCharacteristicFactory().getListCharacteristic();
 		for (int i = 0; i < listCharacteristics.size(); i++) {
@@ -694,6 +700,8 @@ public class DataFormModelGeneratorImpl extends MinimalEObjectImpl.Container imp
 				return getOrientation((Style)arguments.get(0));
 			case GendataformPackage.DATA_FORM_MODEL_GENERATOR___SEARCH_STYLE__DOMAIN_STRING:
 				return searchStyle((Domain)arguments.get(0), (String)arguments.get(1));
+			case GendataformPackage.DATA_FORM_MODEL_GENERATOR___SEARCH_CHARACTERISTIC__DOMAIN_STRING:
+				return searchCharacteristic((Domain)arguments.get(0), (String)arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

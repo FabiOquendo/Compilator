@@ -256,6 +256,29 @@ public class IndividualcomponentItemProviderAdapterFactory extends Individualcom
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link compilator.domain.expression.expressionmodel.individualcomponent.InputElement} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected InputElementItemProvider inputElementItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link compilator.domain.expression.expressionmodel.individualcomponent.InputElement}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createInputElementAdapter() {
+		if (inputElementItemProvider == null) {
+			inputElementItemProvider = new InputElementItemProvider(this);
+		}
+
+		return inputElementItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -362,6 +385,7 @@ public class IndividualcomponentItemProviderAdapterFactory extends Individualcom
 		if (tableItemProvider != null) tableItemProvider.dispose();
 		if (itemItemProvider != null) itemItemProvider.dispose();
 		if (attributeItemProvider != null) attributeItemProvider.dispose();
+		if (inputElementItemProvider != null) inputElementItemProvider.dispose();
 	}
 
 }

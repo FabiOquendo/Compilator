@@ -203,6 +203,11 @@ public class ContainerElementItemProvider extends ElementItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(ContainercomponentPackage.Literals.CONTAINER_ELEMENT__LIST_ELEMENTS,
+				 IndividualcomponentFactory.eINSTANCE.createInputElement()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ContainercomponentPackage.Literals.CONTAINER_ELEMENT__LIST_ELEMENTS,
 				 IndividualcomponentFactory.eINSTANCE.createTextField()));
 
 		newChildDescriptors.add

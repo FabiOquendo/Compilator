@@ -190,6 +190,11 @@ public class ExpressionModelItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ExpressionmodelPackage.Literals.EXPRESSION_MODEL__LIST_ELEMENTS,
+				 IndividualcomponentFactory.eINSTANCE.createInputElement()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ExpressionmodelPackage.Literals.EXPRESSION_MODEL__LIST_ELEMENTS,
 				 IndividualcomponentFactory.eINSTANCE.createTextField()));
 
 		newChildDescriptors.add

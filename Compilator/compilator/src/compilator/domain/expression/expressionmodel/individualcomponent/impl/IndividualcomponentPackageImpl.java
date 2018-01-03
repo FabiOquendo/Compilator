@@ -27,6 +27,7 @@ import compilator.domain.expression.expressionmodel.individualcomponent.ComboBox
 import compilator.domain.expression.expressionmodel.individualcomponent.IndividualElement;
 import compilator.domain.expression.expressionmodel.individualcomponent.IndividualcomponentFactory;
 import compilator.domain.expression.expressionmodel.individualcomponent.IndividualcomponentPackage;
+import compilator.domain.expression.expressionmodel.individualcomponent.InputElement;
 import compilator.domain.expression.expressionmodel.individualcomponent.Item;
 import compilator.domain.expression.expressionmodel.individualcomponent.Label;
 import compilator.domain.expression.expressionmodel.individualcomponent.Table;
@@ -131,6 +132,13 @@ public class IndividualcomponentPackageImpl extends EPackageImpl implements Indi
 	 * @generated
 	 */
 	private EClass attributeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass inputElementEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -278,15 +286,6 @@ public class IndividualcomponentPackageImpl extends EPackageImpl implements Indi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTextField_Attribute() {
-		return (EReference)textFieldEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getColumn() {
 		return columnEClass;
 	}
@@ -368,7 +367,7 @@ public class IndividualcomponentPackageImpl extends EPackageImpl implements Indi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAttribute_TheTextField() {
+	public EReference getAttribute_TheLabel() {
 		return (EReference)attributeEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -377,8 +376,26 @@ public class IndividualcomponentPackageImpl extends EPackageImpl implements Indi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAttribute_TheLabel() {
+	public EReference getAttribute_TheInputElement() {
 		return (EReference)attributeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getInputElement() {
+		return inputElementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getInputElement_Attribute() {
+		return (EReference)inputElementEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -417,7 +434,6 @@ public class IndividualcomponentPackageImpl extends EPackageImpl implements Indi
 		createEReference(labelEClass, LABEL__ATTRIBUTE);
 
 		textFieldEClass = createEClass(TEXT_FIELD);
-		createEReference(textFieldEClass, TEXT_FIELD__ATTRIBUTE);
 
 		columnEClass = createEClass(COLUMN);
 		createEReference(columnEClass, COLUMN__TABLE);
@@ -432,8 +448,11 @@ public class IndividualcomponentPackageImpl extends EPackageImpl implements Indi
 		createEReference(itemEClass, ITEM__COMBO_BOX);
 
 		attributeEClass = createEClass(ATTRIBUTE);
-		createEReference(attributeEClass, ATTRIBUTE__THE_TEXT_FIELD);
 		createEReference(attributeEClass, ATTRIBUTE__THE_LABEL);
+		createEReference(attributeEClass, ATTRIBUTE__THE_INPUT_ELEMENT);
+
+		inputElementEClass = createEClass(INPUT_ELEMENT);
+		createEReference(inputElementEClass, INPUT_ELEMENT__ATTRIBUTE);
 	}
 
 	/**
@@ -470,12 +489,13 @@ public class IndividualcomponentPackageImpl extends EPackageImpl implements Indi
 		buttonEClass.getESuperTypes().add(this.getIndividualElement());
 		individualElementEClass.getESuperTypes().add(theExpressionmodelPackage.getElement());
 		labelEClass.getESuperTypes().add(this.getIndividualElement());
-		textFieldEClass.getESuperTypes().add(this.getIndividualElement());
+		textFieldEClass.getESuperTypes().add(this.getInputElement());
 		columnEClass.getESuperTypes().add(this.getIndividualElement());
-		comboBoxEClass.getESuperTypes().add(this.getIndividualElement());
+		comboBoxEClass.getESuperTypes().add(this.getInputElement());
 		tableEClass.getESuperTypes().add(this.getIndividualElement());
 		itemEClass.getESuperTypes().add(this.getIndividualElement());
 		attributeEClass.getESuperTypes().add(this.getIndividualElement());
+		inputElementEClass.getESuperTypes().add(this.getIndividualElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(buttonEClass, Button.class, "Button", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -486,7 +506,6 @@ public class IndividualcomponentPackageImpl extends EPackageImpl implements Indi
 		initEReference(getLabel_Attribute(), this.getAttribute(), this.getAttribute_TheLabel(), "Attribute", null, 0, 1, Label.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(textFieldEClass, TextField.class, "TextField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTextField_Attribute(), this.getAttribute(), this.getAttribute_TheTextField(), "Attribute", null, 0, 1, TextField.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(columnEClass, Column.class, "Column", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getColumn_Table(), this.getTable(), this.getTable_ListColumn(), "Table", null, 0, 1, Column.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -501,8 +520,11 @@ public class IndividualcomponentPackageImpl extends EPackageImpl implements Indi
 		initEReference(getItem_ComboBox(), this.getComboBox(), this.getComboBox_TheItem(), "ComboBox", null, 0, 1, Item.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(attributeEClass, Attribute.class, "Attribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAttribute_TheTextField(), this.getTextField(), this.getTextField_Attribute(), "theTextField", null, 1, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAttribute_TheLabel(), this.getLabel(), this.getLabel_Attribute(), "theLabel", null, 1, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAttribute_TheInputElement(), this.getInputElement(), this.getInputElement_Attribute(), "theInputElement", null, 1, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(inputElementEClass, InputElement.class, "InputElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getInputElement_Attribute(), this.getAttribute(), this.getAttribute_TheInputElement(), "Attribute", null, 0, 1, InputElement.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 	}
 
 } //IndividualcomponentPackageImpl

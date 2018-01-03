@@ -365,13 +365,22 @@ public interface GendataformPackage extends EPackage {
 	int DATA_FORM_MODEL_GENERATOR___SEARCH_STYLE__DOMAIN_STRING = 13;
 
 	/**
+	 * The operation id for the '<em>Search Characteristic</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATA_FORM_MODEL_GENERATOR___SEARCH_CHARACTERISTIC__DOMAIN_STRING = 14;
+
+	/**
 	 * The number of operations of the '<em>Data Form Model Generator</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_FORM_MODEL_GENERATOR_OPERATION_COUNT = 14;
+	int DATA_FORM_MODEL_GENERATOR_OPERATION_COUNT = 15;
 
 
 	/**
@@ -689,6 +698,16 @@ public interface GendataformPackage extends EPackage {
 	EOperation getDataFormModelGenerator__SearchStyle__Domain_String();
 
 	/**
+	 * Returns the meta object for the '{@link generator.gendataform.DataFormModelGenerator#searchCharacteristic(tooldataform.styles.domain.Domain, java.lang.String) <em>Search Characteristic</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Search Characteristic</em>' operation.
+	 * @see generator.gendataform.DataFormModelGenerator#searchCharacteristic(tooldataform.styles.domain.Domain, java.lang.String)
+	 * @generated
+	 */
+	EOperation getDataFormModelGenerator__SearchCharacteristic__Domain_String();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -962,6 +981,14 @@ public interface GendataformPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation DATA_FORM_MODEL_GENERATOR___SEARCH_STYLE__DOMAIN_STRING = eINSTANCE.getDataFormModelGenerator__SearchStyle__Domain_String();
+
+		/**
+		 * The meta object literal for the '<em><b>Search Characteristic</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation DATA_FORM_MODEL_GENERATOR___SEARCH_CHARACTERISTIC__DOMAIN_STRING = eINSTANCE.getDataFormModelGenerator__SearchCharacteristic__Domain_String();
 
 	}
 

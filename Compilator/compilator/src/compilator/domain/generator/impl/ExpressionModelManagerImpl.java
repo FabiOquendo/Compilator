@@ -395,11 +395,19 @@ public class ExpressionModelManagerImpl extends MinimalEObjectImpl.Container imp
 			e=b;
 		}
 		else if(tokens.get(s)!=null && tokens.get(s).equals("ComboBox")){
+			compilator.domain.expression.expressionmodel.individualcomponent.Attribute a = compilator.domain.expression.expressionmodel.individualcomponent.IndividualcomponentFactory.eINSTANCE.createAttribute();
+			a.setName(s);
+			compilator.domain.expression.expressionmodel.individualcomponent.Label l = compilator.domain.expression.expressionmodel.individualcomponent.IndividualcomponentFactory.eINSTANCE.createLabel();
+			l.setName(s.substring(1));
+			style = findStyleElement(l.getName());
+			if(style!=null) l.setTheStyle(style);
+			a.setTheLabel(l);
 			compilator.domain.expression.expressionmodel.individualcomponent.ComboBox cb = compilator.domain.expression.expressionmodel.individualcomponent.IndividualcomponentFactory.eINSTANCE.createComboBox();
 			cb.setName(s.substring(1));
 			style = findStyleElement(cb.getName());
 			if(style!=null) cb.setTheStyle(style);
-			e=cb;
+			a.setTheInputElement(cb);
+			e=a;
 		}
 		else if(tokens.get(s)!=null && tokens.get(s).equals("Campo de Texto")){
 			compilator.domain.expression.expressionmodel.individualcomponent.TextField txt = compilator.domain.expression.expressionmodel.individualcomponent.IndividualcomponentFactory.eINSTANCE.createTextField();
@@ -426,7 +434,7 @@ public class ExpressionModelManagerImpl extends MinimalEObjectImpl.Container imp
 			txt.setName(s);
 			style = findStyleElement(s);
 			if(style!=null) txt.setTheStyle(style);
-			a.setTheTextField(txt);
+			a.setTheInputElement(txt);
 			e=a;
 		}else if(s.contains("<")){
 			Table  t = createTable(s);

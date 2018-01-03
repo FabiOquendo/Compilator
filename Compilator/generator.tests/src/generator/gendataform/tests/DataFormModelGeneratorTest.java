@@ -30,6 +30,7 @@ import junit.textui.TestRunner;
  *   <li>{@link generator.gendataform.DataFormModelGenerator#setBoundsContainers(java.lang.Integer, java.lang.String, tooldataform.formmodel.containers.GraphicalContainer) <em>Set Bounds Containers</em>}</li>
  *   <li>{@link generator.gendataform.DataFormModelGenerator#getOrientation(tooldataform.styles.domain.Style) <em>Get Orientation</em>}</li>
  *   <li>{@link generator.gendataform.DataFormModelGenerator#searchStyle(tooldataform.styles.domain.Domain, java.lang.String) <em>Search Style</em>}</li>
+ *   <li>{@link generator.gendataform.DataFormModelGenerator#searchCharacteristic(tooldataform.styles.domain.Domain, java.lang.String) <em>Search Characteristic</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -282,6 +283,19 @@ public class DataFormModelGeneratorTest extends TestCase {
 	 * @generated
 	 */
 	public void testSearchStyle__Domain_String() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link generator.gendataform.DataFormModelGenerator#searchCharacteristic(tooldataform.styles.domain.Domain, java.lang.String) <em>Search Characteristic</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see generator.gendataform.DataFormModelGenerator#searchCharacteristic(tooldataform.styles.domain.Domain, java.lang.String)
+	 * @generated
+	 */
+	public void testSearchCharacteristic__Domain_String() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

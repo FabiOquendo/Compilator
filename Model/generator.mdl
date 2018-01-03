@@ -5239,9 +5239,10 @@
 |		genContainer.getListGenElements().add(c);
 |		xa = c.getTheWidth().getValue().intValue(); ya = c.getTheHeight().getValue().intValue()+c.getTheTitleHeight().getValue().intValue(); 
 |	}else if(element instanceof compilator.domain.expression.expressionmodel.individualcomponent.Attribute){
-|		Attribute attribute = (Attribute) element;
+|		compilator.domain.expression.expressionmodel.individualcomponent.Attribute attribute = 
+|				(compilator.domain.expression.expressionmodel.individualcomponent.Attribute) element;
 |		attribute.getTheLabel().setTheStyle(attribute.getTheStyle());
-|		attribute.getTheTextField().setTheStyle(attribute.getTheStyle());
+|		attribute.getTheInputElement().setTheStyle(attribute.getTheStyle());
 |		GenLabel label = (GenLabel) createGenIndividualElement(attribute.getTheLabel());
 |		label.getTheX().setValue(new Integer(x)); label.getTheY().setValue(new Integer(y));
 |		genContainer.getListGenElements().add(label);
@@ -5256,18 +5257,18 @@
 |			y += ya;
 |		}
 |		
-|		GenTextField text = (GenTextField) createGenIndividualElement(attribute.getTheTextField());
-|		text.getTheX().setValue(new Integer(x)); text.getTheY().setValue(new Integer(y));
-|		genContainer.getListGenElements().add(text);
+|		GenIndividualElement input =  createGenIndividualElement(attribute.getTheInputElement());
+|		input.getTheX().setValue(new Integer(x)); input.getTheY().setValue(new Integer(y));
+|		genContainer.getListGenElements().add(input);
 |		if(container.getOrientation().charAt(1) == '|'){ 
 |			x -= xa;
-|			xa += text.getTheWidth().getValue().intValue();
-|			ya = text.getTheHeight().getValue().intValue();
+|			xa += input.getTheWidth().getValue().intValue();
+|			ya = input.getTheHeight().getValue().intValue();
 |		}
 |		else {
 |			y -= ya;
-|			ya += text.getTheHeight().getValue().intValue();
-|			xa = text.getTheWidth().getValue().intValue();
+|			ya += input.getTheHeight().getValue().intValue();
+|			xa = input.getTheWidth().getValue().intValue();
 |		}
 |		
 |	} else  if(element instanceof compilator.domain.expression.expressionmodel.individualcomponent.Table){
@@ -5851,24 +5852,6 @@
 						line_color 	3342489
 						fill_color 	13434879
 						quidu      	"59C18D290144"
-						compartment 	(object Compartment
-						    Parent_View 	@176
-						    location   	(1828, 374)
-						    font       	(object Font
-							size       	10
-							face       	"Arial"
-							bold       	FALSE
-							italics    	FALSE
-							underline  	FALSE
-							strike     	FALSE
-							color      	0
-							default_color 	TRUE)
-						    icon_style 	"Icon"
-						    fill_color 	16777215
-						    anchor     	2
-						    nlines     	4
-						    max_width  	497
-						    justify    	1)
 						width      	518
 						height     	332
 						annotation 	8
@@ -5899,24 +5882,6 @@
 						line_color 	3342489
 						fill_color 	13434879
 						quidu      	"59C19033023D"
-						compartment 	(object Compartment
-						    Parent_View 	@177
-						    location   	(894, 934)
-						    font       	(object Font
-							size       	10
-							face       	"Arial"
-							bold       	FALSE
-							italics    	FALSE
-							underline  	FALSE
-							strike     	FALSE
-							color      	0
-							default_color 	TRUE)
-						    icon_style 	"Icon"
-						    fill_color 	16777215
-						    anchor     	2
-						    nlines     	4
-						    max_width  	513
-						    justify    	1)
 						width      	534
 						height     	332
 						annotation 	8
@@ -5947,24 +5912,6 @@
 						line_color 	3342489
 						fill_color 	13434879
 						quidu      	"59C191C7001A"
-						compartment 	(object Compartment
-						    Parent_View 	@178
-						    location   	(2658, 909)
-						    font       	(object Font
-							size       	10
-							face       	"Arial"
-							bold       	FALSE
-							italics    	FALSE
-							underline  	FALSE
-							strike     	FALSE
-							color      	0
-							default_color 	TRUE)
-						    icon_style 	"Icon"
-						    fill_color 	16777215
-						    anchor     	2
-						    nlines     	5
-						    max_width  	472
-						    justify    	1)
 						width      	492
 						height     	382
 						annotation 	8
@@ -5995,24 +5942,6 @@
 						line_color 	3342489
 						fill_color 	13434879
 						quidu      	"59D2A3380109"
-						compartment 	(object Compartment
-						    Parent_View 	@179
-						    location   	(1934, 961)
-						    font       	(object Font
-							size       	10
-							face       	"Arial"
-							bold       	FALSE
-							italics    	FALSE
-							underline  	FALSE
-							strike     	FALSE
-							color      	0
-							default_color 	TRUE)
-						    icon_style 	"Icon"
-						    fill_color 	16777215
-						    anchor     	2
-						    nlines     	2
-						    max_width  	288
-						    justify    	1)
 						width      	308
 						height     	186
 						annotation 	8
@@ -6176,7 +6105,7 @@
 							supplier   	@177
 							vertices   	(list Points
 							    (1671, 981)
-							    (1419, 982))
+							    (1419, 981))
 							line_style 	0)
 						    (object RoleView "theAlignment" @189
 							Parent_View 	@186
@@ -6288,7 +6217,7 @@
 							supplier   	@178
 							vertices   	(list Points
 							    (2440, 981)
-							    (2648, 982))
+							    (2648, 981))
 							line_style 	0)
 						    (object RoleView "theAlignment" @195
 							Parent_View 	@192
@@ -14596,7 +14525,7 @@
 				    fill_color 	16777215
 				    anchor     	2
 				    nlines     	13
-				    max_width  	584
+				    max_width  	572
 				    justify    	1)
 				width      	592
 				height     	736
@@ -14657,10 +14586,10 @@
 					supplier   	@425
 					vertices   	(list Points
 					    (741, 525)
-					    (741, 795))
+					    (741, 796))
 					line_style 	3
 					origin_attachment 	(741, 525)
-					terminal_attachment 	(741, 795)
+					terminal_attachment 	(741, 796)
 					label      	(object SegLabel @430
 					    Parent_View 	@428
 					    location   	(791, 728)
@@ -14776,7 +14705,7 @@
 				annotation 	8
 				autoResize 	TRUE)
 			    (object AssociationViewNew "$UNNAMED$47" @434
-				location   	(1887, 456)
+				location   	(1947, 516)
 				font       	(object Font
 				    size       	10
 				    face       	"Arial"
@@ -14792,7 +14721,7 @@
 				roleview_list 	(list RoleViews
 				    (object RoleView "theGenModel" @435
 					Parent_View 	@434
-					location   	(490, -9)
+					location   	(550, 51)
 					font       	(object Font
 					    size       	10
 					    face       	"Arial"
@@ -14804,7 +14733,7 @@
 					    default_color 	TRUE)
 					label      	(object SegLabel @436
 					    Parent_View 	@435
-					    location   	(1772, 705)
+					    location   	(1772, 725)
 					    font       	(object Font
 						size       	10
 						face       	"Arial"
@@ -14829,15 +14758,14 @@
 					client     	@434
 					supplier   	@433
 					vertices   	(list Points
-					    (1887, 456)
-					    (1947, 456)
+					    (1947, 516)
 					    (1947, 766))
 					line_style 	3
-					origin_attachment 	(1887, 456)
+					origin_attachment 	(1947, 516)
 					terminal_attachment 	(1947, 766)
 					label      	(object SegLabel @437
 					    Parent_View 	@435
-					    location   	(2001, 728)
+					    location   	(2001, 740)
 					    font       	(object Font
 						size       	10
 						face       	"Arial"
@@ -14858,17 +14786,18 @@
 					    orientation 	0))
 				    (object RoleView "$UNNAMED$48" @438
 					Parent_View 	@434
-					location   	(490, -9)
+					location   	(550, 51)
 					stereotype 	TRUE
 					line_color 	3342489
 					quidu      	"59C57D30001D"
 					client     	@434
 					supplier   	@426
 					vertices   	(list Points
-					    (1887, 456)
+					    (1947, 516)
+					    (1947, 456)
 					    (1636, 456))
 					line_style 	3
-					origin_attachment 	(1887, 456)
+					origin_attachment 	(1947, 516)
 					terminal_attachment 	(1636, 456))))
 			    (object AssociationViewNew "$UNNAMED$49" @439
 				location   	(1925, 1073)

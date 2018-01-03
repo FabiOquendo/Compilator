@@ -123,6 +123,7 @@ import tooldataform.formmodel.concreta.TextView;
 
 import tooldataform.formmodel.containers.GraphicalContainer;
 
+import tooldataform.styles.domain.Characteristic;
 import tooldataform.styles.domain.Domain;
 import tooldataform.styles.domain.Style;
 
@@ -237,6 +238,13 @@ public class DatatypesdataformPackageImpl extends EPackageImpl implements Dataty
 	 * @generated
 	 */
 	private EDataType modelElementDataFormEDataType = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType characteristicEDataType = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -515,6 +523,15 @@ public class DatatypesdataformPackageImpl extends EPackageImpl implements Dataty
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EDataType getCharacteristic() {
+		return characteristicEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public DatatypesdataformFactory getDatatypesdataformFactory() {
 		return (DatatypesdataformFactory)getEFactoryInstance();
 	}
@@ -553,6 +570,7 @@ public class DatatypesdataformPackageImpl extends EPackageImpl implements Dataty
 		domanStyleEDataType = createEDataType(DOMAN_STYLE);
 		styleEDataType = createEDataType(STYLE);
 		modelElementDataFormEDataType = createEDataType(MODEL_ELEMENT_DATA_FORM);
+		characteristicEDataType = createEDataType(CHARACTERISTIC);
 	}
 
 	/**
@@ -594,6 +612,7 @@ public class DatatypesdataformPackageImpl extends EPackageImpl implements Dataty
 		initEDataType(domanStyleEDataType, Domain.class, "DomanStyle", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(styleEDataType, Style.class, "Style", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(modelElementDataFormEDataType, ModelElementDataForm.class, "ModelElementDataForm", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(characteristicEDataType, Characteristic.class, "Characteristic", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 	}
 
 } //DatatypesdataformPackageImpl

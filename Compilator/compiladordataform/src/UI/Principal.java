@@ -347,8 +347,7 @@ public class Principal extends ViewPart {
 		btnExpand.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				txtNormalExpression.setText(stringTool.addLabelsToTexts(txtNormalExpression.getText()));
-				txtNormalExpression.setText(stringTool.addLabelsToCombos(txtNormalExpression.getText()));
+				txtExpandedExpression.setText("");
 				txtExpandedExpression.setText(unPackExpression());
 			}
 		});
@@ -521,13 +520,9 @@ public class Principal extends ViewPart {
 		Button btnGenerateModel = new Button(container, SWT.NONE);
 		btnGenerateModel.setFont(SWTResourceManager.getFont("Yu Gothic UI Light", 12, SWT.NORMAL));
 		btnGenerateModel.addSelectionListener(new SelectionAdapter() {
-
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				txtNormalExpression.setText(stringTool.addLabelsToTexts(txtNormalExpression.getText()));
-				txtNormalExpression.setText(stringTool.addLabelsToCombos(txtNormalExpression.getText()));
 				unPackExpression();
-				initLog();
 			}
 		});
 		btnGenerateModel.setBounds(10, 758, 200, 30);
@@ -1001,7 +996,7 @@ public class Principal extends ViewPart {
 		} else if (element instanceof compilator.domain.expression.expressionmodel.individualcomponent.Attribute) {
 			compilator.domain.expression.expressionmodel.individualcomponent.Attribute a = (compilator.domain.expression.expressionmodel.individualcomponent.Attribute) element;
 			setMinStyle(style, a.getTheLabel());
-			setMinStyle(style, a.getTheTextField());
+			setMinStyle(style, a.getTheInputElement());
 			
 		} else if (element instanceof compilator.domain.expression.expressionmodel.individualcomponent.Button) {
 			element.setTheStyle(style);
