@@ -130,7 +130,10 @@ public class GenButtonItemProvider extends GenIndividualElementItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_GenButton_type");
+		String label = ((GenButton)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_GenButton_type") :
+			getString("_UI_GenButton_type") + " " + label;
 	}
 	
 

@@ -3,6 +3,8 @@
 package generator.genmodel.genindividualcomponent.provider;
 
 
+import generator.genmodel.genindividualcomponent.GenIndividualElement;
+
 import generator.genmodel.provider.GenElementItemProvider;
 
 import generator.provider.GeneratorEditPlugin;
@@ -57,7 +59,10 @@ public class GenIndividualElementItemProvider extends GenElementItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_GenIndividualElement_type");
+		String label = ((GenIndividualElement)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_GenIndividualElement_type") :
+			getString("_UI_GenIndividualElement_type") + " " + label;
 	}
 	
 

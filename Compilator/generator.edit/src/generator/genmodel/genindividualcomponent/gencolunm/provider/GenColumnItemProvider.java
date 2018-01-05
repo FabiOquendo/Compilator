@@ -130,7 +130,10 @@ public class GenColumnItemProvider extends GenIndividualElementItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_GenColumn_type");
+		String label = ((GenColumn)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_GenColumn_type") :
+			getString("_UI_GenColumn_type") + " " + label;
 	}
 	
 

@@ -58,6 +58,10 @@ import generator.gendataform.GendataformPackage;
 
 import generator.gendataform.impl.GendataformPackageImpl;
 
+import generator.genexcel.GenexcelPackage;
+
+import generator.genexcel.impl.GenexcelPackageImpl;
+
 import generator.genmodel.GenElement;
 import generator.genmodel.GenModel;
 import generator.genmodel.GenmodelFactory;
@@ -101,6 +105,7 @@ import generator.genmodel.genindividualcomponent.impl.GenindividualcomponentPack
 
 import generator.impl.GeneratorPackageImpl;
 
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
@@ -208,6 +213,7 @@ public class GenmodelPackageImpl extends EPackageImpl implements GenmodelPackage
 		DatatypesdataformPackageImpl theDatatypesdataformPackage = (DatatypesdataformPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DatatypesdataformPackage.eNS_URI) instanceof DatatypesdataformPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DatatypesdataformPackage.eNS_URI) : DatatypesdataformPackage.eINSTANCE);
 		DatatypesgmfPackageImpl theDatatypesgmfPackage = (DatatypesgmfPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DatatypesgmfPackage.eNS_URI) instanceof DatatypesgmfPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DatatypesgmfPackage.eNS_URI) : DatatypesgmfPackage.eINSTANCE);
 		GendataformPackageImpl theGendataformPackage = (GendataformPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(GendataformPackage.eNS_URI) instanceof GendataformPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(GendataformPackage.eNS_URI) : GendataformPackage.eINSTANCE);
+		GenexcelPackageImpl theGenexcelPackage = (GenexcelPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(GenexcelPackage.eNS_URI) instanceof GenexcelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(GenexcelPackage.eNS_URI) : GenexcelPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theGenmodelPackage.createPackageContents();
@@ -234,6 +240,7 @@ public class GenmodelPackageImpl extends EPackageImpl implements GenmodelPackage
 		theDatatypesdataformPackage.createPackageContents();
 		theDatatypesgmfPackage.createPackageContents();
 		theGendataformPackage.createPackageContents();
+		theGenexcelPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theGenmodelPackage.initializePackageContents();
@@ -260,6 +267,7 @@ public class GenmodelPackageImpl extends EPackageImpl implements GenmodelPackage
 		theDatatypesdataformPackage.initializePackageContents();
 		theDatatypesgmfPackage.initializePackageContents();
 		theGendataformPackage.initializePackageContents();
+		theGenexcelPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theGenmodelPackage.freeze();
@@ -358,6 +366,15 @@ public class GenmodelPackageImpl extends EPackageImpl implements GenmodelPackage
 	 */
 	public EReference getGenElement_TheSize() {
 		return (EReference)genElementEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getGenElement_Name() {
+		return (EAttribute)genElementEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -506,6 +523,7 @@ public class GenmodelPackageImpl extends EPackageImpl implements GenmodelPackage
 		createEReference(genElementEClass, GEN_ELEMENT__THE_COLOR);
 		createEReference(genElementEClass, GEN_ELEMENT__THE_TYPE);
 		createEReference(genElementEClass, GEN_ELEMENT__THE_SIZE);
+		createEAttribute(genElementEClass, GEN_ELEMENT__NAME);
 		createEOperation(genElementEClass, GEN_ELEMENT___CREATE_X);
 		createEOperation(genElementEClass, GEN_ELEMENT___CREATE_Y);
 		createEOperation(genElementEClass, GEN_ELEMENT___CREATE_WIDTH);
@@ -573,6 +591,7 @@ public class GenmodelPackageImpl extends EPackageImpl implements GenmodelPackage
 		initEReference(getGenElement_TheColor(), theFontPackage.getColor(), theFontPackage.getColor_GenElement(), "theColor", null, 1, 1, GenElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getGenElement_TheType(), theFontPackage.getType(), theFontPackage.getType_GenElement(), "theType", null, 1, 1, GenElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getGenElement_TheSize(), theFontPackage.getSize(), theFontPackage.getSize_GenElement(), "theSize", null, 1, 1, GenElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getGenElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, GenElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getGenElement__CreateX(), null, "createX", 0, 1, IS_UNIQUE, IS_ORDERED);
 

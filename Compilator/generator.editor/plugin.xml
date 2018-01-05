@@ -510,4 +510,32 @@
       </editor>
    </extension>
 
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated generator -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="generator.genexcel.presentation.GenexcelModelWizardID"
+            name="%_UI_GenexcelModelWizard_label"
+            class="generator.genexcel.presentation.GenexcelModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/GenexcelModelFile.gif">
+         <description>%_UI_GenexcelModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated generator -->
+      <editor
+            id="generator.genexcel.presentation.GenexcelEditorID"
+            name="%_UI_GenexcelEditor_label"
+            icon="icons/full/obj16/GenexcelModelFile.gif"
+            extensions="genexcel"
+            class="generator.genexcel.presentation.GenexcelEditor"
+            contributorClass="generator.genexcel.presentation.GenexcelActionBarContributor">
+      </editor>
+   </extension>
+
 </plugin>

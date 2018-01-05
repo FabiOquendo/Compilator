@@ -150,6 +150,15 @@ public interface GenbuttonPackage extends EPackage {
 	int GEN_BUTTON__THE_SIZE = GenindividualcomponentPackage.GEN_INDIVIDUAL_ELEMENT__THE_SIZE;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GEN_BUTTON__NAME = GenindividualcomponentPackage.GEN_INDIVIDUAL_ELEMENT__NAME;
+
+	/**
 	 * The feature id for the '<em><b>The Button</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

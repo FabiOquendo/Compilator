@@ -59,6 +59,10 @@ import generator.gendataform.GendataformPackage;
 
 import generator.gendataform.impl.GendataformPackageImpl;
 
+import generator.genexcel.GenexcelPackage;
+
+import generator.genexcel.impl.GenexcelPackageImpl;
+
 import generator.genmodel.GenmodelPackage;
 
 import generator.genmodel.gencontainercomponent.GencontainercomponentPackage;
@@ -206,6 +210,7 @@ public class EnumerationPackageImpl extends EPackageImpl implements EnumerationP
 		DatatypesdataformPackageImpl theDatatypesdataformPackage = (DatatypesdataformPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DatatypesdataformPackage.eNS_URI) instanceof DatatypesdataformPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DatatypesdataformPackage.eNS_URI) : DatatypesdataformPackage.eINSTANCE);
 		DatatypesgmfPackageImpl theDatatypesgmfPackage = (DatatypesgmfPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DatatypesgmfPackage.eNS_URI) instanceof DatatypesgmfPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DatatypesgmfPackage.eNS_URI) : DatatypesgmfPackage.eINSTANCE);
 		GendataformPackageImpl theGendataformPackage = (GendataformPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(GendataformPackage.eNS_URI) instanceof GendataformPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(GendataformPackage.eNS_URI) : GendataformPackage.eINSTANCE);
+		GenexcelPackageImpl theGenexcelPackage = (GenexcelPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(GenexcelPackage.eNS_URI) instanceof GenexcelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(GenexcelPackage.eNS_URI) : GenexcelPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theEnumerationPackage.createPackageContents();
@@ -232,6 +237,7 @@ public class EnumerationPackageImpl extends EPackageImpl implements EnumerationP
 		theDatatypesdataformPackage.createPackageContents();
 		theDatatypesgmfPackage.createPackageContents();
 		theGendataformPackage.createPackageContents();
+		theGenexcelPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theEnumerationPackage.initializePackageContents();
@@ -258,6 +264,7 @@ public class EnumerationPackageImpl extends EPackageImpl implements EnumerationP
 		theDatatypesdataformPackage.initializePackageContents();
 		theDatatypesgmfPackage.initializePackageContents();
 		theGendataformPackage.initializePackageContents();
+		theGenexcelPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theEnumerationPackage.freeze();

@@ -1,23 +1,31 @@
 package Logica;
 
+import generator.apperance.alignment.Alignment;
+import generator.apperance.font.Color;
+import generator.apperance.font.Size;
+import generator.apperance.font.Type;
+import generator.apperance.position.X;
+import generator.apperance.position.Y;
+import generator.apperance.size.Height;
+import generator.apperance.size.Width;
+import generator.apperance.titlesize.TitleHeight;
 import generator.genmodel.GenModel;
 import generator.genmodel.gencontainercomponent.gencontainer.GenContainer;
+import generator.genmodel.genindividualcomponent.GenIndividualElement;
 import generator.genmodel.genindividualcomponent.genbutton.GenButton;
 import generator.genmodel.genindividualcomponent.gencolunm.GenColumn;
 import generator.genmodel.genindividualcomponent.gencombobox.GenComboBox;
 import generator.genmodel.genindividualcomponent.genlabel.GenLabel;
 import generator.genmodel.genindividualcomponent.gentable.GenTable;
 import generator.genmodel.genindividualcomponent.gentextfield.GenTextField;
-import tooldataform.ModelFactory;
+
 import tooldataform.formmodel.concreta.Button;
 import tooldataform.formmodel.concreta.ColumView;
 import tooldataform.formmodel.concreta.ComboView;
 import tooldataform.formmodel.concreta.Container;
-import tooldataform.formmodel.concreta.DataForm_Diagram;
 import tooldataform.formmodel.concreta.GraphicalIndividualEement;
 import tooldataform.formmodel.concreta.Interface;
 import tooldataform.formmodel.concreta.LabelView;
-import tooldataform.formmodel.concreta.ModelElementDataForm;
 import tooldataform.formmodel.concreta.TableView;
 import tooldataform.formmodel.concreta.TextView;
 import tooldataform.formmodel.containers.GraphicalContainer;
@@ -26,26 +34,6 @@ public class GenModelGenerator {
 	
 	public GenModelGenerator() {
 		super();
-	}
-	
-	public int getContainerAmountAbove(GraphicalContainer parent,ModelElementDataForm element) {
-		int amount = 0;
-		int y = 0;
-		if(element instanceof Container) {
-			Container c = (Container) element;
-			y = c.getPositionY();
-		} else if(element instanceof GraphicalIndividualEement) {
-			GraphicalIndividualEement ind = (GraphicalIndividualEement) element;
-			y = ind.getPositionY();
-		}
-		
-		for(int i = 0; i < parent.getListGraphicalContainer().size(); i++) {
-			GraphicalContainer c = parent.getListGraphicalContainer().get(i);
-			if(c.getPositionY()+c.getHeight() <= y)
-				amount++;
-		}
-			
-		return amount;
 	}
 	
 	public GenModel createGenModel(Interface interface1) {
@@ -82,7 +70,7 @@ public class GenModelGenerator {
 	public GenContainer createGenContainer(Container container) {
 		GenContainer genContainer = generator.genmodel.gencontainercomponent.gencontainer.
 				GencontainerFactory.eINSTANCE.createGenContainer();
-		
+		genContainer.setName(container.getName());
 		for(int i = 0; i < container.getListGraphicalContainer().size(); i++) {
 			if(container.getListGraphicalContainer().get(i) instanceof Container) {
 				Container c = (Container) container.getListGraphicalContainer().get(i);
@@ -108,56 +96,139 @@ public class GenModelGenerator {
 			}
 		}
 		
-		return genContainer;
+		return (GenContainer) setPropertiesContainer(genContainer, container);
 	}
-	
+		
 	public GenTable createGenTable(TableView tableView) {
 		GenTable genTable = generator.genmodel.genindividualcomponent.gentable.
 				GentableFactory.eINSTANCE.createGenTable();
-		
+		genTable.setName(tableView.getName());
 		for(int i = 0; i < tableView.getListColumView().size(); i++) {
 			genTable.getListGenColumns().add(createGenColumn(tableView.getListColumView().get(i)));
 		}
 		
-		return genTable;
+		return (GenTable) setPropertiesElement(genTable, tableView);
 	}
 	
 	public GenColumn createGenColumn(ColumView columnView) {
 		GenColumn genColumn = generator.genmodel.genindividualcomponent.gencolunm.
 				GencolunmFactory.eINSTANCE.createGenColumn();
-		
-		return genColumn;
+		genColumn.setName(columnView.getName());
+		return (GenColumn) setPropertiesIndividualElement(genColumn, columnView);
 	}
 	
 	public GenComboBox createGenCombo(ComboView comboView) {
 		GenComboBox genCombo = generator.genmodel.genindividualcomponent.gencombobox.
 				GencomboboxFactory.eINSTANCE.createGenComboBox();
+		genCombo.setName(comboView.getName());
 		
-		
-		return genCombo;
+		return (GenComboBox) setPropertiesElement(genCombo, comboView);
 	}
 	
 	public GenButton createGenButton(Button button) {
 		GenButton genButton = generator.genmodel.genindividualcomponent.genbutton.
 				GenbuttonFactory.eINSTANCE.createGenButton();
+		genButton.setName(button.getName());
 		
-		
-		return genButton;
+		return (GenButton) setPropertiesIndividualElement(genButton, button);
 	}
 	
 	public GenLabel createGenLabel(LabelView labelView) {
 		GenLabel genLabel = generator.genmodel.genindividualcomponent.genlabel.
 				GenlabelFactory.eINSTANCE.createGenLabel();
-		
-		
-		return genLabel;
+		genLabel.setName(labelView.getName());
+		Alignment a = generator.apperance.alignment.AlignmentFactory.eINSTANCE.createAlignment();
+		a.setValue("RIGHT");
+		genLabel.setTheAlignment(a);
+		return (GenLabel) setPropertiesIndividualElement(genLabel, labelView);
 	}
 	
 	public GenTextField createGenTextField(TextView textView) {
 		GenTextField genText = generator.genmodel.genindividualcomponent.gentextfield.
 				GentextfieldFactory.eINSTANCE.createGenTextField();
+		genText.setName(textView.getName());
 		
-		
-		return genText;
+		return (GenTextField) setPropertiesIndividualElement(genText, textView);
+	}
+	
+	public GenContainer setPropertiesContainer(GenContainer genContainer, GraphicalContainer container) {
+		X x = generator.apperance.position.PositionFactory.eINSTANCE.createX();
+		x.setValue(container.getPositionX());
+		genContainer.setTheX(x);
+		Y y = generator.apperance.position.PositionFactory.eINSTANCE.createY();
+		y.setValue(container.getPositionY());
+		genContainer.setTheY(y);
+		Width w = generator.apperance.size.SizeFactory.eINSTANCE.createWidth();
+		w.setValue(container.getWidth());
+		genContainer.setTheWidth(w);
+		Height h = generator.apperance.size.SizeFactory.eINSTANCE.createHeight();
+		h.setValue(container.getHeight()-50);
+		genContainer.setTheHeight(h);
+		TitleHeight th = generator.apperance.titlesize.TitlesizeFactory.eINSTANCE.createTitleHeight();
+		th.setValue(25);
+		genContainer.setTheTitleHeight(th);
+		Color c = generator.apperance.font.FontFactory.eINSTANCE.createColor();
+		//TODO Valores por defecto
+		c.setValue("BLACK");
+		genContainer.setTheColor(c);
+		Size s = generator.apperance.font.FontFactory.eINSTANCE.createSize();
+		s.setValue(12);
+		genContainer.setTheSize(s);
+		Type t = generator.apperance.font.FontFactory.eINSTANCE.createType();
+		t.setValue("Calabri");
+		genContainer.setTheType(t);
+		return genContainer;
+	}
+	
+	public GenIndividualElement setPropertiesIndividualElement(GenIndividualElement genElement, GraphicalIndividualEement element) {
+		X x = generator.apperance.position.PositionFactory.eINSTANCE.createX();
+		x.setValue(element.getPositionX());
+		genElement.setTheX(x);
+		Y y = generator.apperance.position.PositionFactory.eINSTANCE.createY();
+		y.setValue(element.getPositionY());
+		genElement.setTheY(y);
+		Width w = generator.apperance.size.SizeFactory.eINSTANCE.createWidth();
+		w.setValue(element.getWidth());
+		genElement.setTheWidth(w);
+		Height h = generator.apperance.size.SizeFactory.eINSTANCE.createHeight();
+		h.setValue(element.getHeight());
+		genElement.setTheHeight(h);
+		Color c = generator.apperance.font.FontFactory.eINSTANCE.createColor();
+		//TODO Valores por defecto
+		c.setValue("BLACK");
+		genElement.setTheColor(c);
+		Size s = generator.apperance.font.FontFactory.eINSTANCE.createSize();
+		s.setValue(12);
+		genElement.setTheSize(s);
+		Type t = generator.apperance.font.FontFactory.eINSTANCE.createType();
+		t.setValue("Calabri");
+		genElement.setTheType(t);
+		return genElement;
+	}
+	
+	public GenIndividualElement setPropertiesElement(GenIndividualElement genElement, GraphicalContainer container) {
+		X x = generator.apperance.position.PositionFactory.eINSTANCE.createX();
+		x.setValue(container.getPositionX());
+		genElement.setTheX(x);
+		Y y = generator.apperance.position.PositionFactory.eINSTANCE.createY();
+		y.setValue(container.getPositionY());
+		genElement.setTheY(y);
+		Width w = generator.apperance.size.SizeFactory.eINSTANCE.createWidth();
+		w.setValue(container.getWidth());
+		genElement.setTheWidth(w);
+		Height h = generator.apperance.size.SizeFactory.eINSTANCE.createHeight();
+		h.setValue(container.getHeight());
+		genElement.setTheHeight(h);
+		Color c = generator.apperance.font.FontFactory.eINSTANCE.createColor();
+		//TODO Valores por defecto
+		c.setValue("BLACK");
+		genElement.setTheColor(c);
+		Size s = generator.apperance.font.FontFactory.eINSTANCE.createSize();
+		s.setValue(12);
+		genElement.setTheSize(s);
+		Type t = generator.apperance.font.FontFactory.eINSTANCE.createType();
+		t.setValue("Calabri");
+		genElement.setTheType(t);
+		return genElement;
 	}
 }

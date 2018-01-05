@@ -57,6 +57,10 @@ import generator.gendataform.GendataformPackage;
 
 import generator.gendataform.impl.GendataformPackageImpl;
 
+import generator.genexcel.GenexcelPackage;
+
+import generator.genexcel.impl.GenexcelPackageImpl;
+
 import generator.genmodel.GenmodelPackage;
 
 import generator.genmodel.gencontainercomponent.GencontainercomponentPackage;
@@ -215,6 +219,7 @@ public class DatatypesgmfPackageImpl extends EPackageImpl implements Datatypesgm
 		DatatypesPackageImpl theDatatypesPackage = (DatatypesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DatatypesPackage.eNS_URI) instanceof DatatypesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DatatypesPackage.eNS_URI) : DatatypesPackage.eINSTANCE);
 		DatatypesdataformPackageImpl theDatatypesdataformPackage = (DatatypesdataformPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DatatypesdataformPackage.eNS_URI) instanceof DatatypesdataformPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DatatypesdataformPackage.eNS_URI) : DatatypesdataformPackage.eINSTANCE);
 		GendataformPackageImpl theGendataformPackage = (GendataformPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(GendataformPackage.eNS_URI) instanceof GendataformPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(GendataformPackage.eNS_URI) : GendataformPackage.eINSTANCE);
+		GenexcelPackageImpl theGenexcelPackage = (GenexcelPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(GenexcelPackage.eNS_URI) instanceof GenexcelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(GenexcelPackage.eNS_URI) : GenexcelPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theDatatypesgmfPackage.createPackageContents();
@@ -241,6 +246,7 @@ public class DatatypesgmfPackageImpl extends EPackageImpl implements Datatypesgm
 		theDatatypesPackage.createPackageContents();
 		theDatatypesdataformPackage.createPackageContents();
 		theGendataformPackage.createPackageContents();
+		theGenexcelPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theDatatypesgmfPackage.initializePackageContents();
@@ -267,6 +273,7 @@ public class DatatypesgmfPackageImpl extends EPackageImpl implements Datatypesgm
 		theDatatypesPackage.initializePackageContents();
 		theDatatypesdataformPackage.initializePackageContents();
 		theGendataformPackage.initializePackageContents();
+		theGenexcelPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theDatatypesgmfPackage.freeze();

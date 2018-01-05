@@ -218,6 +218,7 @@ public class GeneratorImpl extends MinimalEObjectImpl.Container implements Gener
 		GenContainer genContainer = generator.genmodel.gencontainercomponent.gencontainer.
 				GencontainerFactory.eINSTANCE.createGenContainer();
 		genContainer.setTheContainer(container);
+		genContainer.setName(container.getName());
 		styles.domain.Propertie fontSize = null;
 		EList<styles.domain.Propertie> listProperties = container.getTheStyle().
 				getTheCharacteristic().getListProperties();
@@ -380,6 +381,7 @@ public class GeneratorImpl extends MinimalEObjectImpl.Container implements Gener
 		GenButton genButton = generator.genmodel.genindividualcomponent.genbutton.
 				GenbuttonFactory.eINSTANCE.createGenButton();
 		genButton.setTheButton(button);
+		genButton.setName(button.getName());
 		String text = button.getName();
 		styles.domain.Propertie fontSize = null;
 		EList<styles.domain.Propertie> listProperties = button.getTheStyle().
@@ -417,6 +419,7 @@ public class GeneratorImpl extends MinimalEObjectImpl.Container implements Gener
 		GenColumn genColumn = generator.genmodel.genindividualcomponent.gencolunm.
 				GencolunmFactory.eINSTANCE.createGenColumn();
 		genColumn.setTheColumn(column);
+		genColumn.setName(column.getName());
 		String text = column.getName();
 		styles.domain.Propertie fontSize = null;
 		EList<styles.domain.Propertie> listProperties = column.getTheStyle().
@@ -454,6 +457,7 @@ public class GeneratorImpl extends MinimalEObjectImpl.Container implements Gener
 		GenComboBox genCombo = generator.genmodel.genindividualcomponent.gencombobox.
 				GencomboboxFactory.eINSTANCE.createGenComboBox();
 		genCombo.setTheComboBox(combo);
+		genCombo.setName(combo.getName());
 		styles.domain.Propertie fontSize = null;
 		EList<styles.domain.Propertie> listProperties = combo.getTheStyle().
 				getTheCharacteristic().getListProperties();
@@ -490,6 +494,7 @@ public class GeneratorImpl extends MinimalEObjectImpl.Container implements Gener
 		GenLabel genLabel = generator.genmodel.genindividualcomponent.genlabel.
 				GenlabelFactory.eINSTANCE.createGenLabel();
 		genLabel.setTheLabel(label);
+		genLabel.setName(label.getName());
 		String text = label.getName();
 		styles.domain.Propertie fontSize = null;
 		EList<styles.domain.Propertie> listProperties = label.getTheStyle().
@@ -532,6 +537,7 @@ public class GeneratorImpl extends MinimalEObjectImpl.Container implements Gener
 		GenTable genTable = generator.genmodel.genindividualcomponent.gentable.
 				GentableFactory.eINSTANCE.createGenTable();
 		genTable.setTheTable(table);
+		genTable.setName(table.getName());
 		int columnsWidth = 0;
 		int columnHeight = 0;
 		for(int i=0;i<table.getListColumn().size();i++){
@@ -580,6 +586,7 @@ public class GeneratorImpl extends MinimalEObjectImpl.Container implements Gener
 		GenTextField genText = generator.genmodel.genindividualcomponent.gentextfield.
 				GentextfieldFactory.eINSTANCE.createGenTextField();		
 		genText.setTheTextField(text);
+		genText.setName(text.getName());
 		styles.domain.Propertie fontSize = null;
 		EList<styles.domain.Propertie> listProperties = text.getTheStyle().
 				getTheCharacteristic().getListProperties();

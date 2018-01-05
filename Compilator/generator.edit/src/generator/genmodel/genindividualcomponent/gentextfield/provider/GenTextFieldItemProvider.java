@@ -130,7 +130,10 @@ public class GenTextFieldItemProvider extends GenIndividualElementItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_GenTextField_type");
+		String label = ((GenTextField)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_GenTextField_type") :
+			getString("_UI_GenTextField_type") + " " + label;
 	}
 	
 

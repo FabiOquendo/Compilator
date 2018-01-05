@@ -64,6 +64,36 @@ public interface DatatypesPackage extends EPackage {
 	 */
 	int PROPERTIE = 0;
 
+	/**
+	 * The meta object id for the '<em>Workbook</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.apache.poi.ss.usermodel.Workbook
+	 * @see generator.datatypes.impl.DatatypesPackageImpl#getWorkbook()
+	 * @generated
+	 */
+	int WORKBOOK = 1;
+
+	/**
+	 * The meta object id for the '<em>Sheet</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.apache.poi.ss.usermodel.Sheet
+	 * @see generator.datatypes.impl.DatatypesPackageImpl#getSheet()
+	 * @generated
+	 */
+	int SHEET = 2;
+
+	/**
+	 * The meta object id for the '<em>Cell</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.apache.poi.ss.usermodel.Cell
+	 * @see generator.datatypes.impl.DatatypesPackageImpl#getCell()
+	 * @generated
+	 */
+	int CELL = 3;
+
 
 	/**
 	 * Returns the meta object for data type '{@link styles.domain.Propertie <em>Propertie</em>}'.
@@ -75,6 +105,39 @@ public interface DatatypesPackage extends EPackage {
 	 * @generated
 	 */
 	EDataType getPropertie();
+
+	/**
+	 * Returns the meta object for data type '{@link org.apache.poi.ss.usermodel.Workbook <em>Workbook</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Workbook</em>'.
+	 * @see org.apache.poi.ss.usermodel.Workbook
+	 * @model instanceClass="org.apache.poi.ss.usermodel.Workbook"
+	 * @generated
+	 */
+	EDataType getWorkbook();
+
+	/**
+	 * Returns the meta object for data type '{@link org.apache.poi.ss.usermodel.Sheet <em>Sheet</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Sheet</em>'.
+	 * @see org.apache.poi.ss.usermodel.Sheet
+	 * @model instanceClass="org.apache.poi.ss.usermodel.Sheet"
+	 * @generated
+	 */
+	EDataType getSheet();
+
+	/**
+	 * Returns the meta object for data type '{@link org.apache.poi.ss.usermodel.Cell <em>Cell</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Cell</em>'.
+	 * @see org.apache.poi.ss.usermodel.Cell
+	 * @model instanceClass="org.apache.poi.ss.usermodel.Cell"
+	 * @generated
+	 */
+	EDataType getCell();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -108,6 +171,36 @@ public interface DatatypesPackage extends EPackage {
 		 * @generated
 		 */
 		EDataType PROPERTIE = eINSTANCE.getPropertie();
+
+		/**
+		 * The meta object literal for the '<em>Workbook</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.apache.poi.ss.usermodel.Workbook
+		 * @see generator.datatypes.impl.DatatypesPackageImpl#getWorkbook()
+		 * @generated
+		 */
+		EDataType WORKBOOK = eINSTANCE.getWorkbook();
+
+		/**
+		 * The meta object literal for the '<em>Sheet</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.apache.poi.ss.usermodel.Sheet
+		 * @see generator.datatypes.impl.DatatypesPackageImpl#getSheet()
+		 * @generated
+		 */
+		EDataType SHEET = eINSTANCE.getSheet();
+
+		/**
+		 * The meta object literal for the '<em>Cell</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.apache.poi.ss.usermodel.Cell
+		 * @see generator.datatypes.impl.DatatypesPackageImpl#getCell()
+		 * @generated
+		 */
+		EDataType CELL = eINSTANCE.getCell();
 
 	}
 

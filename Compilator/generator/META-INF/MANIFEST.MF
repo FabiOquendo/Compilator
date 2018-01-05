@@ -3,7 +3,20 @@ Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: generator;singleton:=true
 Bundle-Version: 1.0.0.qualifier
-Bundle-ClassPath: .
+Bundle-ClassPath: poi/lib/commons-codec-1.10.jar,
+ poi/lib/commons-collections4-4.1.jar,
+ poi/lib/commons-logging-1.2.jar,
+ poi/lib/junit-4.12.jar,
+ poi/lib/log4j-1.2.17.jar,
+ poi/ooxml-lib/curvesapi-1.04.jar,
+ poi/ooxml-lib/xmlbeans-2.6.0.jar,
+ poi/poi-3.17.jar,
+ poi/poi-examples-3.17.jar,
+ poi/poi-excelant-3.17.jar,
+ poi/poi-ooxml-3.17.jar,
+ poi/poi-ooxml-schemas-3.17.jar,
+ poi/poi-scratchpad-3.17.jar,
+ .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
@@ -43,6 +56,9 @@ Export-Package: generator,
  generator.gendataform,
  generator.gendataform.impl,
  generator.gendataform.util,
+ generator.genexcel,
+ generator.genexcel.impl,
+ generator.genexcel.util,
  generator.genmodel,
  generator.genmodel.gencontainercomponent,
  generator.genmodel.gencontainercomponent.gencontainer,
@@ -85,5 +101,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.apache.commons.io;bundle-version="2.2.0",
  org.eclipse.ui;bundle-version="3.109.0",
  org.eclipse.gmf.runtime.diagram.core;bundle-version="1.7.0",
- org.eclipse.emf.common.ui;bundle-version="2.12.0"
+ org.eclipse.emf.common.ui;bundle-version="2.12.0",
+ org.eclipse.core.filesystem;bundle-version="1.7.0",
+ org.eclipse.ui.ide;bundle-version="3.13.1"
 Bundle-ActivationPolicy: lazy

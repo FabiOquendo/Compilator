@@ -133,7 +133,10 @@ public class GenLabelItemProvider extends GenIndividualElementItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_GenLabel_type");
+		String label = ((GenLabel)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_GenLabel_type") :
+			getString("_UI_GenLabel_type") + " " + label;
 	}
 	
 

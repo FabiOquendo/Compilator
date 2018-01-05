@@ -34,6 +34,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link generator.genmodel.GenElement#getTheColor <em>The Color</em>}</li>
  *   <li>{@link generator.genmodel.GenElement#getTheType <em>The Type</em>}</li>
  *   <li>{@link generator.genmodel.GenElement#getTheSize <em>The Size</em>}</li>
+ *   <li>{@link generator.genmodel.GenElement#getName <em>Name</em>}</li>
  * </ul>
  *
  * @see generator.genmodel.GenmodelPackage#getGenElement()
@@ -292,6 +293,32 @@ public interface GenElement extends EObject {
 	 * @generated
 	 */
 	void setTheSize(Size value);
+
+	/**
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see generator.genmodel.GenmodelPackage#getGenElement_Name()
+	 * @model
+	 * @generated
+	 */
+	String getName();
+
+	/**
+	 * Sets the value of the '{@link generator.genmodel.GenElement#getName <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
+	 * @generated
+	 */
+	void setName(String value);
 
 	/**
 	 * <!-- begin-user-doc -->

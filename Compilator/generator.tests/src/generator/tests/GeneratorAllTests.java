@@ -4,6 +4,8 @@ package generator.tests;
 
 import generator.gendataform.tests.GendataformTests;
 
+import generator.genexcel.tests.GenexcelTests;
+
 import generator.genmodel.gencontainercomponent.gencontainer.tests.GencontainerTests;
 
 import generator.genmodel.gencontainercomponent.tests.GencontainercomponentTests;
@@ -65,6 +67,7 @@ public class GeneratorAllTests extends TestSuite {
 		suite.addTest(GencontainercomponentTests.suite());
 		suite.addTest(GencontainerTests.suite());
 		suite.addTest(GendataformTests.suite());
+		suite.addTest(GenexcelTests.suite());
 		return suite;
 	}
 

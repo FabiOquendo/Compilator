@@ -127,6 +127,7 @@
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference generator.ecore#//genmodel/GenElement/theColor"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference generator.ecore#//genmodel/GenElement/theType"/>
         <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference generator.ecore#//genmodel/GenElement/theSize"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generator.ecore#//genmodel/GenElement/name"/>
         <genOperations ecoreOperation="generator.ecore#//genmodel/GenElement/createX"/>
         <genOperations ecoreOperation="generator.ecore#//genmodel/GenElement/createY"/>
         <genOperations ecoreOperation="generator.ecore#//genmodel/GenElement/createWidth"/>
@@ -294,6 +295,9 @@
     </nestedGenPackages>
     <nestedGenPackages prefix="Datatypes" disposableProviderFactory="true" ecorePackage="generator.ecore#//datatypes">
       <genDataTypes ecoreDataType="generator.ecore#//datatypes/Propertie"/>
+      <genDataTypes ecoreDataType="generator.ecore#//datatypes/Workbook"/>
+      <genDataTypes ecoreDataType="generator.ecore#//datatypes/Sheet"/>
+      <genDataTypes ecoreDataType="generator.ecore#//datatypes/Cell"/>
       <nestedGenPackages prefix="Datatypesdataform" disposableProviderFactory="true"
           ecorePackage="generator.ecore#//datatypes/datatypesdataform">
         <genDataTypes ecoreDataType="generator.ecore#//datatypes/datatypesdataform/GraphicalContainer"/>
@@ -416,6 +420,120 @@
         <genOperations ecoreOperation="generator.ecore#//gendataform/DataFormModelGenerator/searchCharacteristic">
           <genParameters ecoreParameter="generator.ecore#//gendataform/DataFormModelGenerator/searchCharacteristic/domain"/>
           <genParameters ecoreParameter="generator.ecore#//gendataform/DataFormModelGenerator/searchCharacteristic/characteristicName"/>
+        </genOperations>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Genexcel" disposableProviderFactory="true" ecorePackage="generator.ecore#//genexcel">
+      <genClasses ecoreClass="generator.ecore#//genexcel/ExcelGenerator">
+        <genOperations ecoreOperation="generator.ecore#//genexcel/ExcelGenerator/createExcel">
+          <genParameters ecoreParameter="generator.ecore#//genexcel/ExcelGenerator/createExcel/genModel"/>
+        </genOperations>
+        <genOperations ecoreOperation="generator.ecore#//genexcel/ExcelGenerator/openFileIntoEditor">
+          <genParameters ecoreParameter="generator.ecore#//genexcel/ExcelGenerator/openFileIntoEditor/path"/>
+        </genOperations>
+        <genOperations ecoreOperation="generator.ecore#//genexcel/ExcelGenerator/createContainerExcel">
+          <genParameters ecoreParameter="generator.ecore#//genexcel/ExcelGenerator/createContainerExcel/wb"/>
+          <genParameters ecoreParameter="generator.ecore#//genexcel/ExcelGenerator/createContainerExcel/sheet"/>
+          <genParameters ecoreParameter="generator.ecore#//genexcel/ExcelGenerator/createContainerExcel/genContainer"/>
+          <genParameters ecoreParameter="generator.ecore#//genexcel/ExcelGenerator/createContainerExcel/r"/>
+          <genParameters ecoreParameter="generator.ecore#//genexcel/ExcelGenerator/createContainerExcel/c"/>
+        </genOperations>
+        <genOperations ecoreOperation="generator.ecore#//genexcel/ExcelGenerator/createLabelExcel">
+          <genParameters ecoreParameter="generator.ecore#//genexcel/ExcelGenerator/createLabelExcel/wb"/>
+          <genParameters ecoreParameter="generator.ecore#//genexcel/ExcelGenerator/createLabelExcel/sheet"/>
+          <genParameters ecoreParameter="generator.ecore#//genexcel/ExcelGenerator/createLabelExcel/genLabel"/>
+          <genParameters ecoreParameter="generator.ecore#//genexcel/ExcelGenerator/createLabelExcel/r"/>
+          <genParameters ecoreParameter="generator.ecore#//genexcel/ExcelGenerator/createLabelExcel/c"/>
+        </genOperations>
+        <genOperations ecoreOperation="generator.ecore#//genexcel/ExcelGenerator/createTextExcel">
+          <genParameters ecoreParameter="generator.ecore#//genexcel/ExcelGenerator/createTextExcel/wb"/>
+          <genParameters ecoreParameter="generator.ecore#//genexcel/ExcelGenerator/createTextExcel/sheet"/>
+          <genParameters ecoreParameter="generator.ecore#//genexcel/ExcelGenerator/createTextExcel/genText"/>
+          <genParameters ecoreParameter="generator.ecore#//genexcel/ExcelGenerator/createTextExcel/r"/>
+          <genParameters ecoreParameter="generator.ecore#//genexcel/ExcelGenerator/createTextExcel/c"/>
+        </genOperations>
+        <genOperations ecoreOperation="generator.ecore#//genexcel/ExcelGenerator/createTableExcel">
+          <genParameters ecoreParameter="generator.ecore#//genexcel/ExcelGenerator/createTableExcel/wb"/>
+          <genParameters ecoreParameter="generator.ecore#//genexcel/ExcelGenerator/createTableExcel/sheet"/>
+          <genParameters ecoreParameter="generator.ecore#//genexcel/ExcelGenerator/createTableExcel/genTable"/>
+          <genParameters ecoreParameter="generator.ecore#//genexcel/ExcelGenerator/createTableExcel/r"/>
+          <genParameters ecoreParameter="generator.ecore#//genexcel/ExcelGenerator/createTableExcel/c"/>
+        </genOperations>
+        <genOperations ecoreOperation="generator.ecore#//genexcel/ExcelGenerator/createColumnExcel">
+          <genParameters ecoreParameter="generator.ecore#//genexcel/ExcelGenerator/createColumnExcel/wb"/>
+          <genParameters ecoreParameter="generator.ecore#//genexcel/ExcelGenerator/createColumnExcel/sheet"/>
+          <genParameters ecoreParameter="generator.ecore#//genexcel/ExcelGenerator/createColumnExcel/genColumn"/>
+          <genParameters ecoreParameter="generator.ecore#//genexcel/ExcelGenerator/createColumnExcel/r"/>
+          <genParameters ecoreParameter="generator.ecore#//genexcel/ExcelGenerator/createColumnExcel/c"/>
+          <genParameters ecoreParameter="generator.ecore#//genexcel/ExcelGenerator/createColumnExcel/x"/>
+        </genOperations>
+        <genOperations ecoreOperation="generator.ecore#//genexcel/ExcelGenerator/createTableRowExcel">
+          <genParameters ecoreParameter="generator.ecore#//genexcel/ExcelGenerator/createTableRowExcel/wb"/>
+          <genParameters ecoreParameter="generator.ecore#//genexcel/ExcelGenerator/createTableRowExcel/sheet"/>
+          <genParameters ecoreParameter="generator.ecore#//genexcel/ExcelGenerator/createTableRowExcel/genColumn"/>
+          <genParameters ecoreParameter="generator.ecore#//genexcel/ExcelGenerator/createTableRowExcel/r"/>
+          <genParameters ecoreParameter="generator.ecore#//genexcel/ExcelGenerator/createTableRowExcel/c"/>
+          <genParameters ecoreParameter="generator.ecore#//genexcel/ExcelGenerator/createTableRowExcel/x"/>
+          <genParameters ecoreParameter="generator.ecore#//genexcel/ExcelGenerator/createTableRowExcel/y"/>
+        </genOperations>
+        <genOperations ecoreOperation="generator.ecore#//genexcel/ExcelGenerator/createComboExcel">
+          <genParameters ecoreParameter="generator.ecore#//genexcel/ExcelGenerator/createComboExcel/wb"/>
+          <genParameters ecoreParameter="generator.ecore#//genexcel/ExcelGenerator/createComboExcel/sheet"/>
+          <genParameters ecoreParameter="generator.ecore#//genexcel/ExcelGenerator/createComboExcel/genCombo"/>
+          <genParameters ecoreParameter="generator.ecore#//genexcel/ExcelGenerator/createComboExcel/r"/>
+          <genParameters ecoreParameter="generator.ecore#//genexcel/ExcelGenerator/createComboExcel/c"/>
+        </genOperations>
+        <genOperations ecoreOperation="generator.ecore#//genexcel/ExcelGenerator/createButtonExcel">
+          <genParameters ecoreParameter="generator.ecore#//genexcel/ExcelGenerator/createButtonExcel/wb"/>
+          <genParameters ecoreParameter="generator.ecore#//genexcel/ExcelGenerator/createButtonExcel/sheet"/>
+          <genParameters ecoreParameter="generator.ecore#//genexcel/ExcelGenerator/createButtonExcel/genButton"/>
+          <genParameters ecoreParameter="generator.ecore#//genexcel/ExcelGenerator/createButtonExcel/r"/>
+          <genParameters ecoreParameter="generator.ecore#//genexcel/ExcelGenerator/createButtonExcel/c"/>
+        </genOperations>
+        <genOperations ecoreOperation="generator.ecore#//genexcel/ExcelGenerator/calculateR1">
+          <genParameters ecoreParameter="generator.ecore#//genexcel/ExcelGenerator/calculateR1/y"/>
+        </genOperations>
+        <genOperations ecoreOperation="generator.ecore#//genexcel/ExcelGenerator/calculateR2">
+          <genParameters ecoreParameter="generator.ecore#//genexcel/ExcelGenerator/calculateR2/y"/>
+          <genParameters ecoreParameter="generator.ecore#//genexcel/ExcelGenerator/calculateR2/h"/>
+        </genOperations>
+        <genOperations ecoreOperation="generator.ecore#//genexcel/ExcelGenerator/getColumnLetters">
+          <genParameters ecoreParameter="generator.ecore#//genexcel/ExcelGenerator/getColumnLetters/index"/>
+        </genOperations>
+        <genOperations ecoreOperation="generator.ecore#//genexcel/ExcelGenerator/changeFont">
+          <genParameters ecoreParameter="generator.ecore#//genexcel/ExcelGenerator/changeFont/wb"/>
+          <genParameters ecoreParameter="generator.ecore#//genexcel/ExcelGenerator/changeFont/cell"/>
+          <genParameters ecoreParameter="generator.ecore#//genexcel/ExcelGenerator/changeFont/fontSize"/>
+          <genParameters ecoreParameter="generator.ecore#//genexcel/ExcelGenerator/changeFont/fontType"/>
+        </genOperations>
+        <genOperations ecoreOperation="generator.ecore#//genexcel/ExcelGenerator/changeAlignment">
+          <genParameters ecoreParameter="generator.ecore#//genexcel/ExcelGenerator/changeAlignment/wb"/>
+          <genParameters ecoreParameter="generator.ecore#//genexcel/ExcelGenerator/changeAlignment/cell"/>
+          <genParameters ecoreParameter="generator.ecore#//genexcel/ExcelGenerator/changeAlignment/alignment"/>
+        </genOperations>
+        <genOperations ecoreOperation="generator.ecore#//genexcel/ExcelGenerator/addBorderToMergedRegion">
+          <genParameters ecoreParameter="generator.ecore#//genexcel/ExcelGenerator/addBorderToMergedRegion/wb"/>
+          <genParameters ecoreParameter="generator.ecore#//genexcel/ExcelGenerator/addBorderToMergedRegion/sheet"/>
+          <genParameters ecoreParameter="generator.ecore#//genexcel/ExcelGenerator/addBorderToMergedRegion/r1"/>
+          <genParameters ecoreParameter="generator.ecore#//genexcel/ExcelGenerator/addBorderToMergedRegion/r2"/>
+          <genParameters ecoreParameter="generator.ecore#//genexcel/ExcelGenerator/addBorderToMergedRegion/c1"/>
+          <genParameters ecoreParameter="generator.ecore#//genexcel/ExcelGenerator/addBorderToMergedRegion/c2"/>
+        </genOperations>
+        <genOperations ecoreOperation="generator.ecore#//genexcel/ExcelGenerator/addBorderToButton">
+          <genParameters ecoreParameter="generator.ecore#//genexcel/ExcelGenerator/addBorderToButton/wb"/>
+          <genParameters ecoreParameter="generator.ecore#//genexcel/ExcelGenerator/addBorderToButton/sheet"/>
+          <genParameters ecoreParameter="generator.ecore#//genexcel/ExcelGenerator/addBorderToButton/r1"/>
+          <genParameters ecoreParameter="generator.ecore#//genexcel/ExcelGenerator/addBorderToButton/r2"/>
+          <genParameters ecoreParameter="generator.ecore#//genexcel/ExcelGenerator/addBorderToButton/c1"/>
+          <genParameters ecoreParameter="generator.ecore#//genexcel/ExcelGenerator/addBorderToButton/c2"/>
+        </genOperations>
+        <genOperations ecoreOperation="generator.ecore#//genexcel/ExcelGenerator/addBorderToContainer">
+          <genParameters ecoreParameter="generator.ecore#//genexcel/ExcelGenerator/addBorderToContainer/wb"/>
+          <genParameters ecoreParameter="generator.ecore#//genexcel/ExcelGenerator/addBorderToContainer/sheet"/>
+          <genParameters ecoreParameter="generator.ecore#//genexcel/ExcelGenerator/addBorderToContainer/r1"/>
+          <genParameters ecoreParameter="generator.ecore#//genexcel/ExcelGenerator/addBorderToContainer/r2"/>
+          <genParameters ecoreParameter="generator.ecore#//genexcel/ExcelGenerator/addBorderToContainer/c1"/>
+          <genParameters ecoreParameter="generator.ecore#//genexcel/ExcelGenerator/addBorderToContainer/c2"/>
         </genOperations>
       </genClasses>
     </nestedGenPackages>

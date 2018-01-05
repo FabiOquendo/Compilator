@@ -107,7 +107,10 @@ public class GenContainerElementItemProvider extends GenElementItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_GenContainerElement_type");
+		String label = ((GenContainerElement)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_GenContainerElement_type") :
+			getString("_UI_GenContainerElement_type") + " " + label;
 	}
 	
 

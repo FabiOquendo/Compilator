@@ -149,6 +149,15 @@ public interface GencontainercomponentPackage extends EPackage {
 	int GEN_CONTAINER_ELEMENT__THE_SIZE = GenmodelPackage.GEN_ELEMENT__THE_SIZE;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GEN_CONTAINER_ELEMENT__NAME = GenmodelPackage.GEN_ELEMENT__NAME;
+
+	/**
 	 * The feature id for the '<em><b>List Gen Elements</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

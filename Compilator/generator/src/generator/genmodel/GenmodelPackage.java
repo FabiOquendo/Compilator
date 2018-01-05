@@ -2,6 +2,7 @@
  */
 package generator.genmodel;
 
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
@@ -148,13 +149,22 @@ public interface GenmodelPackage extends EPackage {
 	int GEN_ELEMENT__THE_SIZE = 8;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GEN_ELEMENT__NAME = 9;
+
+	/**
 	 * The number of structural features of the '<em>Gen Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GEN_ELEMENT_FEATURE_COUNT = 9;
+	int GEN_ELEMENT_FEATURE_COUNT = 10;
 
 	/**
 	 * The operation id for the '<em>Create X</em>' operation.
@@ -403,6 +413,17 @@ public interface GenmodelPackage extends EPackage {
 	EReference getGenElement_TheSize();
 
 	/**
+	 * Returns the meta object for the attribute '{@link generator.genmodel.GenElement#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see generator.genmodel.GenElement#getName()
+	 * @see #getGenElement()
+	 * @generated
+	 */
+	EAttribute getGenElement_Name();
+
+	/**
 	 * Returns the meta object for the '{@link generator.genmodel.GenElement#createX() <em>Create X</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -628,6 +649,14 @@ public interface GenmodelPackage extends EPackage {
 		 * @generated
 		 */
 		EReference GEN_ELEMENT__THE_SIZE = eINSTANCE.getGenElement_TheSize();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute GEN_ELEMENT__NAME = eINSTANCE.getGenElement_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>Create X</b></em>' operation.

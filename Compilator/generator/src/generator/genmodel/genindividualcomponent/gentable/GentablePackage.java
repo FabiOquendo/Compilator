@@ -150,6 +150,15 @@ public interface GentablePackage extends EPackage {
 	int GEN_TABLE__THE_SIZE = GenindividualcomponentPackage.GEN_INDIVIDUAL_ELEMENT__THE_SIZE;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GEN_TABLE__NAME = GenindividualcomponentPackage.GEN_INDIVIDUAL_ELEMENT__NAME;
+
+	/**
 	 * The feature id for the '<em><b>The Background</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

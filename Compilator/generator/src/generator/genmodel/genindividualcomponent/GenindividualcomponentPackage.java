@@ -148,6 +148,15 @@ public interface GenindividualcomponentPackage extends EPackage {
 	int GEN_INDIVIDUAL_ELEMENT__THE_SIZE = GenmodelPackage.GEN_ELEMENT__THE_SIZE;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GEN_INDIVIDUAL_ELEMENT__NAME = GenmodelPackage.GEN_ELEMENT__NAME;
+
+	/**
 	 * The number of structural features of the '<em>Gen Individual Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

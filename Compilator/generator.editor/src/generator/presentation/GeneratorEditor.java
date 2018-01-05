@@ -192,6 +192,8 @@ import generator.apperance.titlesize.provider.TitlesizeItemProviderAdapterFactor
 
 import generator.gendataform.provider.GendataformItemProviderAdapterFactory;
 
+import generator.genexcel.provider.GenexcelItemProviderAdapterFactory;
+
 import generator.genmodel.gencontainercomponent.gencontainer.provider.GencontainerItemProviderAdapterFactory;
 
 import generator.genmodel.gencontainercomponent.provider.GencontainercomponentItemProviderAdapterFactory;
@@ -776,6 +778,7 @@ public class GeneratorEditor
 		adapterFactory.addAdapterFactory(new GencontainercomponentItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new GencontainerItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new GendataformItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new GenexcelItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new CompilatorItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new DomainItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ExpressionItemProviderAdapterFactory());

@@ -68,6 +68,10 @@ import generator.gendataform.GendataformPackage;
 
 import generator.gendataform.impl.GendataformPackageImpl;
 
+import generator.genexcel.GenexcelPackage;
+
+import generator.genexcel.impl.GenexcelPackageImpl;
+
 import generator.genmodel.GenmodelPackage;
 
 import generator.genmodel.gencontainercomponent.GencontainercomponentPackage;
@@ -208,6 +212,7 @@ public class GeneratorPackageImpl extends EPackageImpl implements GeneratorPacka
 		DatatypesdataformPackageImpl theDatatypesdataformPackage = (DatatypesdataformPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DatatypesdataformPackage.eNS_URI) instanceof DatatypesdataformPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DatatypesdataformPackage.eNS_URI) : DatatypesdataformPackage.eINSTANCE);
 		DatatypesgmfPackageImpl theDatatypesgmfPackage = (DatatypesgmfPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(DatatypesgmfPackage.eNS_URI) instanceof DatatypesgmfPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(DatatypesgmfPackage.eNS_URI) : DatatypesgmfPackage.eINSTANCE);
 		GendataformPackageImpl theGendataformPackage = (GendataformPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(GendataformPackage.eNS_URI) instanceof GendataformPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(GendataformPackage.eNS_URI) : GendataformPackage.eINSTANCE);
+		GenexcelPackageImpl theGenexcelPackage = (GenexcelPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(GenexcelPackage.eNS_URI) instanceof GenexcelPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(GenexcelPackage.eNS_URI) : GenexcelPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theGeneratorPackage.createPackageContents();
@@ -234,6 +239,7 @@ public class GeneratorPackageImpl extends EPackageImpl implements GeneratorPacka
 		theDatatypesdataformPackage.createPackageContents();
 		theDatatypesgmfPackage.createPackageContents();
 		theGendataformPackage.createPackageContents();
+		theGenexcelPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theGeneratorPackage.initializePackageContents();
@@ -260,6 +266,7 @@ public class GeneratorPackageImpl extends EPackageImpl implements GeneratorPacka
 		theDatatypesdataformPackage.initializePackageContents();
 		theDatatypesgmfPackage.initializePackageContents();
 		theGendataformPackage.initializePackageContents();
+		theGenexcelPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theGeneratorPackage.freeze();
@@ -486,6 +493,7 @@ public class GeneratorPackageImpl extends EPackageImpl implements GeneratorPacka
 		EnumerationPackage theEnumerationPackage = (EnumerationPackage)EPackage.Registry.INSTANCE.getEPackage(EnumerationPackage.eNS_URI);
 		DatatypesPackage theDatatypesPackage = (DatatypesPackage)EPackage.Registry.INSTANCE.getEPackage(DatatypesPackage.eNS_URI);
 		GendataformPackage theGendataformPackage = (GendataformPackage)EPackage.Registry.INSTANCE.getEPackage(GendataformPackage.eNS_URI);
+		GenexcelPackage theGenexcelPackage = (GenexcelPackage)EPackage.Registry.INSTANCE.getEPackage(GenexcelPackage.eNS_URI);
 		ExpressionPackage theExpressionPackage = (ExpressionPackage)EPackage.Registry.INSTANCE.getEPackage(ExpressionPackage.eNS_URI);
 		ExpressionmodelPackage theExpressionmodelPackage = (ExpressionmodelPackage)EPackage.Registry.INSTANCE.getEPackage(ExpressionmodelPackage.eNS_URI);
 		GencontainerPackage theGencontainerPackage = (GencontainerPackage)EPackage.Registry.INSTANCE.getEPackage(GencontainerPackage.eNS_URI);
@@ -512,6 +520,7 @@ public class GeneratorPackageImpl extends EPackageImpl implements GeneratorPacka
 		getESubpackages().add(theEnumerationPackage);
 		getESubpackages().add(theDatatypesPackage);
 		getESubpackages().add(theGendataformPackage);
+		getESubpackages().add(theGenexcelPackage);
 
 		// Create type parameters
 

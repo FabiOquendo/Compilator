@@ -54,6 +54,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  *   <li>{@link generator.genmodel.impl.GenElementImpl#getTheColor <em>The Color</em>}</li>
  *   <li>{@link generator.genmodel.impl.GenElementImpl#getTheType <em>The Type</em>}</li>
  *   <li>{@link generator.genmodel.impl.GenElementImpl#getTheSize <em>The Size</em>}</li>
+ *   <li>{@link generator.genmodel.impl.GenElementImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -128,6 +129,26 @@ public abstract class GenElementImpl extends MinimalEObjectImpl.Container implem
 	 * @ordered
 	 */
 	protected Size theSize;
+
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -536,6 +557,27 @@ public abstract class GenElementImpl extends MinimalEObjectImpl.Container implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GenmodelPackage.GEN_ELEMENT__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public void createX() {
 			X x = generator.apperance.position.PositionFactory.eINSTANCE.createX();
 			this.setTheX(x);
@@ -760,6 +802,8 @@ public abstract class GenElementImpl extends MinimalEObjectImpl.Container implem
 				return getTheType();
 			case GenmodelPackage.GEN_ELEMENT__THE_SIZE:
 				return getTheSize();
+			case GenmodelPackage.GEN_ELEMENT__NAME:
+				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -798,6 +842,9 @@ public abstract class GenElementImpl extends MinimalEObjectImpl.Container implem
 				return;
 			case GenmodelPackage.GEN_ELEMENT__THE_SIZE:
 				setTheSize((Size)newValue);
+				return;
+			case GenmodelPackage.GEN_ELEMENT__NAME:
+				setName((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -838,6 +885,9 @@ public abstract class GenElementImpl extends MinimalEObjectImpl.Container implem
 			case GenmodelPackage.GEN_ELEMENT__THE_SIZE:
 				setTheSize((Size)null);
 				return;
+			case GenmodelPackage.GEN_ELEMENT__NAME:
+				setName(NAME_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -868,6 +918,8 @@ public abstract class GenElementImpl extends MinimalEObjectImpl.Container implem
 				return theType != null;
 			case GenmodelPackage.GEN_ELEMENT__THE_SIZE:
 				return theSize != null;
+			case GenmodelPackage.GEN_ELEMENT__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -909,6 +961,22 @@ public abstract class GenElementImpl extends MinimalEObjectImpl.Container implem
 				return null;
 		}
 		return super.eInvoke(operationID, arguments);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (name: ");
+		result.append(name);
+		result.append(')');
+		return result.toString();
 	}
 
 } //GenElementImpl

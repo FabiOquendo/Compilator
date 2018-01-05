@@ -3,7 +3,20 @@ Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: generator.tests;singleton:=true
 Bundle-Version: 1.0.0.qualifier
-Bundle-ClassPath: .
+Bundle-ClassPath: poi/lib/commons-codec-1.10.jar,
+ poi/lib/commons-collections4-4.1.jar,
+ poi/lib/commons-logging-1.2.jar,
+ poi/lib/junit-4.12.jar,
+ poi/lib/log4j-1.2.17.jar,
+ poi/ooxml-lib/curvesapi-1.04.jar,
+ poi/ooxml-lib/xmlbeans-2.6.0.jar,
+ poi/poi-3.17.jar,
+ poi/poi-examples-3.17.jar,
+ poi/poi-excelant-3.17.jar,
+ poi/poi-ooxml-3.17.jar,
+ poi/poi-ooxml-schemas-3.17.jar,
+ poi/poi-scratchpad-3.17.jar,
+ .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
@@ -20,6 +33,7 @@ Export-Package: generator.apperance.alignment.tests,
  generator.datatypes.tests,
  generator.enumeration.tests,
  generator.gendataform.tests,
+ generator.genexcel.tests,
  generator.genmodel.gencontainercomponent.gencontainer.tests,
  generator.genmodel.gencontainercomponent.tests,
  generator.genmodel.genindividualcomponent.genbutton.tests,

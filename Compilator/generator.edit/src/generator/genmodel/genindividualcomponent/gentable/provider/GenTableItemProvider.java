@@ -139,7 +139,10 @@ public class GenTableItemProvider extends GenIndividualElementItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_GenTable_type");
+		String label = ((GenTable)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_GenTable_type") :
+			getString("_UI_GenTable_type") + " " + label;
 	}
 	
 

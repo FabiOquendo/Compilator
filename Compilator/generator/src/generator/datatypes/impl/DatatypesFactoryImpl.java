@@ -4,6 +4,10 @@ package generator.datatypes.impl;
 
 import generator.datatypes.*;
 
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
@@ -74,6 +78,12 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 		switch (eDataType.getClassifierID()) {
 			case DatatypesPackage.PROPERTIE:
 				return createPropertieFromString(eDataType, initialValue);
+			case DatatypesPackage.WORKBOOK:
+				return createWorkbookFromString(eDataType, initialValue);
+			case DatatypesPackage.SHEET:
+				return createSheetFromString(eDataType, initialValue);
+			case DatatypesPackage.CELL:
+				return createCellFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -89,6 +99,12 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 		switch (eDataType.getClassifierID()) {
 			case DatatypesPackage.PROPERTIE:
 				return convertPropertieToString(eDataType, instanceValue);
+			case DatatypesPackage.WORKBOOK:
+				return convertWorkbookToString(eDataType, instanceValue);
+			case DatatypesPackage.SHEET:
+				return convertSheetToString(eDataType, instanceValue);
+			case DatatypesPackage.CELL:
+				return convertCellToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -109,6 +125,60 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
 	 * @generated
 	 */
 	public String convertPropertieToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Workbook createWorkbookFromString(EDataType eDataType, String initialValue) {
+		return (Workbook)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertWorkbookToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Sheet createSheetFromString(EDataType eDataType, String initialValue) {
+		return (Sheet)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertSheetToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Cell createCellFromString(EDataType eDataType, String initialValue) {
+		return (Cell)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertCellToString(EDataType eDataType, Object instanceValue) {
 		return super.convertToString(eDataType, instanceValue);
 	}
 

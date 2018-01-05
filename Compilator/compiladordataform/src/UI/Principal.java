@@ -30,7 +30,6 @@ import org.eclipse.wb.swt.ResourceManager;
 import org.eclipse.wb.swt.SWTResourceManager;
 
 import Logica.AnalizadorLexico;
-import Logica.ExcelGenerator;
 import Logica.GenModelGenerator;
 import Logica.ParseException;
 import Logica.StringTools;
@@ -53,6 +52,7 @@ import compilator.ui.UiFactory;
 import generator.Generator;
 import generator.gendataform.DataFormDiagramGenerator;
 import generator.gendataform.DataFormModelGenerator;
+import generator.genexcel.ExcelGenerator;
 import generator.genmodel.GenModel;
 import styles.ModelFactoryStyles;
 import styles.domain.Characteristic;
@@ -580,7 +580,12 @@ public class Principal extends ViewPart {
 		btnGenerateGenModelFromDF.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				GenModelGenerator generator = new GenModelGenerator();
+				GenModelGenerator gen = new GenModelGenerator();
+				DataForm_Diagram dfDiagram = (DataForm_Diagram) project.getListDiagram().get(0);
+				
+				ExcelGenerator excelGenerator = generator.genexcel.GenexcelFactory.eINSTANCE.createExcelGenerator();
+				excelGenerator.createExcel(gen.createGenModel(dfDiagram.getTheInterface()));
+				
 			}
 		});
 		btnGenerateGenModelFromDF.setBounds(900, 758, 200, 30);
@@ -1179,13 +1184,8 @@ public class Principal extends ViewPart {
 
 			dataFormDiagramGenerator.generateDiagram();
 			
-			ExcelGenerator excelGenerator = new ExcelGenerator(generatorGenModel.getTheGenModel());
-			try {
-				excelGenerator.createExcel();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-
+			ExcelGenerator excelGenerator = generator.genexcel.GenexcelFactory.eINSTANCE.createExcelGenerator();
+			excelGenerator.createExcel(generatorGenModel.getTheGenModel());
 		} catch (TokenMgrError te) {
 			String error = "Error\n" + te.getMessage();
 			txtConsole.setText(error);

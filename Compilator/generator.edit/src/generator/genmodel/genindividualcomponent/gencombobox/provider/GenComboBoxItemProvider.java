@@ -130,7 +130,10 @@ public class GenComboBoxItemProvider extends GenIndividualElementItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_GenComboBox_type");
+		String label = ((GenComboBox)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_GenComboBox_type") :
+			getString("_UI_GenComboBox_type") + " " + label;
 	}
 	
 
